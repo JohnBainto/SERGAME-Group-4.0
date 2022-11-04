@@ -1,25 +1,25 @@
+INCLUDE chapter0.ink
 INCLUDE chapter1.ink
 INCLUDE chapter2.ink
-INCLUDE chapter3.ink
-INCLUDE tutorial.ink
-
 
 VAR name = "y/n"
 
 -> prologue
 
 /* 
-    TAG DEFINITIONS
-        Tags continue on until they are replace with another tag.
-        Text from the main character with no quotation marks mean internal thoughts.
+    TAGS
+    Tags continue on until they are replace with another tag.
+    Text from the main character with no quotation marks mean internal thoughts.
     
     NARRATOR
         - text from an omniscient narrator
         - italicized, gray, no quotation marks
-    UNKNOWN_NAME
+    UNKNOWN
         - the characters name in the dialog box appears as "???"
+    HIDDEN
+        - the character's portrait is a dark sillhoutte
     Normal character tags
-    MC, WAITER, MAYA, HATTIE, CODEX
+    Every other character
         - normal, black, with quotation marks
 */
 
@@ -45,8 +45,7 @@ The <color=yellow>TRUTH</color> can break through any <color=red>FALLACY</color>
 -> main
 
 === main ===
-+ [Tutorial] -> tutorial
-+ [Go to chapter 1] -> chapter1
-+ {chapter1.end} [Go to chapter 2] -> chapter2
-+ {chapter2.end} [Go to chapter 3] -> chapter3
++ [Chapter 0 (Tutorial)] -> tutorial
++ [Chapter 1] -> chapter1
++ {chapter1.end} [Chapter 2] -> chapter2
 + [End] -> END

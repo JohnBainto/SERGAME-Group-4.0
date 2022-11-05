@@ -156,11 +156,25 @@ Where should I had off to now?
     - - (area1_1)
     What should I investigate?
     + + [Shipping crate 1]
-        // to do
+        {stopping:
+            - It's just an empty shipping crate.
+            - It's actually quite nice in 'ere.
+                You could put a sofa over here, maybe an end table over there?
+                What am I talking about, I need to focus.
+        }
     + + [Shipping crate 2]
-        // to do
+        {stopping:
+            - Looks like this one's locked.
+            - Hrrmpph, it's not use. I can't force it open.
+            - As sealed shut as the vaults of Bangko Sentral.
+        }
     + + [Shipping crate 3]
-        // to do
+        {stopping:
+            - It's mostly empty.
+                Wait, what's this on the floor!
+            - Oh it's just a wet plastic bag.
+                I feel like I've got an omelette's worth of egg on my face just now.
+        }
     + + [Dock worker]
         # DOCK_WORKER
         "What're you gawkin' at me fer?"
@@ -219,7 +233,7 @@ Where should I had off to now?
             "Outside of that, the dock isn't too active."
             
             # MC
-            "You mean 9 to 5"
+            "5 to 9? You mean 9 to 5."
             
             # DOCK_WORKER
             "9 to 5? Whaddya think this is? Some kinda day spa?"
@@ -387,7 +401,51 @@ Where should I had off to now?
 
 = part3
 # NARRATOR
-You suddenly feel a hand on your shoulders.
+You suddenly feel a hand on your shoulder.
+You turn around to see a hissing aswang winding up to punch you.
+The aswang lands its blow right on your left eye.
+It's supernatural strength leaving you substantially shaken.
+You dazedly raise you fists to defend yourself.
+The aswang tries to hit you again, but you block it this time.
+It's time for a counter attack.
+* [Go for the head.]
+    You swing for the monster's head.
+* [Go for the body.]
+    You swing right for the monster's body.
+* [Go for the legs.]
+    You try to sweep the monster's legs.
+- It dodges your attack with inhuman speed.
+Before you can recover, it knocks you back.
+But instead of falling, a kapre catches you and stifles you with a rag.
+Everything becomes hazy as you feel yourself fall unto the floor.
+You wake up to find yourself in a cell.
+There aren't any windows but judging from the smell it still seems that you're still in the docking area.
+
+#MC
+Urgh, my head.
+Where am I?
+Looks like I've been captured.
+I need to look for a way out before anyone comes back.
+- (area2)
+What should I investigate?
++ [Locked door]
++ [Crack on the floor] // have the player look for something to dig the wall out
+    {stopping:
+        - Well this place is certainly no 5 star hotel.
+        - Wait a second...
+            There something in this crack.
+            I just need to...
+        - Dig a little deeper and...
+            Hair?
+            IMPRESSION FOUND # UNLOCK CH1_E3
+            "Looks like an impression manifested itself in that crack."
+            "It's a good thing I spotted it."
+            ~ ch1_evidence += e3
+            -> end_area1
+    }
++ [Floor]
++ [Lightbulb]
+- -> area2
 
 -> end
 

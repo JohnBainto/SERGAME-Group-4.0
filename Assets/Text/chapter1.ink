@@ -1,3 +1,5 @@
+INCLUDE chapter1_battle.ink
+
 LIST ch1_evidence = e1, e2, e3
 
 === chapter1 ===
@@ -157,23 +159,23 @@ Where should I had off to now?
     What should I investigate?
     + + [Shipping crate 1]
         {stopping:
-            - It's just an empty shipping crate.
-            - It's actually quite nice in 'ere.
-                You could put a sofa over here, maybe an end table over there?
-                What am I talking about, I need to focus.
+        -   It's just an empty shipping crate.
+        -   It's actually quite nice in 'ere.
+            You could put a sofa over here, maybe an end table over there?
+            What am I talking about, I need to focus.
         }
     + + [Shipping crate 2]
         {stopping:
-            - Looks like this one's locked.
-            - Hrrmpph, it's not use. I can't force it open.
-            - As sealed shut as the vaults of Bangko Sentral.
+        -   Looks like this one's locked.
+        -   Hrrmpph, it's not use. I can't force it open.
+        -   As sealed shut as the vaults of Bangko Sentral.
         }
     + + [Shipping crate 3]
         {stopping:
-            - It's mostly empty.
-                Wait, what's this on the floor!
-            - Oh it's just a wet plastic bag.
-                I feel like I've got an omelette's worth of egg on my face just now.
+        -   It's mostly empty.
+            Wait, what's this on the floor!
+        -   Oh it's just a wet plastic bag.
+            I feel like I've got an omelette's worth of egg on my face just now.
         }
     + + [Dock worker]
         # DOCK_WORKER
@@ -316,7 +318,7 @@ Where should I had off to now?
             # NARRATOR
             You left the dock area.
             -> area1
-         - else:
+        - else:
             # MC
             I can't leave yet.
             My gut's tellin' me there's somethin' I need to find here.
@@ -346,22 +348,22 @@ Where should I had off to now?
     What should I investigate?
     + + [Skid marks]
         {stopping:
-            - Someone was in a rush.
-            - If they were goin' fast enough to leave skid marks, they were bound to get into an accident.
-                Especially with how slick the road is from the rain.
+        -   Someone was in a rush.
+        -   If they were goin' fast enough to leave skid marks, they were bound to get into an accident.
+            Especially with how slick the road is from the rain.
         }
     + + [Mark on the wall]
         {stopping:
-            - Looks like that kid was right.
-            - This spot must've been where the truck got caught.
-                With how narrow this alley is, I don't think I can really blame 'em.
+        -   Looks like that kid was right.
+        -   This spot must've been where the truck got caught.
+            With how narrow this alley is, I don't think I can really blame 'em.
         }
     + + [The ground]
         {stopping:
-            - Eugh, the ground is covered in slime.
-                If that store clerk's story is right, this is mermaid slime.
-            - I wonder what they're doing transportin' a mermaid around in a crate for.
-                You can bet they're probably transporting all sorts a illegal magical items too.
+        -   Eugh, the ground is covered in slime.
+            If that store clerk's story is right, this is mermaid slime.
+        -   I wonder what they're doing transportin' a mermaid around in a crate for.
+            You can bet they're probably transporting all sorts a illegal magical items too.
         }
     + + [Garbage pile 1]
         Huff, the things I do for this job.
@@ -377,22 +379,22 @@ Where should I had off to now?
         }
     + + [Garbage pile 2]
         {stopping:
-            - Nasty, it looks like a trash full of rotten food.
-            - I'd rather not dig in there again.
+        -   Nasty, it looks like a trash full of rotten food.
+        -   I'd rather not dig in there again.
         }
     + + [The poster]
         {stopping:
-            - 'We will all rise from poverty,' tch. What a joke.
-            - I've faced a lot of monsters, but nothin' scares me as much as local politics.
+        -   'We will all rise from poverty,' tch. What a joke.
+        -   I've faced a lot of monsters, but nothin' scares me as much as local politics.
         }
     + + [Leave]
         { ch1_evidence ? e2:
             # NARRATOR
             You head back to where you were before.
             -> area1
-         - else:
+        - else:
             # MC
-            As happy as I'd be to leave this dank alleyway, my gut's telling me I need to find eomthing here first.
+            As happy as I'd be to leave this dank alleyway, my gut's telling me I need to find something here first.
         }
     
     - - -> area1_2
@@ -424,31 +426,114 @@ There aren't any windows but judging from the smell it still seems that you're s
 #MC
 Urgh, my head.
 Where am I?
-Looks like I've been captured.
-I need to look for a way out before anyone comes back.
+Looks like I'm in hotter water than a hotdog in a carnival concession stand.
+I need to look for a way out before those grunts come back to finish the job.
+
+LIST area2_inv = paper, clip
+
 - (area2)
 What should I investigate?
 + [Locked door]
-+ [Crack on the floor] // have the player look for something to dig the wall out
-    {stopping:
-        - Well this place is certainly no 5 star hotel.
-        - Wait a second...
-            There something in this crack.
+    # NARRATOR
+    You rattle the door.
+    
+    # MC
+    Yeah, didn't expect it to be that easy.
+    
+    {area2_inv !? clip:
+        Wait what's this?
+        
+        # NARRATOR
+        You peer under the door and see something on the floor.
+    
+        # MC
+        A paper clip?
+        Hmm... that could be useful for somethin'.
+        But I'd need something slim to reach it through the door.
+        {area2_inv ? paper:
+            Oh! I can slip these newspapers under the door to reach that paper clip.
             I just need to...
-        - Dig a little deeper and...
-            Hair?
-            IMPRESSION FOUND # UNLOCK CH1_E3
-            "Looks like an impression manifested itself in that crack."
-            "It's a good thing I spotted it."
-            ~ ch1_evidence += e3
-            -> end_area1
+            Got it!
+            ~ area2_inv += clip
+        }
     }
-+ [Floor]
++ [Crack on the floor]
+    {stopping:
+    -   Well this place is certainly no 5 star hotel.
+    -   Wait a second...
+        There something in this crack.
+        I just need to something pointy to dig it out.
+    }
+    {area2_inv ? clip:
+    -   This clip is the perfect tool for that.
+        
+        # NARRATOR
+        You dig something out of crack.
+    
+        # MC
+        Hair?
+        Gasp! Tikbalang hair!
+        IMPRESSION FOUND # UNLOCK CH1_E3
+        "Looks like that hair was a manifestation of an impression."
+        "It's a good thing I spotted it."
+        ~ ch1_evidence += e3
+        Though... I'm not sure how useful that'll be seeing as how I'm still stuck in this room...
+        -> part4
+    }
++ [Papers on the floor]
+    Just some newspapers on the floor.
+    Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
+    {area2_inv !? paper:
+        Although... This might prove to be useful.
+        Might as well take it to be safe.
+        ~ area2_inv += paper
+    }
++ [Wet spot on the floor]
+    {stopping:
+    -   There's a wet spot here...
+        Gross.
+        These guys need to get a better contractor to fix their roofing.
+    -   At least I hope that's rain water.
+        \*shivers\*
+    }
 + [Lightbulb]
+    {stopping:
+    -   It's an incandescent lightbulb.
+    -   It's too high up to reach,
+        but maybe if I had something to stand on...
+    -   But even if I did reach it, I'm not too sure what use I'd have for a lightbulb.
+    }
 - -> area2
 
--> end
+= part4
+# NARRATOR
+Your line of thought is interrupted by heavy footsteps followed by the clinking of keys on the door.
+
+# MC
+Drats! I wasn't fast enough.
+Whatever comes next, I have to face it head on.
+
+# NARRATOR
+From the door emerged a huge inhuman man with the head of a horse.
+His eyes are glowing bright red as he snorts steam out of his flared nostrils.
+He enters the room, suffocating the limited space you had in your enclosure.
+You back up against the wall and ready yourself for a fight.
+
+# KIT
+NEIGHH
+So you're the rat whose been snooping around my docks.
+I'd ask you who you're working for but after we're done with you,
+I'm sure the message will be very clear that the Dark Water gang is dead serious!
+
+-> ch1_battle
 
 = end
+# NARRATOR
+After being defeated, the members of the Dark Water gang were all brought to the police.
+The evidence you've collected was more than enough to put them away for good.
+The domain that formed around the dock area was destroyed and is once again normal.
+The new head promised transparency and honesty in its operations moving forward.
+Because of you, the city of Wetro Wanila is now a little safer.
+CHAPTER END
 + [Return]
 -> main

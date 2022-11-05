@@ -17,6 +17,8 @@ It feels like you're going to be sleeping with the fishes soon.
 // These are the scores corresponding to each sentence
 LIST q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
 LIST q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
+LIST s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
+LIST s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 
 - (battle_phase)
 ~ performance = 0
@@ -46,32 +48,34 @@ LIST q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
         ~ cur_question = q2
     }
 - turn == 2:
-    I'm # KIT QSTART
-    going
-    to send
-    you
-    to the bottom
-    of this
-    harbor
-    you
-    weakling # QEND
-    ~ cur_question = q1
+    Huff, huff. # KIT QSTART
+    Just
+    'cause
+    you've
+    dodged
+    a couple of
+    my attacks
+    doesn't mean
+    you're
+    not a weakling # QEND
+    ~ cur_question = s1
 - turn == 5:
-    Only # KIT QSTART
-    one thing
-    matters
-    in this city:
-    MONEY.
-    My gang and I
-    will survive
-    no matter
-    what! # QEND
-    ~ cur_question = q2
+    I can't... # KIT QSTART
+    possibly
+    lose
+    to a
+    weakling
+    like
+    you!!!
+    I
+    will end
+    you! # QEND
+    ~ cur_question = s2
 - else:
     -> end
 }
-// Unity will use the tag of the question to select the right list.
-// the player will select words using unity and activate the corresponding values in the list.
+// Unity will use the tag of the question to know when the text scroll is done
+// cur_question will contain the scores corressponding to each word/line
 
 + [Retort]
     ~ performance += sum(cur_question)

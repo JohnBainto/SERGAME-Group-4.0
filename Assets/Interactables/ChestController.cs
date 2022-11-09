@@ -5,11 +5,12 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     public bool isOpen;
+    public string chestName;
 
     public void OpenChest() {
         if (!isOpen) {
             isOpen = true;
-            Debug.Log("Chest is now open");
+            Debug.Log(chestName + " is now open");
         }
     }
 }

@@ -1,6 +1,8 @@
 INCLUDE chapter0.ink
 INCLUDE chapter1.ink
 INCLUDE chapter2.ink
+INCLUDE chapter2_battle.ink
+
 
 VAR name = "y/n"
 
@@ -36,7 +38,7 @@ Lately I've been tracking a series 'a stories about supernatural beings infiltra
 Y'know real bump in the night types, spooks ya tell yer friends 'round the campfire types.
 They've been running amok in the city, wreckin' havoc, goin' about doin' whatever in tarnation they please.
 Its 'cause those... things, they have some sorta magic about them. It's like they can cast these spells that can convince ya real good even though what they're sayin's more bologna than a deli on black friday.
-But see, I'm wise to their lil' tricks.
+But see, I'm wise to their tricks.
 What they don't know 's on top 'a bein' an investigative reporter, I'm also the descendant of a family of powerful <color=yellow>babaylans</color> or monster hunters for short.
 I know the truth is more powerful than any 'a their lies.
 The <color=yellow>TRUTH</color> can break through any <color=red>FALLACY</color> and if those monsters think they can make my city into they're own personal playground, then they've got another thing comin'.

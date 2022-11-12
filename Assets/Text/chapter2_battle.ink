@@ -1,13 +1,6 @@
-=== function sum(list)
-{list:
-    ~ return sum(list - LIST_MIN(list)) + LIST_VALUE(LIST_MIN(list))
-- else:
-    ~ return 0
-}
-
-=== ch1_battle ===
+=== ch2_battle ===
 # NARRATOR BATTLE_PHASE
-It feels like you're going to be sleeping with the fishes soon.
+The fishes have come to meet you!
 
 ~ temp life = 20
 ~ temp performance = 0
@@ -15,10 +8,10 @@ It feels like you're going to be sleeping with the fishes soon.
 ~ temp cur_question = 0
 
 // These are the scores corresponding to each sentence
-LIST c1q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
-LIST c11q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
-LIST c1s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
-LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
+LIST c2q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
+LIST c2q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
+LIST c2s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
+LIST c2s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 
 - (battle_phase)
 ~ performance = 0
@@ -35,7 +28,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         harbor
         you
         weakling # QEND
-        ~ cur_question = c1q1
+        ~ cur_question = c2q1
     -   Only # KIT QSTART
         one thing
         matters
@@ -45,7 +38,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         will survive
         no matter
         what! # QEND
-        ~ cur_question = c1q2
+        ~ cur_question = c2q2
     }
 - turn == 2:
     Huff, huff. # KIT QSTART
@@ -58,7 +51,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     doesn't mean
     you're
     not a weakling # QEND
-    ~ cur_question = c1s1
+    ~ cur_question = c2s1
 - turn == 5:
     I can't... # KIT QSTART
     possibly
@@ -70,7 +63,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     I
     will end
     you! # QEND
-    ~ cur_question = c1s2
+    ~ cur_question = c2s2
 - else:
     -> end
 }
@@ -111,28 +104,26 @@ Urk!
 I can't go on!
 Is this the end?
 
-# KIT
-"Huff, toss his body into the bay."
+# KOI
+"Heh, stuff 'em in a crate."
 
 # NARRATOR
 Continue?
-+ [Yes] -> ch1_battle
++ [Yes] -> ch2_battle
 + [No] -> main
 
 - (end)
-# KIT
-"Hrngg!"
-"This.."
-"How is this possible!?"
+# KOI
+"Nggrrh!"
+"How..."
+"How am I losing to the likes of YOU!?"
 
 # MC
-"It's over Kit!"
-"You're done for."
-"I'm puttin' you and your entire posse on the front page of every paper in Wetro Wanila."
+"This is the end Mr. Ignacio!"
+"I've exposed you for what you really are!"
 
-# KIT
-"Defeated..."
-"by a weak human."
-"Hurmph"
+# KOI
+"Darn pesky journalists..."
+"Hurglblgbrblr..."
 
 -> chapter1.end

@@ -29,9 +29,7 @@ PROLOGUE
 The city ain't what it used to.
 Seems like everyday these streets get darker and darker.
 But that's why I'm here.
-I'm... wait what's my name again?
-* [What's your name?]
-Ah that's right, my name is {name}.
+My name is Amy Buscador.
 I'm a hard-boiled investigative journalist working in the city.
 Where ever there's a big scoop, you can bet yer mama's sweet jammys that I'm there.
 Lately I've been tracking a series 'a stories about supernatural beings infiltratin' the local government  infrastructure.

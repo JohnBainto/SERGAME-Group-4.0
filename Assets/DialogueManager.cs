@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Queue<string> sentences;
+    //public UnityEvent onMouceClicked;
     
     // Start is called before the first frame update
     void Start() {
@@ -27,9 +28,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue (Dialogue dialogue) {
-        
-        Debug.Log("Convo with" + dialogue.SpeakerName);
-        nameText.text = dialogue.SpeakerName;
+        Debug.Log("Convo with " + dialogue.SpeakerName);
+        nameText.text = dialogue.SpeakerName + " says";
         sentences.Clear(); // to clear any sentences from the previous conversation
 
         foreach (string sentence in dialogue.Lines) {
@@ -39,20 +39,19 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
     
-    void DisplayNextSentence () {
-        if (Input.GetMouseButtonDown(0)) {
-            if (sentences.Count == 0) {
-                EndDialogue();
-                return;
-            }
-
-            string sentence = sentences.Dequeue();
-            StopAllCoroutines();
-            StartCoroutine(TypeLine(sentence));
+    public void DisplayNextSentence () {
+        Debug.Log(sentences.Count);
+        if (sentences.Count == 0) {
+            EndDialogue();
+            return;
         }
+
+        string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeLine(sentence));
     }
 
-    void EndDialogue() {
+    public void EndDialogue() {
         Debug.Log("End of battle.");
     }
 }

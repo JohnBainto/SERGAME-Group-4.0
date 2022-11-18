@@ -5,8 +5,12 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue _dialogue;
-
+    [Header("Ink JSON")]
+    [SerializeField] private TextAsset inkJSON;
     public void TriggerDialogue () {
-        FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
+        Debug.Log(inkJSON.text);
+        FindObjectOfType<DialogueManager>().EnterDialogueMode(inkJSON);
+        // FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
+        
     }
 }

@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 688067106}
   - component: {fileID: 688067105}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Mouse Tracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,10 +1640,9 @@ MonoBehaviour:
   _dialogue:
     SpeakerName: Dinosaur
     Lines:
-    - kung tama ba talaga toh unlike pag yung participants yung gumawa, yung ineexpect
-      nila
-    - fgfdgdfgdfgdfg
-    - rawrrawrrawrrrawr
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+    - dolor sit amet, consectetur adipiscing elit
 --- !u!1 &1523459715
 GameObject:
   m_ObjectHideFlags: 0

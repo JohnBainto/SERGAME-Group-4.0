@@ -42,7 +42,11 @@ public class PlayerMovement : MonoBehaviour
 
     //better for handling physics, can be called multiple times per update frame
     private void FixedUpdate() { 
-        //check if grounded
+        
+        if(DialogueManager.GetInstance().dialogueIsPlaying) {
+            return; //freeze the player
+        }
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
         if (isGrounded) {
             jumpCount = maxJumpCount;

@@ -26,14 +26,14 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInRange)
+        if (isInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
 
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-                Debug.Log(inkJSON.text);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
         else

@@ -67,6 +67,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void EndDialogue() {
+        dialogueIsPlaying = false;
+        dialogueBox.SetActive(false);
+        //dialogueText.text = "";
         Debug.Log("End of battle.");
     }
 

@@ -8,32 +8,53 @@ public class Interactable : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public GameObject visualCue;
+    public TextAsset inkJSON;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    void Awake()
+    {
+        visualCue.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isInRange) {
-            if (Input.GetKeyDown(interactKey)) {
+        if (isInRange)
+        {
+            visualCue.SetActive(true);
+
+            if (Input.GetKeyDown(interactKey))
+            {
                 interactAction.Invoke();
+                Debug.Log(inkJSON.text);
             }
+        }
+        else
+        {
+            visualCue.SetActive(false);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
             isInRange = true;
             Debug.Log("Player now in range");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
             isInRange = false;
             Debug.Log("Player now not in range");
         }

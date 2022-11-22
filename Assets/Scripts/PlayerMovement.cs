@@ -33,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
     //update is called once per frame
     void Update()
     {
+        if(DialogueManager.GetInstance().dialogueIsPlaying) {
+            return; //freeze the player
+        }
+        
         //get inputs
         ProcessInputs();
 

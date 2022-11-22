@@ -10,7 +10,10 @@ public class DialogueManager : MonoBehaviour
 {
     public KeyCode interactKey;
     public GameObject dialoguePanel;
+
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI displayNameText;
+
     public Story currentStory;
     public bool dialogueIsPlaying;
     private static DialogueManager instance;
@@ -86,10 +89,17 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue(); //pop a line off the stack
             DisplayChoices();
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags) {
+        if (currentTags.Count > 0) {
+            displayNameText.text = currentTags[0];
         }
     }
 

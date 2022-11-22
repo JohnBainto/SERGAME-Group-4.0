@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying;
     private static DialogueManager instance;
     public TextAsset inkJSON;
+    public string pathString;
 
     public GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
@@ -32,8 +33,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
         
         currentStory = new Story(inkJSON.text);
-        currentStory.ChoosePathString("chapter1");
-
+        currentStory.ChoosePathString(pathString);
     }
 
     public static DialogueManager GetInstance()
@@ -101,6 +101,9 @@ public class DialogueManager : MonoBehaviour
         if (currentTags.Count > 0) {
             displayNameText.text = currentTags[0];
         }
+
+        Debug.Log(currentStory.variablesState["BG"]);
+
     }
 
     private void DisplayChoices() {
@@ -120,11 +123,12 @@ public class DialogueManager : MonoBehaviour
         for (int i = index; i < choices.Length; i++) {
             choices[i].gameObject.SetActive(false);
         }
-    
+        
         StartCoroutine(SelectFirstChoice());
     }
 
     private IEnumerator SelectFirstChoice() {
+        Debug.Log(EventSystem.current);
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);

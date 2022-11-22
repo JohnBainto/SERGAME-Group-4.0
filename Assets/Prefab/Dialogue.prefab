@@ -1611,6 +1611,7 @@ MonoBehaviour:
   displayNameText: {fileID: 8096018458632950765}
   dialogueIsPlaying: 0
   inkJSON: {fileID: 4900000, guid: d7c8657a13a67f84ab1291f594828825, type: 3}
+  pathString: chapter1
   choices:
   - {fileID: 8096018458632950766}
   - {fileID: 8096018458632950767}

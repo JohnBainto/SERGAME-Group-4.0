@@ -9,13 +9,12 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
     public GameObject visualCue;
-    public TextAsset inkJSON;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     void Awake()
@@ -33,7 +32,6 @@ public class Interactable : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
         else

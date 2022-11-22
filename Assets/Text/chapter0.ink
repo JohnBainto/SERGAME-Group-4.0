@@ -28,7 +28,7 @@ Okay now try interacting with that table over there by double clicking it.
 My apologies for you see I have not been completely truthful with you.
 I just felt that it was too soon to tell you and I did not want to worry you.
 Unfortunately I can no longer shield you from what's coming next.
-The truth is my dear {name}, you are already in a <color=red>Halimaw's Domain</color>.
+The truth is my dear Amy, you are already in a <color=red>Halimaw's Domain</color>.
 What that means is you have trespassed into a location inhabited by a monster.
 While in this domain, you must look for <color=yellow>evidence</color>.
 What you did just then with the lamp, that was looking for <color=yellow>evidence</color>. 

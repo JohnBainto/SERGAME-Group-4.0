@@ -17,6 +17,7 @@ It feels like you're going to be sleeping with the fishes soon.
 // These are the scores corresponding to each sentence
 LIST c1q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
 LIST c1q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
+
 LIST c1s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
 LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 
@@ -45,6 +46,15 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         will survive
         no matter
         what! # QEND
+        ~ cur_question = c1q2
+    -   You # KIT QSTART
+        must be really
+        stupid
+        if you think
+         you can
+        beat me
+        with some
+        dusty book# QEND
         ~ cur_question = c1q2
     }
 - turn == 2:
@@ -112,7 +122,7 @@ I can't go on!
 Is this the end?
 
 # KIT
-"Huff, toss his body into the bay."
+"Huff, toss 'em into the bay."
 
 # NARRATOR
 Continue?

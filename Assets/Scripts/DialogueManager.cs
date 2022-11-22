@@ -101,7 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleTags() {
         List<string> currentTags = currentStory.currentTags;
-        if (currentTags.Count > 0) {
+        if (currentTags.Count > 0 && displayNameText != null) {
             displayNameText.text = currentTags[0];
         }
     }
@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
         switch (currentStory.variablesState["BG"].ToString())
         {
             case "BLACK": 
-                sceneName = "CH01_EXP_CUTSCENE";
+                sceneName = "CH01_EXP_BLACK";
                 break;
             case "OUTSIDE":
                 sceneName = "CH01_EXP_PIER";
@@ -141,7 +141,9 @@ public class DialogueManager : MonoBehaviour
             choices[i].gameObject.SetActive(false);
         }
         
-        StartCoroutine(SelectFirstChoice());
+        if (currentChoices.Count > 0) {
+            StartCoroutine(SelectFirstChoice());
+        }
     }
 
     private IEnumerator SelectFirstChoice() {

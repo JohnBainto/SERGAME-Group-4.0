@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -89,7 +90,8 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue(); //pop a line off the stack
             DisplayChoices();
-            HandleTags(currentStory.currentTags);
+            HandleTags();
+            HandleScenes();
         }
         else
         {
@@ -97,13 +99,28 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void HandleTags(List<string> currentTags) {
+    private void HandleTags() {
+        List<string> currentTags = currentStory.currentTags;
         if (currentTags.Count > 0) {
             displayNameText.text = currentTags[0];
         }
+    }
 
-        Debug.Log(currentStory.variablesState["BG"]);
+    public void HandleScenes() {
+        string sceneName = "";
+        switch (currentStory.variablesState["BG"].ToString())
+        {
+            case "BLACK": 
+                sceneName = "CH01_EXP_CUTSCENE";
+                break;
+            case "OUTSIDE":
+                sceneName = "CH01_EXP_PIER";
+                break;
+        }
 
+        if (SceneManager.GetActiveScene().name != sceneName) {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     private void DisplayChoices() {

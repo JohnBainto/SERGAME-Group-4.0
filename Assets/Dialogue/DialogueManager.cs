@@ -119,4 +119,8 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
+
+    public void MakeChoice (int choiceIndex) {
+        currentStory.ChooseChoiceIndex(choiceIndex);
+    }
 }

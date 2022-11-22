@@ -6,8 +6,10 @@ LIST ch1_evidence = e1, e2, e3
 
 = part1
 # NARRATOR
+~ BG = BLACK
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM
+~ BG = OUTSIDE
 The light of the setting afternoon sun bathes the shanty houses beside the port in bright orange.
 Even here, the holiday season greets the locals with cooler air and shorter days.
 You gaze at the address you have written in your investigave notebook and look back at 3 story house made of cinderblocks and corrugated steel.
@@ -15,14 +17,15 @@ You gaze at the address you have written in your investigave notebook and look b
 # MC
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
-
+~ INTERACTIBLE = true
 + [Enter the house]
+~ INTERACTIBLE = false
 
 # NARRATOR
 You knock on the front door.
 A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
-
+~ BG = OUTSIDE
 # UNKNOWN WITNESS
 D-did you see any of them outside?
 
@@ -112,6 +115,9 @@ But big trouble can also mean big story...
 You leave the house and step outside.
 Its dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
+~ BG = OUTSIDE
+~ INTERACTIBLE = true
+
 ~temp first_select = ""
 - (area1)
 # MC
@@ -122,6 +128,7 @@ I should head to the pier area to investigate.
     But to take over a whole pier?
     This operation must run deep.
     
+    ~ BG = PIER
     # NARRATOR
     You make your way to the pier area.
     Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
@@ -172,6 +179,7 @@ I should head to the pier area to investigate.
         -   I feel... kind of silly.
         }
     + + [Dock worker]
+        ~ INTERACTIBLE = false
         # DOCK_WORKER
         "What're you gawkin' at me fer?"
         
@@ -287,6 +295,7 @@ I should head to the pier area to investigate.
         + + + "Nothing else." # MC
             # DOCK_WORKER
             "Alright, now stop botherin' me."
+            ~ INTERACTIBLE = true
             -> area1_1
         
         - - - -> area1_1_1
@@ -313,6 +322,7 @@ I should head to the pier area to investigate.
 - (end_area1) -> part3
 
 = part3
+~ INTERACTIBLE = false
 # NARRATOR
 Before you could do anything, you suddenly feel a hand on your shoulder.
 You turn around to see a hissing aswang winding up to punch you.
@@ -330,7 +340,9 @@ It's time for a counter attack.
 - It dodges your attack with inhuman speed.
 Before you can recover, it knocks you back.
 But instead of falling, a kapre catches you and stifles you with a rag.
+~ BG = BLACK
 Everything becomes hazy as you feel yourself fall unto the floor.
+~ BG = BASEMENT
 You wake up to find yourself in a cell.
 There aren't any windows but judging from the smell it still seems that you're still in the docking area.
 
@@ -342,6 +354,7 @@ I need to look for a way out before those grunts come back to finish the job.
 
 LIST ch1_area2_inv = paper, clip
 
+~ INTERACTIBLE = true
 - (area2)
 What should I investigate?
 + [Locked door]
@@ -417,6 +430,7 @@ What should I investigate?
 - -> area2
 
 = part4
+~ INTERACTIBLE = false
 # NARRATOR
 Your line of thought is interrupted by heavy footsteps followed by the clinking of keys on the door.
 

@@ -4,7 +4,8 @@ INCLUDE chapter2.ink
 INCLUDE chapter2_battle.ink
 
 
-VAR name = "y/n"
+LIST BG = BLACK, OUTSIDE, PIER, BASEMENT, HALLWAY
+VAR INTERACTIBLE = false
 
 -> prologue
 

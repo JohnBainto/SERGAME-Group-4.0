@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetKeyDown(interactKey))
         {
             ContinueStory();
+            HandleInteractable();
         }
     }
 
@@ -117,12 +118,20 @@ public class DialogueManager : MonoBehaviour
                 sceneName = "CH01_EXP_BLACK";
                 break;
             case "OUTSIDE":
-                sceneName = "CH01_EXP_PIER";
+                sceneName = "CH01_EXP_OUTSIDE";
                 break;
         }
 
         if (SceneManager.GetActiveScene().name != sceneName) {
             SceneManager.LoadScene(sceneName);
+        }
+    }
+
+    public void HandleInteractable() {
+        Debug.Log(currentStory.variablesState["INTERACTIBLE"].ToString());
+        if (bool.Parse(currentStory.variablesState["INTERACTIBLE"].ToString())) {
+            Debug.Log("im in");
+            ExitDialogueMode();
         }
     }
 
@@ -157,6 +166,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice (int choiceIndex) {
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+
         currentStory.ChooseChoiceIndex(choiceIndex);
     }
 }

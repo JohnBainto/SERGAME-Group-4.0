@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
         return instance;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

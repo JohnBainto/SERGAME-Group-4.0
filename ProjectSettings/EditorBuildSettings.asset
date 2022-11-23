@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CH01_EXP_CUTSCENE.unity
     guid: f6246dfef28c63c438576e5dd9bb9806
   - enabled: 1
-    path: Assets/Scenes/CH01_EXP_BLACK.unity
-    guid: 6634aed3bb6378b4f8302707514a04ce
-  - enabled: 1
     path: Assets/Scenes/CH01_EXP_PIER.unity
     guid: a3156249c78ef6e4ca8ee487a3309a7c
+  - enabled: 1
+    path: Assets/Scenes/CH01_EXP_BLACK.unity
+    guid: 5576d71df24ff0640abe93577cb2b742
   m_configObjects: {}

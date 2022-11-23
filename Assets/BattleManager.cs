@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public float retortFunction(Player player) {
-        float total_damage = 0;
+    public Player player;
 
-        foreach(Word w in player.selected_words) {
-            total_damage+= w.damage;
-        }
-        return total_damage;
+    public void retortFunction() {
+        // ink integ
+        int totalDamage = 2;
+        player.damagePlayer(totalDamage);
     }
 
+    public void skipFunction() {
+        // ink integ
+        int totalDamage = 10;
+        player.damagePlayer(totalDamage);
+    }
 
 }

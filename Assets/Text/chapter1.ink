@@ -21,6 +21,7 @@ The witness didn't give me a name, but told me to meet him at this address as so
 Select an option:
 ~ INTERACTIBLE = true
 + [Enter the house]
+-
 ~ INTERACTIBLE = false
 
 # NARRATOR

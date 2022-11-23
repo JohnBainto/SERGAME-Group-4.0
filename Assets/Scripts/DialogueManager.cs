@@ -112,6 +112,7 @@ public class DialogueManager : MonoBehaviour
 
     public void HandleScenes() {
         string sceneName = "";
+        Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
         switch (currentStory.variablesState["BG"].ToString())
         {
             case "BLACK": 
@@ -119,6 +120,12 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "OUTSIDE":
                 sceneName = "CH01_EXP_OUTSIDE";
+                break;
+            case "INSIDE":
+                sceneName = "CH01_EXP_INSIDE";
+                break;
+            default:
+                sceneName = "";
                 break;
         }
 
@@ -128,9 +135,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void HandleInteractable() {
-        Debug.Log(currentStory.variablesState["INTERACTIBLE"].ToString());
+        Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTIBLE"].ToString());
         if (bool.Parse(currentStory.variablesState["INTERACTIBLE"].ToString())) {
-            Debug.Log("im in");
             ExitDialogueMode();
         }
     }
@@ -159,7 +165,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     private IEnumerator SelectFirstChoice() {
-        Debug.Log(EventSystem.current);
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);

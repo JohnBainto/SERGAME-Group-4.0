@@ -30,8 +30,11 @@ public class DialogueManager : MonoBehaviour
         if (instance != null)
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
+            Destroy(gameObject);
+            return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
         
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);

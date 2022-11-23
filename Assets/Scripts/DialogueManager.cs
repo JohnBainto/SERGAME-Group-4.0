@@ -93,6 +93,7 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue(); //pop a line off the stack
+            Debug.Log("Text: " + dialogueText.text);
             DisplayChoices();
             HandleTags();
             HandleScenes();
@@ -123,6 +124,9 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "INSIDE":
                 sceneName = "CH01_EXP_INSIDE";
+                break;
+            case "PIER":
+                sceneName = "CH01_EXP_PIER";
                 break;
             default:
                 sceneName = "";

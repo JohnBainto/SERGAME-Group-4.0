@@ -17,6 +17,8 @@ You gaze at the address you have written in your investigave notebook and look b
 # MC
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
+
+Select an option:
 ~ INTERACTIBLE = true
 + [Enter the house]
 ~ INTERACTIBLE = false

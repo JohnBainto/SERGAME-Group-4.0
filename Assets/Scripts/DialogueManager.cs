@@ -166,9 +166,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice (int choiceIndex) {
-        dialogueIsPlaying = true;
-        dialoguePanel.SetActive(true);
-
         currentStory.ChooseChoiceIndex(choiceIndex);
+    }
+
+    public void MakeChoiceThenContinue (int choiceIndex) {
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        EnterDialogueMode();
     }
 }

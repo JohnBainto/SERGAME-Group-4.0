@@ -13,10 +13,19 @@ It feels like you're going to be sleeping with the fishes soon.
 ~ temp performance = 0
 ~ temp turn = 0
 ~ temp cur_question = 0
+~ temp fallacy = ""
 
 // These are the scores corresponding to each sentence
-LIST c1q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
-LIST c1q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
+LIST c1q1 = p1=-1,p2=-2,p3=-1,p4=1,p5=-1,p6=-1,p7=-1,p8=1,p9=2
+LIST c1q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
+LIST c1q3 = p1=-1,p2=-2,p3=-1,p4=-2,p5=0,p6=0,p7=-1,p8=-1
+LIST c1q4 = p1=1,p2=0,p3=1,p4=2,p5=0,p6=0,p7=1,p8=1,p9=0,p10=1
+LIST c1q5 = p1=1,p2=1,p3=0,p4=2,p5=1,p6=1,p7=0
+LIST c1q6 = p1=-1,p2=-1,p3=-1,p4=-2,p5=-2,p6=-1,p7=2,p8=-1
+LIST c1q7 = p1=-1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-1
+LIST c1q8 = p1=1,p2=0,p3=0,p4=-1,p5=-1,p6=2
+LIST c1q9 = p1=1,p2=1,p3=-1,p4=-1,p5=-1,p6=0
+LIST c1q10 = p1=2,p2=2,p3=0,p4=1,p5=-1,p6=-1,p7=-1
 
 LIST c1s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
 LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
@@ -36,26 +45,91 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         harbor
         you
         weakling # QEND
+         ~ fallacy = "AD HOMINEM"
         ~ cur_question = c1q1
-    -   Only # KIT QSTART
+    -   The # KIT QSTART
+        truth 
+        is
+        only
         one thing
         matters
-        in this city:
-        MONEY.
-        My gang and I
-        will survive
-        no matter
-        what! # QEND
+        in this city,
+        MONEY. # QEND
+        ~ fallacy = "AD HOMINEM"
         ~ cur_question = c1q2
-    -   You # KIT QSTART
-        must be really
-        stupid
-        if you think
-         you can
-        beat me
-        with some
-        dusty book# QEND
-        ~ cur_question = c1q2
+     -   My gang # KIT QSTART
+        will take over
+        this city
+        and
+        we'll crush
+        anyone
+        who gets
+        in the way. # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q3
+    -   You're # KIT QSTART
+        out of your depths
+        here
+        little girl.
+        You
+        can't stop
+        us.# QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q4
+    -   We've been # KIT QSTART
+        hiding
+        in the shadows
+        too long
+        for some
+        nosy brat
+        to expose us. # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q5
+    -   My gang # KIT QSTART
+        will take over
+        this city
+        and
+        we'll crush
+        anyone
+        who gets
+        in the way. # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q5
+    -   Monster hunters # KIT QSTART
+        like you
+        might be able
+        to pick us off
+        one by one
+        but now
+        you're
+        in our domain. # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q7
+    -   You'll # KIT QSTART
+        never
+        see
+        the light of day
+        again
+        pathetic human! # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q8
+    -   Your movements # KIT QSTART
+        are getting slower.
+        It
+        won't be long
+        now
+        'til you're down. # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q9
+    -   Snot-nosed # KIT QSTART
+        brats
+        like
+        you
+        need
+        to be taught
+        a lesson! # QEND
+        ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q10
     }
 - turn == 2:
     Huff, huff. # KIT QSTART
@@ -68,6 +142,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     doesn't mean
     you're
     not a weakling # QEND
+    ~ fallacy = "AD HOMINEM"
     ~ cur_question = c1s1
 - turn == 5:
     I can't... # KIT QSTART
@@ -80,37 +155,47 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     I
     will end
     you! # QEND
+    ~ fallacy = "AD HOMINEM"
     ~ cur_question = c1s2
 - else:
     -> end
 }
-// Unity will use the tag of the question to know when the text scroll is done
-// cur_question will contain the scores corressponding to each word/line
 
 + [Retort]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
-    - performance > 3:
-        {shuffle:
-        -   No that's wrong! # MC
-        -   Chigauyo! # MC
-        }
     - performance > 0:
         {shuffle:
-        -   U rappin OK # MC
-        -   good # MC
+        -   Tch, intimidation? That's ain't gonna work on me. # MC
+        -   Think you're the first monster I've taken down? I know your tricks # MC
+        -   That's wrong! I can see through your magic! # MC
+        -   I'm not afarid of you! # MC
         }
-    - else > 0:
+    - performance > -2:
         {shuffle:
-        -   U rappin AWFUL # MC
-        -   \*record scratch noise\* # MC
+        -   N-no that's not true! # MC
+        -   Ngh, I won't let you under my skin. # MC
+        -   I w-won't give in! # MC
+        -   Mmph! I uhh... t-that's wrong! # MC
+        }
+    - else >= -2:
+        {shuffle:
+        -   Ugh! I don't think that was right # MC
+        -   Kyah!! # MC
+        -   Hrngg! # MC
+        -   Ouch!
+        }
+        {fallacy == "AD HOMINEM":
+            I should look for words that are attacking or insulting me directly to unravel his fallacy spell.
         }
     }
 + [Skip]
     {shuffle:
-    -   no that's a scam # MC
-    -   back to u # MC
+    -   You're not worth my time! # MC
+    -   Trying to be tricky eh? # MC
+    -   As if!
+    -   You won't fool me with that!
     }
 ~ turn++
 - -> battle_phase

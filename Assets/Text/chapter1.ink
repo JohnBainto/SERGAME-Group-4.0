@@ -19,6 +19,7 @@ I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
 ~ INTERACTIBLE = true
 + [Enter the house]
+-
 ~ INTERACTIBLE = false
 
 # NARRATOR

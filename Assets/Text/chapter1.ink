@@ -17,6 +17,8 @@ You gaze at the address you have written in your investigave notebook and look b
 # MC
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
+
+Select an option:
 ~ INTERACTIBLE = true
 + [Enter the house]
 -
@@ -26,7 +28,7 @@ The witness didn't give me a name, but told me to meet him at this address as so
 You knock on the front door.
 A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
-~ BG = OUTSIDE
+~ BG = INSIDE
 # UNKNOWN WITNESS
 D-did you see any of them outside?
 
@@ -63,6 +65,7 @@ Why don't 'cha start of from the start?
 "It was a person attached to a fish!"
 
 # MC
+Select an option:
 + "Attached to a fish?"
     # UNKNOWN WITNESS
     "I honestly don't know what I saw."

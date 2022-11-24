@@ -161,19 +161,19 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
         switch (currentStory.variablesState["BG"].ToString())
         {
-            case "BLACK": 
+            case "CH01_EXP_BLACK": 
                 sceneName = "CH01_EXP_BLACK";
                 break;
-            case "OUTSIDE":
+            case "CH01_EXP_OUTSIDE":
                 sceneName = "CH01_EXP_OUTSIDE";
                 break;
-            case "INSIDE":
+            case "CH01_EXP_INSIDE":
                 sceneName = "CH01_EXP_INSIDE";
                 break;
-            case "PIER":
+            case "CH01_EXP_PIER":
                 sceneName = "CH01_EXP_PIER";
                 break;
-            case "BASEMENT":
+            case "CH01_EXP_BASEMENT":
                 sceneName = "CH01_EXP_BASEMENT";
                 break;
             case "BATTLE":

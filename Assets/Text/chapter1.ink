@@ -6,10 +6,10 @@ LIST ch1_evidence = e1, e2, e3
 
 = part1
 # NARRATOR
-~ BG = BLACK
+~ BG = CH01_EXP_BLACK
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM
-~ BG = OUTSIDE
+~ BG = CH01_EXP_OUTSIDE
 The light of the setting afternoon sun bathes the shanty houses beside the port in bright orange.
 Even here, the holiday season greets the locals with cooler air and shorter days.
 You gaze at the address you have written in your investigave notebook and look back at 3 story house made of cinderblocks and corrugated steel.
@@ -28,7 +28,7 @@ Select an option:
 You knock on the front door.
 A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
-~ BG = INSIDE
+~ BG = CH01_EXP_INSIDE
 # UNKNOWN WITNESS
 D-did you see any of them outside?
 
@@ -119,7 +119,7 @@ But big trouble can also mean big story...
 You leave the house and step outside.
 Its dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
-~ BG = OUTSIDE
+~ BG = CH01_EXP_OUTSIDE
 
 ~temp first_select = ""
 # MC
@@ -129,7 +129,7 @@ Boats 'll make transportin' goods a breeze.
 But to take over a whole pier?
 This operation must run deep.
 
-~ BG = PIER
+~ BG = CH01_EXP_PIER
 # NARRATOR
 You make your way to the pier area.
 Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
@@ -346,9 +346,9 @@ It's time for a counter attack.
 - It dodges your attack with inhuman speed.
 Before you can recover, it knocks you back.
 But instead of falling, a kapre catches you and stifles you with a rag.
-~ BG = BLACK
+~ BG = CH01_EXP_BLACK
 Everything becomes hazy as you feel yourself fall unto the floor.
-~ BG = BASEMENT
+~ BG = CH01_EXP_BASEMENT
 You wake up to find yourself in a cell.
 There aren't any windows but judging from the smell it still seems that you're still in the docking area.
 

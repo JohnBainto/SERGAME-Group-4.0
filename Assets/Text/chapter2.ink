@@ -5,7 +5,7 @@ LIST ch2_evidence = e1, e2, e3
 ~ BG = CH02_EXP_BLACK
 CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
-~ BG = BASEMENT
+~ BG = CH02_EXP_BASEMENT
 Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
@@ -41,7 +41,7 @@ What should I do now?
 - (end_area1)
 
 ~ INTERACTIBLE = false
-~ BG = HALLWAY
+~ BG = CH02_EXP_HALLWAY
 # NARRATOR
 You step out into the narrow hallway.
 The wall are made of exposed hollow blocks with a peeling layer of white paint.

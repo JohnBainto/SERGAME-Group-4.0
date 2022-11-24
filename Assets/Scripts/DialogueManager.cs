@@ -185,6 +185,15 @@ public class DialogueManager : MonoBehaviour
             case "BATTLE":
                 sceneName = "BattlePhase";
                 break;
+            case "CH02_EXP_BLACK":
+                sceneName = "CH02_EXP_BLACK";
+                break;
+            case "CH02_EXP_BASEMENT":
+                sceneName = "CH02_EXP_BASEMENT";
+                break;
+            case "CH02_EXP_HALLWAY":
+                sceneName = "CH02_EXP_HALLWAY";
+                break;
             default:
                 sceneName = "";
                 break;

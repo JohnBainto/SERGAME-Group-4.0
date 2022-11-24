@@ -4,16 +4,16 @@ INCLUDE chapter2.ink
 INCLUDE chapter2_battle.ink
 
 
-LIST BG = PROLOGUE, MENU, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE
+LIST BG = PROLOGUE, MENU, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE, BLACK, OUTSIDE, INSIDE, PIER, PIER_WET, PIER_MOVED, BASEMENT
 VAR INTERACTIBLE = false
 
 -> prologue
 
-/* 
+/*
     TAGS
     Tags continue on until they are replace with another tag.
     Text from the main character with no quotation marks mean internal thoughts.
-    
+
     NARRATOR
         - text from an omniscient narrator
         - italicized, gray, no quotation marks

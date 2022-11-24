@@ -25,7 +25,7 @@ LIST c1q5 = p1=1,p2=1,p3=0,p4=2,p5=1,p6=1,p7=0
 LIST c1q6 = p1=-1,p2=-1,p3=-1,p4=-2,p5=-2,p6=-1,p7=2,p8=-1
 LIST c1q7 = p1=-1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-1
 LIST c1q8 = p1=1,p2=0,p3=0,p4=-1,p5=-1,p6=2
-LIST c1q9 = p1=1,p2=1,p3=-1,p4=-1,p5=-1,p6=0
+LIST c1q9 = p1=1,p2=1,p3=1,p4=-1,p5=-1,p6=1,p7=0
 LIST c1q10 = p1=2,p2=2,p3=0,p4=1,p5=-1,p6=-1,p7=-1
 
 LIST c1s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
@@ -114,12 +114,14 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         pathetic human! # QEND
         ~ fallacy = "AD HOMINEM"
         ~ cur_question = c1q8
-    -   Your movements # KIT QSTART
-        are getting slower.
-        It
-        won't be long
-        now
-        'til you're down. # QEND
+    -   You're # KIT QSTART
+        only doing this
+        to earn a living
+        too
+        aren't you?
+        We're
+        two sides of the same coin,
+        human. # QEND
         ~ fallacy = "AD HOMINEM"
         ~ cur_question = c1q9
     -   Snot-nosed # KIT QSTART
@@ -168,10 +170,10 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     {
     - performance > 0:
         {shuffle:
-        -   Tch, intimidation? That's ain't gonna work on me. # MC
+        -   Tch, intimidation? That ain't gonna work on me. # MC
         -   Think you're the first monster I've taken down? I know your tricks # MC
         -   That's wrong! I can see through your magic! # MC
-        -   I'm not afarid of you! # MC
+        -   I'm not afraid of you! # MC
         }
     - performance > -2:
         {shuffle:

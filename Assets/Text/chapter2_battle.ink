@@ -1,23 +1,20 @@
 === ch2_battle ===
 # NARRATOR BATTLE_PHASE
-The fishes have come to meet you!
+It feels like you're going to be sleeping with the fishes soon.
 
 ~ temp life = 20
 ~ temp performance = 0
 ~ temp turn = 0
 ~ temp cur_question = 0
+~ temp fallacy = ""
 
 // These are the scores corresponding to each sentence
-LIST c2q1 = p1=-2, p2=0, p3=1, p4=2, p5=0, p6=0, p=0, p8=2, p9=3
-LIST c2q2 = p1=-1, p2=-1, p3=-1, p4=-1, p5=-1, p6=-1, p=-1, p8=-1, p9=-1
-LIST c2s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
-LIST c2s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 
 - (battle_phase)
 ~ performance = 0
 {life <= 0: -> bad_end}
 {
-- turn == 0 || turn == 1 || turn == 3 || turn == 4:
+- turn == 0 || turn == 1 || turn == 3 || turn == 4 || turn == 5:
     {shuffle:
     -   I'm # KIT QSTART
         going
@@ -28,17 +25,8 @@ LIST c2s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         harbor
         you
         weakling # QEND
-        ~ cur_question = c2q1
-    -   Only # KIT QSTART
-        one thing
-        matters
-        in this city:
-        MONEY.
-        My gang and I
-        will survive
-        no matter
-        what! # QEND
-        ~ cur_question = c2q2
+         ~ fallacy = "AD HOMINEM"
+        ~ cur_question = c1q1
     }
 - turn == 2:
     Huff, huff. # KIT QSTART
@@ -51,8 +39,9 @@ LIST c2s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     doesn't mean
     you're
     not a weakling # QEND
-    ~ cur_question = c2s1
-- turn == 5:
+    ~ fallacy = "AD HOMINEM"
+    ~ cur_question = c1s1
+- turn == 6:
     I can't... # KIT QSTART
     possibly
     lose
@@ -63,37 +52,48 @@ LIST c2s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     I
     will end
     you! # QEND
-    ~ cur_question = c2s2
+    ~ fallacy = "AD HOMINEM"
+    ~ cur_question = c1s2
 - else:
     -> end
 }
-// Unity will use the tag of the question to know when the text scroll is done
-// cur_question will contain the scores corressponding to each word/line
 
 + [Retort]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
-    - performance > 3:
-        {shuffle:
-        -   No that's wrong! # MC
-        -   Chigauyo! # MC
-        }
     - performance > 0:
         {shuffle:
-        -   U rappin OK # MC
-        -   good # MC
+        -   Don't bother trying to distract me, I already know what you're up to. # MC
+        -   Think you're the first monster I've taken down? I know your tricks # MC
+        -   That's wrong! I can see through your magic! # MC
+        -   I can see trhough your illusions Koi! # MC
         }
-    - else > 0:
+    - performance > -2:
         {shuffle:
-        -   U rappin AWFUL # MC
-        -   \*record scratch noise\* # MC
+        -   N-no that's not true! # MC
+        -   Ngh, I won't let you under my skin. # MC
+        -   I w-won't give in! # MC
+        -   Mmph! I uhh... t-that's wrong! # MC
+        }
+    - else >= -2:
+        {shuffle:
+        -   Ugh! I don't think that was right # MC
+        -   Kyah!! # MC
+        -   Hrngg! # MC
+        -   Ouch!
+        }
+        {fallacy == "RED HERRING":
+            I should look for words that are unrelated to what he is saying.
+            I can't be fooled by his distractions.
         }
     }
 + [Skip]
     {shuffle:
-    -   no that's a scam # MC
-    -   back to u # MC
+    -   You're not worth my time! # MC
+    -   Trying to be tricky eh? # MC
+    -   As if!
+    -   You won't fool me with that!
     }
 ~ turn++
 - -> battle_phase
@@ -105,25 +105,30 @@ I can't go on!
 Is this the end?
 
 # KOI
-"Heh, stuff 'em in a crate."
+"That will teach you to meddle in my affairs."
 
 # NARRATOR
 Continue?
-+ [Yes] -> ch2_battle
++ [Yes] -> ch1_battle
 + [No] -> main
 
 - (end)
 # KOI
-"Nggrrh!"
-"How..."
-"How am I losing to the likes of YOU!?"
+"Aaarrghh!!"
+"How dare you, y-you gutter trash!"
 
 # MC
-"This is the end Mr. Ignacio!"
-"I've exposed you for what you really are!"
+"You're no match for me Koi!"
 
 # KOI
-"Darn pesky journalists..."
-"Hurglblgbrblr..."
+"That's Mr. Ignacio to you!"
 
--> chapter1.end
+# MC
+"It's over!"
+"You little reign of terror over the pier is going to be exposed."
+
+# KIT
+"This... can't... be..."
+"hapening!!!"
+
+-> chapter2.end

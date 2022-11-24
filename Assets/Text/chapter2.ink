@@ -11,8 +11,8 @@ Just beyond him the door to your cell has been left open.
 
 # MC
 - (area1)
-What should I do now?
 ~ INTERACTIBLE = true
+What should I do now?
 + [Kit]
     ~ INTERACTIBLE = false
     That's right Kit said something about a boss?
@@ -59,10 +59,12 @@ You lock the door, leaving Kit inside.
 LIST ch2_area1_inv = newspaper, fire, detector
 
 # MC
-Okay what should I do know?
-~ INTERACTIBLE = true
+
 - (area2)
+~ INTERACTIBLE = true
+Okay what should I do now?
 + [Door 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -70,6 +72,7 @@ Okay what should I do know?
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -79,6 +82,7 @@ Okay what should I do know?
         It was worth a shot.
     }
 + [Exposed electrical wiring]
+    ~ INTERACTIBLE = false
     # NARRATOR
     A couple of exposed wires dangle from the wall. 
     They crackle and pop little bolts of lightning.
@@ -101,6 +105,7 @@ Okay what should I do know?
         Now I just need to get this closer to the fire alarm.
     }
 + [Newspapers on the floor]
+    ~ INTERACTIBLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
         I guess I'll take it anyway in case I need it.
@@ -110,6 +115,7 @@ Okay what should I do know?
         ~ ch2_area1_inv += newspaper
     }
 + [Smoke detector]
+    ~ INTERACTIBLE = false
     {stopping:
     -   It looks like one 'a those smoke detectors.
     -   It supposed to trigger a fire alarm if it detects smoke.
@@ -131,6 +137,7 @@ Okay what should I do know?
         ~ ch2_area1_inv += detector
     }
 + [Stairs]
+    ~ INTERACTIBLE = false
     {ch2_area1_inv !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR

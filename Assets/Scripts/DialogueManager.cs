@@ -161,6 +161,9 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
         switch (currentStory.variablesState["BG"].ToString())
         {
+            case "PROLOGUE": 
+                sceneName = "PROLOGUE";
+                break;
             case "CH01_EXP_BLACK": 
                 sceneName = "CH01_EXP_BLACK";
                 break;

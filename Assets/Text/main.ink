@@ -4,7 +4,7 @@ INCLUDE chapter2.ink
 INCLUDE chapter2_battle.ink
 
 
-LIST BG = CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE
+LIST BG = PROLOGUE, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE
 VAR INTERACTIBLE = false
 
 -> prologue
@@ -27,7 +27,7 @@ VAR INTERACTIBLE = false
 */
 
 === prologue ===
-PROLOGUE
+~BG = PROLOGUE
 # MC
 The city ain't what it used to.
 Seems like everyday these streets get darker and darker.

@@ -10,10 +10,11 @@ Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
 # MC
+- (area1)
 What should I do now?
 ~ INTERACTIBLE = true
-- (area1)
 + [Kit]
+    ~ INTERACTIBLE = false
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
@@ -26,6 +27,7 @@ What should I do now?
     "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
+    ~ INTERACTIBLE = false
     {ch2_evidence ? ch2_evidence.e1:
         Alright! Time to make like tree and leave.
         ->end_area1
@@ -40,9 +42,9 @@ What should I do now?
 
 - (end_area1)
 
+# NARRATOR
 ~ INTERACTIBLE = false
 ~ BG = CH02_EXP_HALLWAY
-# NARRATOR
 You step out into the narrow hallway.
 The wall are made of exposed hollow blocks with a peeling layer of white paint.
 Its quiet except for the faint buzzing of the florescent light bulbs above and the distant sounds of the pier outside.

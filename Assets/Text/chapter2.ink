@@ -2,7 +2,7 @@ LIST ch2_evidence = e1, e2, e3
 
 === chapter2 ===
 # NARRATOR
-~ BG = BLACK
+~ BG = CH02_EXP_BLACK
 CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
 ~ BG = BASEMENT
@@ -174,7 +174,7 @@ Okay what should I do know?
 - (end_area2) -> part2
 
 = part2
-~ BG = BLACK
+~ BG = CH02_EXP_BLACK
 # NARRATOR
 You exit into the main area of shipping office.
 The door leading outside is wide open exposing the interior of the building to heavy rain from the outside.

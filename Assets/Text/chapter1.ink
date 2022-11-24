@@ -463,17 +463,15 @@ I'm sure the message will be very clear that the Dark Water gang is dead serious
 # KIT
 "Heh."
 "You really think it'll be that easy to defeat our gang."
-"The boss will make sure you'll never live to tell anybody what you saw here today."
+"Mr. Ignacio will make sure you'll never live to tell anybody what you saw here today."
 
 # MC
-Boss? I thought he was the head honcho.
-Then again, if he were the only boss here the domain should have fully dissolved after he was defeated.
-"Ugh, just my luck."
-"Guess I'm going to have to pay your boss a visit too."
+Mr... what? I thought he was the head honcho here?
+Darn it! I need to get out of here or all I've done so far will be for nothing!
 
 # NARRATOR
 You've defeated Kit, but you're still trapped in the shipping office's main building.
-You have to find a way out and defeat the monster that even Kit calls his boss.
+You  find a way out and discover more about this mysterious person Kit is alluding to.
 CHAPTER END
 + [Return]
 -> main

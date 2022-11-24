@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
 // with inky
     [Header("Dialogue UI")] // Access to dialogue panel
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject startButton;
     [SerializeField] private TextMeshProUGUI dText;
     private Story currentStory; // tracker for which ink file is currently in use
     private bool dialogueIsPlaying;
@@ -58,6 +59,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        startButton.SetActive(false);
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueBox.SetActive(true);

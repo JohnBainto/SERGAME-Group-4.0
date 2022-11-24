@@ -10,7 +10,6 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue () {
         Debug.Log(inkJSON.text);
         FindObjectOfType<DialogueManager>().EnterDialogueMode(inkJSON);
-        // FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
         
     }
 }

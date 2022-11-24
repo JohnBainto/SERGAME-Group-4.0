@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
+    public float typingSpeed;
+
     public KeyCode interactKey;
     public GameObject dialoguePanel;
 
@@ -17,6 +19,10 @@ public class DialogueManager : MonoBehaviour
 
     public Story currentStory;
     public bool dialogueIsPlaying;
+
+    private bool canContinueToNext;
+    private Coroutine displayLineCoroutine;
+
     private static DialogueManager instance;
     public TextAsset inkJSON;
     public string pathString;
@@ -50,6 +56,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
+        canContinueToNext = false;
+
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
         foreach(GameObject choice in choices) {
@@ -65,7 +73,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(interactKey))
+        if (canContinueToNext && Input.GetKeyDown(interactKey))
         {
             ContinueStory();
             HandleInteractable();
@@ -92,9 +100,12 @@ public class DialogueManager : MonoBehaviour
 
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue(); //pop a line off the stack
+            if (displayLineCoroutine != null) {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue())); //pop a line off the stack
             Debug.Log("Text: " + dialogueText.text);
-            DisplayChoices();
+            
             HandleTags();
             HandleScenes();
         }
@@ -102,6 +113,40 @@ public class DialogueManager : MonoBehaviour
         {
             ExitDialogueMode();
         }
+    }
+
+    private IEnumerator DisplayLine(string line) {
+        dialogueText.text = "";
+
+        HideChoices();
+
+        canContinueToNext = false;
+
+        bool isAddingRichTextTag = false;
+
+        foreach(char letter in line.ToCharArray()) {
+
+            // if(Input.GetKeyDown(interactKey)) {
+            //     dialogueText.text = line;
+            //     break;
+            // }
+
+            if (letter == '<' || isAddingRichTextTag) {
+                isAddingRichTextTag = true;
+                dialogueText.text += letter;
+                if (letter == '>') {
+                    isAddingRichTextTag = false;
+                }
+            } else {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+        }
+
+        DisplayChoices();
+
+        canContinueToNext = true;
     }
 
     private void HandleTags() {
@@ -116,17 +161,29 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
         switch (currentStory.variablesState["BG"].ToString())
         {
-            case "BLACK": 
+            case "PROLOGUE": 
+                sceneName = "PROLOGUE";
+                break;
+            case "MENU": 
+                sceneName = "MENU";
+                break;
+            case "CH01_EXP_BLACK": 
                 sceneName = "CH01_EXP_BLACK";
                 break;
-            case "OUTSIDE":
+            case "CH01_EXP_OUTSIDE":
                 sceneName = "CH01_EXP_OUTSIDE";
                 break;
-            case "INSIDE":
+            case "CH01_EXP_INSIDE":
                 sceneName = "CH01_EXP_INSIDE";
                 break;
-            case "PIER":
+            case "CH01_EXP_PIER":
                 sceneName = "CH01_EXP_PIER";
+                break;
+            case "CH01_EXP_BASEMENT":
+                sceneName = "CH01_EXP_BASEMENT";
+                break;
+            case "BATTLE":
+                sceneName = "BattlePhase";
                 break;
             default:
                 sceneName = "";
@@ -168,6 +225,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void HideChoices() {
+        foreach (GameObject choiceButton in choices) {
+            choiceButton.SetActive(false);
+        }
+    }
+
     private IEnumerator SelectFirstChoice() {
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
@@ -175,7 +238,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice (int choiceIndex) {
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueToNext) {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+        }
     }
 
     public void MakeChoiceThenContinue (int choiceIndex) {

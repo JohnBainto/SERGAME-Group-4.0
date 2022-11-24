@@ -2,21 +2,28 @@ LIST ch2_evidence = e1, e2, e3
 
 === chapter2 ===
 # NARRATOR
-CHAPTER 2: BUT YOU CAN'T MAKE HIM DROWN
+~ BG = CH02_EXP_BLACK
+CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
+~ BG = BASEMENT
 Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
 # MC
 What should I do now?
+~ INTERACTIBLE = true
 - (area1)
 + [Kit]
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
     IMPRESSION FOUND # UNLOCK CH2_E1
-    "Another monster inhabits this domain"
-    "I really need get out of here and solve this quick."
+    That's right, I can still feel that the presence of a monster's domain.
+    If he were the only boss here the domain should have dissolved after he was defeated.
+    "Mr Ignacio..."
+    "Ugh, just my luck."
+    "Guess I'm in for another battle with whoever that is."
+    "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
     {ch2_evidence ? ch2_evidence.e1:
@@ -33,6 +40,8 @@ What should I do now?
 
 - (end_area1)
 
+~ INTERACTIBLE = false
+~ BG = HALLWAY
 # NARRATOR
 You step out into the narrow hallway.
 The wall are made of exposed hollow blocks with a peeling layer of white paint.
@@ -49,6 +58,7 @@ LIST ch2_area1_inv = newspaper, fire, detector
 
 # MC
 Okay what should I do know?
+~ INTERACTIBLE = true
 - (area2)
 + [Door 1]
     {stopping:
@@ -132,6 +142,7 @@ Okay what should I do know?
             I need to find a way to get out without being noticed
         }
     - else:
+        ~ INTERACTIBLE = false
         # NARRATOR
         You put your ear to the door to see if the guards outside have left.
         
@@ -163,8 +174,9 @@ Okay what should I do know?
 - (end_area2) -> part2
 
 = part2
+~ BG = CH02_EXP_BLACK
 # NARRATOR
-You exit in the main area of shipping office.
+You exit into the main area of shipping office.
 The door leading outside is wide open exposing the interior of the building to heavy rain from the outside.
 In combination with the sprinklers, there is a good inch of water pooling on the ground.
 
@@ -179,6 +191,7 @@ IMPRESSION FOUND # UNLOCK CH2_E2
 
 # NARRATOR
 You run out of the shipping office and enter the pier area.
+~ BG = PIER_WET
 Heavy torrents of rain fall all around you reducing visibility.
 Whatever parts that you managed to keep dry from the water sprinklers are now thoroughly drenched as well.
 
@@ -196,6 +209,7 @@ LIST ch2_area2_inv = key, crane
 # MC
 Ugh! Just perfect.
 I need to find a way around to get out.
+~ INTERACTIBLE = true
 - (area3)
 + [Shipping container 1]
     {stopping:
@@ -225,12 +239,15 @@ I need to find a way around to get out.
 + [Crane]
     {ch2_area2_inv ? key:
         {ch2_area2_inv ? crane:
+            ~ INTERACTIBLE = false
             Alright!
             Let's see if what this baby can do!
             Wooaahh!
             Okay I guess I don't exactly know how to operate this thing.
             But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
             ~ ch2_area2_inv += crane
+            ~ BG = PIER_MOVED
+            ~ INTERACTIBLE = true
         - else:
             I think I got it stuck.
             Besides, I really don't feel like getting back on that thing.
@@ -265,6 +282,7 @@ I need to find a way around to get out.
 - -> area3
 
 = part3
+~ INTERACTIBLE = false
 # KOI
 "So you're the one whose been making a mess of my business."
 

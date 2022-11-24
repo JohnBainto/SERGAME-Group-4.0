@@ -6,10 +6,10 @@ LIST ch1_evidence = e1, e2, e3
 
 = part1
 # NARRATOR
-~ BG = BLACK
+~ BG = CH01_EXP_BLACK
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM
-~ BG = OUTSIDE
+~ BG = CH01_EXP_OUTSIDE
 The light of the setting afternoon sun bathes the shanty houses beside the port in bright orange.
 Even here, the holiday season greets the locals with cooler air and shorter days.
 You gaze at the address you have written in your investigave notebook and look back at 3 story house made of cinderblocks and corrugated steel.
@@ -28,7 +28,7 @@ Select an option:
 You knock on the front door.
 A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
-~ BG = INSIDE
+~ BG = CH01_EXP_INSIDE
 # UNKNOWN WITNESS
 D-did you see any of them outside?
 
@@ -119,7 +119,7 @@ But big trouble can also mean big story...
 You leave the house and step outside.
 Its dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
-~ BG = OUTSIDE
+~ BG = CH01_EXP_OUTSIDE
 
 ~temp first_select = ""
 # MC
@@ -129,7 +129,7 @@ Boats 'll make transportin' goods a breeze.
 But to take over a whole pier?
 This operation must run deep.
 
-~ BG = PIER
+~ BG = CH01_EXP_PIER
 # NARRATOR
 You make your way to the pier area.
 Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
@@ -346,9 +346,9 @@ It's time for a counter attack.
 - It dodges your attack with inhuman speed.
 Before you can recover, it knocks you back.
 But instead of falling, a kapre catches you and stifles you with a rag.
-~ BG = BLACK
+~ BG = CH01_EXP_BLACK
 Everything becomes hazy as you feel yourself fall unto the floor.
-~ BG = BASEMENT
+~ BG = CH01_EXP_BASEMENT
 You wake up to find yourself in a cell.
 There aren't any windows but judging from the smell it still seems that you're still in the docking area.
 
@@ -473,17 +473,15 @@ I'm sure the message will be very clear that the Dark Water gang is dead serious
 # KIT
 "Heh."
 "You really think it'll be that easy to defeat our gang."
-"The boss will make sure you'll never live to tell anybody what you saw here today."
+"Mr. Ignacio will make sure you'll never live to tell anybody what you saw here today."
 
 # MC
-Boss? I thought he was the head honcho.
-Then again, if he were the only boss here the domain should have fully dissolved after he was defeated.
-"Ugh, just my luck."
-"Guess I'm going to have to pay your boss a visit too."
+Mr... what? I thought he was the head honcho here?
+Darn it! I need to get out of here or all I've done so far will be for nothing!
 
 # NARRATOR
 You've defeated Kit, but you're still trapped in the shipping office's main building.
-You have to find a way out and defeat the monster that even Kit calls his boss.
+You  find a way out and discover more about this mysterious person Kit is alluding to.
 CHAPTER END
 + [Return]
 -> main

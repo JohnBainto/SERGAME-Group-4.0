@@ -7,6 +7,7 @@
 
 === ch1_battle ===
 # NARRATOR BATTLE_PHASE
+~BG = BATTLE
 It feels like you're going to be sleeping with the fishes soon.
 
 ~ temp life = 20

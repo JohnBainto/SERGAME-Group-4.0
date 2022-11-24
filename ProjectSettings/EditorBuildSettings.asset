@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CH01_EXP_BLACK.unity
+    path: Assets/Scenes/Chapter 01/CH01_EXP_BLACK.unity
     guid: 5576d71df24ff0640abe93577cb2b742
   - enabled: 1
-    path: Assets/Scenes/CH01_EXP_OUTSIDE.unity
+    path: Assets/Scenes/Chapter 01/CH01_EXP_OUTSIDE.unity
     guid: 1524c159732f94f47b4587d9ca7d768d
   - enabled: 1
-    path: Assets/Scenes/CH01_EXP_INSIDE.unity
+    path: Assets/Scenes/Chapter 01/CH01_EXP_INSIDE.unity
     guid: 7f3582d9dec1ea846aecc96e573505fa
   - enabled: 1
-    path: Assets/Scenes/CH01_EXP_PIER.unity
+    path: Assets/Scenes/Chapter 01/CH01_EXP_PIER.unity
     guid: a3156249c78ef6e4ca8ee487a3309a7c
   - enabled: 1
     path: Assets/Scenes/CH01_EXP_CUTSCENE.unity

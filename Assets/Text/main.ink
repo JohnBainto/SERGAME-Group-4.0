@@ -4,7 +4,7 @@ INCLUDE chapter2.ink
 INCLUDE chapter2_battle.ink
 
 
-LIST BG = PROLOGUE, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE
+LIST BG = PROLOGUE, MENU, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, HALLWAY, BATTLE
 VAR INTERACTIBLE = false
 
 -> prologue
@@ -46,6 +46,8 @@ The <color=yellow>TRUTH</color> can break through any <color=red>FALLACY</color>
 -> main
 
 === main ===
+~BG = MENU
+Select an option:
 + [Chapter 0 (Tutorial)] -> tutorial
 + [Chapter 1] -> chapter1
 + {chapter1.end} [Chapter 2] -> chapter2

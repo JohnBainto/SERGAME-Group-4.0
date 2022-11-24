@@ -164,6 +164,9 @@ public class DialogueManager : MonoBehaviour
             case "PROLOGUE": 
                 sceneName = "PROLOGUE";
                 break;
+            case "MENU": 
+                sceneName = "MENU";
+                break;
             case "CH01_EXP_BLACK": 
                 sceneName = "CH01_EXP_BLACK";
                 break;

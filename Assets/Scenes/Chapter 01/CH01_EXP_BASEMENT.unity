@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672442054675849407, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
       propertyPath: m_Name
-      value: Dock Worker Prompt
+      value: Light Bulb Prompt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 1211684204}
   - component: {fileID: 1211684203}
   m_Layer: 0
-  m_Name: Dock Worker
+  m_Name: Light Bulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1393,7 +1393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1522,7 +1522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 3560198041143515961}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24c3cda96711554dbf0de3bf07e7d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.025
+  typingSpeed: 0
   interactKey: 13
   dialoguePanel: {fileID: 4744203468620282655}
   dialogueText: {fileID: 4744203468620282654}

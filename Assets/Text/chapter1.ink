@@ -123,205 +123,203 @@ Its dusk now and shadows loom over everything abated only by the lights on the s
 ~ INTERACTIBLE = true
 
 ~temp first_select = ""
-- (area1)
 # MC
 I should head to the pier area to investigate.
-+ [Pier area]
-    If they're smugglin' illegal items, the pier's the perfect place to do it.
-    Boats 'll make transportin' goods a breeze.
-    But to take over a whole pier?
-    This operation must run deep.
-    
-    ~ BG = PIER
-    # NARRATOR
-    You make your way to the pier area.
-    Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
-    The pungent smell of the harbor is almost overwhelming.
-    In the distance, large cranes with dangling hooks litter the port.
-    All around you, there are various shipping containers in shades of maroon, green, and the occasional blue.
-    Strangely, there are not as many dock wokers as you'd expect.
+If they're smugglin' illegal items, the pier's the perfect place to do it.
+Boats 'll make transportin' goods a breeze.
+But to take over a whole pier?
+This operation must run deep.
+
+~ BG = PIER
+# NARRATOR
+You make your way to the pier area.
+Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
+The pungent smell of the harbor is almost overwhelming.
+In the distance, large cranes with dangling hooks litter the port.
+All around you, there are various shipping containers in shades of maroon, green, and the occasional blue.
+Strangely, there are not as many dock wokers as you'd expect.
+
+# MC
+Geez, everybody clock out early or somethin'?
+Still, this place is likely a halimaw's domain.
+I oughtta blend in to avoid any untoward suspicion to myself.
+
+- (area1)
+What should I investigate?
++ [Shipping crate 1]
+    {stopping:
+    -   The inside is full of discarded packaging. Wait what's this on the floor?
+    -   It's a crowbar!
+        Not unusual to see in a dock, but...
+        There! It looks to have some dried blood on it.
+        {ch1_evidence !? ch1_evidence.e2:
+            IMPRESSION FOUND # UNLOCK CH1_E2
+            "Okay!"
+            I feel like I'm really getting to the bottom of this.
+            ~ ch1_evidence += ch1_evidence.e2
+        
+            {LIST_COUNT(ch1_evidence) == 2:
+                "I think I've investigated enough of the dock for now."
+                
+                # NARRATOR
+                "You turn to leave the pier area."
+                -> end_area1
+            }
+        }
+    }
++ [Shipping crate 2]
+    {stopping:
+    -   Looks like this one's locked.
+    -   Hrrmpph, it's not use. I can't force it open.
+    -   Sealed tight as the vaults of Bangko Sentral.
+    }
++ [Shipping crate 3]
+    {stopping:
+    -   It's mostly empty.
+        Wait, what's this on the floor!
+    -   Oh it's just a wet plastic bag.
+    -   I feel... kind of silly.
+    }
++ [Dock worker]
+    ~ INTERACTIBLE = false
+    # DOCK_WORKER
+    "What're you gawkin' at me fer?"
     
     # MC
-    Geez, everybody clock out early or somethin'?
-    Still, this place is likely a halimaw's domain.
-    I oughtta blend in to avoid any untoward suspicion to myself.
+    "Oh sorry, I uhh."
     
+    # DOCK_WORKER
+    "Waait a minute, who are ya?"
+    "Why're ya snoopin' 'round the dock fer?"
+    "You with the popo?"
+    
+    # NARRATOR
+    The dock work crosses his arms and narrows his eyes at you.
+    
+    # MC
+    I can't let him know the truth.
+    + + ["I'm researching for my thesis."]
+        "I'm uhh doing field work for my uhh thesis."
+        "Yeah, its about the logistics of shipping and transportation."
+        
+        # DOCK_WORKER
+        "Ehh, college boy huh?"
+        "Where do you go? What're you takin'?"
+        
+        # MC
+        "I'm taking my masters in civil engineering at DLSU"
+        
+        # DOCK_WORKER
+        "Scoff, listen fancy pants, you can't just go around here stickin' your nose where ever ya want."
+    + + ["My motorcycle was stolen here"]
+        "My uhh my motorcycle got stolen around here."
+        "Yeah, im just lookin' around to see maybe if I could uhh..."
+        "If there 're any witnesses or CCTV cameras 'round here that could've."
+        
+        # DOCK_WORKER
+        "Stolen eh?"
+        "Well that's too bad, but you can't just go around here stickin' your nose where ever ya want."
+        
+    - - "This place is dangerous, and its a serious work place."
+        "So, if ya don't have propa' business to conduct here then scram!"
+        
+        # MC
+        "Aww please, I just need to ask a few questions 's all."
+        "Just a few questions so I can come back with the proper requirements and protocols and whatnot."
+        
+        # DOCK_WORKER
+        "Sigh... alright, whaddya need?"
+        
     - - (area1_1)
-    What should I investigate?
-    + + [Shipping crate 1]
-        {stopping:
-        -   The inside is full of discarded packaging. Wait what's this on the floor?
-        -   It's a crowbar!
-            Not unusual to see in a dock, but...
-            There! It looks to have some dried blood on it.
-            {ch1_evidence !? ch1_evidence.e2:
-                IMPRESSION FOUND # UNLOCK CH1_E2
-                "Okay!"
-                I feel like I'm really getting to the bottom of this.
-                ~ ch1_evidence += ch1_evidence.e2
-            
-                {LIST_COUNT(ch1_evidence) == 2:
-                    "I think I've investigated enough of the dock for now."
-                    
-                    # NARRATOR
-                    "You turn to leave the pier area."
-                    -> end_area1
-                }
-            }
-        }
-    + + [Shipping crate 2]
-        {stopping:
-        -   Looks like this one's locked.
-        -   Hrrmpph, it's not use. I can't force it open.
-        -   Sealed tight as the vaults of Bangko Sentral.
-        }
-    + + [Shipping crate 3]
-        {stopping:
-        -   It's mostly empty.
-            Wait, what's this on the floor!
-        -   Oh it's just a wet plastic bag.
-        -   I feel... kind of silly.
-        }
-    + + [Dock worker]
-        ~ INTERACTIBLE = false
+    + + "What hours is the dock open?" # MC
+    
         # DOCK_WORKER
-        "What're you gawkin' at me fer?"
+        "Well, technically the dock is always open."
+        "But, its operatin' hours 's the usual 5 to 9"
+        "Outside of that, the dock isn't too active."
         
         # MC
-        "Oh sorry, I uhh."
+        "5 to 9? You mean 9 to 5."
         
         # DOCK_WORKER
-        "Waait a minute, who are ya?"
-        "Why're ya snoopin' 'round the dock fer?"
-        "You with the popo?"
+        "9 to 5? Whaddya think this is? Some kinda day spa?"
+        "This is a pier, genious. It works 'round the clock to get ya the food you eat and junk you buy."
+        "If we work hours were that short, heh, the city'd probably collapse buy now."
+    + + "Who runs this place?" # MC
         
-        # NARRATOR
-        The dock work crosses his arms and narrows his eyes at you.
+        # DOCK_WORKER
+        "Mm, I ain't really supposed to say."
+        
+        # MC 
+        "Aww, c'mon. How am I supposed to ask permission if I don't know who to ask permission from?"
+        
+        # DOCK_WORKER
+        "Sigh, alright. His name's Kit, that's all I'll say."
+        "If you really want to meet him, the shipping office's number's in the yellow pages."
+        
+        # MC 
+        Hmm... Kit?
+        That name... it seems like...
+        {ch1_evidence !? ch1_evidence.e1:
+            IMPRESSION FOUND # UNLOCK CH1_E1
+            "Nice!"
+            That should help unravel this whole mystery.
+            ~ ch1_evidence += ch1_evidence.e1
+        
+        
+            # DOCK_WORKER
+            "What?"
+        
+            # MC 
+            "Oh it's sorry it's nothing."
+        
+        
+            {LIST_COUNT(ch1_evidence) == 2:
+                "Anyway, I have to go now"
+                
+                # NARRATOR
+                "You turn to leave the pier area and walk back to the main road."
+                -> end_area1
+            }
+        }
+    + + "What do you mean by 'dangerous'?" # MC
+        
+        # DOCK_WORKER
+        "I mean IT'S DANGEROUS"
+        "I ain't just wearin' this hard hat to attract ladies ya know."
+        "Besides, there's other things..."
+        "Or ahem other people from 'round these parts that could be dangerous too."
+        "These streets ain't like they used to tuts."
+        "Gotta be careful now, ya never know what creepin' for ya just right 'round the corner."
         
         # MC
-        I can't let him know the truth.
-        + + + ["I'm researching for my thesis."]
-            "I'm uhh doing field work for my uhh thesis."
-            "Yeah, its about the logistics of shipping and transportation."
-            
-            # DOCK_WORKER
-            "Ehh, college boy huh?"
-            "Where do you go? What're you takin'?"
-            
-            # MC
-            "I'm taking my masters in civil engineering at DLSU"
-            
-            # DOCK_WORKER
-            "Scoff, listen fancy pants, you can't just go around here stickin' your nose where ever ya want."
-        + + + ["My motorcycle was stolen here"]
-            "My uhh my motorcycle got stolen around here."
-            "Yeah, im just lookin' around to see maybe if I could uhh..."
-            "If there 're any witnesses or CCTV cameras 'round here that could've."
-            
-            # DOCK_WORKER
-            "Stolen eh?"
-            "Well that's too bad, but you can't just go around here stickin' your nose where ever ya want."
-            
-        - - - "This place is dangerous, and its a serious work place."
-            "So, if ya don't have propa' business to conduct here then scram!"
-            
-            # MC
-            "Aww please, I just need to ask a few questions 's all."
-            "Just a few questions so I can come back with the proper requirements and protocols and whatnot."
-            
-            # DOCK_WORKER
-            "Sigh... alright, whaddya need?"
-            
-        - - - (area1_1_1)
-        + + + "What hours is the dock open?" # MC
+        "Thanks, I'll be careful."
+    + + "Nothing else." # MC
+        # DOCK_WORKER
+        "Alright, now stop botherin' me."
+        ~ INTERACTIBLE = true
+        -> area1
+    
+    - - - -> area1_1
++ [Go further in]
+    {stopping:
+        - # DOCK_WORKER
+        "Hey, you! Alice in wonderland."
+        "Do yous think this place is some sorta theme park or somethin'?"
+        "Authorized personnel only."
         
-            # DOCK_WORKER
-            "Well, technically the dock is always open."
-            "But, its operatin' hours 's the usual 5 to 9"
-            "Outside of that, the dock isn't too active."
-            
-            # MC
-            "5 to 9? You mean 9 to 5."
-            
-            # DOCK_WORKER
-            "9 to 5? Whaddya think this is? Some kinda day spa?"
-            "This is a pier, genious. It works 'round the clock to get ya the food you eat and junk you buy."
-            "If we work hours were that short, heh, the city'd probably collapse buy now."
-        + + + "Who runs this place?" # MC
-            
-            # DOCK_WORKER
-            "Mm, I ain't really supposed to say."
-            
-            # MC 
-            "Aww, c'mon. How am I supposed to ask permission if I don't know who to ask permission from?"
-            
-            # DOCK_WORKER
-            "Sigh, alright. His name's Kit, that's all I'll say."
-            "If you really want to meet him, the shipping office's number's in the yellow pages."
-            
-            # MC 
-            Hmm... Kit?
-            That name... it seems like...
-            {ch1_evidence !? ch1_evidence.e1:
-                IMPRESSION FOUND # UNLOCK CH1_E1
-                "Nice!"
-                That should help unravel this whole mystery.
-                ~ ch1_evidence += ch1_evidence.e1
-            
-            
-                # DOCK_WORKER
-                "What?"
-            
-                # MC 
-                "Oh it's sorry it's nothing."
-            
-            
-                {LIST_COUNT(ch1_evidence) == 2:
-                    "Anyway, I have to go now"
-                    
-                    # NARRATOR
-                    "You turn to leave the pier area and walk back to the main road."
-                    -> end_area1
-                }
-            }
-        + + + "What do you mean by 'dangerous'?" # MC
-            
-            # DOCK_WORKER
-            "I mean IT'S DANGEROUS"
-            "I ain't just wearin' this hard hat to attract ladies ya know."
-            "Besides, there's other things..."
-            "Or ahem other people from 'round these parts that could be dangerous too."
-            "These streets ain't like they used to tuts."
-            "Gotta be careful now, ya never know what creepin' for ya just right 'round the corner."
-            
-            # MC
-            "Thanks, I'll be careful."
-        + + + "Nothing else." # MC
-            # DOCK_WORKER
-            "Alright, now stop botherin' me."
-            ~ INTERACTIBLE = true
-            -> area1_1
+        #MC
+        "Oh uh, sorry my bad."
+        Hmm look like I gotta find some other way to get in.
+        - # DOCK_WORKER
+        "How many times do I gotta says to you, AUTHORIZED PERSONNEL ONLY!"
         
-        - - - -> area1_1_1
-    + + [Go further in]
-        {stopping:
-            - # DOCK_WORKER
-            "Hey, you! Alice in wonderland."
-            "Do yous think this place is some sorta theme park or somethin'?"
-            "Authorized personnel only."
-            
-            #MC
-            "Oh uh, sorry my bad."
-            Hmm look like I gotta find some other way to get in.
-            - # DOCK_WORKER
-            "How many times do I gotta says to you, AUTHORIZED PERSONNEL ONLY!"
-            
-            #MC
-            !
-            "Sorry!"
-        }
-        
-    - - -> area1_1
+        #MC
+        !
+        "Sorry!"
+    }
+    
+- -> area1
     
 - (end_area1) -> part3
 

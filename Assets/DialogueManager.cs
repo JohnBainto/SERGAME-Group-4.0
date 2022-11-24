@@ -79,7 +79,6 @@ public class DialogueManager : MonoBehaviour
         if(currentStory.canContinue)
         {
             string currentLine = currentStory.Continue();
-            //dText.text = currentLine;
             StopAllCoroutines();
             StartCoroutine(TypeLine(currentLine));
         }

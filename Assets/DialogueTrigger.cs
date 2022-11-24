@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue _dialogue;
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
     public void TriggerDialogue () {

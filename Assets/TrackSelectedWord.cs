@@ -9,11 +9,12 @@ public class TrackSelectedWord : MonoBehaviour
 
     public string LastClickedWord;
     public Camera MainCamera;
+    [SerializeField] private TextMeshProUGUI selectedWords;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
+        {   
             Debug.Log("weeee");
             var wordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, MainCamera);
             Debug.Log(wordIndex);
@@ -21,6 +22,7 @@ public class TrackSelectedWord : MonoBehaviour
             {
                 Debug.Log("AAAAA" + wordIndex);
                 LastClickedWord = text.textInfo.wordInfo[wordIndex].GetWord();
+                selectedWords.text+=(LastClickedWord+"\n");
                 Debug.Log("Clicked on " + LastClickedWord);              
                 
                 TMP_WordInfo info = text.textInfo.wordInfo[wordIndex];

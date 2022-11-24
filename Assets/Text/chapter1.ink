@@ -18,8 +18,8 @@ You gaze at the address you have written in your investigave notebook and look b
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
 
-Select an option:
 ~ INTERACTIBLE = true
+Select an option:
 + [Enter the house]
 -
 ~ INTERACTIBLE = false
@@ -120,7 +120,6 @@ You leave the house and step outside.
 Its dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
 ~ BG = OUTSIDE
-~ INTERACTIBLE = true
 
 ~temp first_select = ""
 # MC
@@ -145,8 +144,10 @@ Still, this place is likely a halimaw's domain.
 I oughtta blend in to avoid any untoward suspicion to myself.
 
 - (area1)
+~ INTERACTIBLE = true
 What should I investigate?
 + [Shipping crate 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   The inside is full of discarded packaging. Wait what's this on the floor?
     -   It's a crowbar!
@@ -168,12 +169,14 @@ What should I investigate?
         }
     }
 + [Shipping crate 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Looks like this one's locked.
     -   Hrrmpph, it's not use. I can't force it open.
     -   Sealed tight as the vaults of Bangko Sentral.
     }
 + [Shipping crate 3]
+    ~ INTERACTIBLE = false
     {stopping:
     -   It's mostly empty.
         Wait, what's this on the floor!
@@ -302,6 +305,7 @@ What should I investigate?
     
     - - - -> area1_1
 + [Go further in]
+    ~ INTERACTIBLE = false
     {stopping:
         - # DOCK_WORKER
         "Hey, you! Alice in wonderland."

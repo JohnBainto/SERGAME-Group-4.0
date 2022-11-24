@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 680656189}
   - component: {fileID: 680656190}
   m_Layer: 0
-  m_Name: LoadTrigger
+  m_Name: DialogueTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -360,10 +360,12 @@ I need to look for a way out before those grunts come back to finish the job.
 
 LIST ch1_area2_inv = paper, clip
 
-~ INTERACTIBLE = true
+
 - (area2)
+~ INTERACTIBLE = true
 What should I investigate?
 + [Locked door]
+    ~ INTERACTIBLE = false
     # NARRATOR
     You rattle the door.
     
@@ -388,6 +390,7 @@ What should I investigate?
         }
     }
 + [Crack on the floor]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Well this place is certainly no 5 star hotel.
     -   Wait a second...
@@ -411,6 +414,7 @@ What should I investigate?
         -> part4
     }
 + [Papers on the floor]
+    ~ INTERACTIBLE = false
     Just some newspapers on the floor.
     Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
     {ch1_area2_inv !? paper:
@@ -419,6 +423,7 @@ What should I investigate?
         ~ ch1_area2_inv += paper
     }
 + [Wet spot on the floor]
+    ~ INTERACTIBLE = false
     {stopping:
     -   There's a wet spot here...
         Gross.
@@ -427,6 +432,7 @@ What should I investigate?
         \*shivers\*
     }
 + [Lightbulb]
+    ~ INTERACTIBLE = false
     {stopping:
     -   It's an incandescent lightbulb.
     -   It's too high up to reach,

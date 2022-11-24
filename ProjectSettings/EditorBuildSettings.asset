@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattlePhase.unity
     guid: bfbc5ab8c511f174ca7ea9d59ff189e5
+  - enabled: 1
+    path: Assets/Scenes/Chapter 02/CH02_EXP_BLACK.unity
+    guid: 82bc1c752a9fb5041ac01508112cad29
   m_configObjects: {}

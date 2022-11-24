@@ -14,63 +14,23 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory; // tracker for which ink file is currently in use
     private bool dialogueIsPlaying;
     private static DialogueManager instance;
-//w/o inky
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
-    public Queue<string> sentences;
-    // public UnityEvent onMouceClicked;
     
     // Start is called before the first frame update
     private void Start() {
-        sentences = new Queue<string>(); 
+        //sentences = new Queue<string>(); 
         dialogueIsPlaying = false;
         dialogueBox.SetActive(false);
     }
-
-
 
     // Typing each character in a sentence.
     IEnumerator TypeLine(string line) {
-        dialogueText.text = "";
+        dText.text = "";
         // Typing each character
         foreach(char c in line.ToCharArray())
         {
-            dialogueText.text +=c;
-            yield return null;
+            dText.text +=c;
+            yield return new WaitForSeconds(0.025f);
         }
-    }
-// without inky
-    public void StartDialogue (Dialogue dialogue) {
-        dialogueIsPlaying = true;
-        dialogueBox.SetActive(true);
-        Debug.Log("Convo with " + dialogue.SpeakerName);
-        nameText.text = dialogue.SpeakerName + " says";
-        sentences.Clear(); // to clear any sentences from the previous conversation
-
-        foreach (string sentence in dialogue.Lines) {
-            sentences.Enqueue(sentence);
-        }
-
-        DisplayNextSentence();
-    }
-    
-    public void DisplayNextSentence () {
-        Debug.Log(sentences.Count);
-        if (sentences.Count == 0) {
-            EndDialogue();
-            return;
-        }
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeLine(sentence));
-    }
-
-    public void EndDialogue() {
-        dialogueIsPlaying = false;
-        dialogueBox.SetActive(false);
-        //dialogueText.text = "";
-        Debug.Log("End of battle.");
     }
 
 // with inky
@@ -117,9 +77,9 @@ public class DialogueManager : MonoBehaviour
         if(currentStory.canContinue)
         {
             string currentLine = currentStory.Continue();
-            dText.text = currentLine;
-            //StopAllCoroutines();
-            //StartCoroutine(TypeLine(currentLine));
+            //dText.text = currentLine;
+            StopAllCoroutines();
+            StartCoroutine(TypeLine(currentLine));
         }
         else
         {

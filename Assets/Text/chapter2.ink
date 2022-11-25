@@ -84,12 +84,12 @@ Okay what should I do now?
     ~ INTERACTABLE = false
     # NARRATOR
     A couple of exposed wires dangle from the wall.
-    They crackle and pop little bolts of lightning.
+    The frayed ends crackle and pop with little bolts of lightning.
 
     # AMY
     Jeepers! I almost shocked myself.
     These really have no business being exposed like this.
-    Although...
+    Although... I might find some use for these yet
     {inventory ? newspaper:
         If I use those newspapers I got to connect these two wires...
 

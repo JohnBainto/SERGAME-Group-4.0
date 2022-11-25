@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     //update is called once per frame
     void Update()
     {
-        if(DialogueManager.GetInstance().dialogueIsPlaying) {
+        if(DialogueManagerExploration.GetInstance().dialogueIsPlaying) {
             return; //freeze the player
         }
         
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     //better for handling physics, can be called multiple times per update frame
     private void FixedUpdate() { 
         
-        if(DialogueManager.GetInstance().dialogueIsPlaying) {
+        if(DialogueManagerExploration.GetInstance().dialogueIsPlaying) {
             return; //freeze the player
         }
 

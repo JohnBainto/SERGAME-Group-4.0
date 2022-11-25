@@ -5,10 +5,10 @@ using UnityEngine;
 public class SelectionController : MonoBehaviour
 {
     public void Select(int choice) {
-        DialogueManager.GetInstance().MakeChoiceThenContinue(choice);
+        DialogueManagerExploration.GetInstance().MakeChoiceThenContinue(choice);
     }
 
     public void Interact() {
-        DialogueManager.GetInstance().EnterDialogueMode();
+        DialogueManagerExploration.GetInstance().EnterDialogueMode();
     }
 }

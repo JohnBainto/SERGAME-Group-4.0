@@ -34,7 +34,7 @@ public class TestMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManagerExploration.GetInstance().dialogueIsPlaying)
         {
             return; //freeze the player
         }

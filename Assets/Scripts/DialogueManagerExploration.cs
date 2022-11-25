@@ -7,7 +7,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManagerExploration : MonoBehaviour
 {
     public float typingSpeed;
 
@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     private bool canContinueToNext;
     private Coroutine displayLineCoroutine;
 
-    private static DialogueManager instance;
+    private static DialogueManagerExploration instance;
     public TextAsset inkJSON;
     public string pathString;
 
@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChoosePathString(pathString);
     }
 
-    public static DialogueManager GetInstance()
+    public static DialogueManagerExploration GetInstance()
     {
         return instance;
     }

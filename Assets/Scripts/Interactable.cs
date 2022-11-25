@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (isInRange && !DialogueManagerExploration.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
 

@@ -8,6 +8,6 @@ public class LoadDialogue: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DialogueManager.GetInstance().EnterDialogueMode();
+        DialogueManagerExploration.GetInstance().EnterDialogueMode();
     }
 }

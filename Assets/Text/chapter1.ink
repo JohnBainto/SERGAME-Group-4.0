@@ -18,11 +18,11 @@ You gaze at the address you have written in your investigave notebook and look b
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
 
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 What should I do now?:
 + [Enter the house]
 -
-~ INTERACTIBLE = false
+~ INTERACTABLE = false
 # NARRATOR
 You knock on the front door.
 A moment later, a nervous looking man opens the door.
@@ -143,10 +143,10 @@ Still, this place is likely a halimaw's domain.
 I oughtta blend in to avoid any untoward suspicion to myself.
 
 - (area1)
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 What should I investigate?
 + [Shipping crate 1]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   The inside is full of discarded packaging. Wait what's this on the floor?
     -   It's a crowbar!
@@ -169,14 +169,14 @@ What should I investigate?
         }
     }
 + [Shipping crate 2]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   Looks like this one's locked.
     -   Hrrmpph, it's not use. I can't force it open.
     -   Sealed tight as the vaults of Bangko Sentral.
     }
 + [Shipping crate 3]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   It's mostly empty.
         Wait, what's this on the floor!
@@ -184,7 +184,7 @@ What should I investigate?
     -   I feel... kind of silly.
     }
 + [Dock worker]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     # DOCK_WORKER
     "What're you gawkin' at me fer?"
     
@@ -301,12 +301,12 @@ What should I investigate?
     + + "Nothing else." # AMY
         # DOCK_WORKER
         "Alright, now stop botherin' me."
-        ~ INTERACTIBLE = true
+        ~ INTERACTABLE = true
         -> area1
     
     - - - -> area1_1
 + [Go further in]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
         - # DOCK_WORKER
         "Hey, you! Alice in wonderland."
@@ -329,7 +329,7 @@ What should I investigate?
 - (end_area1) -> part3
 
 = part3
-~ INTERACTIBLE = false
+~ INTERACTABLE = false
 # NARRATOR
 Before you could do anything, you suddenly feel a hand on your shoulder.
 You turn around to see a hissing aswang winding up to punch you.
@@ -361,10 +361,10 @@ I need to look for a way out before those grunts come back to finish the job.
 
 
 - (area2)
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 What should I investigate?
 + [Locked door]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     # NARRATOR
     You rattle the door.
     
@@ -389,7 +389,7 @@ What should I investigate?
         }
     }
 + [Crack on the floor]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   Well this place is certainly no 5 star hotel.
     -   Wait a second...
@@ -416,7 +416,7 @@ What should I investigate?
         -> part4
     }
 + [Papers on the floor]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     Just some newspapers on the floor.
     Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
     {inventory !? paper:
@@ -425,7 +425,7 @@ What should I investigate?
         ~ inventory += paper
     }
 + [Wet spot on the floor]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   There's a wet spot here...
         Gross.
@@ -434,7 +434,7 @@ What should I investigate?
         \*shivers\*
     }
 + [Lightbulb]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   It's an incandescent lightbulb.
     -   It's too high up to reach,
@@ -445,7 +445,7 @@ What should I investigate?
 
 = part4
 ~ inventory = ()
-~ INTERACTIBLE = false
+~ INTERACTABLE = false
 # NARRATOR
 Your line of thought is interrupted by heavy footsteps followed by the clinking of keys on the door.
 

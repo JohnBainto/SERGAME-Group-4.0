@@ -11,11 +11,11 @@ Just beyond him the door to your cell has been left open.
 
 
 - (area1)
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 # AMY
 What should I do now?
 + [Kit]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
@@ -29,7 +29,7 @@ What should I do now?
     "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {ch2_evidence ? ch2_evidence.e1:
         Alright! Time to make like tree and leave.
         ->end_area1
@@ -44,7 +44,7 @@ What should I do now?
 
 - (end_area1)
 
-~ INTERACTIBLE = false
+~ INTERACTABLE = false
 ~ BG = CH02_EXP_HALLWAY
 # NARRATOR
 You step out into the narrow hallway.
@@ -59,11 +59,11 @@ Hmm... I ought to lock 'em in there for when he comes to.
 You lock the door, leaving Kit inside.
 
 - (area2)
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 # AMY
 Okay what should I do now?
 + [Door 1]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # AMY
@@ -71,7 +71,7 @@ Okay what should I do now?
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # AMY
@@ -81,7 +81,7 @@ Okay what should I do now?
         It was worth a shot.
     }
 + [Exposed electrical wiring]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     # NARRATOR
     A couple of exposed wires dangle from the wall.
     They crackle and pop little bolts of lightning.
@@ -107,7 +107,7 @@ Okay what should I do now?
         Now I just need to get this closer to the fire alarm.
     }
 + [Newspapers on the floor]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
         I guess I'll take it anyway in case I need it.
@@ -117,7 +117,7 @@ Okay what should I do now?
         ~ inventory += newspaper
     }
 + [Smoke detector]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   It looks like one 'a those smoke detectors.
     -   It supposed to trigger a fire alarm if it detects smoke.
@@ -141,7 +141,7 @@ Okay what should I do now?
         ~ inventory += detector
     }
 + [Stairs]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {inventory !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR
@@ -225,10 +225,10 @@ Ugh! Just perfect.
 I need to find a way around to get out.
 
 - (area3)
-~ INTERACTIBLE = true
+~ INTERACTABLE = true
 What should I do now?
 + [Shipping container 1]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   Can't anything ever be easy!
         That wave knocked the shipping containers over and now the exit's blocked.
@@ -236,14 +236,14 @@ What should I do now?
         Or maybe over?
     }
 + [Shipping container 2]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     {stopping:
     -   Looks like this has been knocked over too.
         It doesn't look like I can open it either.
     -   I wonder if I can get on top of this thing?
     }
 + [Washed up fish]
-    ~ INTERACTIBLE = false
+    ~ INTERACTABLE = false
     # NARRATOR
     There are a couple of fish flopping around the ground of the docks.
 
@@ -259,7 +259,7 @@ What should I do now?
 + [Crane]
     {inventory ? key:
         {inventory ? crane:
-            ~ INTERACTIBLE = false
+            ~ INTERACTABLE = false
             Alright!
             Let's see if what this baby can do!
             Wooaahh!
@@ -267,7 +267,7 @@ What should I do now?
             But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
             ~ inventory += crane
             ~ BG = CH02_EXP_PIER_MOVED
-            ~ INTERACTIBLE = true
+            ~ INTERACTABLE = true
         - else:
             I think I got it stuck.
             Besides, I really don't feel like getting back on that thing.
@@ -304,7 +304,7 @@ What should I do now?
 = part3
 
 ~ inventory = ()
-~ INTERACTIBLE = false
+~ INTERACTABLE = false
 # KOI
 "So you're the one whose been making a mess of my business."
 

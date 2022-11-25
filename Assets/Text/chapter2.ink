@@ -257,9 +257,9 @@ What should I do now?
     "These fish are somehow connected to whoever is behind this whole thing."
     ~ ch2_evidence += ch2_evidence.e3
 + [Crane]
+    ~ INTERACTABLE = false
     {inventory ? key:
         {inventory ? crane:
-            ~ INTERACTABLE = false
             Alright!
             Let's see if what this baby can do!
             Wooaahh!
@@ -287,6 +287,7 @@ What should I do now?
         }
     }
 + [Key]
+    ~ INTERACTABLE = false
     {inventory !? key:
         A key!
         Maybe the one of the dock workers dropped this while trying to get away from the wave.
@@ -294,6 +295,7 @@ What should I do now?
         ~ inventory += key
     }
 + [Leave]
+    ~ INTERACTABLE = false
     {inventory ? crane:
         Alright, big jump coming.
         I just need to get a running start and...!

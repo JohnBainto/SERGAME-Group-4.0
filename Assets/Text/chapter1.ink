@@ -463,7 +463,7 @@ You back up against the wall and ready yourself for a fight.
 NEIGHH
 So you're the rat whose been snooping around my docks.
 I'd ask you who you're working for but after we're done with you,
-I'm sure the message will be very clear that the Dark Water gang is dead serious!
+I'm sure the message will be very clear that the our gang is dead serious!
 
 -> ch1_battle
 

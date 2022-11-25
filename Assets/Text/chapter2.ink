@@ -350,6 +350,21 @@ No way!
 -> ch2_battle
 
 = end
+# AMY
+"Huff, huff"
+"I'm exhausted. But it seems like the domain has fully unravelled."
 
+# KOI
+"...and I would have gotten away with it too..."
+"if it weren't hrhgblurblblrbl..."
+
+# AMY
+"I'm going to go home an take a nice long hot bath."
+
+# NARRATOR
+After defeating Mr. Ignacio's gang you returned home for a well-deserved rest.
+The next morning, the papers are painted with retellings of your exploits.
+Wetro Wanila is that much more safer thanks to you.
+CHAPTER END
 + [Return]
 -> main

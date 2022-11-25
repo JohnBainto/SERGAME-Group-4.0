@@ -7,6 +7,8 @@ INCLUDE chapter2_battle.ink
 LIST BG = PROLOGUE, MENU, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, BATTLE, CH02_EXP_BLACK, CH02_EXP_BASEMENT, CH02_EXP_HALLWAY, CH02_EXP_PIER_WET, CH02_EXP_PIER_MOVED
 VAR INTERACTIBLE = false
 
+LIST inventory = paper, clip, key, crane, newspaper, fire, detector
+
 -> prologue
 
 === prologue ===

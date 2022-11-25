@@ -359,8 +359,6 @@ Where am I?
 Looks like I'm in hotter water than a hotdog in a carnival concession stand.
 I need to look for a way out before those grunts come back to finish the job.
 
-LIST ch1_area2_inv = paper, clip
-
 
 - (area2)
 ~ INTERACTIBLE = true
@@ -373,7 +371,7 @@ What should I investigate?
     # AMY
     Yeah, didn't expect it to be that easy.
     
-    {ch1_area2_inv !? clip:
+    {inventory !? clip:
         Wait what's this?
         
         # NARRATOR
@@ -383,11 +381,11 @@ What should I investigate?
         A paper clip?
         Hmm... that could be useful for somethin'.
         But I'd need something slim to reach it through the door.
-        {ch1_area2_inv ? paper:
+        {inventory ? paper:
             Oh! I can slip these newspapers under the door to reach that paper clip.
             I just need to...
             Got it!
-            ~ ch1_area2_inv += clip
+            ~ inventory += clip
         }
     }
 + [Crack on the floor]
@@ -398,11 +396,13 @@ What should I investigate?
         There something in this crack.
         I just need to something pointy to dig it out.
     }
-    {ch1_area2_inv ? clip:
+    {inventory ? clip:
     -   This clip is the perfect tool for that.
         
         # NARRATOR
         You dig something out of crack.
+        
+        ~ inventory -= clip
     
         # AMY
         Hair?
@@ -419,10 +419,10 @@ What should I investigate?
     ~ INTERACTIBLE = false
     Just some newspapers on the floor.
     Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
-    {ch1_area2_inv !? paper:
+    {inventory !? paper:
         Although... This might prove to be useful.
         Might as well take it to be safe.
-        ~ ch1_area2_inv += paper
+        ~ inventory += paper
     }
 + [Wet spot on the floor]
     ~ INTERACTIBLE = false
@@ -444,6 +444,7 @@ What should I investigate?
 - -> area2
 
 = part4
+~ inventory = ()
 ~ INTERACTIBLE = false
 # NARRATOR
 Your line of thought is interrupted by heavy footsteps followed by the clinking of keys on the door.

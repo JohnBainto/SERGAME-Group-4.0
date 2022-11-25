@@ -58,8 +58,6 @@ Hmm... I ought to lock 'em in there for when he comes to.
 # NARRATOR
 You lock the door, leaving Kit inside.
 
-LIST ch2_area1_inv = newspaper, fire, detector
-
 - (area2)
 ~ INTERACTIBLE = true
 # AMY
@@ -92,7 +90,7 @@ Okay what should I do now?
     Jeepers! I almost shocked myself.
     These really have no business being exposed like this.
     Although...
-    {ch2_area1_inv ? newspaper:
+    {inventory ? newspaper:
         If I use those newspapers I got to connect these two wires...
 
         # NARRATOR
@@ -101,7 +99,8 @@ Okay what should I do now?
         Then suddenly, the parts of the paper touching the wires start turning into a darker shade.
         Slowly, smoke start to emmanate from the newspaper until it fully catches on fire.
 
-        ~ ch2_area1_inv += fire
+        ~ inventory -= newspaper
+        ~ inventory += fire
 
         # AMY
         Eureka!
@@ -114,8 +113,8 @@ Okay what should I do now?
         I guess I'll take it anyway in case I need it.
     -   I hope somebody at least read these...
     }
-    {ch2_area1_inv !? newspaper:
-        ~ ch2_area1_inv += newspaper
+    {inventory !? newspaper:
+        ~ inventory += newspaper
     }
 + [Smoke detector]
     ~ INTERACTIBLE = false
@@ -124,7 +123,7 @@ Okay what should I do now?
     -   It supposed to trigger a fire alarm if it detects smoke.
         I wonder if I can use that for my escape.
     }
-    {ch2_area1_inv ? fire:
+    {inventory ? fire:
         # NARRATOR
         You reach up to get the flaming newspaper as close to the fire alarm as possible.
 
@@ -134,14 +133,16 @@ Okay what should I do now?
         # NARRATOR
         The fire alarm starts beeping out a steady high pitched tune.
         All along the ceiling, water sprinklers start coming to life.
+        You let the burning piece of newpaper you are holding fall onto the wet floor where it is quickly extinguished.
 
         # AMY
         Nice! This should distract those goons outside.
-        ~ ch2_area1_inv += detector
+        ~ inventory -= fire
+        ~ inventory += detector
     }
 + [Stairs]
     ~ INTERACTIBLE = false
-    {ch2_area1_inv !? detector:
+    {inventory !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR
             You can hear faint voices coming from the other side.
@@ -182,7 +183,9 @@ Okay what should I do now?
     }
 - -> area2
 
-- (end_area2) -> part2
+- (end_area2)
+~ inventory = ()
+-> part2
 
 = part2
 ~ BG = CH02_EXP_BLACK
@@ -216,8 +219,6 @@ I need to find a way to get out of here despite the rain.
 As you began to move forward, a strong wave suddenly crashed into the pier.
 You managed to hold on to the walls of the shipping office to avoid getting swept away completely.
 Once you reoriented yourself, you notice that the way you cam from has now been blocked by a flipped over shipping container.
-
-LIST ch2_area2_inv = key, crane
 
 # AMY
 Ugh! Just perfect.
@@ -256,16 +257,15 @@ What should I do now?
     "These fish are somehow connected to whoever is behind this whole thing."
     ~ ch2_evidence += ch2_evidence.e3
 + [Crane]
-    ~ INTERACTIBLE = false
-    {ch2_area2_inv ? key:
-        {ch2_area2_inv ? crane:
+    {inventory ? key:
+        {inventory ? crane:
             ~ INTERACTIBLE = false
             Alright!
             Let's see if what this baby can do!
             Wooaahh!
             Okay I guess I don't exactly know how to operate this thing.
             But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
-            ~ ch2_area2_inv += crane
+            ~ inventory += crane
             ~ BG = CH02_EXP_PIER_MOVED
             ~ INTERACTIBLE = true
         - else:
@@ -287,16 +287,14 @@ What should I do now?
         }
     }
 + [Key]
-    ~ INTERACTIBLE = false
-    {ch2_area2_inv !? key:
+    {inventory !? key:
         A key!
         Maybe the one of the dock workers dropped this while trying to get away from the wave.
         With any luck I might just be able to use that crane.
-        ~ ch2_area2_inv += key
+        ~ inventory += key
     }
 + [Leave]
-    ~ INTERACTIBLE = false
-    {ch2_area2_inv ? crane:
+    {inventory ? crane:
         Alright, big jump coming.
         I just need to get a running start and...!
         -> part3
@@ -305,6 +303,7 @@ What should I do now?
 
 = part3
 
+~ inventory = ()
 ~ INTERACTIBLE = false
 # KOI
 "So you're the one whose been making a mess of my business."

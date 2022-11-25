@@ -61,6 +61,7 @@ public class DialogueManager : MonoBehaviour
     {
         startButton.SetActive(false);
         currentStory = new Story(inkJSON.text);
+        currentStory.ChoosePathString("ch1_battle");
         dialogueIsPlaying = true;
         dialogueBox.SetActive(true);
         ContinueStory();

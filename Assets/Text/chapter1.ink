@@ -381,7 +381,7 @@ What should I investigate?
         A paper clip?
         Hmm... that could be useful for somethin'.
         But I'd need something slim to reach it through the door.
-        {inventory ? paper:
+        {inventory ? newspaper:
             Oh! I can slip these newspapers under the door to reach that paper clip.
             I just need to...
             Got it!
@@ -419,10 +419,10 @@ What should I investigate?
     ~ INTERACTABLE = false
     Just some newspapers on the floor.
     Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
-    {inventory !? paper:
+    {inventory !? newspaper:
         Although... This might prove to be useful.
         Might as well take it to be safe.
-        ~ inventory += paper
+        ~ inventory += newspaper
     }
 + [Wet spot on the floor]
     ~ INTERACTABLE = false

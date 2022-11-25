@@ -200,7 +200,7 @@ IMPRESSION FOUND # UNLOCK CH2_E2
 
 # NARRATOR
 You run out of the shipping office and enter the pier area.
-~ BG = PIER_WET
+~ BG = CH02_EXP_PIER_WET
 Heavy torrents of rain fall all around you reducing visibility.
 Whatever parts that you managed to keep dry from the water sprinklers are now thoroughly drenched as well.
 
@@ -255,7 +255,7 @@ I need to find a way around to get out.
             Okay I guess I don't exactly know how to operate this thing.
             But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
             ~ ch2_area2_inv += crane
-            ~ BG = PIER_MOVED
+            ~ BG = CH02_EXP_PIER_MOVED
             ~ INTERACTIBLE = true
         - else:
             I think I got it stuck.

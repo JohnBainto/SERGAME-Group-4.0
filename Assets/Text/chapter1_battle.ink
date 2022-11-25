@@ -170,23 +170,23 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     {
     - performance > 0:
         {shuffle:
-        -   Tch, intimidation? That ain't gonna work on me. # MC
-        -   Think you're the first monster I've taken down? I know your tricks # MC
-        -   That's wrong! I can see through your magic! # MC
-        -   I'm not afraid of you! # MC
+        -   Tch, intimidation? That ain't gonna work on me. # AMY
+        -   Think you're the first monster I've taken down? I know your tricks # AMY
+        -   That's wrong! I can see through your magic! # AMY
+        -   I'm not afraid of you! # AMY
         }
     - performance > -2:
         {shuffle:
-        -   N-no that's not true! # MC
-        -   Ngh, I won't let you under my skin. # MC
-        -   I w-won't give in! # MC
-        -   Mmph! I uhh... t-that's wrong! # MC
+        -   N-no that's not true! # AMY
+        -   Ngh, I won't let you under my skin. # AMY
+        -   I w-won't give in! # AMY
+        -   Mmph! I uhh... t-that's wrong! # AMY
         }
     - else >= -2:
         {shuffle:
-        -   Ugh! I don't think that was right # MC
-        -   Kyah!! # MC
-        -   Hrngg! # MC
+        -   Ugh! I don't think that was right # AMY
+        -   Kyah!! # AMY
+        -   Hrngg! # AMY
         -   Ouch!
         }
         {fallacy == "AD HOMINEM":
@@ -195,8 +195,8 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     }
 + [Skip]
     {shuffle:
-    -   You're not worth my time! # MC
-    -   Trying to be tricky eh? # MC
+    -   You're not worth my time! # AMY
+    -   Trying to be tricky eh? # AMY
     -   As if!
     -   You won't fool me with that!
     }
@@ -204,7 +204,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 - -> battle_phase
 
 - (bad_end)
-# MC
+# AMY
 Urk!
 I can't go on!
 Is this the end?
@@ -223,7 +223,7 @@ Continue?
 "This.."
 "How is this possible!?"
 
-# MC
+# AMY
 "It's over Kit!"
 "You're done for."
 "I'm puttin' you and your entire posse on the front page of every paper in Wetro Wanila."

@@ -14,7 +14,7 @@ The light of the setting afternoon sun bathes the shanty houses beside the port 
 Even here, the holiday season greets the locals with cooler air and shorter days.
 You gaze at the address you have written in your investigave notebook and look back at 3 story house made of cinderblocks and corrugated steel.
 
-# MC
+# AMY
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
 The witness didn't give me a name, but told me to meet him at this address as soon as I could.
 
@@ -29,23 +29,23 @@ You knock on the front door.
 A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
 ~ BG = CH01_EXP_INSIDE
-# UNKNOWN WITNESS
+# WITNESS
 D-did you see any of them outside?
 
-# MC
+# AMY
 Them?
 
-# UNKNOWN WITNESS
+# WITNESS
 I'm being stalked.
 Ever since I saw *that*, everywhere I go I feel like I'm being watched.
 Not just by ordinary people either, I suspect a gang of halimaws are watching me.
 
-# MC
+# AMY
 That? Listen, its pretty clear that you're being spooked by somethin',
 but I'm going to need ya to be a bit more clear, alright?
 Why don't 'cha start of from the start?
 
-# UNKNOWN WITNESS
+# WITNESS
 "Right, sorry."
 "It all began a couple of days ago."
 "I was coming home at 3 in the morning from my shift at a convinience store."
@@ -64,18 +64,18 @@ Why don't 'cha start of from the start?
 "But then it started moving and a human hand came out."
 "It was a person attached to a fish!"
 
-# MC
+# AMY
 Select an option:
 + "Attached to a fish?"
-    # UNKNOWN WITNESS
+    # WITNESS
     "I honestly don't know what I saw."
     "It was dark, but there was for sure a person in that crate and it seemed like they were hiding inside a giant fish"
 + "Were they alive?"
-    # UNKNOWN WITNESS
+    # WITNESS
     "It was hard to tell. I was pretty scared already and didn't get a good look"
     "It was dark but I could swear I saw the person blinking, so they were probably still alive."
 
-- A mermaid? # MC
+- A mermaid? # AMY
 Whoever these people are, they're involved in some halimaw smuggling and traficking ring.
 
 "Anyway, after seeing the person in the crate, I screamed."
@@ -93,7 +93,7 @@ Whoever these people are, they're involved in some halimaw smuggling and trafick
 "But I saw your article on the paper. You took down that manananggal girl that was terrorizing that suburb."
 "Please, you have to help me. I think that my life is in danger, and you may be the only one who can help."
 
-# MC
+# AMY
 "Right, okay."
 "I believe you."
 "I'll see what I can do, but remember..."
@@ -101,12 +101,12 @@ Whoever these people are, they're involved in some halimaw smuggling and trafick
 "Maybe if I can get enough evidence to unravel their whole operation, you'd be safe."
 "But, I can't promise anything."
 
-# UNKNOWN WITNESS
+# WITNESS
 "Oh, thank you! Thank you!"
 "Please, do your best!"
 "I'm counting on you."
 
-# MC
+# AMY
 Sheesh looks like this is goiong to be more trouble than a can of sardines in a feral cat's cage.
 But big trouble can also mean big story...
 "Alright!"
@@ -122,7 +122,7 @@ Its dusk now and shadows loom over everything abated only by the lights on the s
 ~ BG = CH01_EXP_OUTSIDE
 
 ~temp first_select = ""
-# MC
+# AMY
 I should head to the pier area to investigate.
 If they're smugglin' illegal items, the pier's the perfect place to do it.
 Boats 'll make transportin' goods a breeze.
@@ -138,7 +138,7 @@ In the distance, large cranes with dangling hooks litter the port.
 All around you, there are various shipping containers in shades of maroon, green, and the occasional blue.
 Strangely, there are not as many dock wokers as you'd expect.
 
-# MC
+# AMY
 Geez, everybody clock out early or somethin'?
 Still, this place is likely a halimaw's domain.
 I oughtta blend in to avoid any untoward suspicion to myself.
@@ -154,7 +154,8 @@ What should I investigate?
         Not unusual to see in a dock, but...
         There! It looks to have some dried blood on it.
         {ch1_evidence !? ch1_evidence.e2:
-            IMPRESSION FOUND # UNLOCK CH1_E2
+            IMPRESSION FOUND  # NARRATOR
+            # AMY
             "Okay!"
             I feel like I'm really getting to the bottom of this.
             ~ ch1_evidence += ch1_evidence.e2
@@ -188,7 +189,7 @@ What should I investigate?
     # DOCK_WORKER
     "What're you gawkin' at me fer?"
     
-    # MC
+    # AMY
     "Oh sorry, I uhh."
     
     # DOCK_WORKER
@@ -199,7 +200,7 @@ What should I investigate?
     # NARRATOR
     The dock work crosses his arms and narrows his eyes at you.
     
-    # MC
+    # AMY
     I can't let him know the truth.
     + + ["I'm researching for my thesis."]
         "I'm uhh doing field work for my uhh thesis."
@@ -209,7 +210,7 @@ What should I investigate?
         "Ehh, college boy huh?"
         "Where do you go? What're you takin'?"
         
-        # MC
+        # AMY
         "I'm taking my masters in civil engineering at DLSU"
         
         # DOCK_WORKER
@@ -226,7 +227,7 @@ What should I investigate?
     - - "This place is dangerous, and its a serious work place."
         "So, if ya don't have propa' business to conduct here then scram!"
         
-        # MC
+        # AMY
         "Aww please, I just need to ask a few questions 's all."
         "Just a few questions so I can come back with the proper requirements and protocols and whatnot."
         
@@ -234,37 +235,38 @@ What should I investigate?
         "Sigh... alright, whaddya need?"
         
     - - (area1_1)
-    + + "What hours is the dock open?" # MC
+    + + "What hours is the dock open?" # AMY
     
         # DOCK_WORKER
         "Well, technically the dock is always open."
         "But, its operatin' hours 's the usual 5 to 9"
         "Outside of that, the dock isn't too active."
         
-        # MC
+        # AMY
         "5 to 9? You mean 9 to 5."
         
         # DOCK_WORKER
         "9 to 5? Whaddya think this is? Some kinda day spa?"
         "This is a pier, genious. It works 'round the clock to get ya the food you eat and junk you buy."
         "If we work hours were that short, heh, the city'd probably collapse buy now."
-    + + "Who runs this place?" # MC
+    + + "Who runs this place?" # AMY
         
         # DOCK_WORKER
         "Mm, I ain't really supposed to say."
         
-        # MC 
+        # AMY 
         "Aww, c'mon. How am I supposed to ask permission if I don't know who to ask permission from?"
         
         # DOCK_WORKER
         "Sigh, alright. His name's Kit, that's all I'll say."
         "If you really want to meet him, the shipping office's number's in the yellow pages."
         
-        # MC 
+        # AMY 
         Hmm... Kit?
         That name... it seems like...
         {ch1_evidence !? ch1_evidence.e1:
-            IMPRESSION FOUND # UNLOCK CH1_E1
+            IMPRESSION FOUND  # NARRATOR
+            # AMY
             "Nice!"
             That should help unravel this whole mystery.
             ~ ch1_evidence += ch1_evidence.e1
@@ -273,7 +275,7 @@ What should I investigate?
             # DOCK_WORKER
             "What?"
         
-            # MC 
+            # AMY 
             "Oh it's sorry it's nothing."
         
         
@@ -285,7 +287,7 @@ What should I investigate?
                 -> end_area1
             }
         }
-    + + "What do you mean by 'dangerous'?" # MC
+    + + "What do you mean by 'dangerous'?" # AMY
         
         # DOCK_WORKER
         "I mean IT'S DANGEROUS"
@@ -295,9 +297,9 @@ What should I investigate?
         "These streets ain't like they used to tuts."
         "Gotta be careful now, ya never know what creepin' for ya just right 'round the corner."
         
-        # MC
+        # AMY
         "Thanks, I'll be careful."
-    + + "Nothing else." # MC
+    + + "Nothing else." # AMY
         # DOCK_WORKER
         "Alright, now stop botherin' me."
         ~ INTERACTIBLE = true
@@ -369,7 +371,7 @@ What should I investigate?
     # NARRATOR
     You rattle the door.
     
-    # MC
+    # AMY
     Yeah, didn't expect it to be that easy.
     
     {ch1_area2_inv !? clip:
@@ -378,7 +380,7 @@ What should I investigate?
         # NARRATOR
         You peer under the door and see something on the floor.
     
-        # MC
+        # AMY
         A paper clip?
         Hmm... that could be useful for somethin'.
         But I'd need something slim to reach it through the door.
@@ -403,10 +405,11 @@ What should I investigate?
         # NARRATOR
         You dig something out of crack.
     
-        # MC
+        # AMY
         Hair?
         Gasp! Tikbalang hair!
-        IMPRESSION FOUND # UNLOCK CH1_E3
+        IMPRESSION FOUND # NARRATOR
+         # AMY
         "Looks like that hair was a manifestation of an impression."
         "It's a good thing I spotted it."
         ~ ch1_evidence += ch1_evidence.e3
@@ -446,7 +449,7 @@ What should I investigate?
 # NARRATOR
 Your line of thought is interrupted by heavy footsteps followed by the clinking of keys on the door.
 
-# MC
+# AMY
 Drats! I wasn't fast enough.
 Whatever comes next, I have to face it head on.
 
@@ -465,7 +468,7 @@ I'm sure the message will be very clear that the Dark Water gang is dead serious
 -> ch1_battle
 
 = end
-# MC
+# AMY
 "Alright, I can already feel this domain weakening."
 "If I'm right then, the other goons of this place should be feeling it too."
 "I must just be able to get out of this alive."
@@ -475,7 +478,7 @@ I'm sure the message will be very clear that the Dark Water gang is dead serious
 "You really think it'll be that easy to defeat our gang."
 "Mr. Ignacio will make sure you'll never live to tell anybody what you saw here today."
 
-# MC
+# AMY
 Mr... what? I thought he was the head honcho here?
 Darn it! I need to get out of here or all I've done so far will be for nothing!
 

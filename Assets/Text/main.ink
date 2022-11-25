@@ -9,26 +9,9 @@ VAR INTERACTIBLE = false
 
 -> prologue
 
-/*
-    TAGS
-    Tags continue on until they are replace with another tag.
-    Text from the main character with no quotation marks mean internal thoughts.
-
-    NARRATOR
-        - text from an omniscient narrator
-        - italicized, gray, no quotation marks
-    UNKNOWN
-        - the characters name in the dialog box appears as "???"
-    HIDDEN
-        - the character's portrait is a dark sillhoutte
-    Normal character tags
-    Every other character
-        - normal, black, with quotation marks
-*/
-
 === prologue ===
 ~BG = PROLOGUE
-# MC
+# AMY
 The city ain't what it used to.
 Seems like everyday these streets get darker and darker.
 But that's why I'm here.

@@ -9,7 +9,7 @@ DECEMBER 8, 20XX \| 11:02 PM
 Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
-# MC
+# AMY
 What should I do now?
 ~ INTERACTIBLE = true
 - (area1)
@@ -17,7 +17,8 @@ What should I do now?
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
-    IMPRESSION FOUND # UNLOCK CH2_E1
+    IMPRESSION FOUND # NARRATOR
+    # AMY
     That's right, I can still feel that the presence of a monster's domain.
     If he were the only boss here the domain should have dissolved after he was defeated.
     "Mr Ignacio..."
@@ -48,7 +49,7 @@ The wall are made of exposed hollow blocks with a peeling layer of white paint.
 Its quiet except for the faint buzzing of the florescent light bulbs above and the distant sounds of the pier outside.
 You turn to look at the room you were brought to.
 
-# MC
+# AMY
 Hmm... I ought to lock 'em in there for when he comes to.
 
 # NARRATOR
@@ -56,21 +57,21 @@ You lock the door, leaving Kit inside.
 
 LIST ch2_area1_inv = newspaper, fire, detector
 
-# MC
+# AMY
 Okay what should I do know?
 ~ INTERACTIBLE = true
 - (area2)
 + [Door 1]
     {stopping:
     -   You rattle the door knob. # NARRATOR
-        # MC
+        # AMY
         Sigh, it's locked.
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
     {stopping:
     -   You rattle the door knob. # NARRATOR
-        # MC
+        # AMY
         Mmph, it not openin'.
     -   Open sesame!
         ...
@@ -81,7 +82,7 @@ Okay what should I do know?
     A couple of exposed wires dangle from the wall. 
     They crackle and pop little bolts of lightning.
     
-    # MC
+    # AMY
     Jeepers! I almost shocked myself.
     These really have no business being exposed like this.
     Although...
@@ -96,7 +97,7 @@ Okay what should I do know?
         
         ~ ch2_area1_inv += fire
         
-        # MC
+        # AMY
         Eureka!
         Now I just need to get this closer to the fire alarm.
     }
@@ -119,14 +120,14 @@ Okay what should I do know?
         # NARRATOR
         You reach up to get the flaming newspaper as close to the fire alarm as possible.
         
-        # MC
+        # AMY
         C'moon...
         
         # NARRATOR
         The fire alarm starts beeping out a steady high pitched tune.
         All along the ceiling, water sprinklers start coming to life.
         
-        # MC
+        # AMY
         Nice! This should distract those goons outside.
         ~ ch2_area1_inv += detector
     }
@@ -136,7 +137,7 @@ Okay what should I do know?
         -   You stop before the door. # NARRATOR
             You can hear faint voices coming from the other side.
             
-            # MC
+            # AMY
             Drats! Those goons must be guarding outside.
             I can't let them know I'm out and about.
         -   I don't think I can take 'em on in a fight.
@@ -159,7 +160,7 @@ Okay what should I do know?
         # GOON1
         Alright.
         
-        # MC
+        # AMY
         Corn nab it!
         They're comin' here!
         I need to hide.
@@ -182,11 +183,12 @@ You exit into the main area of shipping office.
 The door leading outside is wide open exposing the interior of the building to heavy rain from the outside.
 In combination with the sprinklers, there is a good inch of water pooling on the ground.
 
-# MC
+# AMY
 Mmph!
 All this water... serving as a distraction.
 It feels like a...
-IMPRESSION FOUND # UNLOCK CH2_E2
+IMPRESSION FOUND # NARRATOR
+# AMY
 "Looks like that hair was a manifestation of an impression."
 "Phew! Alright, it's good that I found that but I really need get out of here."
 ~ ch2_evidence += ch2_evidence.e2
@@ -197,7 +199,7 @@ You run out of the shipping office and enter the pier area.
 Heavy torrents of rain fall all around you reducing visibility.
 Whatever parts that you managed to keep dry from the water sprinklers are now thoroughly drenched as well.
 
-# MC
+# AMY
 Just my luck.
 I need to find a way to get out of here despite the rain.
 
@@ -208,7 +210,7 @@ Once you reoriented yourself, you notice that the way you cam from has now been 
 
 LIST ch2_area2_inv = key, crane
 
-# MC
+# AMY
 Ugh! Just perfect.
 I need to find a way around to get out.
 ~ INTERACTIBLE = true
@@ -230,11 +232,12 @@ I need to find a way around to get out.
     # NARRATOR
     There are a couple of fish flopping around the ground of the docks.
     
-    # MC
+    # AMY
     That wave must have washed these fish over here.
     This is honestly a pretty perfect metaphor for my situation.
     Wait these fish remind me of something...
-    IMPRESSION FOUND # UNLOCK CH2_E3
+    IMPRESSION FOUND # NARRATOR
+    # AMY
     "That's right!"
     "These fish are somehow connected to whoever is behind this whole thing."
     ~ ch2_evidence += ch2_evidence.e3
@@ -262,7 +265,7 @@ I need to find a way around to get out.
             
         -   You tried opening the cabin. # NARRATOR
             
-            # MC
+            # AMY
             Dang, locked.
             Maybe the key for it is around somewhere.
         -   It's locked, I need to look for the key to open it if I want to use it.
@@ -288,7 +291,7 @@ I need to find a way around to get out.
 # KOI
 "So you're the one whose been making a mess of my business."
 
-# MC
+# AMY
 "Huh, who the devil are you?"
 And how'd you get up here??
 
@@ -303,7 +306,7 @@ And how'd you get up here??
 "I'll forgive all the mess you've done on my dock so long as you promise to never return."
 "Seem like a pretty good deal no?"
 
-# MC
+# AMY
 What? Give him the undercity codex?
 No way!
 + [Pretend to toss the book]
@@ -315,7 +318,7 @@ No way!
     # KOI
     "Hiss! Do you think that I am some sort of fool?"
     
-    # MC
+    # AMY
     Ngh!
     It didn't work.
 + ["Never!"]
@@ -329,7 +332,7 @@ No way!
     # NARRATOR
     You think about his proposition for a moment.
     
-    # MC
+    # AMY
     Ah to heck with it.
     I'm getting outta here!
     

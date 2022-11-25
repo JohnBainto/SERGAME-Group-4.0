@@ -5,11 +5,11 @@ This Unity package allows you to integrate inkle's [ink narrative scripting lang
 # Overview
 
  - **Using ink in your game**: Allows running and controlling ink files in Unity via the [C# runtime API](https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md).
- 	
+
  - **ink player**: Provides a powerful [Ink Player Window](https://github.com/inkle/ink-unity-integration/blob/master/Documentation/InkPlayerWindow.md) for playing and debugging stories.
- 
+
  - **Auto compilation**: Instantly creates and updates a JSON story file when a `.ink` is updated.
- 	
+
  - **Inspector tools**: Provides an icon for ink files, and a custom inspector that provides information about a file.
 
 # Getting started
@@ -50,7 +50,7 @@ The C# API provides all you need to control ink stories in code; advancing your 
 For convenience, the package also creates an (**Help > Ink > API Documentation**) menu option.
 
 ## :pencil2: Writing ink
-For more information on writing with **ink**, see [the documentation in the main ink repo](https://github.com/inkle/ink). 
+For more information on writing with **ink**, see [the documentation in the main ink repo](https://github.com/inkle/ink).
 For convenience, the package also creates an (**Help > Ink > Writing Tutorial**) menu option.
 
 
@@ -63,13 +63,13 @@ To keep up to date with the latest news about ink [sign up for the mailing list]
 # Features
 
 ## Compilation
-	
-Ink files must be compiled to JSON before they can be used in-game. 
+
+Ink files must be compiled to JSON before they can be used in-game.
 **This package compiles all edited ink files automatically.**
 By default, compiled files are created next to their ink file.
 
 ### Editor Compilation
-This package provides tools to automate this process when a .ink file is edited. 
+This package provides tools to automate this process when a .ink file is edited.
 
 **Disabling auto-compilation**: You might want to have manual control over ink compilation. If this is the case, you can disable "Compile ink automatically" in the InkSettings file or delete the InkPostProcessor class.
 
@@ -88,7 +88,7 @@ The Ink Player Window (**Window > Ink Player**) allows you to play stories in an
 
 To play a story, click the "play" button shown on the inspector of a compiled ink file, or drag a compiled ink story TextAsset into the window.
 
-**Editor Attaching**: Attaching the InkStory instance used by your game to the Ink Player window allows you to view and edit your story as it runs in game. 
+**Editor Attaching**: Attaching the InkStory instance used by your game to the Ink Player window allows you to view and edit your story as it runs in game.
 
 See BasicInkExampleEditor.cs in the Examples folder for an example of how to:
 * Show an attach/detach button on an inspector
@@ -110,7 +110,7 @@ This package replaces the icon for ink files to make them easier to spot, and ad
 There is currently no support for Bolt, Unity's official visual scripting tool. If you're interested in building one, we'd love to see it!
 
 ## PlayMaker
-There's [unofficial support for PlayMaker here.](https://github.com/inkle/ink-unity-integration/issues/22) 
+There's [unofficial support for PlayMaker here.](https://github.com/inkle/ink-unity-integration/issues/22)
 
 
 We'd love to see this supported more if you'd like to assist the effort!
@@ -125,7 +125,7 @@ Adding or removing ink files will also make changes to the InkLibrary file, and 
 
 # <a name="WebGLBestPractices"></a>WebGL best practices
 
-WebGL builds should be as small as possible. The ink compiler is included in builds, but is typically only used in the editor. 
+WebGL builds should be as small as possible. The ink compiler is included in builds, but is typically only used in the editor.
 If your game doesn't require compiling ink at runtime we recommend adding a .asmdef at Ink Unity Integration > InkLibs > InkCompiler that only functions in the editor.
 
 
@@ -142,7 +142,7 @@ If your game doesn't require compiling ink at runtime we recommend adding a .asm
 # Support us!:heart:
 
 Ink is free, forever; but we'd really appreciate your support!
-If you're able to give back, generous donations at our [Patreon](https://www.patreon.com/inkle) mean the world to us. 
+If you're able to give back, generous donations at our [Patreon](https://www.patreon.com/inkle) mean the world to us.
 
 # License
 

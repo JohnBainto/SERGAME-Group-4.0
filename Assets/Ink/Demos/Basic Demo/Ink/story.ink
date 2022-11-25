@@ -3,7 +3,7 @@
     'What is the purpose of our journey, Monsieur?'
     'A wager,' he replied.
     * *     'A wager!'[] I returned.
-            He nodded. 
+            He nodded.
             * * *   'But surely that is foolishness!'
             * * *  'A most serious matter then!'
             - - -   He nodded again.

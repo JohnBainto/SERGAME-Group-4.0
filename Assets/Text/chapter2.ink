@@ -352,14 +352,15 @@ No way!
 = end
 # AMY
 "Huff, huff"
-"I'm exhausted. But it seems like the domain has fully unravelled."
+"I'm more tired than a snail after a funeral. But it seems like the domain over this place has finally unravelled."
 
 # KOI
 "...and I would have gotten away with it too..."
 "if it weren't hrhgblurblblrbl..."
 
 # AMY
-"I'm going to go home an take a nice long hot bath."
+"Yeah..."
+"Anyway, I'm going to go home an take a nice long hot bath."
 
 # NARRATOR
 After defeating Mr. Ignacio's gang you returned home for a well-deserved rest.

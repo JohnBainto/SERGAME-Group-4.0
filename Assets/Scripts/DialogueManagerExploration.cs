@@ -197,6 +197,12 @@ public class DialogueManagerExploration : MonoBehaviour
             case "CH02_EXP_HALLWAY":
                 sceneName = "CH02_EXP_HALLWAY";
                 break;
+            case "CH02_EXP_PIER_WET":
+                sceneName = "CH02_EXP_PIER_WET";
+                break;
+            case "CH02_EXP_PIER_MOVED":
+                sceneName = "CH02_EXP_PIER_MOVED";
+                break;
             default:
                 sceneName = "";
                 break;

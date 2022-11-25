@@ -9,11 +9,13 @@ DECEMBER 8, 20XX \| 11:02 PM
 Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
+
+- (area1)
+~ INTERACTIBLE = true
 # MC
 What should I do now?
-~ INTERACTIBLE = true
-- (area1)
 + [Kit]
+    ~ INTERACTIBLE = false
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
@@ -26,6 +28,7 @@ What should I do now?
     "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
+    ~ INTERACTIBLE = false
     {ch2_evidence ? ch2_evidence.e1:
         Alright! Time to make like tree and leave.
         ->end_area1
@@ -57,10 +60,11 @@ You lock the door, leaving Kit inside.
 LIST ch2_area1_inv = newspaper, fire, detector
 
 # MC
-Okay what should I do know?
-~ INTERACTIBLE = true
 - (area2)
+~ INTERACTIBLE = true
+Okay what should I do now?
 + [Door 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -68,6 +72,7 @@ Okay what should I do know?
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -77,6 +82,7 @@ Okay what should I do know?
         It was worth a shot.
     }
 + [Exposed electrical wiring]
+    ~ INTERACTIBLE = false
     # NARRATOR
     A couple of exposed wires dangle from the wall. 
     They crackle and pop little bolts of lightning.
@@ -101,6 +107,7 @@ Okay what should I do know?
         Now I just need to get this closer to the fire alarm.
     }
 + [Newspapers on the floor]
+    ~ INTERACTIBLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
         I guess I'll take it anyway in case I need it.
@@ -110,6 +117,7 @@ Okay what should I do know?
         ~ ch2_area1_inv += newspaper
     }
 + [Smoke detector]
+    ~ INTERACTIBLE = false
     {stopping:
     -   It looks like one 'a those smoke detectors.
     -   It supposed to trigger a fire alarm if it detects smoke.
@@ -131,6 +139,7 @@ Okay what should I do know?
         ~ ch2_area1_inv += detector
     }
 + [Stairs]
+    ~ INTERACTIBLE = false
     {ch2_area1_inv !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR
@@ -144,7 +153,6 @@ Okay what should I do know?
             I need to find a way to get out without being noticed
         }
     - else:
-        ~ INTERACTIBLE = false
         # NARRATOR
         You put your ear to the door to see if the guards outside have left.
         
@@ -193,6 +201,7 @@ IMPRESSION FOUND # UNLOCK CH2_E2
 
 # NARRATOR
 You run out of the shipping office and enter the pier area.
+
 ~ BG = CH02_EXP_PIER_WET
 Heavy torrents of rain fall all around you reducing visibility.
 Whatever parts that you managed to keep dry from the water sprinklers are now thoroughly drenched as well.
@@ -207,13 +216,15 @@ You managed to hold on to the walls of the shipping office to avoid getting swep
 Once you reoriented yourself, you notice that the way you cam from has now been blocked by a flipped over shipping container.
 
 LIST ch2_area2_inv = key, crane
-
 # MC
 Ugh! Just perfect.
 I need to find a way around to get out.
-~ INTERACTIBLE = true
+
 - (area3)
+~ INTERACTIBLE = true
+What should I do now?
 + [Shipping container 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Can't anything ever be easy!
         That wave knocked the shipping containers over and now the exit's blocked.
@@ -221,12 +232,14 @@ I need to find a way around to get out.
         Or maybe over?
     }
 + [Shipping container 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Looks like this has been knocked over too.
         It doesn't look like I can open it either.
     -   I wonder if I can get on top of this thing?
     }
 + [Washed up fish]
+    ~ INTERACTIBLE = false
     # NARRATOR
     There are a couple of fish flopping around the ground of the docks.
     
@@ -239,6 +252,7 @@ I need to find a way around to get out.
     "These fish are somehow connected to whoever is behind this whole thing."
     ~ ch2_evidence += ch2_evidence.e3
 + [Crane]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv ? key:
         {ch2_area2_inv ? crane:
             ~ INTERACTIBLE = false
@@ -269,6 +283,7 @@ I need to find a way around to get out.
         }
     }
 + [Key]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv !? key:
         A key!
         Maybe the one of the dock workers dropped this while trying to get away from the wave.
@@ -276,6 +291,7 @@ I need to find a way around to get out.
         ~ ch2_area2_inv += key
     }
 + [Leave]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv ? crane:
         Alright, big jump coming.
         I just need to get a running start and...!
@@ -284,6 +300,7 @@ I need to find a way around to get out.
 - -> area3
 
 = part3
+
 ~ INTERACTIBLE = false
 # KOI
 "So you're the one whose been making a mess of my business."

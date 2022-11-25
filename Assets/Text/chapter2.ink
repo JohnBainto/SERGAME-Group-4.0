@@ -9,11 +9,13 @@ DECEMBER 8, 20XX \| 11:02 PM
 Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
+
+- (area1)
+~ INTERACTIBLE = true
 # AMY
 What should I do now?
-~ INTERACTIBLE = true
-- (area1)
 + [Kit]
+    ~ INTERACTIBLE = false
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
@@ -27,6 +29,7 @@ What should I do now?
     "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
+    ~ INTERACTIBLE = false
     {ch2_evidence ? ch2_evidence.e1:
         Alright! Time to make like tree and leave.
         ->end_area1
@@ -57,11 +60,12 @@ You lock the door, leaving Kit inside.
 
 LIST ch2_area1_inv = newspaper, fire, detector
 
-# AMY
-Okay what should I do know?
-~ INTERACTIBLE = true
 - (area2)
+~ INTERACTIBLE = true
+# AMY
+Okay what should I do now?
 + [Door 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # AMY
@@ -69,6 +73,7 @@ Okay what should I do know?
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # AMY
@@ -78,39 +83,42 @@ Okay what should I do know?
         It was worth a shot.
     }
 + [Exposed electrical wiring]
+    ~ INTERACTIBLE = false
     # NARRATOR
-    A couple of exposed wires dangle from the wall. 
+    A couple of exposed wires dangle from the wall.
     They crackle and pop little bolts of lightning.
-    
+
     # AMY
     Jeepers! I almost shocked myself.
     These really have no business being exposed like this.
     Although...
     {ch2_area1_inv ? newspaper:
         If I use those newspapers I got to connect these two wires...
-        
+
         # NARRATOR
         You put the newspapers you collected up to the exposed wires.
         Nothing seemed to happen at first.
         Then suddenly, the parts of the paper touching the wires start turning into a darker shade.
         Slowly, smoke start to emmanate from the newspaper until it fully catches on fire.
-        
+
         ~ ch2_area1_inv += fire
-        
+
         # AMY
         Eureka!
         Now I just need to get this closer to the fire alarm.
     }
 + [Newspapers on the floor]
+    ~ INTERACTIBLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
         I guess I'll take it anyway in case I need it.
     -   I hope somebody at least read these...
     }
-    {ch2_area1_inv !? newspaper: 
+    {ch2_area1_inv !? newspaper:
         ~ ch2_area1_inv += newspaper
     }
 + [Smoke detector]
+    ~ INTERACTIBLE = false
     {stopping:
     -   It looks like one 'a those smoke detectors.
     -   It supposed to trigger a fire alarm if it detects smoke.
@@ -119,24 +127,25 @@ Okay what should I do know?
     {ch2_area1_inv ? fire:
         # NARRATOR
         You reach up to get the flaming newspaper as close to the fire alarm as possible.
-        
+
         # AMY
         C'moon...
-        
+
         # NARRATOR
         The fire alarm starts beeping out a steady high pitched tune.
         All along the ceiling, water sprinklers start coming to life.
-        
+
         # AMY
         Nice! This should distract those goons outside.
         ~ ch2_area1_inv += detector
     }
 + [Stairs]
+    ~ INTERACTIBLE = false
     {ch2_area1_inv !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR
             You can hear faint voices coming from the other side.
-            
+
             # AMY
             Drats! Those goons must be guarding outside.
             I can't let them know I'm out and about.
@@ -145,26 +154,25 @@ Okay what should I do know?
             I need to find a way to get out without being noticed
         }
     - else:
-        ~ INTERACTIBLE = false
         # NARRATOR
         You put your ear to the door to see if the guards outside have left.
-        
+
         # GOON1
         Ach! everything's wet!
-        
+
         # GOON2
         Ngrrhh!
         Go check what made the fire alarm go off and see if Kit's okay down stairs.
         I'll go out and get help.
-        
+
         # GOON1
         Alright.
-        
+
         # AMY
         Corn nab it!
         They're comin' here!
         I need to hide.
-        
+
         # NARRATOR
         You positioned yourself behind the door just in time before it swung open.
         You recognize the kapre running down the stair from when you were attacked earlier.
@@ -195,6 +203,7 @@ IMPRESSION FOUND # NARRATOR
 
 # NARRATOR
 You run out of the shipping office and enter the pier area.
+
 ~ BG = CH02_EXP_PIER_WET
 Heavy torrents of rain fall all around you reducing visibility.
 Whatever parts that you managed to keep dry from the water sprinklers are now thoroughly drenched as well.
@@ -213,9 +222,12 @@ LIST ch2_area2_inv = key, crane
 # AMY
 Ugh! Just perfect.
 I need to find a way around to get out.
-~ INTERACTIBLE = true
+
 - (area3)
+~ INTERACTIBLE = true
+What should I do now?
 + [Shipping container 1]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Can't anything ever be easy!
         That wave knocked the shipping containers over and now the exit's blocked.
@@ -223,15 +235,17 @@ I need to find a way around to get out.
         Or maybe over?
     }
 + [Shipping container 2]
+    ~ INTERACTIBLE = false
     {stopping:
     -   Looks like this has been knocked over too.
         It doesn't look like I can open it either.
     -   I wonder if I can get on top of this thing?
     }
 + [Washed up fish]
+    ~ INTERACTIBLE = false
     # NARRATOR
     There are a couple of fish flopping around the ground of the docks.
-    
+
     # AMY
     That wave must have washed these fish over here.
     This is honestly a pretty perfect metaphor for my situation.
@@ -242,6 +256,7 @@ I need to find a way around to get out.
     "These fish are somehow connected to whoever is behind this whole thing."
     ~ ch2_evidence += ch2_evidence.e3
 + [Crane]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv ? key:
         {ch2_area2_inv ? crane:
             ~ INTERACTIBLE = false
@@ -262,9 +277,9 @@ I need to find a way around to get out.
         -   Looks like this crane's still workin'.
             ...unlike that other one.
             Maybe I can use this to escape somehow?
-            
+
         -   You tried opening the cabin. # NARRATOR
-            
+
             # AMY
             Dang, locked.
             Maybe the key for it is around somewhere.
@@ -272,6 +287,7 @@ I need to find a way around to get out.
         }
     }
 + [Key]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv !? key:
         A key!
         Maybe the one of the dock workers dropped this while trying to get away from the wave.
@@ -279,6 +295,7 @@ I need to find a way around to get out.
         ~ ch2_area2_inv += key
     }
 + [Leave]
+    ~ INTERACTIBLE = false
     {ch2_area2_inv ? crane:
         Alright, big jump coming.
         I just need to get a running start and...!
@@ -287,6 +304,7 @@ I need to find a way around to get out.
 - -> area3
 
 = part3
+
 ~ INTERACTIBLE = false
 # KOI
 "So you're the one whose been making a mess of my business."
@@ -311,38 +329,38 @@ What? Give him the undercity codex?
 No way!
 + [Pretend to toss the book]
     Here catch!
-    
+
     # NARRATOR
     You toss a spare notepad you have into the air.
-    
+
     # KOI
     "Hiss! Do you think that I am some sort of fool?"
-    
+
     # AMY
     Ngh!
     It didn't work.
 + ["Never!"]
     I'll never give you this book!
     I'm getting out of here and exposing your entire gang!
-    
+
     # KOI
     "Hiss, fine!"
     "Have it your way."
 + [Ignore him and jump]
     # NARRATOR
     You think about his proposition for a moment.
-    
+
     # AMY
     Ah to heck with it.
     I'm getting outta here!
-    
+
     # NARRATOR
     You break out into a sprint ready to leap from the crane.
-    
+
     # KOI
     "Hiss! You fool!"
     "Do you think you can get away?"
-    
+
     # NARRATOR
     Mr. Ignacio moved swiftly like a stream of water.
     Before you know it, he is gripping your arm with webbed hand topped with sharp claws.

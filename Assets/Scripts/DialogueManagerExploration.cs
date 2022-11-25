@@ -9,17 +9,17 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManagerExploration : MonoBehaviour
 {
-    public float typingSpeed;
-
     public KeyCode interactKey;
-    public GameObject dialoguePanel;
 
+    public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+
     public TextMeshProUGUI displayNameText;
 
     public Story currentStory;
     public bool dialogueIsPlaying;
 
+    public float typingSpeed;
     private bool canContinueToNext;
     private Coroutine displayLineCoroutine;
 
@@ -29,6 +29,9 @@ public class DialogueManagerExploration : MonoBehaviour
 
     public GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+
+    public GameObject itemPanel;
+    public TextMeshProUGUI itemText;
 
     // Start is called before the first frame update
     private void Awake()
@@ -77,6 +80,7 @@ public class DialogueManagerExploration : MonoBehaviour
         {
             ContinueStory();
             HandleInteractable();
+            HandleInventory();
         }
     }
 
@@ -104,7 +108,6 @@ public class DialogueManagerExploration : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue())); //pop a line off the stack
-            Debug.Log("Text: " + dialogueText.text);
             
             HandleTags();
             HandleScenes();
@@ -205,9 +208,28 @@ public class DialogueManagerExploration : MonoBehaviour
     }
 
     public void HandleInteractable() {
-        Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTIBLE"].ToString());
-        if (bool.Parse(currentStory.variablesState["INTERACTIBLE"].ToString())) {
+        Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTABLE"].ToString());
+        if (bool.Parse(currentStory.variablesState["INTERACTABLE"].ToString())) {
             ExitDialogueMode();
+        }
+
+    }
+
+    public void HandleInventory() {
+        Debug.Log("INVENTORY: " + currentStory.variablesState["inventory"].ToString());
+
+        InkList inventory = (InkList) currentStory.variablesState["inventory"];
+        if(inventory.Count > 0) {
+            itemPanel.SetActive(true);
+            itemText.text = "<i>Inventory</i>\n";
+            foreach (var item in inventory) {
+                string itemName = item.Key.ToString().Split('.')[1];
+                Debug.Log(itemName);
+                itemText.text += itemName + "\n";
+            } 
+        } else {
+            itemPanel.SetActive(false);
+            itemText.text = "";
         }
     }
 

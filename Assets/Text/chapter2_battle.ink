@@ -1,6 +1,7 @@
 === ch2_battle ===
 # NARRATOR BATTLE_PHASE
-It feels like you're going to be sleeping with the fishes soon.
+The wind is howling and the rain is falling in torrents.
+Are you ready?
 
 ~ temp life = 20
 ~ temp performance = 0

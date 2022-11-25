@@ -10,11 +10,10 @@ Kit's defeated body lays on the floor in front you.
 Just beyond him the door to your cell has been left open.
 
 # MC
-- (area1)
-~ INTERACTIBLE = true
 What should I do now?
+~ INTERACTIBLE = true
+- (area1)
 + [Kit]
-    ~ INTERACTIBLE = false
     That's right Kit said something about a boss?
     Somebody more powerful than Kit...
     Hmm... that's gotta mean..!
@@ -27,7 +26,6 @@ What should I do now?
     "I really need get out of here and solve this case quick."
     ~ ch2_evidence += ch2_evidence.e1
 + [Door]
-    ~ INTERACTIBLE = false
     {ch2_evidence ? ch2_evidence.e1:
         Alright! Time to make like tree and leave.
         ->end_area1
@@ -42,9 +40,9 @@ What should I do now?
 
 - (end_area1)
 
-# NARRATOR
 ~ INTERACTIBLE = false
 ~ BG = CH02_EXP_HALLWAY
+# NARRATOR
 You step out into the narrow hallway.
 The wall are made of exposed hollow blocks with a peeling layer of white paint.
 Its quiet except for the faint buzzing of the florescent light bulbs above and the distant sounds of the pier outside.
@@ -59,12 +57,10 @@ You lock the door, leaving Kit inside.
 LIST ch2_area1_inv = newspaper, fire, detector
 
 # MC
-
-- (area2)
+Okay what should I do know?
 ~ INTERACTIBLE = true
-Okay what should I do now?
+- (area2)
 + [Door 1]
-    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -72,7 +68,6 @@ Okay what should I do now?
     -   I should really learn how to pick a lock one of these days.
     }
 + [Door 2]
-    ~ INTERACTIBLE = false
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # MC
@@ -82,7 +77,6 @@ Okay what should I do now?
         It was worth a shot.
     }
 + [Exposed electrical wiring]
-    ~ INTERACTIBLE = false
     # NARRATOR
     A couple of exposed wires dangle from the wall. 
     They crackle and pop little bolts of lightning.
@@ -100,12 +94,13 @@ Okay what should I do now?
         Then suddenly, the parts of the paper touching the wires start turning into a darker shade.
         Slowly, smoke start to emmanate from the newspaper until it fully catches on fire.
         
+        ~ ch2_area1_inv += fire
+        
         # MC
         Eureka!
         Now I just need to get this closer to the fire alarm.
     }
 + [Newspapers on the floor]
-    ~ INTERACTIBLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
         I guess I'll take it anyway in case I need it.
@@ -115,7 +110,6 @@ Okay what should I do now?
         ~ ch2_area1_inv += newspaper
     }
 + [Smoke detector]
-    ~ INTERACTIBLE = false
     {stopping:
     -   It looks like one 'a those smoke detectors.
     -   It supposed to trigger a fire alarm if it detects smoke.
@@ -137,7 +131,6 @@ Okay what should I do now?
         ~ ch2_area1_inv += detector
     }
 + [Stairs]
-    ~ INTERACTIBLE = false
     {ch2_area1_inv !? detector:
         {stopping:
         -   You stop before the door. # NARRATOR

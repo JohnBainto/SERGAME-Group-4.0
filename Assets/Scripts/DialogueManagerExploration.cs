@@ -160,56 +160,11 @@ public class DialogueManagerExploration : MonoBehaviour
     }
 
     public void HandleScenes() {
-        string sceneName = "";
+        string sceneName = currentStory.variablesState["BG"].ToString();
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
-        switch (currentStory.variablesState["BG"].ToString())
-        {
-            case "PROLOGUE": 
-                sceneName = "PROLOGUE";
-                break;
-            case "MENU": 
-                sceneName = "MENU";
-                break;
-            case "CH01_EXP_BLACK": 
-                sceneName = "CH01_EXP_BLACK";
-                break;
-            case "CH01_EXP_OUTSIDE":
-                sceneName = "CH01_EXP_OUTSIDE";
-                break;
-            case "CH01_EXP_INSIDE":
-                sceneName = "CH01_EXP_INSIDE";
-                break;
-            case "CH01_EXP_PIER":
-                sceneName = "CH01_EXP_PIER";
-                break;
-            case "CH01_EXP_BASEMENT":
-                sceneName = "CH01_EXP_BASEMENT";
-                break;
-            case "BATTLE":
-                sceneName = "BattlePhase";
-                break;
-            case "CH02_EXP_BLACK":
-                sceneName = "CH02_EXP_BLACK";
-                break;
-            case "CH02_EXP_BASEMENT":
-                sceneName = "CH02_EXP_BASEMENT";
-                break;
-            case "CH02_EXP_HALLWAY":
-                sceneName = "CH02_EXP_HALLWAY";
-                break;
-            case "CH02_EXP_PIER_WET":
-                sceneName = "CH02_EXP_PIER_WET";
-                break;
-            case "CH02_EXP_PIER_MOVED":
-                sceneName = "CH02_EXP_PIER_MOVED";
-                break;
-            default:
-                sceneName = "";
-                break;
-        }
 
         if (SceneManager.GetActiveScene().name != sceneName) {
-            SceneManager.LoadScene(sceneName);
+            Initiate.Fade(sceneName, Color.black, 0.5f);
         }
     }
 

@@ -2,7 +2,12 @@
 ~BG = BATTLE
 # TUTORIAL BATTLE_PHASE
 This is the battle phase.
-Each round
+Each round your enemy will try to attack you using a fallacy spell.
+Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.
+If you run out of stamina you will lose the fight.
+You can dispel these fallacy spells by identifying their weak points.
+Each boss specializes a certain type of fallacy as indicated in your undercity codex.
+Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.
 
 ~ temp life = 20
 ~ temp performance = 0
@@ -15,203 +20,120 @@ Each round
 - (battle_phase)
 ~ performance = 0
 {life <= 0: -> bad_end}
-{
-- turn == 0 || turn == 1 || turn == 3 || turn == 4:
-    {shuffle:
-    -   I'm # KIT QSTART
-        going
-        to send
-        you
-        to the bottom
-        of this
-        harbor
-        you
-        weakling # QEND
-         ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q1
-    -   The # KIT QSTART
-        truth 
-        is
-        only
-        one thing
-        matters
-        in this city,
-        MONEY. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q2
-     -   My gang # KIT QSTART
-        will take over
-        this city
-        and
-        we'll crush
-        anyone
-        who gets
-        in the way. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q3
-    -   You're # KIT QSTART
-        out of your depths
-        here
-        little girl.
-        You
-        can't stop
-        us.# QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q4
-    -   We've been # KIT QSTART
-        hiding
-        in the shadows
-        too long
-        for some
-        nosy brat
-        to expose us. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q5
-    -   My gang # KIT QSTART
-        will take over
-        this city
-        and
-        we'll crush
-        anyone
-        who gets
-        in the way. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q5
-    -   Monster hunters # KIT QSTART
-        like you
-        might be able
-        to pick us off
-        one by one
-        but now
-        you're
-        in our domain. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q7
-    -   You'll # KIT QSTART
-        never
-        see
-        the light of day
-        again
-        pathetic human! # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q8
-    -   You're # KIT QSTART
-        only doing this
-        to earn a living
-        too
-        aren't you?
-        We're
-        two sides of the same coin,
-        human. # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q9
-    -   Snot-nosed # KIT QSTART
-        brats
-        like
-        you
-        need
-        to be taught
-        a lesson! # QEND
-        ~ fallacy = "AD HOMINEM"
-        ~ cur_question = c1q10
-    }
-- turn == 2:
-    Huff, huff. # KIT QSTART
-    Just
-    'cause
-    you've
-    dodged
-    a couple of
-    my attacks
-    doesn't mean
-    you're
-    not a weakling # QEND
-    ~ fallacy = "AD HOMINEM"
-    ~ cur_question = c1s1
-- turn == 5:
-    I can't... # KIT QSTART
-    possibly
-    lose
-    to a
-    weakling
-    like
-    you!!!
-    I
-    will end
-    you! # QEND
-    ~ fallacy = "AD HOMINEM"
-    ~ cur_question = c1s2
-- else:
-    -> end
+{cycle:
+-   OMG! # HATTIE QSTART
+    You're
+    going to try
+    to fight
+    me?
+    That's
+    either
+    the funniest thing
+    I've ever heard
+    or
+    the like saddest! # QEND
+    # TUTORIAL
+    Finding the weak points of a fallacy spell can be tricky.
+    But, you can CONSULT you undercity codex dusring the batttle to help you decide which words to pick.
+    Remember that Hattie's special fallacy skill is 【FALSE DICHOTOMY】.
+    Try to look for words that try to frame somethings as only one of two things.
+    Then when you're ready, click retort to dispel their attack.
+-   Tch, # HATTIE QSTART
+    as if
+    I'm
+    going to spend
+    my time
+    battling
+    some poser like
+    you.  # QEND
+    # TUTORIAL
+    Watch out! this question is tricky.
+    Sometimes, the opponent can show you a statement that does NOT contain the weakness of their special fallacy skill.
+    If you try to retort something like this, you will end up wasting your stamina on something tht doesn't matter.
+    For questions like this, it's best for you to just skip.
+    But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!
+-   -> end
 }
 
 + [Retort]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
-    - performance > 0:
-        {shuffle:
-        -   Tch, intimidation? That ain't gonna work on me. # AMY
-        -   Think you're the first monster I've taken down? I know your tricks # AMY
-        -   That's wrong! I can see through your magic! # AMY
-        -   I'm not afraid of you! # AMY
-        }
-    - performance > -2:
-        {shuffle:
-        -   N-no that's not true! # AMY
-        -   Ngh, I won't let you under my skin. # AMY
-        -   I w-won't give in! # AMY
-        -   Mmph! I uhh... t-that's wrong! # AMY
-        }
-    - else >= -2:
-        {shuffle:
-        -   Ugh! I don't think that was right # AMY
-        -   Kyah!! # AMY
-        -   Hrngg! # AMY
-        -   Ouch!
-        }
-        {fallacy == "AD HOMINEM":
-            I should look for words that are attacking or insulting me directly to unravel his fallacy spell.
-        }
+    - turn == 0 and performance > 0:
+        # AMY
+        "It's neither of those two, I'm dead serious about defeating you."
+        # TUTORIAL
+        Woah good job! You're a natural!
+    - turn == 0 and performance > -2:
+        # AMY
+        "N-no its not that going to be that simple... I think."
+        # TUTORIAL
+        Nice one!
+        A little shaky but you've got the right idea.
+        Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.
+    -   turn == 0:
+        # AMY
+        "Gah! N-no w-way!"
+        I'm not sure what to say!
+        # TUTORIAL
+        That response was pretty shaky but that's okay.
+        Practice makes perfect!
+        Try to review yout undercity codex if you're unsure which words you should be picking to dispels Hattie's fallacy spells.
+    -   turn == 1:
+        # AMY
+        "No, that's wrong!"
+        # HATTIE
+        "Haah? Do you even know what you're talking about?"
+        "Hahahahaha\~"
+        # AMY
+        "Urk! Was that wrong?"
     }
 + [Skip]
-    {shuffle:
-    -   You're not worth my time! # AMY
-    -   Trying to be tricky eh? # AMY
-    -   As if!
-    -   You won't fool me with that!
+    {fallacy == "NONE":
+        {shuffle:
+        -   You're not worth my time! # AMY
+        -   Trying to be tricky eh? # AMY
+        -   As if! # AMY
+        -   You won't fool me with that! # AMY
+        }
+        # TUTORIAL
+        Alright! Good job!
+    -   else:
+        {shuffle:
+        -   Uhh, pass! # AMY
+        -   That's... # AMY
+        -   Ah! Wait no, hmm... # AMY
+        -   ??? # AMY
+        }
+        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase
 
 - (bad_end)
 # AMY
-Urk!
-I can't go on!
-Is this the end?
+How did I lose??
 
-# KIT
-"Huff, toss 'em into the bay."
+# HATTIE
+"AHAHAHA! You're like so pathetic that it's hillarious\~"
 
 # NARRATOR
 Continue?
-+ [Yes] -> ch1_battle
++ [Yes] -> ch0_battle
 + [No] -> main
 
 - (end)
-# KIT
-"Hrngg!"
-"This.."
-"How is this possible!?"
+# HATTIE
+"Ngaah!!"
+"This totally majorly BLOWS!"
+"How am I supposed to take over this territory like this!!"
 
 # AMY
-"It's over Kit!"
-"You're done for."
-"I'm puttin' you and your entire posse on the front page of every paper in Wetro Wanila."
+"You're no match for me Hattie!"
+"I hope you can make friends in juvie."
 
-# KIT
-"Defeated..."
-"by a weak human."
-"Hurmph"
+# HATTIE
+"Kyaah!! No way, no way, no way, no way!"
+"Juvie is totally the worst!!"
 
 -> tutorial.end

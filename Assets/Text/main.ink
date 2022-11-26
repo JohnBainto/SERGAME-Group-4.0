@@ -19,6 +19,9 @@ LIST inventory = clip, key, crane, newspaper, fire, detector
     ~ return 0
 }
 
+=== function skip_penalty(list)
+    ~ return sum(LIST_RANGE(LIST_ALL(list), 0, 5)) * 2
+
 === prologue ===
 ~BG = PROLOGUE
 # AMY

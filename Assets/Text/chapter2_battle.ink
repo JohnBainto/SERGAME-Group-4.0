@@ -193,24 +193,37 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=0,p8=1
         -   I w-won't give in! # AMY
         -   Mmph! I uhh... t-that's wrong! # AMY
         }
-    - else >= -2:
+    - else:
         {shuffle:
         -   Ugh! I don't think that was right # AMY
         -   Kyah!! # AMY
         -   Hrngg! # AMY
-        -   Ouch!
+        -   Ouch! # AMY
         }
         {fallacy == "RED HERRING":
             I should look for words that are unrelated to what he is saying.
             I can't be fooled by his distractions.
+        -   else:
+            I don't think that one even had a fallacy.
+            I should ne more careful next time.
         }
     }
 + [Skip]
-    {shuffle:
-    -   You're not worth my time! # AMY
-    -   Trying to be tricky eh? # AMY
-    -   As if!
-    -   You won't fool me with that!
+    {fallacy == "NONE":
+        {shuffle:
+        -   You're not worth my time! # AMY
+        -   Trying to be tricky eh? # AMY
+        -   As if! # AMY
+        -   You won't fool me with that! # AMY
+        }
+    -   else:
+        {shuffle:
+        -   Uhh, pass! # AMY
+        -   That's... # AMY
+        -   Ah! Wait no, hmm... # AMY
+        -   ??? # AMY
+        }
+        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

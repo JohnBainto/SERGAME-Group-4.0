@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MENU.unity
     guid: d1ecba4aab544ca4d9e01d7251022b65
   - enabled: 1
+    path: Assets/Scenes/Chapter 00/CH00_EXP_BLACK.unity
+    guid: c380b72363a04b74c8838e075b129d3b
+  - enabled: 1
+    path: Assets/Scenes/Chapter 00/CH00_EXP_TUTORIAL.unity
+    guid: cc6a942522221c84faca5483b7a071e9
+  - enabled: 1
     path: Assets/Scenes/Chapter 01/CH01_EXP_BLACK.unity
     guid: 5576d71df24ff0640abe93577cb2b742
   - enabled: 1

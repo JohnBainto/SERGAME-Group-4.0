@@ -78,7 +78,7 @@ public class DialogueManagerExploration : MonoBehaviour
             return;
         }
 
-        if (canContinueToNext && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(interactKey))
+        if (canContinueToNext && Input.GetKeyDown(interactKey))
         {
             ContinueStory();
             HandleInteractable();
@@ -167,6 +167,10 @@ public class DialogueManagerExploration : MonoBehaviour
         string sceneName = currentStory.variablesState["BG"].ToString();
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
 
+        if (sceneName == "BATTLE") {
+            sceneName = "BattlePhase";
+        }
+
         if (SceneManager.GetActiveScene().name != sceneName) {
             loadingScene = true;
             dialoguePanel.SetActive(false);
@@ -244,7 +248,6 @@ public class DialogueManagerExploration : MonoBehaviour
         Debug.Log("choiceIndex: " + choiceIndex);            
         if (canContinueToNext) {
             currentStory.ChooseChoiceIndex(choiceIndex);
-            ContinueStory();
         }
     }
 

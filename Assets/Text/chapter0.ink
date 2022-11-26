@@ -3,11 +3,11 @@ LIST ch0_evidence = e1
 === tutorial ===
 = part1
 ~ INTERACTABLE = false
-~ BG = CH01_EXP_BLACK
+~ BG = CH00_EXP_BLACK
 # NARRATOR
 CHAPTER 0: TUTORIAL
 NOVEMBER 23, 20XX \| 1:02 AM
-~ BG = TUTORIAL
+~ BG = CH00_EXP_TUTORIAL
 The night is still in the late evening hours of the city's suburban area.
 Only the distant sounds of the highway occasionally interrupt the peaceful quiet that has settled among the sleeping houses.
 The moonless sky above is dark save for the twinkling of a few starts and the red lights of distant cell towers.
@@ -30,15 +30,17 @@ Whatever's the case, its time to investigate.
 You have entered a monster's domain.
 While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
 Impressions can be revealed by examining objects or interacting with people.
-To move around a domain, use your left and right arrow keys.
-~ INTERACTABLE = true
-+ [Go to locked box]
-- Press Z to interact with objects. # TUTORIAL
+To move around a domain, use your ←/A and →/D keys.
+Now try moving towards the box on your right!
+// + [Go to locked box]
+// - Press E to interact with objects. # TUTORIAL
 
 ~ temp examined_box = false
 ~ temp examined_tall_box = false
 
 - (area1)
+~ INTERACTABLE = true
+What should I do now?
 + [Examine box]
     ~ INTERACTABLE = false
     ~ examined_box = true
@@ -46,9 +48,10 @@ To move around a domain, use your left and right arrow keys.
     Well, this is supposed to be the package.
     # TUTORIAL
     Use the up and down arrow keys to select between different choices.
-    Then, use Z to select a choice.
-    Sometimes, examining something multiple times can yield different results.
+    Then, click on the Enter key to confirm your selection.
+    Sometimes, examining something multiple times can also yield different results.
     
+    What should I do now?
     + + [Examine slip of paper.]
         # AMY
         There's a piece of paper that got caught on the lid of the box.
@@ -83,9 +86,9 @@ To move around a domain, use your left and right arrow keys.
             If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
         -   I wonder if the key to this is somewhere around here
         }
-    - - ~ INTERACTABLE = true
         -> area1
 + [Examine tall box]
+    ~ INTERACTABLE = false
     {
     -   examined_box and not examined_tall_box:
         ~ examined_tall_box = true
@@ -101,7 +104,7 @@ To move around a domain, use your left and right arrow keys.
         I need to stand on something else to reach it.
         
         # TUTORIAL
-        Press the up arrow key to jump.
+        Press the spacebar to jump.
         Some items can be stood on.
         Try jumping on top of that box over there
     -   examined_box and examined_tall_box:
@@ -109,6 +112,7 @@ To move around a domain, use your left and right arrow keys.
         I have to stand on something to reach the key over there.
     }
 + [Get key]
+    ~ INTERACTABLE = false
     {examined_tall_box and inventory !? key:
         ~ inventory += key
         # TUTORIAL
@@ -119,6 +123,7 @@ To move around a domain, use your left and right arrow keys.
         Nice! Now let's see what's inside that crate.
     }
 + [Examine broken crate]
+    ~ INTERACTABLE = false
     {inventory ? key:
         # AMY
         !?

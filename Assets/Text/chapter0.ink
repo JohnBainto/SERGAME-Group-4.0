@@ -8,11 +8,10 @@ LIST ch0_evidence = e1
 CHAPTER 0: TUTORIAL
 NOVEMBER 23, 20XX \| 1:02 AM
 ~ BG = CH00_EXP_TUTORIAL
-The night is still in the late evening hours of the city's suburban area.
-Only the distant sounds of the highway occasionally interrupt the peaceful quiet that has settled among the sleeping houses.
-The moonless sky above is dark save for the twinkling of a few starts and the red lights of distant cell towers.
+In the late evening hours, the city's suburban area is still and quiet.
+Only the occasional sounds of the distant highway interrupt the peace that has settled among the sleeping houses.
+The moonless sky above is dark, save for the twinkling of a few stars and the red lights of distant cell towers.
 Here, you find yourself wandering the dimly lit streets looking for your next big scoop.
-
 
 # AMY
 Over the past week I've been investigatin' a series of vanadalism cases in this area.
@@ -31,7 +30,8 @@ You have entered a monster's domain.
 While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
 Impressions can be revealed by examining objects or interacting with people.
 To move around a domain, use your ←/A and →/D keys.
-Now try moving towards the box on your right!
+To interact with objects in a domain, stand next to the object and press E.
+Now try moving towards the box on your right and interacting with it!
 // + [Go to locked box]
 // - Press E to interact with objects. # TUTORIAL
 
@@ -40,53 +40,67 @@ Now try moving towards the box on your right!
 
 - (area1)
 ~ INTERACTABLE = true
-What should I do now?
+{examined_box: 
+    # TUTORIAL
+    Seems like you need to find a key to open that box.
+    Try exploring the area to the left to look for a key.
+    Go left until you find a tall box and interact with it.
+}
 + [Examine box]
     ~ INTERACTABLE = false
-    ~ examined_box = true
-    # AMY
-    Well, this is supposed to be the package.
-    # TUTORIAL
-    Use the up and down arrow keys to select between different choices.
-    Then, click on the Enter key to confirm your selection.
-    Sometimes, examining something multiple times can also yield different results.
-    
-    What should I do now?
-    + + [Examine slip of paper.]
+    {stopping:
+    -   # AMY
+        Well, this is supposed to be the package.
+        # TUTORIAL
+        Sometimes, examining something multiple times can also yield different results.
+    -   # AMY
+        Looks like the tried to hide it in this dark corner, but they didn;t do a very good job at it.
+        # TUTORIAL
+        Try inspecting this box one more time.
+    -   ~ examined_box = true
+        # TUTORIAL
+        You will also encounter choices.
+        Use the up and down arrow keys to select between different choices.
+        Then, click on the Enter key to confirm your selection.
         # AMY
-        There's a piece of paper that got caught on the lid of the box.
-        It looks like a note?
-        
-        # NARRATOR
-        You try pulling the note out.
-        You manage to get more of it out, but you are unable to fully take it.
-        
-        # AMY
-        Ah no good, the lids too tight it'll tear if I force it.
-        Let's see what we can read from what's sticking out.
-        
-        # NOTE
-        anyw....
-        ps. i put da key....
-        pps. so u need 2 stop breaki...
-        these. are. expensive!!
-        
-        # AMY
-        Hm... no names.
-        But it did mention a key.
-        Maybe they hid a key somewhere around here.
-        If I can find that key, I'd be able to read the whole note.
-        Then, I would know more about who I'm staking out and what to expect.
-    + + [Examine lock.]
-        {stopping:
-        -   # AMY
-            Must not have wanted anyone taking a look inside.
-            I wonder if I could force it open.
-        -   No, forcing it would be a terrible idea.
-            If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
-        -   I wonder if the key to this is somewhere around here
-        }
-        -> area1
+        Anyway, what should I do now?
+        + + [Examine slip of paper.]
+            # AMY
+            There's a piece of paper that got caught on the lid of the box.
+            It looks like a note?
+            
+            # NARRATOR
+            You try pulling the note out.
+            You manage to get more of it out, but you are unable to fully take it.
+            
+            # AMY
+            Ah no good, the lids too tight it'll tear if I force it.
+            Let's see what we can read from what's sticking out.
+            
+            # NOTE
+            anyw....
+            ps. i put da key....
+            pps. so u need 2 stop breaki...
+            these. are. expensive!!
+            
+            # AMY
+            Hm... no names.
+            But it did mention a key.
+            Maybe they hid a key somewhere around here.
+            If I can find that key, I'd be able to read the whole note.
+            Then, I would know more about who I'm staking out and what to expect.
+            -> area1
+        + + [Examine lock.]
+            {stopping:
+            -   # AMY
+                Must not have wanted anyone taking a look inside.
+                I wonder if I could force it open.
+            -   No, forcing it would be a terrible idea.
+                If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
+            -   I wonder if the key to this is somewhere around here
+            }
+            -> area1
+    }
 + [Examine tall box]
     ~ INTERACTABLE = false
     {
@@ -106,7 +120,7 @@ What should I do now?
         # TUTORIAL
         Press the spacebar to jump.
         Some items can be stood on.
-        Try jumping on top of that box over there
+        Try jumping on top of that smaller box to the left.
     -   examined_box and examined_tall_box:
         # AMY
         I have to stand on something to reach the key over there.
@@ -172,7 +186,7 @@ When you encounter the boss monster of a domain, you will have to battle them us
 
 = end
 # AMY
-"Huff, huff. Nice try, but you're no match for Amy Buscador, Babaylan Investogator."
+"Huff, huff. Nice try, but you're no match for Amy Buscador, Babaylan Investigator."
 
 # HATTIE
 "That... sounds... totally lame..."

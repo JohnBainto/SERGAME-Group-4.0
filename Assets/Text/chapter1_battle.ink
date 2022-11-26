@@ -1,13 +1,6 @@
-=== function sum(list)
-{list:
-    ~ return sum(list - LIST_MIN(list)) + LIST_VALUE(LIST_MIN(list))
-- else:
-    ~ return 0
-}
-
 === ch1_battle ===
-# NARRATOR BATTLE_PHASE
 ~BG = BATTLE
+# NARRATOR BATTLE_PHASE
 It feels like you're going to be sleeping with the fishes soon.
 
 ~ temp life = 20
@@ -56,7 +49,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         matters
         in this city,
         MONEY. # QEND
-        ~ fallacy = "AD HOMINEM"
+        ~ fallacy = "NONE"
         ~ cur_question = c1q2
      -   My gang # KIT QSTART
         will take over
@@ -66,7 +59,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         anyone
         who gets
         in the way. # QEND
-        ~ fallacy = "AD HOMINEM"
+        ~ fallacy = "NONE"
         ~ cur_question = c1q3
     -   You're # KIT QSTART
         out of your depths
@@ -94,7 +87,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         anyone
         who gets
         in the way. # QEND
-        ~ fallacy = "AD HOMINEM"
+        ~ fallacy = "NONE"
         ~ cur_question = c1q5
     -   Monster hunters # KIT QSTART
         like you
@@ -104,7 +97,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         but now
         you're
         in our domain. # QEND
-        ~ fallacy = "AD HOMINEM"
+        ~ fallacy = "NONE"
         ~ cur_question = c1q7
     -   You'll # KIT QSTART
         never
@@ -152,7 +145,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     possibly
     lose
     to a
-    weakling
+    wimpy human
     like
     you!!!
     I
@@ -182,23 +175,36 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         -   I w-won't give in! # AMY
         -   Mmph! I uhh... t-that's wrong! # AMY
         }
-    - else >= -2:
+    - else:
         {shuffle:
         -   Ugh! I don't think that was right # AMY
         -   Kyah!! # AMY
         -   Hrngg! # AMY
-        -   Ouch!
+        -   Ouch! # AMY
         }
         {fallacy == "AD HOMINEM":
             I should look for words that are attacking or insulting me directly to unravel his fallacy spell.
+        -   else:
+            I don't think that one even had a fallacy.
+            I should ne more careful next time.
         }
     }
 + [Skip]
-    {shuffle:
-    -   You're not worth my time! # AMY
-    -   Trying to be tricky eh? # AMY
-    -   As if!
-    -   You won't fool me with that!
+    {fallacy == "NONE":
+        {shuffle:
+        -   You're not worth my time! # AMY
+        -   Trying to be tricky eh? # AMY
+        -   As if! # AMY
+        -   You won't fool me with that! # AMY
+        }
+    -   else:
+        {shuffle:
+        -   Uhh, pass! # AMY
+        -   That's... # AMY
+        -   Ah! Wait no, hmm... # AMY
+        -   ??? # AMY
+        }
+        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

@@ -1,15 +1,26 @@
 INCLUDE chapter0.ink
 INCLUDE chapter1.ink
 INCLUDE chapter2.ink
+INCLUDE chapter0_battle.ink
+INCLUDE chapter1_battle.ink
 INCLUDE chapter2_battle.ink
 
-
-LIST BG = PROLOGUE, MENU, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, BATTLE, CH02_EXP_BLACK, CH02_EXP_BASEMENT, CH02_EXP_HALLWAY, CH02_EXP_PIER_WET, CH02_EXP_PIER_MOVED
+LIST BG = PROLOGUE, MENU, TUTORIAL, CH01_EXP_BLACK, CH01_EXP_OUTSIDE, CH01_EXP_INSIDE, CH01_EXP_PIER, CH01_EXP_BASEMENT, BATTLE, CH02_EXP_BLACK, CH02_EXP_BASEMENT, CH02_EXP_HALLWAY, CH02_EXP_PIER_WET, CH02_EXP_PIER_MOVED
 VAR INTERACTABLE = false
 
-LIST inventory = paper, clip, key, crane, newspaper, fire, detector
+LIST inventory = clip, key, crane, newspaper, fire, detector
 
 -> prologue
+
+=== function sum(list)
+{list:
+    ~ return sum(list - LIST_MIN(list)) + LIST_VALUE(LIST_MIN(list))
+- else:
+    ~ return 0
+}
+
+=== function skip_penalty(list)
+    ~ return sum(LIST_RANGE(LIST_ALL(list), 0, 5)) * 2
 
 === prologue ===
 ~BG = PROLOGUE
@@ -20,7 +31,7 @@ But that's why I'm here.
 My name is Amy Buscador.
 I'm a hard-boiled investigative journalist working in the city.
 Where ever there's a big scoop, you can bet yer mama's sweet jammys that I'm there.
-Lately I've been tracking a series 'a stories about supernatural beings infiltratin' the local government  infrastructure.
+Lately I've been tracking a series 'a stories about gangs of supernatural beings doing organized crime in the city.
 Y'know real bump in the night types, spooks ya tell yer friends 'round the campfire types.
 They've been running amok in the city, wreckin' havoc, goin' about doin' whatever in tarnation they please.
 Its 'cause those... things, they have some sorta magic about them. It's like they can cast these spells that can convince ya real good even though what they're sayin's more bologna than a deli on black friday.

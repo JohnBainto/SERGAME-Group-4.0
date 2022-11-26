@@ -1,8 +1,9 @@
 LIST ch2_evidence = e1, e2, e3
 
 === chapter2 ===
-# NARRATOR
+~ INTERACTABLE = false
 ~ BG = CH02_EXP_BLACK
+# NARRATOR
 CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
 ~ BG = CH02_EXP_BASEMENT
@@ -259,7 +260,7 @@ What should I do now?
 + [Crane]
     ~ INTERACTABLE = false
     {inventory ? key:
-        {inventory ? crane:
+        {inventory !? crane:
             Alright!
             Let's see if what this baby can do!
             Wooaahh!

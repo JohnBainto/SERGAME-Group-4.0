@@ -46,6 +46,7 @@ Now try moving towards the box on your right and interacting with it!
     Try exploring the area to the left to look for a key.
     Go left until you find a tall box and interact with it.
 }
+What should I do now?
 + [Examine box]
     ~ INTERACTABLE = false
     {stopping:

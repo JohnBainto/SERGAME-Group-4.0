@@ -1,74 +1,183 @@
+LIST ch0_evidence = e1
+
 === tutorial ===
+= part1
+~ INTERACTABLE = false
+~ BG = CH01_EXP_BLACK
 # NARRATOR
-TUTORIAL
-# CODEX # UNKNOWN_NAME
-Hi there! Looks like you're pretty new to this game.
-Why don't we start you off with the basics.
+CHAPTER 0: TUTORIAL
+NOVEMBER 23, 20XX \| 1:02 AM
+~ BG = TUTORIAL
+The night is still in the late evening hours of the city's suburban area.
+Only the distant sounds of the highway occasionally interrupt the peaceful quiet that has settled among the sleeping houses.
+The moonless sky above is dark save for the twinkling of a few starts and the red lights of distant cell towers.
+Here, you find yourself wandering the dimly lit streets looking for your next big scoop.
 
-Try to move around this room by clicking around using your mouse
-+ [Move around the room]
-- Awesome! You're a total moving afficionado.
 
-Okay now try interacting with that table over there by double clicking it.
-+ [Interact with table]
-    It's a table
-- Great! Why don't you try doing the same thing with that lamp over there.
-+ [Interact with lamp]
-    It's just a lamp.
-    ...
-    Or is it?
-    You turn the lamp around and see a speck of blood.
+# AMY
+Over the past week I've been investigatin' a series of vanadalism cases in this area.
+Each case has the same MO, black and white gang signs painted over the vandalized property.
+Now, you don't need to be genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
+But what I do know as a supernatural detective is that a domain has already formed over this place.
+That means this is no ordinary gang, but a gang of supernatural beings!
+Since this case piqued my interest, I set up a mole in a couple of art supply chains to warn me about any large orders of spray paints and what not.
+After a particularly suspicious order of black and white spray paint, I asked my guy to place a tracking device on the package.
+And that leads me to here.
+Who ever bought the package seems to have just left it here slightly hidden in the bushes.
+Whatever's the case, its time to investigate.
+
+# TUTORIAL
+You have entered a monster's domain.
+While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
+Impressions can be revealed by examining objects or interacting with people.
+To move around a domain, use your left and right arrow keys.
+~ INTERACTABLE = true
++ [Go to locked box]
+- Press Z to interact with objects. # TUTORIAL
+
+~ temp examined_box = false
+~ temp examined_tall_box = false
+
+- (area1)
++ [Examine box]
+    ~ INTERACTABLE = false
+    ~ examined_box = true
+    # AMY
+    Well, this is supposed to be the package.
+    # TUTORIAL
+    Use the up and down arrow keys to select between different choices.
+    Then, use Z to select a choice.
+    Sometimes, examining something multiple times can yield different results.
     
-    EVIDENCE 1 OBTAINED
-    Your undercity codex stirs to life!
-    + + Perform ritual mini-game
-    - - You have unlocked a new entry in your undercity codex.
-    
-- Oh no... It's happening.
-My apologies for you see I have not been completely truthful with you.
-I just felt that it was too soon to tell you and I did not want to worry you.
-Unfortunately I can no longer shield you from what's coming next.
-The truth is my dear Amy, you are already in a <color=red>Halimaw's Domain</color>.
-What that means is you have trespassed into a location inhabited by a monster.
-While in this domain, you must look for <color=yellow>evidence</color>.
-What you did just then with the lamp, that was looking for <color=yellow>evidence</color>. 
-<color=yellow>Evidence</color> is hidden throughout a domain.
-Investigate different objects to discover new <color=yellow>evidence</color>.
-Finding <color=yellow>evidence</color> is not always as easy as clicking on a lamp.
-Sometimes you will need to investigate objects multiple times to find  <color=yellow>evidence</color>.
-Or, you may need to investigate something else before investigating an object yields evidence.
-Other domains are larger as well and you may need to traverse different rooms to look for <color=yellow>evidence</color>.
-But worry not I--
-Wait a moment I have not introduced myself yet have I?
-# CODEX
-I am your undercity codex, or more accurately I am the spirit that dwells in it.
-I am here to aid you in your fight against the monsters of this city.
-Whenever you discover a new piece of <color=yellow>evidence</color>, I will react to it and you must perform the ritual I instruct to you to reveal new information about the monster of the domain you're in.
-Why don't you click that tab on the bottom to to read the new entry you've just discovered.
-+ [Open undercity codex]
-- From now on you will be able to open your undercity codex at any time.
-Why don't you take a few minutes to study the new information you've learned about the monster residing in this domain.
-You'll need it for what's coming next.
+    + + [Examine slip of paper.]
+        # AMY
+        There's a piece of paper that got caught on the lid of the box.
+        It looks like a note?
+        
+        # NARRATOR
+        You try pulling the note out.
+        You manage to get more of it out, but you are unable to fully take it.
+        
+        # AMY
+        Ah no good, the lids too tight it'll tear if I force it.
+        Let's see what we can read from what's sticking out.
+        
+        # NOTE
+        anyw....
+        ps. i put da key....
+        pps. so u need 2 stop breaki...
+        these. are. expensive!!
+        
+        # AMY
+        Hm... no names.
+        But it did mention a key.
+        Maybe they hid a key somewhere around here.
+        If I can find that key, I'd be able to read the whole note.
+        Then, I would know more about who I'm staking out and what to expect.
+    + + [Examine lock.]
+        {stopping:
+        -   # AMY
+            Must not have wanted anyone taking a look inside.
+            I wonder if I could force it open.
+        -   No, forcing it would be a terrible idea.
+            If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
+        -   I wonder if the key to this is somewhere around here
+        }
+    - - ~ INTERACTABLE = true
+        -> area1
++ [Examine tall box]
+    {
+    -   examined_box and not examined_tall_box:
+        ~ examined_tall_box = true
+        # AMY
+        I wonder if the key to that box is around here somewhere...
+        Ah there!
+        
+        # NARRATOR
+        Out of the corner of your eye, you spot something twinkling on top of some boxes
+        
+        # AMY
+        Hmm it's too tall to reach.
+        I need to stand on something else to reach it.
+        
+        # TUTORIAL
+        Press the up arrow key to jump.
+        Some items can be stood on.
+        Try jumping on top of that box over there
+    -   examined_box and examined_tall_box:
+        # AMY
+        I have to stand on something to reach the key over there.
+    }
++ [Get key]
+    {examined_tall_box and inventory !? key:
+        ~ inventory += key
+        # TUTORIAL
+        Sometimes, interacting with an object will result in you picking up that object.
+        You can see the objects that you have picked up so far on the lower-right side of your screen.
+        
+        # AMY
+        Nice! Now let's see what's inside that crate.
+    }
++ [Examine broken crate]
+    {inventory ? key:
+        # AMY
+        !?
+        The crate has been cut in half!
+        Seems I've got company.
+        
+        # NARRATOR
+        You examine the note.
+        
+        # NOTE
+        heyy hattie, here are the goods like u asked.
+        u better have my money ready 4 this!!
+        anyway tty tom, <3
+        ps. i put da key in the usual place ;)
+        pps. so u need 2 stop breaking my boxes fr!!
+        these. are. expensive!!
+        
+        # AMY
+        Hattie? Could this person be the leader of this gang?
+        Besides, this box of black and white paint...
+        And the crate that's not supposed to be seprated in two pieces being cut in half like this...
+        
+        IMPRESSION FOUND  # NARRATOR
+        ~ ch0_evidence += ch0_evidence.e1
+        
+        # TUTORIAL
+        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
+        Your undercity codex is the book that you can see on the lower-left side of your screen.
+        Press the X button to access it any time and review the the evidence you just discovered.
+        It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
+        Speaking of which...
+        -> part2
+    }
+- -> area1
 
-+ [Finish reading]
-- SCREEEEECCHHH!!!!
-
-Get ready it's here!
-
-You encounter Hattie Haute
-+ [Fight Hattie Haute]
+= part2
+~ INTERACTABLE = false
 - # HATTIE
-AHAHAHA! Looks like I've got a tasty new thing to play with\~
-# NARRATOR
-Urmph! Don't worry! You're alright!
-This is a <color=yellow>confrontation</color>. After you finish investigating and collecting all of the <color=yellow>evidence</color> you need, you must confront the monster of the domain to defeat them.
+AHAHAHA! Looks like I've found a nosy snoop messing around with my stuff\~
+Lucky for me cause I've just been itchin' to find somebody fun to play with\~
+
+# TUTORIAL
+When you encounter the boss monster of a domain, you will have to battle them using your undercity codex and the evidence you have acquired.
+
+-> ch0_battle
+
+= end
+# AMY
+"Huff, huff. Nice try, but you're no match for Amy Buscador, Babaylan Investogator."
+
 # HATTIE
-AHAHAHA! As if! That's either totally hillarious or super super sad\~
+"That... sounds... totally lame..."
+"Urgh."
+
+
 # NARRATOR
-Ignore her. In the confrontation phase, your opponent's words will appear in front of you like that.
-You must click on the words that contribute to being a fallacy.
-
-// aaron write this section :(
-
+After defeating Hattie, you were able to turn her to the police using the evidence you collected.
+Apart from that, you were also lauded for the article you wrote about the gang of manananggals terrorizing the local community.
+Just another typical action-packed day in the life of Amy Buscador.
+CHAPTER END
 + [Return]
-    -> main
+-> main

@@ -1,7 +1,8 @@
-=== ch1_battle ===
+=== ch0_battle ===
 ~BG = BATTLE
-# NARRATOR BATTLE_PHASE
-It feels like you're going to be sleeping with the fishes soon.
+# TUTORIAL BATTLE_PHASE
+This is the battle phase.
+Each round
 
 ~ temp life = 20
 ~ temp performance = 0
@@ -10,19 +11,6 @@ It feels like you're going to be sleeping with the fishes soon.
 ~ temp fallacy = ""
 
 // These are the scores corresponding to each sentence
-LIST c1q1 = p1=-1,p2=-2,p3=-1,p4=1,p5=-1,p6=-1,p7=-1,p8=1,p9=2
-LIST c1q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
-LIST c1q3 = p1=-1,p2=-2,p3=-1,p4=-2,p5=0,p6=0,p7=-1,p8=-1
-LIST c1q4 = p1=1,p2=0,p3=1,p4=2,p5=0,p6=0,p7=1,p8=1,p9=0,p10=1
-LIST c1q5 = p1=1,p2=1,p3=0,p4=2,p5=1,p6=1,p7=0
-LIST c1q6 = p1=-1,p2=-1,p3=-1,p4=-2,p5=-2,p6=-1,p7=2,p8=-1
-LIST c1q7 = p1=-1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-1
-LIST c1q8 = p1=1,p2=0,p3=0,p4=-1,p5=-1,p6=2
-LIST c1q9 = p1=1,p2=1,p3=1,p4=-1,p5=-1,p6=1,p7=0
-LIST c1q10 = p1=2,p2=2,p3=0,p4=1,p5=-1,p6=-1,p7=-1
-
-LIST c1s1 = p1=-3, p2=-1, p3=-1, p4=1, p5=0, p6=0, p=0, p8=1, p9=2, p10=2
-LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 
 - (battle_phase)
 ~ performance = 0
@@ -226,4 +214,4 @@ Continue?
 "by a weak human."
 "Hurmph"
 
--> chapter1.end
+-> tutorial.end

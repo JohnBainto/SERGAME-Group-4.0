@@ -1,12 +1,11 @@
-INCLUDE chapter1_battle.ink
-
 LIST ch1_evidence = e1, e2, e3
 
 === chapter1 ===
 
 = part1
-# NARRATOR
+~ INTERACTABLE = false
 ~ BG = CH01_EXP_BLACK
+# NARRATOR
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM
 ~ BG = CH01_EXP_OUTSIDE

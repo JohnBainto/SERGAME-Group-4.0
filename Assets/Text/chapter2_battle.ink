@@ -1,4 +1,5 @@
 === ch2_battle ===
+~BG = BATTLE
 # NARRATOR BATTLE_PHASE
 The wind is howling and the rain is falling in torrents.
 Are you ready?
@@ -225,7 +226,7 @@ Is this the end?
 
 # NARRATOR
 Continue?
-+ [Yes] -> ch1_battle
++ [Yes] -> ch2_battle
 + [No] -> main
 
 - (end)

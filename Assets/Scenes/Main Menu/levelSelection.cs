@@ -24,16 +24,17 @@ public class levelSelection : MonoBehaviour
 
     public void screenChangeToTutorial ()
     {
-        SceneManager.LoadScene("PROLOGUE"); 
+        Initiate.Fade("PROLOGUE", Color.black, 1.0f);
     }
 
     public void screenChangeToChapter1 ()
     {
+        Initiate.Fade("CH01_EXP_OUTSIDE", Color.black, 1.0f);
         SceneManager.LoadScene("CH01_EXP_OUTSIDE"); 
     }
 
     public void screenChangeToChapter2 ()
     {
-        SceneManager.LoadScene("CH02_EXP_HALLWAY"); 
+        Initiate.Fade("CH02_EXP_HALLWAY", Color.black, 1.0f); 
     }
 }

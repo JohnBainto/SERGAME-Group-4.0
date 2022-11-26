@@ -22,8 +22,7 @@ public class titleScreen : MonoBehaviour
 
     public void startgame () 
     {
-        Debug.Log ("hello pareh");
-        SceneManager.LoadScene("Level Selection Screen"); 
+        Initiate.Fade("Level Selection Screen", Color.black, 1.0f);
     }
 
 

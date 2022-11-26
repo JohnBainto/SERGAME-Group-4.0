@@ -258,7 +258,7 @@ What should I do now?
     ~ ch2_evidence += ch2_evidence.e3
 + [Crane]
     {inventory ? key:
-        {inventory ? crane:
+        {inventory !? crane:
             ~ INTERACTABLE = false
             Alright!
             Let's see if what this baby can do!

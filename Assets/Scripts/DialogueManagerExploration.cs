@@ -33,6 +33,7 @@ public class DialogueManagerExploration : MonoBehaviour
     public GameObject itemPanel;
     public TextMeshProUGUI itemText;
 
+    private bool loadingScene;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -60,6 +61,7 @@ public class DialogueManagerExploration : MonoBehaviour
         dialoguePanel.SetActive(false);
 
         canContinueToNext = false;
+        loadingScene = false;
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -110,7 +112,7 @@ public class DialogueManagerExploration : MonoBehaviour
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue())); //pop a line off the stack
             
             HandleTags();
-            HandleScenes();
+            StartCoroutine(HandleScenes());
         }
         else
         {
@@ -133,6 +135,8 @@ public class DialogueManagerExploration : MonoBehaviour
             //     dialogueText.text = line;
             //     break;
             // }
+
+            while(loadingScene) yield return null;
 
             if (letter == '<' || isAddingRichTextTag) {
                 isAddingRichTextTag = true;
@@ -159,12 +163,19 @@ public class DialogueManagerExploration : MonoBehaviour
         }
     }
 
-    public void HandleScenes() {
+    public IEnumerator HandleScenes() {
         string sceneName = currentStory.variablesState["BG"].ToString();
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
 
         if (SceneManager.GetActiveScene().name != sceneName) {
-            Initiate.Fade(sceneName, Color.black, 0.5f);
+            loadingScene = true;
+            dialoguePanel.SetActive(false);
+
+            Initiate.Fade(sceneName, Color.black, 2.5f);
+            yield return new WaitForSeconds(1.0f);
+
+            dialoguePanel.SetActive(true);
+            loadingScene = false;
         }
     }
 

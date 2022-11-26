@@ -76,7 +76,7 @@ public class DialogueManagerExploration : MonoBehaviour
             return;
         }
 
-        if (canContinueToNext && Input.GetKeyDown(interactKey))
+        if (canContinueToNext && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(interactKey))
         {
             ContinueStory();
             HandleInteractable();
@@ -275,8 +275,10 @@ public class DialogueManagerExploration : MonoBehaviour
     }
 
     public void MakeChoice (int choiceIndex) {
+        Debug.Log("choiceIndex: " + choiceIndex);            
         if (canContinueToNext) {
             currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
         }
     }
 

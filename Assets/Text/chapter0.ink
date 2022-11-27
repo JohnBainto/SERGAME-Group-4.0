@@ -135,6 +135,12 @@ Try moving towards the box on your right and interacting with it!
         Try examining the box where you first started first.
     }
 + [Get key]
+    {not examined_box:
+        # TUTORIAL
+        Woah slow down!
+        Try examining the box where you first started first.
+        Otherwise you might be better off skipping the tutorial.
+    }
     {not examined_tall_box:
         ~ examined_tall_box = true
         # TUTORIAL

@@ -140,6 +140,7 @@ Try moving towards the box on your right and interacting with it!
         Woah slow down!
         Try examining the box where you first started first.
         Otherwise you might be better off skipping the tutorial.
+        -> area1
     }
     {not examined_tall_box:
         ~ examined_tall_box = true

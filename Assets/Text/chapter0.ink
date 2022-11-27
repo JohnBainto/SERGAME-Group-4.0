@@ -31,22 +31,13 @@ While in a domain it your job to look for impressions or weaknesses and other in
 Impressions can be revealed by examining objects or interacting with people.
 To move around a domain, use your ←/A and →/D keys.
 To interact with objects in a domain, stand next to the object and press E.
-Now try moving towards the box on your right and interacting with it!
-// + [Go to locked box]
-// - Press E to interact with objects. # TUTORIAL
+Try moving towards the box on your right and interacting with it!
 
 ~ temp examined_box = false
 ~ temp examined_tall_box = false
 
 - (area1)
 ~ INTERACTABLE = true
-{examined_box: 
-    # TUTORIAL
-    Seems like you need to find a key to open that box.
-    Try exploring the area to the left to look for a key.
-    Go left until you find a tall box and interact with it.
-}
-What should I do now?
 + [Examine box]
     ~ INTERACTABLE = false
     {stopping:
@@ -90,16 +81,27 @@ What should I do now?
             Maybe they hid a key somewhere around here.
             If I can find that key, I'd be able to read the whole note.
             Then, I would know more about who I'm staking out and what to expect.
+            
+            # TUTORIAL
+            Seems like you need to find a key to open that box.
+            Try exploring the area to the left to look for a key.
+            Go left until you find a tall box and interact with it.
             -> area1
         + + [Examine lock.]
             {stopping:
             -   # AMY
                 Must not have wanted anyone taking a look inside.
                 I wonder if I could force it open.
-            -   No, forcing it would be a terrible idea.
+            -   # AMY
+                No, forcing it would be a terrible idea.
                 If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
-            -   I wonder if the key to this is somewhere around here
+            -   # AMY
+                I wonder if the key to this is somewhere around here...
             }
+            # TUTORIAL
+            Seems like you need to find a key to open that box.
+            Try exploring the area to the left to look for a key.
+            Go left until you find a tall box and interact with it.
             -> area1
     }
 + [Examine tall box]
@@ -121,14 +123,27 @@ What should I do now?
         # TUTORIAL
         Press the spacebar to jump.
         Some items can be stood on.
-        Try jumping on top of that smaller box to the left.
-    -   examined_box and examined_tall_box:
+        Try jumping on top of that box over there
+    -   examined_box and examined_tall_box and inventory !? key:
         # AMY
         I have to stand on something to reach the key over there.
+    -   examined_box and examined_tall_box and inventory ? key:
+        # AMY
+        It's a tall box.
+    -   else:
+        # TUTORIAL
+        Try examining the box where you first started first.
     }
 + [Get key]
-    ~ INTERACTABLE = false
-    {examined_tall_box and inventory !? key:
+    {not examined_tall_box:
+        ~ examined_tall_box = true
+        # TUTORIAL
+        Looks like you've figured out how to jump.
+        To jump, press the up arrow key.
+        Some items like this box can be stood on.
+    }
+    {
+    -   inventory !? key:
         ~ inventory += key
         # TUTORIAL
         Sometimes, interacting with an object will result in you picking up that object.
@@ -136,6 +151,9 @@ What should I do now?
         
         # AMY
         Nice! Now let's see what's inside that crate.
+    -   inventory ? key:
+        # AMY
+        I don't think I need anything else from here.
     }
 + [Examine broken crate]
     ~ INTERACTABLE = false

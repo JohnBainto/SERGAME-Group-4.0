@@ -46,11 +46,12 @@ Try moving towards the box on your right and interacting with it!
         # TUTORIAL
         Sometimes, examining something multiple times can also yield different results.
     -   # AMY
-        Looks like the tried to hide it in this dark corner, but they didn;t do a very good job at it.
+        Looks like they tried to hide it in this dark corner, but they didn;t do a very good job at it.
         # TUTORIAL
         Try inspecting this box one more time.
     -   ~ examined_box = true
         # TUTORIAL
+        Good job!
         You will also encounter choices.
         Use the up and down arrow keys to select between different choices.
         Then, click on the Enter key to confirm your selection.

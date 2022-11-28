@@ -25,7 +25,7 @@ LIST c2q11 = p1=-1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1
 LIST c2q12 = p1=-1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1
 
 LIST c2s1 = p1=-2,p2=1,p3=-1,p4=1,p5=1,p6=0,p7=0
-LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=0,p8=1
+LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
 
 - (battle_phase)
 ~ performance = 0
@@ -166,8 +166,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=0,p8=1
     your salt.
     Let's call it
     a tie
-    and forget
-    all about this.
+    and forget all about this.
     Water under the bridge, huh? # QEND
     ~ fallacy = "AD HOMINEM"
     ~ cur_question = c1s2

@@ -16,22 +16,22 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 ~ temp fallacy = ""
 
 // These are the scores corresponding to each sentence
+LIST c0q1 = p1=-2,p2=-1,p3=-1,p4=2,p5=0,p6=1,p7=0
+LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
 
 - (battle_phase)
 ~ performance = 0
 {life <= 0: -> bad_end}
 {cycle:
 -   OMG! # HATTIE QSTART
-    You're
-    going to try
-    to fight
-    me?
+    You're going to try
+    to fight me?
     That's
     either
     the funniest thing
     I've ever heard
     or
-    the like saddest! # QEND
+    like the saddest! # QEND
     # TUTORIAL
     Finding the weak points of a fallacy spell can be tricky.
     But, you can CONSULT you undercity codex dusring the batttle to help you decide which words to pick.

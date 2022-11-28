@@ -23,15 +23,15 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
 ~ performance = 0
 {life <= 0: -> bad_end}
 {cycle:
--   <link="c0q1 1">OMG!</list> # HATTIE QSTART
-	<link="c0q1 2">You're going to try</list>
-	<link="c0q1 3">to fight me?</list>
-	<link="c0q1 4">That's</list>
-	<link="c0q1 5">either</list>
-	<link="c0q1 6">the funniest thing</list>
-	<link="c0q1 7">I've ever heard</list>
-	<link="c0q1 8">or</list>
-	<link="c0q1 9">like the saddest!</list> # QEND
+-   <link="c0q1 1">OMG!</list> <> # HATTIE QSTART
+	<link="c0q1 2">You're going to try</list> <>
+	<link="c0q1 3">to fight me?</list> <>
+	<link="c0q1 4">That's</list> <>
+	<link="c0q1 5">either</list> <>
+	<link="c0q1 6">the funniest thing</list> <>
+	<link="c0q1 7">I've ever heard</list> <>
+	<link="c0q1 8">or</list> <>
+	<link="c0q1 9">like the saddest!</list> <> # QEND
 	~ fallacy = "FALSE DICHOTOMY"
 	~ cur_question = c0q1
 	
@@ -41,14 +41,14 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
     Remember that Hattie's special fallacy skill is 【FALSE DICHOTOMY】.
     Try to look for words that try to frame somethings as only one of two things.
     Then when you're ready, click retort to dispel their attack.
--   <link="c0q2 1">Tch,</list> # HATTIE QSTART
-	<link="c0q2 2">as if</list>
-	<link="c0q2 3">I'm</list>
-	<link="c0q2 4">going to spend</list>
-	<link="c0q2 5">my time</list>
-	<link="c0q2 6">battling</list>
-	<link="c0q2 7">some poser like</list>
-	<link="c0q2 8">you. </list> # QEND
+-   <link="c0q2 1">Tch,</list> <> # HATTIE QSTART
+	<link="c0q2 2">as if</list> <>
+	<link="c0q2 3">I'm</list> <>
+	<link="c0q2 4">going to spend</list> <>
+	<link="c0q2 5">my time</list> <>
+	<link="c0q2 6">battling</list> <>
+	<link="c0q2 7">some poser like</list> <>
+	<link="c0q2 8">you. </list> <> # QEND
 	~ fallacy = "NONE"
 	~ cur_question = c0q2
 

@@ -40,6 +40,40 @@ Try moving towards the box on your right and interacting with it!
 ~ INTERACTABLE = true
 + [Examine box]
     ~ INTERACTABLE = false
+    {inventory ? key:
+        # AMY
+        !?
+        Alright, let's open up this bad boy.
+        
+        # NARRATOR
+        You opened the crate with the key you found and examine the contents.
+        Inside there is a bunch of black and white spray cans, a note, and a set of clothes that have been cut into .
+        You read the note.
+        
+        # NOTE
+        heyy hattie, here are the goods like u asked.
+        u better have my money ready 4 this!!
+        anyway tty tom, <3
+        ps. i put da key in the usual place ;)
+        pps. so u need 2 stop breaking my boxes fr!!
+        these. are. expensive!!
+        
+        # AMY
+        Hattie? Could this person be the leader of this gang?
+        With that and this box of black and white paint...
+        And the pieces of clothes here that have been cut into two pieces...
+        
+        IMPRESSION FOUND  # NARRATOR
+        ~ ch0_evidence += ch0_evidence.e1
+        
+        # TUTORIAL
+        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
+        Your undercity codex is the book that you can see on the lower-left side of your screen.
+        Press the X button to access it any time and review the the evidence you just discovered.
+        It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
+        Speaking of which...
+        -> part2
+    }
     {stopping:
     -   # AMY
         Well, this is supposed to be the package.
@@ -148,7 +182,7 @@ Try moving towards the box on your right and interacting with it!
         # TUTORIAL
         Looks like you've figured out how to jump.
         To jump, press the up arrow key.
-        Some items like this box can be stood on.
+        And as you've alread yfigured out, some items like this box can be stood on.
     }
     {
     -   inventory !? key:
@@ -162,41 +196,6 @@ Try moving towards the box on your right and interacting with it!
     -   inventory ? key:
         # AMY
         I don't think I need anything else from here.
-    }
-+ [Examine broken crate]
-    ~ INTERACTABLE = false
-    {inventory ? key:
-        # AMY
-        !?
-        The crate has been cut in half!
-        Seems I've got company.
-        
-        # NARRATOR
-        You examine the note.
-        
-        # NOTE
-        heyy hattie, here are the goods like u asked.
-        u better have my money ready 4 this!!
-        anyway tty tom, <3
-        ps. i put da key in the usual place ;)
-        pps. so u need 2 stop breaking my boxes fr!!
-        these. are. expensive!!
-        
-        # AMY
-        Hattie? Could this person be the leader of this gang?
-        Besides, this box of black and white paint...
-        And the crate that's not supposed to be seprated in two pieces being cut in half like this...
-        
-        IMPRESSION FOUND  # NARRATOR
-        ~ ch0_evidence += ch0_evidence.e1
-        
-        # TUTORIAL
-        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
-        Your undercity codex is the book that you can see on the lower-left side of your screen.
-        Press the X button to access it any time and review the the evidence you just discovered.
-        It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
-        Speaking of which...
-        -> part2
     }
 - -> area1
 

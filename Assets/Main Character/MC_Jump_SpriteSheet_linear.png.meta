@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: edf443780ce78d54f930483d001b7993
+guid: 25774709dd7f1914fb42e757a77927e3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,127 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_0
+      name: MC_Jump_SpriteSheet_linear_0
       rect:
         serializedVersion: 2
-        x: 210
-        y: 209
-        width: 1435
-        height: 1963
+        x: 162
+        y: 64
+        width: 1541
+        height: 2747
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb15053b400fa1a4eb5a9fcf7d6effa4
-      internalID: 769991718
+      spriteID: a78f5411e9558cc469abc0e4480e8be0
+      internalID: -1783836250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_2
+      name: MC_Jump_SpriteSheet_linear_1
       rect:
         serializedVersion: 2
-        x: 4515
-        y: 209
-        width: 1435
-        height: 1963
+        x: 1783
+        y: 64
+        width: 1541
+        height: 2747
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a973a9761b41f14aba6b05bd5a0e80b
-      internalID: 1580183584
+      spriteID: e4ceedeae27dcc649b8497d70e83e601
+      internalID: 635282733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_3
+      name: MC_Jump_SpriteSheet_linear_2
       rect:
         serializedVersion: 2
-        x: 3081
-        y: 209
-        width: 1435
-        height: 1963
+        x: 3483
+        y: 64
+        width: 1541
+        height: 2747
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa5568f6c9892248a1a8a6103a47460
-      internalID: -1683365870
+      spriteID: 2a9ee35d101f8c549bb94e2db7caa1b1
+      internalID: 1822000757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_1
+      name: MC_Jump_SpriteSheet_linear_3
       rect:
         serializedVersion: 2
-        x: 1645
-        y: 209
-        width: 1435
-        height: 1963
+        x: 5167
+        y: 64
+        width: 1541
+        height: 2747
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d569032cb5eab8746913cb0b801ea73d
-      internalID: 551696044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_4
-      rect:
-        serializedVersion: 2
-        x: 5953
-        y: 209
-        width: 1435
-        height: 1963
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6272f27061f2f3e42a5833e22995c2a7
-      internalID: 1508430409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_WalkCycle_SpriteSheet_linear_5
-      rect:
-        serializedVersion: 2
-        x: 7392
-        y: 209
-        width: 1435
-        height: 1963
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28a58296721a1ce419de3936cdd955e9
-      internalID: 1916623156
+      spriteID: f2bac072214c9f54982e9553f1a96b43
+      internalID: -336200517
       vertices: []
       indices: 
       edges: []
@@ -253,12 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_WalkCycle_SpriteSheet_linear_5: 1916623156
-      MC_WalkCycle_SpriteSheet_linear_0: 769991718
-      MC_WalkCycle_SpriteSheet_linear_1: 551696044
-      MC_WalkCycle_SpriteSheet_linear_2: 1580183584
-      MC_WalkCycle_SpriteSheet_linear_3: -1683365870
-      MC_WalkCycle_SpriteSheet_linear_4: 1508430409
+      MC_Jump_SpriteSheet_linear_3: -336200517
+      MC_Jump_SpriteSheet_linear_0: -1783836250
+      MC_Jump_SpriteSheet_linear_1: 635282733
+      MC_Jump_SpriteSheet_linear_2: 1822000757
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

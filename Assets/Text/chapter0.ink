@@ -16,7 +16,7 @@ Here, you find yourself wandering the dimly lit streets looking for your next bi
 # AMY
 Over the past week I've been investigatin' a series of vanadalism cases in this area.
 Each case has the same MO, black and white gang signs painted over the vandalized property.
-Now, you don't need to be genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
+Now, you don't need to be a genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
 But what I do know as a supernatural detective is that a domain has already formed over this place.
 That means this is no ordinary gang, but a gang of supernatural beings!
 Since this case piqued my interest, I set up a mole in a couple of art supply chains to warn me about any large orders of spray paints and what not.
@@ -47,7 +47,7 @@ Try moving towards the box on your right and interacting with it!
         
         # NARRATOR
         You opened the crate with the key you found and examine the contents.
-        Inside there is a bunch of black and white spray cans, a note, and a set of clothes that have been cut into .
+        Inside there is a bunch of black and white spray cans, a note, and a set of clothes that have been cut into two.
         You read the note.
         
         # NOTE
@@ -79,6 +79,7 @@ Try moving towards the box on your right and interacting with it!
         Well, this is supposed to be the package.
         # TUTORIAL
         Sometimes, examining something multiple times can yield different results.
+        Try inspecting this box again.
     -   # AMY
         Looks like they tried to hide it in this dark corner, but they didn't do a very good job at it.
         # TUTORIAL
@@ -97,11 +98,12 @@ Try moving towards the box on your right and interacting with it!
             It looks like a note?
             
             # NARRATOR
-            You try pulling the note out.
+            You try pulling out the note.
             You manage to get more of it out, but you are unable to fully take it.
             
             # AMY
-            Ah no good, the lids too tight it'll tear if I force it.
+            Ah no good, the lids too tight.
+            It'll tear if I force it.
             Let's see what we can read from what's sticking out.
             
             # NOTE
@@ -129,7 +131,7 @@ Try moving towards the box on your right and interacting with it!
                 I wonder if I could force it open.
             -   # AMY
                 No, forcing it would be a terrible idea.
-                If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
+                If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
             -   # AMY
                 I wonder if the key to this is somewhere around here...
             }
@@ -167,13 +169,13 @@ Try moving towards the box on your right and interacting with it!
         It's a tall box.
     -   else:
         # TUTORIAL
-        Try examining the box where you first started first.
+        Try examining the box near where you first started before anything else.
     }
 + [Get key]
     {not examined_box:
         # TUTORIAL
         Woah slow down!
-        Try examining the box where you first started first.
+        Try examining the box near where you first started before anything else.
         Otherwise you might be better off skipping the tutorial.
         -> area1
     }
@@ -181,8 +183,8 @@ Try moving towards the box on your right and interacting with it!
         ~ examined_tall_box = true
         # TUTORIAL
         Looks like you've figured out how to jump.
-        To jump, press the up arrow key.
-        And as you've alread yfigured out, some items like this box can be stood on.
+        To jump, you press the up arrow key.
+        And as you've already figured out, some items like this box can be stood on.
     }
     {
     -   inventory !? key:

@@ -6,7 +6,7 @@ Each round your enemy will try to attack you using a fallacy spell.
 Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.
 If you run out of stamina you will lose the fight.
 You can dispel these fallacy spells by identifying their weak points.
-Each boss specializes a certain type of fallacy as indicated in your undercity codex.
+Each boss specializes in a certain type of fallacy as indicated in your undercity codex.
 Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.
 
 ~ temp life = 20
@@ -55,7 +55,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
     # TUTORIAL
     Watch out! this question is tricky.
     Sometimes, the opponent can show you a statement that does NOT contain the weakness of their special fallacy skill.
-    If you try to retort something like this, you will end up wasting your stamina on something tht doesn't matter.
+    If you try to retort something like this, you will end up wasting your stamina on something that doesn't matter.
     For questions like this, it's best for you to just skip.
     But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!
 -   -> end
@@ -75,7 +75,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         "N-no its not that going to be that simple... I think."
         # TUTORIAL
         Nice one!
-        A little shaky but you've got the right idea.
+        A little shaky, but you've got the right idea.
         Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.
     -   turn == 0:
         # AMY
@@ -84,7 +84,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         # TUTORIAL
         That response was pretty shaky but that's okay.
         Practice makes perfect!
-        Try to review yout undercity codex if you're unsure which words you should be picking to dispels Hattie's fallacy spells.
+        Try to review yout undercity codex if you're unsure which words you should be picking to dispel Hattie's fallacy spells.
     -   turn == 1:
         # AMY
         "No, that's wrong!"
@@ -93,6 +93,10 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         "Hahahahaha\~"
         # AMY
         "Urk! Was that wrong?"
+        # TUTORIAL
+        Okay seem like you were supposed to skip that one.
+        But don't worry!
+        Even if you lose a battle, you can always try again next time.
     }
 + [Skip]
     {fallacy == "NONE":

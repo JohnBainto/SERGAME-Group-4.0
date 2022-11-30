@@ -19,7 +19,6 @@ public class TrackSelectedWord : MonoBehaviour
     private void Update()
     {
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(text, Input.mousePosition, MainCamera);    
-        Debug.Log("LINK INDEX: " + linkIndex);
         LinkOnHover(linkIndex);
         if (linkIndex != -1)
         {    

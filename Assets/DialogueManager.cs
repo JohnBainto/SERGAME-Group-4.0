@@ -4,50 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Ink.Runtime;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
-// with inky
-    [Header("Dialogue UI")] // Access to dialogue panel
+    // Access to Dialogue Manager Inspector
+    [Header("Dialogue UI")]                                     
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private GameObject startButton;
-    [SerializeField] private TextMeshProUGUI dText;
-    private Story currentStory; // tracker for which ink file is currently in use
-    private bool dialogueIsPlaying;
+    [SerializeField] private GameObject startBattleBtn;         // startBattle button
+    [SerializeField] private TextMeshProUGUI normalDialogue;    // Normal Text
+    [SerializeField] private TextMeshProUGUI battleDialogue;    // Battle Text  
+    [SerializeField] private TextMeshProUGUI speakerName;       // Speaker Name
+    [SerializeField] private TextMeshProUGUI selectedWords;     // List of Selected Words
+    [SerializeField] private TextAsset inkJSON;                 // main.ink --> Game Script
+
+    // Other important attributes
+    private Story currentStory;                                 // Tracker for which ink file is currently in use
+    private string currentLine;                                 // Tracker for which lineis currently being said in the game
+    private bool dialogueIsPlaying;                             // Tracker for if the dialogue is active
     private static DialogueManager instance;
     
     // Start is called before the first frame update
-    private void Start() {
-        //sentences = new Queue<string>(); 
-        dialogueIsPlaying = false;
-        dialogueBox.SetActive(false);
+    private void Start() 
+    {
+        speakerName.text = "";
+        selectedWords.text = "";
+        normalDialogue.text = "";
+        battleDialogue.text = "";
+        currentStory = new Story(inkJSON.text);                 // Accesses the main ink file
+        currentStory.ChoosePathString("ch1_battle");            // goes directly to the Chapter 1 Battle script
+        StartDialogue();                                        
     }
 
-    // Typing each character in a sentence.
-    IEnumerator TypeLine(string line) {
-        dText.text = "";
-        // Typing each character
-        foreach(char c in line.ToCharArray())
-        {
-            dText.text +=c;
-            yield return new WaitForSeconds(0.025f);
-        }
-    }
-
-// with inky
-    // private void Update()
-    // {
-    //     if(!dialogueIsPlaying)
-    //     {
-    //         return;
-    //     }
-    //     else
-        
-    //     if(InputManager.GetInstance().GetSubmitPressed())
-    //     {
-    //         ContinueStory();
-    //     }
-    // }
+    // Tracks if there are multiple instances of the dialogue manager in a scene.
     private void Awake()
     {
         if(instance != null)
@@ -57,37 +46,70 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    // Typing effect: Types each character in a sentence.
+    IEnumerator TypeLine(string line, bool isBattle) 
     {
-        startButton.SetActive(false);
-        currentStory = new Story(inkJSON.text);
-        currentStory.ChoosePathString("ch1_battle");
-        dialogueIsPlaying = true;
-        dialogueBox.SetActive(true);
+        bool isAddingRichTextTag = false;
+        foreach(char c in line.ToCharArray())
+        {
+            if (c == '<' || isAddingRichTextTag) {
+                isAddingRichTextTag = true;
+                if (c == '>') {
+                    isAddingRichTextTag = false;
+                }
+            } else {
+                normalDialogue.text += c;
+                yield return new WaitForSeconds(0.04f);
+            }
+        }
+        if(isBattle)
+            battleDialogue.text = line;
+    }
+
+    // Start of the dialogue
+    public void StartDialogue()
+    {
+        selectedWords.text = "";
+        normalDialogue.text = "";
+        battleDialogue.text = "";
         ContinueStory();
     } 
 
+    // End of the dialogue
     public void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialogueBox.SetActive(false);
-        dText.text = "";
+        normalDialogue.text = "";
+        battleDialogue.text = "";
         Debug.Log("End of battle.");
     }
 
+    // Continues the dialogue (if there are more in the script)
     public void ContinueStory()
     {
         if(currentStory.canContinue)
         {
-            string currentLine = currentStory.Continue();
-            StopAllCoroutines();
-            StartCoroutine(TypeLine(currentLine));
+            currentLine = "";
+            currentLine = currentStory.Continue();
+            List<string> tags = currentStory.currentTags;
+            
+            if(tags[0] == "KIT QSTART") 
+            { 
+                startBattleBtn.SetActive(false);    
+                StopAllCoroutines();
+                StartCoroutine(TypeLine(currentLine,true));
+            }
+            else 
+            {
+                StopAllCoroutines();
+                StartCoroutine(TypeLine(currentLine,false));                
+            }
         }
         else
         {
             ExitDialogueMode();
         }
     }
-
 }
 

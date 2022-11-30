@@ -440,6 +440,7 @@ MonoBehaviour:
   normalDialogue: {fileID: 536259023}
   battleDialogue: {fileID: 916933081}
   speakerName: {fileID: 1908383041}
+  selectedWords: {fileID: 582046951}
   inkJSON: {fileID: 4900000, guid: 2cd7e1221a0ea42108a4027aebdd400f, type: 3}
 --- !u!4 &70969583
 Transform:

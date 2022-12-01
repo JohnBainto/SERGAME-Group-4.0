@@ -84,7 +84,8 @@ Try moving towards the box on your right and interacting with it!
         Looks like they tried to hide it in this dark corner, but they didn't do a very good job at it.
         # TUTORIAL
         Try inspecting this box one more time.
-    -   ~ examined_box = true
+    -   
+        ~ examined_box = true
         # TUTORIAL
         Good job!
         You will also encounter choices.
@@ -92,55 +93,52 @@ Try moving towards the box on your right and interacting with it!
         Then, click on the Enter key to confirm your selection.
         # AMY
         Anyway, what should I do now?
-        + + [Examine slip of paper.]
-            # AMY
-            There's a piece of paper that got caught on the lid of the box.
-            It looks like a note?
-            
-            # NARRATOR
-            You try pulling out the note.
-            You manage to get more of it out, but you are unable to fully take it.
-            
-            # AMY
-            Ah no good, the lids too tight.
-            It'll tear if I force it.
-            Let's see what we can read from what's sticking out.
-            
-            # NOTE
-            anyw....
-            ps. i put da key....
-            pps. so u need 2 stop breaki...
-            these. are. expensive!!
-            
-            # AMY
-            Hm... no names.
-            But it did mention a key.
-            Maybe they hid a key somewhere around here.
-            If I can find that key, I'd be able to read the whole note.
-            Then, I would know more about who I'm staking out and what to expect.
-            
-            # TUTORIAL
-            Seems like you need to find a key to open that box.
-            Try exploring the area to the left to look for a key.
-            Go left until you find a tall box and interact with it.
-            -> area1
-        + + [Examine lock.]
-            {stopping:
-            -   # AMY
-                Must not have wanted anyone taking a look inside.
-                I wonder if I could force it open.
-            -   # AMY
-                No, forcing it would be a terrible idea.
-                If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
-            -   # AMY
-                I wonder if the key to this is somewhere around here...
-            }
-            # TUTORIAL
-            Seems like you need to find a key to open that box.
-            Try exploring the area to the left to look for a key.
-            Go left until you find a tall box and interact with it.
-            -> area1
+    -   # AMY
+        What should I inspect?
     }
+    {not examined_box: -> area1}
+    + + [Examine slip of paper.]
+        # AMY
+        There's a piece of paper that got caught on the lid of the box.
+        It looks like a note?
+        
+        # NARRATOR
+        You try pulling out the note.
+        You manage to get more of it out, but you are unable to fully take it.
+        
+        # AMY
+        Ah no good, the lids too tight.
+        It'll tear if I force it.
+        Let's see what we can read from what's sticking out.
+        
+        # NOTE
+        anyw....
+        ps. i put da key....
+        pps. so u need 2 stop breaki...
+        these. are. expensive!!
+        
+        # AMY
+        Hm... no names.
+        But it did mention a key.
+        Maybe they hid a key somewhere around here.
+        If I can find that key, I'd be able to read the whole note.
+        Then, I would know more about who I'm staking out and what to expect.
+    + + [Examine lock.]
+        {stopping:
+        -   # AMY
+            Must not have wanted anyone taking a look inside.
+            I wonder if I could force it open.
+        -   # AMY
+            No, forcing it would be a terrible idea.
+            If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
+        -   # AMY
+            I wonder if the key to this is somewhere around here...
+        }
+    - - # TUTORIAL
+        Seems like you need to find a key to open that box.
+        Try exploring the area to the left to look for a key.
+        Go left until you find a tall box and interact with it.
+        -> area1
 + [Examine tall box]
     ~ INTERACTABLE = false
     {

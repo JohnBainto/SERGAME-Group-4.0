@@ -12,28 +12,22 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 ~ temp life = 20
 ~ temp performance = 0
 ~ temp turn = 0
-~ temp cur_question = 0
 ~ temp fallacy = ""
-
-// These are the scores corresponding to each sentence
-LIST c0q1 = p1=-2,p2=-1,p3=-1,p4=2,p5=0,p6=1,p7=0
-LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
 
 - (battle_phase)
 ~ performance = 0
 {life <= 0: -> bad_end}
 {cycle:
--   <link="c0q1 1">OMG!</list> <> # HATTIE QSTART
-	<link="c0q1 2">You're going to try</list> <>
-	<link="c0q1 3">to fight me?</list> <>
-	<link="c0q1 4">That's</list> <>
-	<link="c0q1 5">either</list> <>
-	<link="c0q1 6">the funniest thing</list> <>
-	<link="c0q1 7">I've ever heard</list> <>
-	<link="c0q1 8">or</list> <>
-	<link="c0q1 9">like the saddest!</list> <> # QEND
+-   <link="-2">OMG!</link> <> # HATTIE QSTART
+	<link="-1">You're going to try</link> <>
+	<link="-1">to fight me?</link> <>
+	<link="-1">That's</link> <>
+	<link="1">either</link> <>
+	<link="0">the funniest thing</link> <>
+	<link="0">I've ever heard</link> <>
+	<link="2">or</link> <>
+	<link="0">like the saddest!</link> <> # QEND
 	~ fallacy = "FALSE DICHOTOMY"
-	~ cur_question = c0q1
 	
     # TUTORIAL
     Finding the weak points of a fallacy spell can be tricky.
@@ -41,16 +35,15 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
     Remember that Hattie's special fallacy skill is 【FALSE DICHOTOMY】.
     Try to look for words that try to frame somethings as only one of two things.
     Then when you're ready, click retort to dispel their attack.
--   <link="c0q2 1">Tch,</list> <> # HATTIE QSTART
-	<link="c0q2 2">as if</list> <>
-	<link="c0q2 3">I'm</list> <>
-	<link="c0q2 4">going to spend</list> <>
-	<link="c0q2 5">my time</list> <>
-	<link="c0q2 6">battling</list> <>
-	<link="c0q2 7">some poser like</list> <>
-	<link="c0q2 8">you. </list> <> # QEND
+-   <link="-1">Tch,</link> <> # HATTIE QSTART
+	<link="-2">as if</link> <>
+	<link="-1">I'm</link> <>
+	<link="-1">going to spend</link> <>
+	<link="-1">my time</link> <>
+	<link="-1">battling</link> <>
+	<link="-1">some poser like</link> <>
+	<link="-2">you. </link> <> # QEND
 	~ fallacy = "NONE"
-	~ cur_question = c0q2
 
     # TUTORIAL
     Watch out! this question is tricky.
@@ -60,16 +53,17 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
     But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!
 -   -> end
 }
+~ life -= 10
 
 + [Retort]
-    ~ performance += sum(cur_question)
-    ~ life += performance
+    // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - turn == 0 and performance > 0:
         # AMY
         "It's neither of those two, I'm dead serious about defeating you."
         # TUTORIAL
         Woah good job! You're a natural!
+        ~ life += 13
     - turn == 0 and performance > -2:
         # AMY
         "N-no its not that going to be that simple... I think."
@@ -77,6 +71,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         Nice one!
         A little shaky, but you've got the right idea.
         Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.
+        ~ life += 6
     -   turn == 0:
         # AMY
         "Gah! N-no w-way!"
@@ -108,6 +103,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         }
         # TUTORIAL
         Alright! Good job!
+        ~ life += 10
     -   else:
         {shuffle:
         -   Uhh, pass! # AMY
@@ -115,7 +111,6 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         -   Ah! Wait no, hmm... # AMY
         -   ??? # AMY
         }
-        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

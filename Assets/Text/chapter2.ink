@@ -22,8 +22,8 @@ What should I do now?
     Hmm... that's gotta mean..!
     IMPRESSION FOUND # NARRATOR
     # AMY
-    That's right, I can still feel that the presence of a monster's domain.
-    If he were the only boss here the domain should have dissolved after he was defeated.
+    That's right, I can still feel the presence of a monster's domain.
+    If he were the only boss here, the domain should have dissolved after he was defeated.
     "Mr Ignacio..."
     "Ugh, just my luck."
     "Guess I'm in for another battle with whoever that is."
@@ -54,7 +54,7 @@ Its quiet except for the faint buzzing of the florescent light bulbs above and t
 You turn to look at the room you were brought to.
 
 # AMY
-Hmm... I ought to lock 'em in there for when he comes to.
+Hmm... I ought 'ta lock 'em in there for when he comes to.
 
 # NARRATOR
 You lock the door, leaving Kit inside.
@@ -97,8 +97,8 @@ Okay what should I do now?
         # NARRATOR
         You put the newspapers you collected up to the exposed wires.
         Nothing seemed to happen at first.
-        Then suddenly, the parts of the paper touching the wires start turning into a darker shade.
-        Slowly, smoke start to emmanate from the newspaper until it fully catches on fire.
+        Then slowly, the parts of the paper touching the wires start turning into a darker shade until smoke start to emanate from the newspaper,
+        You hold it there until it fully catches on fire.
 
         ~ inventory -= newspaper
         ~ inventory += fire
@@ -111,7 +111,7 @@ Okay what should I do now?
     ~ INTERACTABLE = false
     {stopping:
     -   More news papers on the floor, it really breaks my heart to see a journalist's hardwork taken for granted like this.
-        I guess I'll take it anyway in case I need it.
+        I guess I'll take some of it anyway in case I need it.
     -   I hope somebody at least read these...
     }
     {inventory !? newspaper:
@@ -149,7 +149,7 @@ Okay what should I do now?
             You can hear faint voices coming from the other side.
 
             # AMY
-            Drats! Those goons must be guarding outside.
+            Rats! Those goons must be guarding outside.
             I can't let them know I'm out and about.
         -   I don't think I can take 'em on in a fight.
             My eye's still achin' from that one punch.
@@ -178,7 +178,7 @@ Okay what should I do now?
         # NARRATOR
         You positioned yourself behind the door just in time before it swung open.
         You recognize the kapre running down the stair from when you were attacked earlier.
-        In the monster's rush to get downstairs, he did not even notice you holding your breath behin the door.
+        In the monster's rush to get downstairs, he did not even notice you holding your breath behind the door.
         You quickly slip out the door after he is some distance away.
         -> end_area2
     }
@@ -201,8 +201,8 @@ All this water... serving as a distraction.
 It feels like a...
 IMPRESSION FOUND # NARRATOR
 # AMY
-"Looks like that hair was a manifestation of an impression."
-"Phew! Alright, it's good that I found that but I really need get out of here."
+"Who would 'a thought all that water would have contained an impression."
+"Phew! It's good that I found that, but I really need get out of here."
 ~ ch2_evidence += ch2_evidence.e2
 
 # NARRATOR
@@ -219,7 +219,7 @@ I need to find a way to get out of here despite the rain.
 # NARRATOR
 As you began to move forward, a strong wave suddenly crashed into the pier.
 You managed to hold on to the walls of the shipping office to avoid getting swept away completely.
-Once you reoriented yourself, you notice that the way you cam from has now been blocked by a flipped over shipping container.
+Once you reoriented yourself, you notice that the way you came from has now been blocked by a flipped over shipping container.
 
 # AMY
 Ugh! Just perfect.
@@ -317,14 +317,13 @@ And how'd you get up here??
 
 # KOI
 "Oh, where are my manners?"
-"You can call me Mr. Ignacio"
-"Koi ignacio."
+"You can call me Mr. Ignacio. That's Mr. Ignacio, Koi."
 "The shipping business is my business."
 "And furthermore, it is none of your business."
 "So, let me make you a deal."
 "Give me that book you have and I'll let you go."
-"I'll forgive all the mess you've done on my dock so long as you promise to never return."
-"Seem like a pretty good deal no?"
+"I'll forgive all the mess you've done on my dock so long as you promise to never return or speak a word of anything you've seen."
+"Seem like a pretty good deal, no?"
 
 # AMY
 What? Give him the undercity codex?
@@ -365,7 +364,7 @@ No way!
 
     # NARRATOR
     Mr. Ignacio moved swiftly like a stream of water.
-    Before you know it, he is gripping your arm with webbed hand topped with sharp claws.
+    Before you know it, he is gripping your arm with a webbed hand topped with sharp claws.
 - "If you refuse to cooperate, then the only way you're getting out of here is in a box!" # KO1
 -> ch2_battle
 

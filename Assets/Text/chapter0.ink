@@ -16,7 +16,7 @@ Here, you find yourself wandering the dimly lit streets looking for your next bi
 # AMY
 Over the past week I've been investigatin' a series of vanadalism cases in this area.
 Each case has the same MO, black and white gang signs painted over the vandalized property.
-Now, you don't need to be genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
+Now, you don't need to be a genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
 But what I do know as a supernatural detective is that a domain has already formed over this place.
 That means this is no ordinary gang, but a gang of supernatural beings!
 Since this case piqued my interest, I set up a mole in a couple of art supply chains to warn me about any large orders of spray paints and what not.
@@ -40,13 +40,48 @@ Try moving towards the box on your right and interacting with it!
 ~ INTERACTABLE = true
 + [Examine box]
     ~ INTERACTABLE = false
+    {inventory ? key:
+        # AMY
+        !?
+        Alright, let's open up this bad boy.
+        
+        # NARRATOR
+        You opened the crate with the key you found and examine the contents.
+        Inside there is a bunch of black and white spray cans, a note, and a set of clothes that have been cut into two.
+        You read the note.
+        
+        # NOTE
+        heyy hattie, here are the goods like u asked.
+        u better have my money ready 4 this!!
+        anyway tty tom, <3
+        ps. i put da key in the usual place ;)
+        pps. so u need 2 stop breaking my boxes fr!!
+        these. are. expensive!!
+        
+        # AMY
+        Hattie? Could this person be the leader of this gang?
+        With that and this box of black and white paint...
+        And the pieces of clothes here that have been cut into two pieces...
+        
+        IMPRESSION FOUND  # NARRATOR
+        ~ ch0_evidence += ch0_evidence.e1
+        
+        # TUTORIAL
+        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
+        Your undercity codex is the book that you can see on the lower-left side of your screen.
+        Press the X button to access it any time and review the the evidence you just discovered.
+        It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
+        Speaking of which...
+        -> part2
+    }
     {stopping:
     -   # AMY
         Well, this is supposed to be the package.
         # TUTORIAL
-        Sometimes, examining something multiple times can also yield different results.
+        Sometimes, examining something multiple times can yield different results.
+        Try inspecting this box again.
     -   # AMY
-        Looks like they tried to hide it in this dark corner, but they didn;t do a very good job at it.
+        Looks like they tried to hide it in this dark corner, but they didn't do a very good job at it.
         # TUTORIAL
         Try inspecting this box one more time.
     -   ~ examined_box = true
@@ -63,11 +98,12 @@ Try moving towards the box on your right and interacting with it!
             It looks like a note?
             
             # NARRATOR
-            You try pulling the note out.
+            You try pulling out the note.
             You manage to get more of it out, but you are unable to fully take it.
             
             # AMY
-            Ah no good, the lids too tight it'll tear if I force it.
+            Ah no good, the lids too tight.
+            It'll tear if I force it.
             Let's see what we can read from what's sticking out.
             
             # NOTE
@@ -95,7 +131,7 @@ Try moving towards the box on your right and interacting with it!
                 I wonder if I could force it open.
             -   # AMY
                 No, forcing it would be a terrible idea.
-                If I broke the lock then whoever is expecting this package will know for sure that somebody is watching them.
+                If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
             -   # AMY
                 I wonder if the key to this is somewhere around here...
             }
@@ -133,13 +169,13 @@ Try moving towards the box on your right and interacting with it!
         It's a tall box.
     -   else:
         # TUTORIAL
-        Try examining the box where you first started first.
+        Try examining the box near where you first started before anything else.
     }
 + [Get key]
     {not examined_box:
         # TUTORIAL
         Woah slow down!
-        Try examining the box where you first started first.
+        Try examining the box near where you first started before anything else.
         Otherwise you might be better off skipping the tutorial.
         -> area1
     }
@@ -147,8 +183,8 @@ Try moving towards the box on your right and interacting with it!
         ~ examined_tall_box = true
         # TUTORIAL
         Looks like you've figured out how to jump.
-        To jump, press the up arrow key.
-        Some items like this box can be stood on.
+        To jump, you press the up arrow key.
+        And as you've already figured out, some items like this box can be stood on.
     }
     {
     -   inventory !? key:
@@ -162,41 +198,6 @@ Try moving towards the box on your right and interacting with it!
     -   inventory ? key:
         # AMY
         I don't think I need anything else from here.
-    }
-+ [Examine broken crate]
-    ~ INTERACTABLE = false
-    {inventory ? key:
-        # AMY
-        !?
-        The crate has been cut in half!
-        Seems I've got company.
-        
-        # NARRATOR
-        You examine the note.
-        
-        # NOTE
-        heyy hattie, here are the goods like u asked.
-        u better have my money ready 4 this!!
-        anyway tty tom, <3
-        ps. i put da key in the usual place ;)
-        pps. so u need 2 stop breaking my boxes fr!!
-        these. are. expensive!!
-        
-        # AMY
-        Hattie? Could this person be the leader of this gang?
-        Besides, this box of black and white paint...
-        And the crate that's not supposed to be seprated in two pieces being cut in half like this...
-        
-        IMPRESSION FOUND  # NARRATOR
-        ~ ch0_evidence += ch0_evidence.e1
-        
-        # TUTORIAL
-        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
-        Your undercity codex is the book that you can see on the lower-left side of your screen.
-        Press the X button to access it any time and review the the evidence you just discovered.
-        It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
-        Speaking of which...
-        -> part2
     }
 - -> area1
 

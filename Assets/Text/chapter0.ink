@@ -30,6 +30,7 @@ You have entered a monster's domain.
 While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
 Impressions can be revealed by examining objects or interacting with people.
 To move around a domain, use your ←/A and →/D keys.
+To jump, press spacebar.
 To interact with objects in a domain, stand next to the object and press E.
 Try moving towards the box on your right and interacting with it!
 
@@ -149,16 +150,12 @@ Try moving towards the box on your right and interacting with it!
         Ah there!
         
         # NARRATOR
-        Out of the corner of your eye, you spot something twinkling on top of some boxes
-        
-        # AMY
-        Hmm it's too tall to reach.
-        I need to stand on something else to reach it.
+        Out of the corner of your eye, you spot something twinkling on top of a tall box
         
         # TUTORIAL
         Press the spacebar to jump.
         Some items can be stood on.
-        Try jumping on top of that box over there
+        Try jumping on top of this box to reach the key
     -   examined_box and examined_tall_box and inventory !? key:
         # AMY
         I have to stand on something to reach the key over there.
@@ -176,13 +173,6 @@ Try moving towards the box on your right and interacting with it!
         Try examining the box near where you first started before anything else.
         Otherwise you might be better off skipping the tutorial.
         -> area1
-    }
-    {not examined_tall_box:
-        ~ examined_tall_box = true
-        # TUTORIAL
-        Looks like you've figured out how to jump.
-        To jump, you press the up arrow key.
-        And as you've already figured out, some items like this box can be stood on.
     }
     {
     -   inventory !? key:

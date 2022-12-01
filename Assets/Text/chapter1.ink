@@ -36,12 +36,12 @@ Them?
 # WITNESS
 I'm being stalked.
 Ever since I saw *that*, everywhere I go I feel like I'm being watched.
-Not just by ordinary people either, I suspect a gang of halimaws are watching me.
+Not just by ordinary people either, I suspect a gang of monsters are watching me.
 
 # AMY
 That? Listen, its pretty clear that you're being spooked by somethin',
 but I'm going to need ya to be a bit more clear, alright?
-Why don't 'cha start of from the start?
+Why don't 'cha start of from the beginning?
 
 # WITNESS
 "Right, sorry."
@@ -67,14 +67,14 @@ Select an option:
 + "Attached to a fish?"
     # WITNESS
     "I honestly don't know what I saw."
-    "It was dark, but there was for sure a person in that crate and it seemed like they were hiding inside a giant fish"
+    "It was dark, but there was for sure a person in that crate and it seemed like they were hiding inside a giant fish?"
 + "Were they alive?"
     # WITNESS
     "It was hard to tell. I was pretty scared already and didn't get a good look"
     "It was dark but I could swear I saw the person blinking, so they were probably still alive."
 
 - A mermaid? # AMY
-Whoever these people are, they're involved in some halimaw smuggling and traficking ring.
+Whoever these people are, they're involved in some monster smuggling and traficking ring.
 
 "Anyway, after seeing the person in the crate, I screamed."
 "And that was when I caught those two guy's attention."
@@ -96,7 +96,7 @@ Whoever these people are, they're involved in some halimaw smuggling and trafick
 "I believe you."
 "I'll see what I can do, but remember..."
 "I'm a journalist, not a cop."
-"Maybe if I can get enough evidence to unravel their whole operation, you'd be safe."
+"Maybe if I can get enough evidence to get them arrested, you'd be safe."
 "But, I can't promise anything."
 
 # WITNESS
@@ -105,7 +105,7 @@ Whoever these people are, they're involved in some halimaw smuggling and trafick
 "I'm counting on you."
 
 # AMY
-Sheesh looks like this is goiong to be more trouble than a can of sardines in a feral cat's cage.
+Sheesh looks like this is going to be more trouble than a can of sardines in a feral cat's cage.
 But big trouble can also mean big story...
 "Alright!"
 "Let's take this smuggler gang out!"
@@ -125,7 +125,7 @@ I should head to the pier area to investigate.
 If they're smugglin' illegal items, the pier's the perfect place to do it.
 Boats 'll make transportin' goods a breeze.
 But to take over a whole pier?
-This operation must run deep.
+They must be a hardy bunch 'a criminals.
 
 ~ BG = CH01_EXP_PIER
 # NARRATOR
@@ -137,9 +137,9 @@ All around you, there are various shipping containers in shades of maroon, green
 Strangely, there are not as many dock wokers as you'd expect.
 
 # AMY
-Geez, everybody clock out early or somethin'?
-Still, this place is likely a halimaw's domain.
-I oughtta blend in to avoid any untoward suspicion to myself.
+Geez, this place is a ghost town.
+Still, could be trouble here.
+I ought 'ta blend in to avoid any suspicion to myself.
 
 - (area1)
 ~ INTERACTABLE = true
@@ -244,9 +244,9 @@ What should I investigate?
         "5 to 9? You mean 9 to 5."
         
         # DOCK_WORKER
-        "9 to 5? Whaddya think this is? Some kinda day spa?"
-        "This is a pier, genious. It works 'round the clock to get ya the food you eat and junk you buy."
-        "If we work hours were that short, heh, the city'd probably collapse buy now."
+        "9 to 5? Hah! Whaddya think this is? Some kinda day spa?"
+        "This is a pier, genius. It works 'round the clock to get ya the food you eat and junk you buy."
+        "If we work hours were that short, heh, the city'd probably collapse by now."
     + + "Who runs this place?" # AMY
         
         # DOCK_WORKER
@@ -256,11 +256,11 @@ What should I investigate?
         "Aww, c'mon. How am I supposed to ask permission if I don't know who to ask permission from?"
         
         # DOCK_WORKER
-        "Sigh, alright. His name's Kit, that's all I'll say."
+        "Sigh, alright. His name's Kit Balang, that's all I'll say."
         "If you really want to meet him, the shipping office's number's in the yellow pages."
         
         # AMY 
-        Hmm... Kit?
+        Hmm... Kit... Balang?
         That name... it seems like...
         {ch1_evidence !? ch1_evidence.e1:
             IMPRESSION FOUND  # NARRATOR
@@ -289,7 +289,7 @@ What should I investigate?
         
         # DOCK_WORKER
         "I mean IT'S DANGEROUS"
-        "I ain't just wearin' this hard hat to attract ladies ya know."
+        "I ain't just wearin' this hard hat just to attract ladies ya know."
         "Besides, there's other things..."
         "Or ahem other people from 'round these parts that could be dangerous too."
         "These streets ain't like they used to tuts."
@@ -314,7 +314,7 @@ What should I investigate?
         
         #MC
         "Oh uh, sorry my bad."
-        Hmm look like I gotta find some other way to get in.
+        Hmm looks like I gotta find some other way to get in.
         - # DOCK_WORKER
         "How many times do I gotta says to you, AUTHORIZED PERSONNEL ONLY!"
         
@@ -334,7 +334,7 @@ Before you could do anything, you suddenly feel a hand on your shoulder.
 You turn around to see a hissing aswang winding up to punch you.
 The aswang lands its blow right on your left eye.
 It's supernatural strength leaving you substantially shaken.
-You dazedly raise you fists to defend yourself.
+You dazedly raise your fists to defend yourself.
 The aswang tries to hit you again, but you block it this time.
 It's time for a counter attack.
 + [Go for the head.]
@@ -345,12 +345,12 @@ It's time for a counter attack.
     You try to sweep the monster's legs.
 - It dodges your attack with inhuman speed.
 Before you can recover, it knocks you back.
-But instead of falling, a kapre catches you and stifles you with a rag.
+But instead of falling, a kapre catches you and stifles your mouth and nose with a rag.
 ~ BG = CH01_EXP_BLACK
 Everything becomes hazy as you feel yourself fall unto the floor.
 ~ BG = CH01_EXP_BASEMENT
 You wake up to find yourself in a cell.
-There aren't any windows but judging from the smell it still seems that you're still in the docking area.
+There aren't any windows but judging from the smell it seems that you're still in the docking area.
 
 #MC
 Urgh, my head.
@@ -417,7 +417,7 @@ What should I investigate?
 + [Papers on the floor]
     ~ INTERACTABLE = false
     Just some newspapers on the floor.
-    Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used flooring.
+    Gotta say, I don't feel to good seein' the fruit of all my hardwork as a journalist bein' used as a glorified rag.
     {inventory !? newspaper:
         Although... This might prove to be useful.
         Might as well take it to be safe.
@@ -462,7 +462,7 @@ You back up against the wall and ready yourself for a fight.
 NEIGHH
 So you're the rat whose been snooping around my docks.
 I'd ask you who you're working for but after we're done with you,
-I'm sure the message will be very clear that the our gang is dead serious!
+I'm sure the message will be very clear that the our gang is DEAD serious!
 
 -> ch1_battle
 

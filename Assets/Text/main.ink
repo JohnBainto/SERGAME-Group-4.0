@@ -12,16 +12,6 @@ LIST inventory = clip, key, crane, newspaper, fire, detector
 
 -> prologue
 
-=== function sum(list)
-{list:
-    ~ return sum(list - LIST_MIN(list)) + LIST_VALUE(LIST_MIN(list))
-- else:
-    ~ return 0
-}
-
-=== function skip_penalty(list)
-    ~ return sum(LIST_RANGE(LIST_ALL(list), 0, 5)) * 2
-
 === prologue ===
 ~BG = PROLOGUE
 # AMY

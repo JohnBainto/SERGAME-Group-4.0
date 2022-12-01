@@ -174,7 +174,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
     -> end
 }
 
-+ [Retort]
++ [RETORT]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
@@ -207,7 +207,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
             I should ne more careful next time.
         }
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

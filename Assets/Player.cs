@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 20;
     public int currentHealth;
-    public Word[] selected_words;
 
     public HealthBar healthBar;
 

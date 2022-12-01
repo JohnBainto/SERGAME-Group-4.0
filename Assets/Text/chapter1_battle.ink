@@ -2,13 +2,11 @@
 ~BG = BATTLE
 # NARRATOR BATTLE_PHASE
 It feels like you're going to be sleeping with the fishes soon.
-
 ~ temp life = 20
 ~ temp performance = 0
 ~ temp turn = 0
 ~ temp cur_question = 0
 ~ temp fallacy = ""
-
 // These are the scores corresponding to each sentence
 LIST c1q1 = p1=-1,p2=-2,p3=-1,p4=1,p5=-1,p6=-1,p7=-1,p8=1,p9=2
 LIST c1q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
@@ -157,7 +155,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
     -> end
 }
 
-+ [Retort]
++ [RETORT]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
@@ -189,7 +187,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
             I should ne more careful next time.
         }
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY
@@ -206,6 +204,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         }
         ~ life -= skip_penalty(cur_question)
     }
++ [CONSULT]
 ~ turn++
 - -> battle_phase
 

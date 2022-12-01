@@ -61,7 +61,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
 -   -> end
 }
 
-+ [Retort]
++ [RETORT]
     ~ performance += sum(cur_question)
     ~ life += performance
     {
@@ -94,7 +94,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         # AMY
         "Urk! Was that wrong?"
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

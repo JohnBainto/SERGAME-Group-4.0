@@ -60,16 +60,17 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
     But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!
 -   -> end
 }
+~ life -= 10
 
 + [Retort]
     ~ performance += sum(cur_question)
-    ~ life += performance
     {
     - turn == 0 and performance > 0:
         # AMY
         "It's neither of those two, I'm dead serious about defeating you."
         # TUTORIAL
         Woah good job! You're a natural!
+        ~ life += 13
     - turn == 0 and performance > -2:
         # AMY
         "N-no its not that going to be that simple... I think."
@@ -77,6 +78,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         Nice one!
         A little shaky, but you've got the right idea.
         Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.
+        ~ life += 6
     -   turn == 0:
         # AMY
         "Gah! N-no w-way!"
@@ -108,6 +110,7 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         }
         # TUTORIAL
         Alright! Good job!
+        ~ life += 10
     -   else:
         {shuffle:
         -   Uhh, pass! # AMY
@@ -115,7 +118,6 @@ LIST c0q2 = p1=-1,p2=-2,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-2
         -   Ah! Wait no, hmm... # AMY
         -   ??? # AMY
         }
-        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

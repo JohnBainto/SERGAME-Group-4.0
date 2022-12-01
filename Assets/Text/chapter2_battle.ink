@@ -4,7 +4,7 @@
 The wind is howling and the rain is falling in torrents.
 Are you ready?
 
-~ temp life = 20
+~ temp life = 30
 ~ temp performance = 0
 ~ temp turn = 0
 ~ temp cur_question = 0
@@ -173,10 +173,10 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
 - else:
     -> end
 }
+~ life -= 10
 
 + [Retort]
     ~ performance += sum(cur_question)
-    ~ life += performance
     {
     - performance > 0:
         {shuffle:
@@ -185,6 +185,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
         -   That's wrong! I can see through your magic! # AMY
         -   I can see trhough your illusions Koi! # AMY
         }
+        ~ life += 13
     - performance > -2:
         {shuffle:
         -   N-no that's not true! # AMY
@@ -192,6 +193,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
         -   I w-won't give in! # AMY
         -   Mmph! I uhh... t-that's wrong! # AMY
         }
+        ~ life += 6
     - else:
         {shuffle:
         -   Ugh! I don't think that was right # AMY
@@ -215,6 +217,7 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
         -   As if! # AMY
         -   You won't fool me with that! # AMY
         }
+        ~ life += 10
     -   else:
         {shuffle:
         -   Uhh, pass! # AMY
@@ -222,7 +225,6 @@ LIST c2s2 = p1=-2,p2=-1,p3=-1,p4=-1,p5=-1,p6=1,p7=1,p8=-1
         -   Ah! Wait no, hmm... # AMY
         -   ??? # AMY
         }
-        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

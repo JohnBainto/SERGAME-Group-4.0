@@ -3,7 +3,7 @@
 # NARRATOR BATTLE_PHASE
 It feels like you're going to be sleeping with the fishes soon.
 
-~ temp life = 20
+~ temp life = 30
 ~ temp performance = 0
 ~ temp turn = 0
 ~ temp cur_question = 0
@@ -30,7 +30,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 {
 - turn == 0 || turn == 1 || turn == 3 || turn == 4:
     {shuffle:
-    	-	<link="c1q1 1">I'm</list> <> # KIT QSTART
+    -	<link="c1q1 1">I'm</list> <> # KIT QSTART
 		<link="c1q1 2">going</list> <>
 		<link="c1q1 3">to send</list> <>
 		<link="c1q1 4">you</list> <>
@@ -156,6 +156,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
 - else:
     -> end
 }
+~ life -= 10
 
 + [Retort]
     ~ performance += sum(cur_question)
@@ -168,6 +169,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         -   That's wrong! I can see through your magic! # AMY
         -   I'm not afraid of you! # AMY
         }
+        ~ life += 13
     - performance > -2:
         {shuffle:
         -   N-no that's not true! # AMY
@@ -175,6 +177,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         -   I w-won't give in! # AMY
         -   Mmph! I uhh... t-that's wrong! # AMY
         }
+        ~ life += 6
     - else:
         {shuffle:
         -   Ugh! I don't think that was right # AMY
@@ -197,6 +200,7 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         -   As if! # AMY
         -   You won't fool me with that! # AMY
         }
+        ~ life += 10
     -   else:
         {shuffle:
         -   Uhh, pass! # AMY
@@ -204,7 +208,6 @@ LIST c1s2 = p1=0, p2=-1, p3=0, p4=-1, p5=3, p6=0, p=2, p8=0, p9=1, p10=2
         -   Ah! Wait no, hmm... # AMY
         -   ??? # AMY
         }
-        ~ life -= skip_penalty(cur_question)
     }
 ~ turn++
 - -> battle_phase

@@ -1,10 +1,10 @@
-VAR _performance = 0
-VAR _life = 30
-VAR _turn = 0
-VAR _boss = "Kit Balang"
-VAR _result = ""
 === ch1_battle ===
 ~BG = BATTLE
+~ _performance = 0
+~ _life = 30
+~ _turn = 0
+~ _boss = "Kit Balang"
+~ _result = ""
 # NARRATOR BATTLE_PHASE
 It feels like you're going to be sleeping with the fishes soon.
 
@@ -211,12 +211,3 @@ Continue?
 "Hurmph" # KIT
 ~ _result = "WIN"
 -> chapter1.end
-
-== function set_performance(amount) ==
-~ _performance = amount
-
-== function set_life(add_amount) ==
-~ _life += add_amount
-
-== function set_turn(add_amount) ==
-~ _turn += add_amount

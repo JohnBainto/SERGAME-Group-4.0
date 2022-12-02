@@ -168,7 +168,7 @@ public class DialogueManagerExploration : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
 
         if (sceneName == "BATTLE") {
-            sceneName = "BattlePhase";
+            sceneName = "BattleScene 1";
         }
 
         if (SceneManager.GetActiveScene().name != sceneName) {

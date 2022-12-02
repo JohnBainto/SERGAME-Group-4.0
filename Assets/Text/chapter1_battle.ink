@@ -1,6 +1,8 @@
 VAR _performance = 0
 VAR _life = 30
 VAR _turn = 0
+VAR _boss = "Kit Balang"
+VAR _result = ""
 === ch1_battle ===
 ~BG = BATTLE
 # NARRATOR BATTLE_PHASE
@@ -175,8 +177,9 @@ It feels like you're going to be sleeping with the fishes soon.
     }
 - -> battle_phase
 
-- (bad_end)
 
+- (bad_end)
+# AMY LOSE
 Urk! # AMY
 I can't go on! # AMY
 Is this the end? # AMY
@@ -185,12 +188,13 @@ Is this the end? # AMY
 "Huff, toss 'em into the bay."
 
 # NARRATOR
+~ _result = "LOSE"
 Continue?
-+ [Yes] -> ch1_battle
-+ [No] -> main
++ [Try Again] -> ch1_battle
++ [Main Menu] -> main
 
 - (end)
-# KIT
+# KIT WIN SCENE
 "Hrngg!" # KIT
 "This.." # KIT
 "How is this possible!?" # KIT
@@ -204,7 +208,7 @@ Continue?
 "Defeated..." # KIT
 "by a weak human." # KIT
 "Hurmph" # KIT
-
+~ _result = "WIN"
 -> chapter1.end
 
 == function set_performance(amount) ==

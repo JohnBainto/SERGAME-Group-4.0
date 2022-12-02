@@ -24,7 +24,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject consultButton;          // consult button
     // Other important attributes
     public Story currentStory;                                 // Tracker for which ink file is currently in use
-    private string currentLine;                                 // Tracker for which lineis currently being said in the game
+    private string currentLine; 
+    private string bossBattleName;                                // Tracker for which lineis currently being said in the game
     public bool dialogueIsPlaying;                              // Tracker for if the dialogue is active
     private static DialogueManager instance;
     public List<string> tags;
@@ -38,12 +39,16 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] normalChoicesText;
     private TextMeshProUGUI[] battleChoicesText;
 
+    // Win or Lose Screen
+    public LoseScreen loseScreen;
+    public WinScreen winScreen;
     // Start is called before the first frame update
     private void Start() 
     {
         StartCoroutine(ClearText());
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);
+        bossBattleName = currentStory.variablesState["_boss"].ToString();
         List<string> tags = new List<string>();
         // Get all normal choices
         normalChoicesText = new TextMeshProUGUI[normalChoices.Length];
@@ -196,6 +201,7 @@ public class DialogueManager : MonoBehaviour
                 if (!startBattleBtn.activeSelf)
                     continueButton.SetActive(true);           
             }
+            HandleScenes();
         }
         else
         {
@@ -247,7 +253,6 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNext) { 
             currentStory.ChooseChoiceIndex(choiceIndex);
             currentStory.EvaluateFunction("set_turn", 1);
-            Debug.Log("TURN " + currentStory.variablesState["turn"]);
         }
     }
 
@@ -284,4 +289,19 @@ public class DialogueManager : MonoBehaviour
                 Debug.LogWarning("This tag does not have a character name: " + tag);
         }
     }
+
+    public void HandleScenes() {
+        string sceneName = currentStory.variablesState["_result"].ToString();
+        Debug.Log("BG: " + currentStory.variablesState["_result"].ToString());
+
+        if (sceneName == "LOSE") {
+            loseScreen.Setup();
+        }
+        else if (sceneName == "WIN") {
+            winScreen.Setup(bossBattleName);
+        }
+        else {
+            Debug.Log("Battle not yet done.");
+        }
+    }   
 }

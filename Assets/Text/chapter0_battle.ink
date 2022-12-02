@@ -1,7 +1,6 @@
 VAR _performance = 0
 VAR _life = 30
 VAR _turn = 0
-VAR _boss = "Hattie Haute"
 VAR _result = ""
 === ch0_battle ===
 ~BG = BATTLE

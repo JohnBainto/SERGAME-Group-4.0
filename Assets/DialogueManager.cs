@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(ClearText());
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);
-        bossBattleName = currentStory.variablesState["_boss"].ToString();
+        Debug.Log(bossBattleName);
         List<string> tags = new List<string>();
         // Get all normal choices
         normalChoicesText = new TextMeshProUGUI[normalChoices.Length];
@@ -276,13 +276,19 @@ public class DialogueManager : MonoBehaviour
             string tag = curTags[0].Trim();
             Debug.Log("WHAT TAG: "+tag);
             if(tag.Contains("KIT")) {
+                bossBattleName = "Kit Balang";
                 speakerName.text = "Kit says...";
-            } else if(tag.Contains("AMY"))
+            } else if(tag.Contains("AMY")) {
                 speakerName.text = "Amy says...";
-            else if(tag.Contains("HATTIE"))
+            }
+            else if(tag.Contains("HATTIE")) {
+                bossBattleName = "Hattie Haute";
                 speakerName.text = "Hattie says..."; 
-            else if(tag.Contains("KOI"))
+            }
+            else if(tag.Contains("KOI")) {
+                bossBattleName = "Koi Ignacio";
                 speakerName.text = "Koi says...";
+            }
             else if(tag.Contains("NARRATOR"))
                 speakerName.text = "Narrator says...";
             else

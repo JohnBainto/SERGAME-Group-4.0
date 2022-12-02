@@ -3,7 +3,6 @@
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
-~ _boss = "Koi Ignacio"
 ~ _result = ""
 # NARRATOR BATTLE_PHASE
 The wind is howling and the rain is falling in torrents.

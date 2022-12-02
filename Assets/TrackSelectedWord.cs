@@ -7,15 +7,15 @@ using TMPro;
 public class TrackSelectedWord : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public string LastClickedWord;
     public Camera MainCamera;
-    [SerializeField] private TextMeshProUGUI selectedWords;
-    private List<string> parts;
+    [SerializeField] public TextMeshProUGUI selectedWords;
+    public List<TMP_LinkInfo> _parts;
 
     private void Start() 
     {
-        parts = new List<string>();
+        _parts = new List<TMP_LinkInfo>();
     }
+
     private void Update()
     {
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(text, Input.mousePosition, MainCamera);    
@@ -24,10 +24,8 @@ public class TrackSelectedWord : MonoBehaviour
         {    
             TMP_LinkInfo info = text.textInfo.linkInfo[linkIndex];
             if (Input.GetMouseButtonDown(0))
-            {
-                string LastClickedPart = text.textInfo.linkInfo[linkIndex].GetLinkText();
-                parts.Add(LastClickedPart);          
-                
+            {    
+                _parts.Add(text.textInfo.linkInfo[linkIndex]);
                 for (int i = 0; i < info.linkTextLength; i++)
                 {
                     TMP_CharacterInfo cInfo = text.textInfo.characterInfo[info.linkTextfirstCharacterIndex+i];
@@ -43,7 +41,7 @@ public class TrackSelectedWord : MonoBehaviour
                         vertexColors[vertexIndex + 1] = Color.white;
                         vertexColors[vertexIndex + 2] = Color.white;
                         vertexColors[vertexIndex + 3] = Color.white;
-                        parts.Remove(LastClickedPart);
+                        _parts.Remove(text.textInfo.linkInfo[linkIndex]);
                     } 
                     else if (cInfo.isVisible) 
                     {
@@ -62,9 +60,9 @@ public class TrackSelectedWord : MonoBehaviour
 
     public void printSelectedParts() {
         selectedWords.text="";
-        foreach (string part in parts)
+        for (int i = 0; i <_parts.Count; i++)
         {
-            selectedWords.text+=(part+"\n");
+            selectedWords.text+=(_parts[i].GetLinkText()+"\n");
         }
     }
 

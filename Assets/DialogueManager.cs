@@ -12,22 +12,22 @@ public class DialogueManager : MonoBehaviour
 {
     // Access to Dialogue Manager Inspector
     [Header("Dialogue UI")]                                     
-    [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private GameObject startBattleBtn;         // startBattle button
-    [SerializeField] private TextMeshProUGUI normalDialogue;    // Normal Text
-    [SerializeField] private TextMeshProUGUI battleDialogue;    // Battle Text  
-    [SerializeField] private TextMeshProUGUI speakerName;       // Speaker Name
-    [SerializeField] private TextMeshProUGUI selectedWords;     // List of Selected Words
-    [SerializeField] private TextAsset inkJSON;                 // main.ink --> Game Script
-    public string pathString;          
-    [SerializeField] private GameObject continueIcon;
-    // [SerializeField] private GameObject consultBattleBtn;                           
+    TrackSelectedWord trackSelectedWord;
+    [SerializeField] GameObject dialogueBox;
+    [SerializeField] GameObject startBattleBtn;         // startBattle button
+    [SerializeField] public TextMeshProUGUI normalDialogue;    // Normal Text
+    [SerializeField] public TextMeshProUGUI battleDialogue;    // Battle Text  
+    [SerializeField] TextMeshProUGUI speakerName;       // Speaker Name
+    [SerializeField] TextAsset inkJSON;                 // main.ink --> Game Script
+    [SerializeField] string pathString;          
+    [SerializeField] public GameObject continueButton;
+    [SerializeField] public GameObject consultButton;          // consult button
     // Other important attributes
-    private Story currentStory;                                 // Tracker for which ink file is currently in use
+    public Story currentStory;                                 // Tracker for which ink file is currently in use
     private string currentLine;                                 // Tracker for which lineis currently being said in the game
     public bool dialogueIsPlaying;                              // Tracker for if the dialogue is active
     private static DialogueManager instance;
-    
+    public List<string> tags;
     public KeyCode interactKey;
     private bool canContinueToNext = false;
     private Coroutine displayLineCoroutine;
@@ -42,9 +42,9 @@ public class DialogueManager : MonoBehaviour
     private void Start() 
     {
         StartCoroutine(ClearText());
-        currentStory = new Story(inkJSON.text);                 // Accesses the main ink file
-        currentStory.ChoosePathString("ch1_battle");            // goes directly to the Chapter 1 Battle script
-        
+        currentStory = new Story(inkJSON.text);
+        currentStory.ChoosePathString(pathString);
+        List<string> tags = new List<string>();
         // Get all normal choices
         normalChoicesText = new TextMeshProUGUI[normalChoices.Length];
         int index = 0;
@@ -62,12 +62,13 @@ public class DialogueManager : MonoBehaviour
             battleChoicesText[index] = bChoice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
-        StartDialogue();                                        
+        StartDialogue();                                       
     }
 
     // Tracks if there are multiple instances of the dialogue manager in a scene.
     private void Awake()
     {
+        trackSelectedWord = GameObject.Find("Mouse Tracker").GetComponent<TrackSelectedWord>();
         if (instance != null)
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
@@ -76,8 +77,8 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
         
-        currentStory = new Story(inkJSON.text);
-        currentStory.ChoosePathString(pathString);
+        //currentStory = new Story(inkJSON.text);
+        //currentStory.ChoosePathString(pathString);
     }
 
     public void Update() {
@@ -98,11 +99,13 @@ public class DialogueManager : MonoBehaviour
     // Typing effect: Types each character in a sentence.
     IEnumerator TypeLine(string line, bool isBattle) 
     {
+        //clear
+        normalDialogue.text = "";
+        battleDialogue.text = " ";
         // hide items
         HideChoices(battleChoices);
         HideChoices(normalChoices);
-        continueIcon.SetActive(false);
-        // consultBattleBtn.SetActive(false);
+        continueButton.SetActive(false);
         canContinueToNext = false;
         bool isAddingRichTextTag = false;
         
@@ -131,15 +134,8 @@ public class DialogueManager : MonoBehaviour
         if(isBattle) 
         {
             battleDialogue.text = line;
-            DisplayChoices(battleChoices,battleChoicesText);
-            // consultBattleBtn.SetActive(true);
         }
-        
-        if(!isBattle) 
-        {
-            DisplayChoices(normalChoices,normalChoicesText);
-        }
-        continueIcon.SetActive(true);
+
         canContinueToNext = true;
     }
 
@@ -149,12 +145,11 @@ public class DialogueManager : MonoBehaviour
         // hide items
         HideChoices(battleChoices);
         HideChoices(normalChoices);
-        continueIcon.SetActive(false);
-        // consultBattleBtn.SetActive(false);
+        continueButton.SetActive(false);
+        consultButton.SetActive(false);
         
         canContinueToNext = false;
         dialogueIsPlaying = true;
-        StartCoroutine(ClearText());
         ContinueStory();
     } 
 
@@ -172,25 +167,34 @@ public class DialogueManager : MonoBehaviour
     {
         if(currentStory.canContinue)
         {
+            trackSelectedWord._parts = new List<TMP_LinkInfo>();
             currentLine = "";
             currentLine = currentStory.Continue();
-            List<string> tags = currentStory.currentTags;
-            HandleNameTags(tags);
+            Debug.Log(currentLine);
+            tags = currentStory.currentTags;
             
-            if(tags[0] == "KIT QSTART") 
+            HandleNameTags(tags);
+            Debug.Log(tags[0]);
+            if(tags[0].Contains("QSTART")) 
             { 
                 Debug.Log("BATTLE " + currentLine);
                 startBattleBtn.SetActive(false);    
                 StopAllCoroutines();
                 StartCoroutine(TypeLine(currentLine,true));
                 DisplayChoices(battleChoices,battleChoicesText);
+                consultButton.SetActive(true);
+                continueButton.SetActive(false);
             }
+
             else 
             {
                 Debug.Log("NORMAL " + currentLine);
                 StopAllCoroutines();
-                StartCoroutine(TypeLine(currentLine,false));    
-                DisplayChoices(normalChoices,normalChoicesText);           
+                StartCoroutine(TypeLine(currentLine,false));   
+                
+                DisplayChoices(normalChoices,normalChoicesText);
+                if (!startBattleBtn.activeSelf)
+                    continueButton.SetActive(true);           
             }
         }
         else
@@ -242,7 +246,8 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("choiceIndex: " + choiceIndex);           
         if (canContinueToNext) { 
             currentStory.ChooseChoiceIndex(choiceIndex);
-            StartDialogue();
+            currentStory.EvaluateFunction("set_turn", 1);
+            Debug.Log("TURN " + currentStory.variablesState["turn"]);
         }
     }
 
@@ -251,7 +256,6 @@ public class DialogueManager : MonoBehaviour
         while(true)
         {
             speakerName.text = " ";
-            selectedWords.text = " ";
             normalDialogue.text = "";
             battleDialogue.text = " ";
             yield return new WaitForSeconds(1.0f);

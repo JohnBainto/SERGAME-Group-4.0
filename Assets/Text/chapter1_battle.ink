@@ -47,8 +47,8 @@ It feels like you're going to be sleeping with the fishes soon.
 		<link="-1">here</link> <>
 		<link="2">little girl</link>. <>
 		<link="0">You</link> <>
-		<link="-0>can't stop</link> <>
-		<link="-1">us</link> <> # QEND
+		<link="0">can't stop</link> <>
+		<link="-1">us</link>! <> # QEND
 		~ fallacy = "AD HOMINEM"
 	-	<link="-1">We've been</link> <> # KIT QSTART
 		<link="-1">hiding</link> <>
@@ -120,26 +120,27 @@ It feels like you're going to be sleeping with the fishes soon.
     -> end
 }
 ~ set_life(-10)
-
 + [RETORT]
     // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - _performance > 0:
+        ~ set_life(13)
         {shuffle:
         -   Tch, intimidation? That ain't gonna work on me. # AMY
         -   Think you're the first monster I've taken down? I know your tricks # AMY
         -   That's wrong! I can see through your magic! # AMY
         -   I'm not afraid of you! # AMY
         }
-        ~ set_life(13)
+       
     - _performance > -2:
+        ~ set_life(6)
         {shuffle:
         -   N-no that's not true! # AMY
         -   Ngh, I won't let you under my skin. # AMY
         -   I w-won't give in! # AMY
         -   Mmph! I uhh... t-that's wrong! # AMY
         }
-        ~ set_life(6)
+    
     - else:
         {shuffle:
         -   Ugh! I don't think that was right # AMY
@@ -156,13 +157,14 @@ It feels like you're going to be sleeping with the fishes soon.
     }
 + [SKIP]
     {fallacy == "NONE":
+        ~ set_life(10)
         {shuffle:
         -   You're not worth my time! # AMY
         -   Trying to be tricky eh? # AMY
         -   As if! # AMY
         -   You won't fool me with that! # AMY
         }
-        ~ set_life(10)
+        
     -   else:
         {shuffle:
         -   Uhh, pass! # AMY

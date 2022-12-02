@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     DialogueManager dialogueManager;
     private int maxHealth = 30;
     private int currentHealth;
-    private int damageHealth = -10;
     private List<TMP_LinkInfo> selectedParts;
     private Story cStory;
 
@@ -23,23 +22,20 @@ public class PlayerHealth : MonoBehaviour
     
     void Start() {
         selectedParts = new List<TMP_LinkInfo>();
-        
         cStory = dialogueManager.currentStory;
-        // initializes the properties 
+
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update() {
-        setInk_Performance();
+        cStory.EvaluateFunction("set_performance", sumPerformance());
         currentHealth = (int)cStory.variablesState["_life"];
-        int c = (int)cStory.variablesState["_turn"];
-        Debug.Log("TURN " + c);
-        Debug.Log("SENT LIFE: "+ currentHealth);
         healthBar.SetHealth(currentHealth);
+        int c = (int)cStory.variablesState["_turn"];
     }
 
-// with ink
+
     public int sumPerformance()
     {
         selectedParts = trackSelectedWord._parts;
@@ -51,13 +47,6 @@ public class PlayerHealth : MonoBehaviour
             performance+=x;
         }
 
-        Debug.Log("PERFORMANCE: "+ performance);
         return performance;
-    }
-
-    public void setInk_Performance()
-    {
-        Debug.Log("SENT PERFORMANCE: "+ sumPerformance());
-        cStory.EvaluateFunction("set_performance", sumPerformance());
     }
 }

@@ -268,7 +268,8 @@ What should I do now?
             But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
             ~ inventory += crane
             ~ BG = CH02_EXP_PIER_MOVED
-            ~ INTERACTABLE = true
+            Yes!
+            I did it!
         - else:
             I think I got it stuck.
             Besides, I really don't feel like getting back on that thing.

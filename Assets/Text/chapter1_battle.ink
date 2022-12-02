@@ -175,11 +175,12 @@ It feels like you're going to be sleeping with the fishes soon.
         -   ??? # AMY
         }
     }
+~ set_turn(1)
 - -> battle_phase
 
 
 - (bad_end)
-# AMY LOSE
+# AMY
 Urk! # AMY
 I can't go on! # AMY
 Is this the end? # AMY
@@ -194,7 +195,7 @@ Continue?
 + [Main Menu] -> main
 
 - (end)
-# KIT WIN SCENE
+# KIT
 "Hrngg!" # KIT
 "This.." # KIT
 "How is this possible!?" # KIT

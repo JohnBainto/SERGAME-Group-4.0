@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &869790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3679245, g: 0.17938742, b: 0.09411765, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.4, y: 20.2, z: 0}
+  m_LocalPosition: {x: 6.57, y: 23.96, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 93760969}
   - component: {fileID: 93760968}
   m_Layer: 6
-  m_Name: Steel Bar 5
+  m_Name: Steel Bar 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 178290217}
   - component: {fileID: 178290216}
   m_Layer: 6
-  m_Name: Crate 2 (3)
+  m_Name: Crate 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70477,7 +70477,7 @@ GameObject:
   - component: {fileID: 518153474}
   - component: {fileID: 518153473}
   m_Layer: 6
-  m_Name: Steel Bar 1 (2)
+  m_Name: Steel Bar 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70667,12 +70667,12 @@ GameObject:
   - component: {fileID: 569596109}
   - component: {fileID: 569596108}
   m_Layer: 0
-  m_Name: Steel Bar 7
+  m_Name: Steel Bar 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &569596108
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -70709,17 +70709,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 569596111}
-    m_ColliderPaths:
-    - - X: 44800000
-        Y: -9999992
-      - X: 44800000
-        Y: 10000008
-      - X: -44800000
-        Y: 9999992
-      - X: -44800000
-        Y: -10000008
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -4.48, y: -0.9999715}
@@ -70862,12 +70852,12 @@ GameObject:
   - component: {fileID: 797532548}
   - component: {fileID: 797532547}
   m_Layer: 0
-  m_Name: Steel Bar 6
+  m_Name: Steel Bar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &797532547
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -70904,17 +70894,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 797532550}
-    m_ColliderPaths:
-    - - X: 44800000
-        Y: -9999992
-      - X: 44800000
-        Y: 10000008
-      - X: -44800000
-        Y: 9999992
-      - X: -44800000
-        Y: -10000008
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -4.48, y: -0.9999715}
@@ -71052,12 +71032,12 @@ GameObject:
   - component: {fileID: 806319570}
   - component: {fileID: 806319569}
   m_Layer: 6
-  m_Name: Steel Bar 3
+  m_Name: Steel Bar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!251 &806319569
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -71094,17 +71074,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 806319572}
-    m_ColliderPaths:
-    - - X: 107341640
-        Y: 10000000
-      - X: -107341640
-        Y: 10000000
-      - X: -107341640
-        Y: -10000000
-      - X: 107341640
-        Y: -10000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 10.734135, y: -1}
@@ -71324,7 +71294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672442054675849407, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
@@ -72037,7 +72007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211684202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.04, y: 7.92, z: 0}
+  m_LocalPosition: {x: -18.5, y: 5.44, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73170,7 +73140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766660736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.56, y: -3.38, z: 0}
+  m_LocalPosition: {x: 19.83, y: -3.38, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73365,7 +73335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800591025}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.99, y: 5.8, z: 0}
+  m_LocalPosition: {x: 5.99, y: 6.3, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73393,7 +73363,7 @@ GameObject:
   - component: {fileID: 1849481682}
   - component: {fileID: 1849481681}
   m_Layer: 6
-  m_Name: Steel Bar 1 (1)
+  m_Name: Steel Bar 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73583,7 +73553,7 @@ GameObject:
   - component: {fileID: 1855784458}
   - component: {fileID: 1855784457}
   m_Layer: 6
-  m_Name: Steel Bar 1
+  m_Name: Steel Bar 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

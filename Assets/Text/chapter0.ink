@@ -39,6 +39,8 @@ Try moving towards the box on your right and interacting with it!
 
 - (area1)
 ~ INTERACTABLE = true
+# AMY
+What should I do now?
 + [Examine box]
     ~ INTERACTABLE = false
     {inventory ? key:
@@ -92,10 +94,6 @@ Try moving towards the box on your right and interacting with it!
         You will also encounter choices.
         Use the up and down arrow keys to select between different choices.
         Then, click on the Enter key to confirm your selection.
-        # AMY
-        Anyway, what should I do now?
-    -   # AMY
-        What should I inspect?
     }
     {not examined_box: -> area1}
     + + [Examine slip of paper.]
@@ -137,7 +135,7 @@ Try moving towards the box on your right and interacting with it!
         }
     - - # TUTORIAL
         Seems like you need to find a key to open that box.
-        Try exploring the area to the left to look for a key.
+        Try exploring the area to the right to look for a key.
         Go left until you find a tall box and interact with it.
         -> area1
 + [Examine tall box]

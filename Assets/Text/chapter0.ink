@@ -167,6 +167,7 @@ Try moving towards the box on your right and interacting with it!
         Try examining the box near where you first started before anything else.
     }
 + [Get key]
+    ~ INTERACTABLE = false
     {not examined_box:
         # TUTORIAL
         Woah slow down!

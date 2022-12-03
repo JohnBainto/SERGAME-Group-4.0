@@ -141,6 +141,8 @@ Geez, this place is a ghost town.
 Still, could be trouble here.
 I ought 'ta blend in to avoid any suspicion to myself.
 
+~ temp dock_worker = false
+
 - (area1)
 ~ INTERACTABLE = true
 What should I investigate?
@@ -187,6 +189,8 @@ What should I investigate?
     # DOCK WORKER
     "What're you gawkin' at me fer?"
     
+    {dock_worker: -> area1_1}
+    
     # AMY
     "Oh sorry, I uhh."
     
@@ -205,7 +209,7 @@ What should I investigate?
         "Yeah, its about the logistics of shipping and transportation."
         
         # DOCK WORKER
-        "Ehh, college boy huh?"
+        "Ehh, college kid huh?"
         "Where do you go? What're you takin'?"
         
         # AMY
@@ -231,6 +235,7 @@ What should I investigate?
         
         # DOCK WORKER
         "Sigh... alright, whaddya need?"
+        ~ dock_worker = true
         
     - - (area1_1)
     + + "What hours is the dock open?" # AMY
@@ -289,11 +294,11 @@ What should I investigate?
         
         # DOCK WORKER
         "I mean IT'S DANGEROUS"
-        "I ain't just wearin' this hard hat just to attract ladies ya know."
+        "I ain't just wearin' this PPE just to attract ladies ya know."
         "Besides, there's other things..."
         "Or ahem other people from 'round these parts that could be dangerous too."
         "These streets ain't like they used to tuts."
-        "Gotta be careful now, ya never know what creepin' for ya just right 'round the corner."
+        "Gotta be careful now, ya never know what's creepin' for ya just right 'round the corner."
         
         # AMY
         "Thanks, I'll be careful."
@@ -303,7 +308,7 @@ What should I investigate?
         ~ INTERACTABLE = true
         -> area1
     
-    - - - -> area1_1
+    - - -> area1_1
 + [Go further in]
     ~ INTERACTABLE = false
     {stopping:
@@ -408,7 +413,7 @@ What should I investigate?
         Gasp! Tikbalang hair!
         IMPRESSION FOUND # NARRATOR
          # AMY
-        "Looks like that hair was a manifestation of an impression."
+        "Looks like an impression manifested in that hair."
         "It's a good thing I spotted it."
         ~ ch1_evidence += ch1_evidence.e3
         Though... I'm not sure how useful that'll be seeing as how I'm still stuck in this room...

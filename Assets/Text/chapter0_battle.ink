@@ -56,7 +56,7 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 }
 ~ set_life(-10)
 
-+ [Retort]
++ [RETORT]
     // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - _turn == 0 and _performance > 0:
@@ -94,7 +94,7 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
         But don't worry! # TUTORIAL
         Even if you lose a battle, you can always try again next time. # TUTORIAL
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

@@ -144,7 +144,7 @@ Are you ready?
 }
 ~ set_life(-10)
 
-+ [Retort]
++ [RETORT]
     // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - _performance > 0:
@@ -178,7 +178,7 @@ Are you ready?
             I should ne more careful next time.
         }
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

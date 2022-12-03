@@ -1,4 +1,4 @@
-LIST ch0_evidence = e1
+LIST ch0_evidence = e1,e2
 === tutorial ===
 = part1
 ~ INTERACTABLE = false

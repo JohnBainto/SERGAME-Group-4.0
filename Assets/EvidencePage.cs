@@ -11,7 +11,7 @@ public class EvidencePage : MonoBehaviour
     [SerializeField]  TextMeshProUGUI text2;
     [SerializeField]  GameObject sprite0;
 
-    public void Setup(PageData pageData) {
+    public void Setup(PageData pageData, string ch0_e, string ch1_e, string ch2_e,  int chNo) {
         gameObject.SetActive(true);
         text0.text = pageData.pageContents[0];
         text1.text = pageData.pageContents[1];

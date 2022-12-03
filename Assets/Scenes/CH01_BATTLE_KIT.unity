@@ -5615,6 +5615,10 @@ MonoBehaviour:
     pageContents:
     - Dock Worker
     - Evidence 1
+    - "Talking to the dock worker gave the impression that the boss \u2018Kit\u2019
+      is very intimidating.\n\nThis likely means that his fallacy spell skill is
+      also involved with <b>intimidation</b>\n\nWhen battling him he will try to
+      intimidate <b>you</b> so look for words that are used to directly address you."
     - ???????
     - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:

@@ -1,12 +1,5 @@
 === ch1_battle ===
 ~BG = BATTLE
-~ ch0_evidence += ch0_evidence.e1
-~ ch1_evidence += ch1_evidence.e1
-~ ch1_evidence += ch1_evidence.e2
-~ ch1_evidence += ch1_evidence.e3
-~ ch2_evidence += ch2_evidence.e1
-~ ch2_evidence += ch2_evidence.e2
-~ ch2_evidence += ch2_evidence.e3
 
 ~ _performance = 0
 ~ _life = 30

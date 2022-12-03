@@ -10,6 +10,7 @@ public class CodexScreen : MonoBehaviour
     private string ch1_evidences;
     private string ch2_evidences;
     private string chapter; //pathString
+    private int chapterNo;
     public int maxPage;
     public int currentPage;
     [SerializeField] GameObject nextButton;
@@ -40,13 +41,16 @@ public class CodexScreen : MonoBehaviour
         {
             case "tutorial":
             case "ch0_battle":
-                maxPage = 4; break;
+                maxPage = 4;
+                chapterNo = 0; break;
             case "chapter1":
             case "ch1_battle":
-                maxPage = 10; break;
+                maxPage = 10;
+                chapterNo = 1; break;
             case "chapter2":
             case "ch2_battle":
-                maxPage = 16; break;
+                maxPage = 16;
+                chapterNo = 2; break;
         }
         
         Debug.Log("CODEX SCREEN:\n" + ch0_evidences + " AAAA " + ch1_evidences + " BBB " + ch2_evidences
@@ -118,7 +122,7 @@ public class CodexScreen : MonoBehaviour
             chapterPage.Destroy();
             evidencePage.Destroy();
             fallacySkillPage.Destroy();
-            caseFilePage.Setup(pageData); 
+            caseFilePage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo); 
         }
         else if(type == "Evidence")
         {
@@ -126,7 +130,7 @@ public class CodexScreen : MonoBehaviour
             chapterPage.Destroy();
             caseFilePage.Destroy();
             fallacySkillPage.Destroy();
-            evidencePage.Setup(pageData);
+            evidencePage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo);
         }
         else if(type == "Fallacy Skill")
         {
@@ -134,7 +138,7 @@ public class CodexScreen : MonoBehaviour
             chapterPage.Destroy();
             caseFilePage.Destroy();
             evidencePage.Destroy();
-            fallacySkillPage.Setup(pageData); 
+            fallacySkillPage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo); 
         }
         else
         {

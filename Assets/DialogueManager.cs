@@ -42,13 +42,14 @@ public class DialogueManager : MonoBehaviour
     // Win or Lose Screen
     public LoseScreen loseScreen;
     public WinScreen winScreen;
+    public CodexScreen codexScreen;
     // Start is called before the first frame update
     private void Start() 
     {
         StartCoroutine(ClearText());
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);
-        Debug.Log(bossBattleName);
+        
         List<string> tags = new List<string>();
         // Get all normal choices
         normalChoicesText = new TextMeshProUGUI[normalChoices.Length];

@@ -598,9 +598,9 @@ MonoBehaviour:
   battleChoices:
   - {fileID: 8880801}
   - {fileID: 1865855817}
-  - {fileID: 1387332679}
   loseScreen: {fileID: 651391107}
   winScreen: {fileID: 230967958}
+  codexScreen: {fileID: 174686377}
 --- !u!4 &70969583
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,7 +1199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &174686374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2924528, g: 0.21382163, b: 0.21382163, a: 0.8666667}
+  m_Color: {r: 0.49056602, g: 0.35404056, b: 0.35404056, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5938,7 +5938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1387332682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174686377}
+        m_TargetAssemblyTypeName: CodexScreen, Assembly-CSharp
+        m_MethodName: Setup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1387332682
 MonoBehaviour:
   m_ObjectHideFlags: 0

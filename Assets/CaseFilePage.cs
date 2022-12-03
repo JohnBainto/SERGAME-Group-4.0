@@ -17,7 +17,7 @@ public class CaseFilePage : MonoBehaviour
         text1.text = pageData.pageContents[1];
 
         // Deciding on the content
-        if(chNo == 0) 
+        if(pageData.pageName == "CH0 Case File") 
         {
             if(!ch0_e.Contains("e1"))
                 text2.text = pageData.pageContents[3];
@@ -25,7 +25,7 @@ public class CaseFilePage : MonoBehaviour
                 text2.text = pageData.pageContents[2];
         }
         
-        if (chNo == 1) 
+        if (pageData.pageName == "CH1 Case File") 
         {
             if(!ch1_e.Contains("e1"))
                 text2.text = pageData.pageContents[3];
@@ -33,7 +33,7 @@ public class CaseFilePage : MonoBehaviour
                 text2.text = pageData.pageContents[2];
         }
         
-        if (chNo == 2)
+        if (pageData.pageName == "CH2 Case File")
         {
             if(!ch2_e.Contains("e1"))
                 text2.text = pageData.pageContents[3];

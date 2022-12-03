@@ -29,12 +29,11 @@ public class levelSelection : MonoBehaviour
 
     public void screenChangeToChapter1 ()
     {
-        Initiate.Fade("CH01_EXP_OUTSIDE", Color.black, 1.0f);
-        SceneManager.LoadScene("CH01_EXP_OUTSIDE"); 
+        Initiate.Fade("CH01_EXP_BLACK", Color.black, 1.0f);
     }
 
     public void screenChangeToChapter2 ()
     {
-        Initiate.Fade("CH02_EXP_HALLWAY", Color.black, 1.0f); 
+        Initiate.Fade("CH02_EXP_BLACK", Color.black, 1.0f); 
     }
 }

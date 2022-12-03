@@ -71658,7 +71658,7 @@ PrefabInstance:
       objectReference: {fileID: 235099743}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactKey
-      value: 101
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 423640586379627479, guid: 4e559d4b735fcac49bfb009ab91831d4, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

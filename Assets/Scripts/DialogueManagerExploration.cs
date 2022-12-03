@@ -201,7 +201,9 @@ public class DialogueManagerExploration : MonoBehaviour
             foreach (var item in inventory) {
                 string itemName = item.Key.ToString().Split('.')[1];
                 Debug.Log(itemName);
-                itemText.text += itemName + "\n";
+                if (itemName != "crane") {
+                    itemText.text += itemName + "\n";
+                }
             } 
         } else {
             itemPanel.SetActive(false);

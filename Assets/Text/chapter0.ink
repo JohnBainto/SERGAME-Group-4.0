@@ -1,9 +1,9 @@
 LIST ch0_evidence = e1
-
 === tutorial ===
 = part1
 ~ INTERACTABLE = false
 ~ BG = CH00_EXP_BLACK
+# LOAD CODEX
 # NARRATOR
 CHAPTER 0: TUTORIAL
 NOVEMBER 23, 20XX \| 1:02 AM

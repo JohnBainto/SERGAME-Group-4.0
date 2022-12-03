@@ -1,9 +1,9 @@
 === ch2_battle ===
 ~BG = BATTLE
+# LOAD CODEX
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
-~ _boss = "Koi Ignacio"
 ~ _result = ""
 # NARRATOR BATTLE_PHASE
 The wind is howling and the rain is falling in torrents.
@@ -145,7 +145,7 @@ Are you ready?
 }
 ~ set_life(-10)
 
-+ [Retort]
++ [RETORT]
     // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - _performance > 0:
@@ -179,7 +179,7 @@ Are you ready?
             I should ne more careful next time.
         }
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

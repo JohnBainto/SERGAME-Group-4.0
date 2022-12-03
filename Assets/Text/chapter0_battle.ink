@@ -1,10 +1,10 @@
 VAR _performance = 0
 VAR _life = 30
 VAR _turn = 0
-VAR _boss = "Hattie Haute"
 VAR _result = ""
 === ch0_battle ===
 ~BG = BATTLE
+# LOAD CODEX
 # NARRATOR TUTORIAL BATTLE_PHASE
 This is the battle phase.
 Each round your enemy will try to attack you using a fallacy spell.
@@ -57,7 +57,7 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 }
 ~ set_life(-10)
 
-+ [Retort]
++ [RETORT]
     // SET THE PERFORMANCE VALUE SOMEHOW
     {
     - _turn == 0 and _performance > 0:
@@ -95,7 +95,7 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
         But don't worry! # TUTORIAL
         Even if you lose a battle, you can always try again next time. # TUTORIAL
     }
-+ [Skip]
++ [SKIP]
     {fallacy == "NONE":
         {shuffle:
         -   You're not worth my time! # AMY

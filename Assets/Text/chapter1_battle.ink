@@ -1,9 +1,9 @@
 === ch1_battle ===
 ~BG = BATTLE
+# LOAD CODEX
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
-~ _boss = "Kit Balang"
 ~ _result = ""
 # NARRATOR BATTLE_PHASE
 It feels like you're going to be sleeping with the fishes soon.

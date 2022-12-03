@@ -17,16 +17,37 @@ public class FallacySkillPage : MonoBehaviour
         text2.text = pageData.pageContents[2];
         sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];
 
-        if ((chNo == 0 && ch0_e != "e1") || 
-        (chNo == 1 && ch1_e != "e1, e2, e3") ||
-        (chNo == 2 && ch2_e != "e1, e2, e3")) 
+        // Deciding on the content
+        if(pageData.pageName == "CH0 Special Fallacy Skill") 
         {
-            Debug.Log("LFJNKFND " + chNo);
-            text1.text = pageData.pageContents[3];
-            text2.text = pageData.pageContents[4];
-            sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];
+            if(!ch0_e.Contains("e1")) 
+            {
+                text1.text = pageData.pageContents[3];
+                text2.text = pageData.pageContents[4];
+                sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];//
+            }
+                
         }
-
+        
+        if (pageData.pageName == "CH1 Special Fallacy Skill") 
+        {
+            if(ch1_e != "e1, e2, e3") 
+            {
+                text1.text = pageData.pageContents[3];
+                text2.text = pageData.pageContents[4];
+                sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];//
+            }
+        }
+        
+        if (pageData.pageName == "CH2 Special Fallacy Skill")
+        {
+            if(ch2_e != "e1, e2, e3") 
+            {
+                text1.text = pageData.pageContents[3];
+                text2.text = pageData.pageContents[4];
+                sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0]; //
+            }
+        }
         gameObject.SetActive(true);
     }
 

@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 93760970}
   - component: {fileID: 93760969}
   - component: {fileID: 93760968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Steel Bar 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,19 +287,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 93760971}
     m_ColliderPaths:
     - - X: 40000000
-        Y: 9999998
+        Y: 10000000
       - X: -40000000
-        Y: 10000002
+        Y: 10000000
       - X: -40000000
-        Y: -9999998
+        Y: -10000000
       - X: 40000000
-        Y: -10000002
+        Y: -10000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 3.999971, y: -1.0000002}
-      - {x: 3.999971, y: 0.9999998}
-      - {x: -4, y: 0.9999709}
-      - {x: -3.999971, y: -0.9999998}
+    - - {x: 3.999971, y: -1}
+      - {x: 3.999971, y: 1}
+      - {x: -4, y: 0.99997073}
+      - {x: -3.999971, y: -1}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &93760970
@@ -408,14 +408,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93760967}
-  m_LocalRotation: {x: -0, y: -0, z: -0.1545077, w: 0.98799163}
-  m_LocalPosition: {x: 30.64, y: -1.78, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9914449, w: 0.13052626}
+  m_LocalPosition: {x: 30.64, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2.0888572}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2139276461}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 165}
 --- !u!1001 &110310481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70449,7 +70449,7 @@ GameObject:
   - component: {fileID: 518153475}
   - component: {fileID: 518153474}
   - component: {fileID: 518153473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Steel Bar 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70495,20 +70495,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 518153476}
     m_ColliderPaths:
-    - - X: 20000000
-        Y: 10000000
-      - X: -20000000
-        Y: 10000000
-      - X: -20000000
-        Y: -10000000
-      - X: 20000000
-        Y: -10000000
+    - - X: 30000000
+        Y: 9999999
+      - X: -30000000
+        Y: 10000001
+      - X: -30000000
+        Y: -9999999
+      - X: 30000000
+        Y: -10000001
   m_CompositePaths:
     m_Paths:
-    - - {x: 1.9999708, y: -1}
-      - {x: 1.9999708, y: 1}
-      - {x: -2, y: 0.99997073}
-      - {x: -1.9999708, y: -1}
+    - - {x: 2.999971, y: -1.0000001}
+      - {x: 2.999971, y: 0.99999994}
+      - {x: -3, y: 0.9999708}
+      - {x: -2.999971, y: -0.99999994}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &518153475
@@ -70618,8 +70618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518153472}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 35.72, y: -1.88, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 2.0888572}
+  m_LocalPosition: {x: 35.72, y: -1.12, z: 0}
+  m_LocalScale: {x: 0.75, y: 1, z: 2.0888572}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2139276461}
@@ -72557,7 +72557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682516279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.7, y: 7.8, z: 0}
+  m_LocalPosition: {x: 46.7, y: 15.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73335,7 +73335,7 @@ GameObject:
   - component: {fileID: 1849481683}
   - component: {fileID: 1849481682}
   - component: {fileID: 1849481681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Steel Bar 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73381,20 +73381,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1849481684}
     m_ColliderPaths:
-    - - X: 40000004
-        Y: -9999999
-      - X: 40000004
-        Y: 10000004
-      - X: -40000004
-        Y: 9999999
-      - X: -40000004
-        Y: -10000004
+    - - X: 40000000
+        Y: 10000000
+      - X: -40000000
+        Y: 10000000
+      - X: -40000000
+        Y: -10000000
+      - X: 40000000
+        Y: -10000000
   m_CompositePaths:
     m_Paths:
-    - - {x: -4.0000005, y: -0.9999711}
-      - {x: 4.0000005, y: -0.9999706}
-      - {x: 3.9999712, y: 1.0000004}
-      - {x: -4.0000005, y: 0.9999706}
+    - - {x: 3.999971, y: -1}
+      - {x: 3.999971, y: 1}
+      - {x: -4, y: 0.99997073}
+      - {x: -3.999971, y: -1}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1849481683
@@ -73503,14 +73503,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849481680}
-  m_LocalRotation: {x: -0, y: -0, z: 0.8971213, w: 0.4417844}
-  m_LocalPosition: {x: 31.5, y: -0.25, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalPosition: {x: 31.5, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2139276461}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 127.564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
 --- !u!1 &1855784456
 GameObject:
   m_ObjectHideFlags: 0
@@ -73525,7 +73525,7 @@ GameObject:
   - component: {fileID: 1855784459}
   - component: {fileID: 1855784458}
   - component: {fileID: 1855784457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Steel Bar 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73571,20 +73571,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1855784460}
     m_ColliderPaths:
-    - - X: 60000004
-        Y: -9999989
-      - X: 60000004
-        Y: 10000011
-      - X: -60000004
-        Y: 9999989
-      - X: -60000004
-        Y: -10000011
+    - - X: 40000000
+        Y: -9999993
+      - X: 39999996
+        Y: 10000007
+      - X: -40000000
+        Y: 9999993
+      - X: -39999996
+        Y: -10000007
   m_CompositePaths:
     m_Paths:
-    - - {x: -6.0000005, y: -0.9999718}
-      - {x: 6.0000005, y: -0.9999696}
-      - {x: 5.9999714, y: 1.0000011}
-      - {x: -6.0000005, y: 0.9999696}
+    - - {x: -3.9999998, y: -0.9999714}
+      - {x: 4, y: -0.99997}
+      - {x: 3.9999704, y: 1.0000007}
+      - {x: -4, y: 0.99997}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1855784459
@@ -73694,8 +73694,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855784456}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 34.08, y: 2.03, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
+  m_LocalPosition: {x: 34.08, y: 0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2139276461}
@@ -73880,7 +73880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926871356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.64, y: 15.6, z: 0}
+  m_LocalPosition: {x: 46.8, y: 7.8, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:

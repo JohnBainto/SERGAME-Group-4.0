@@ -1,54 +1,109 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class TrackSelectedWord : MonoBehaviour
 {
     public TextMeshProUGUI text;
-
-    public string LastClickedWord;
     public Camera MainCamera;
-    [SerializeField] private TextMeshProUGUI selectedWords;
+    [SerializeField] public TextMeshProUGUI selectedWords;
+    public List<TMP_LinkInfo> _parts;
+
+    private void Start() 
+    {
+        _parts = new List<TMP_LinkInfo>();
+    }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {   
-            Debug.Log("weeee");
-            var wordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, MainCamera);
-            Debug.Log(wordIndex);
-            if (wordIndex != -1)
-            {
-                Debug.Log("AAAAA" + wordIndex);
-                LastClickedWord = text.textInfo.wordInfo[wordIndex].GetWord();
-                selectedWords.text+=(LastClickedWord+"\n");
-                Debug.Log("Clicked on " + LastClickedWord);              
-                
-                TMP_WordInfo info = text.textInfo.wordInfo[wordIndex];
-                for (int i = 0; i < info.characterCount; ++i)
+        int linkIndex = TMP_TextUtilities.FindIntersectingLink(text, Input.mousePosition, MainCamera);    
+        LinkOnHover(linkIndex);
+        if (linkIndex != -1)
+        {    
+            TMP_LinkInfo info = text.textInfo.linkInfo[linkIndex];
+            if (Input.GetMouseButtonDown(0))
+            {    
+                _parts.Add(text.textInfo.linkInfo[linkIndex]);
+                for (int i = 0; i < info.linkTextLength; i++)
                 {
-                    int charIndex = info.firstCharacterIndex + i;
-                    int meshIndex = text.textInfo.characterInfo[charIndex].materialReferenceIndex;
-                    int vertexIndex = text.textInfo.characterInfo[charIndex].vertexIndex;
+                    TMP_CharacterInfo cInfo = text.textInfo.characterInfo[info.linkTextfirstCharacterIndex+i];
+                    if(!cInfo.isVisible) continue;
+                    int meshIndex = cInfo.materialReferenceIndex;
+                    int vertexIndex = cInfo.vertexIndex;
                 
                     Color32[] vertexColors = text.textInfo.meshInfo[meshIndex].colors32;
-                    if (vertexColors[vertexIndex + 0] == Color.white) {
-                        vertexColors[vertexIndex + 0] = Color.red;
-                        vertexColors[vertexIndex + 1] = Color.red;
-                        vertexColors[vertexIndex + 2] = Color.red;
-                        vertexColors[vertexIndex + 3] = Color.red;
-                    }
-                    else
+                    
+                    if (vertexColors[vertexIndex + 0] == Color.red) 
                     {
                         vertexColors[vertexIndex + 0] = Color.white;
                         vertexColors[vertexIndex + 1] = Color.white;
                         vertexColors[vertexIndex + 2] = Color.white;
                         vertexColors[vertexIndex + 3] = Color.white;
-                    }
+                        _parts.Remove(text.textInfo.linkInfo[linkIndex]);
+                    } 
+                    else if (cInfo.isVisible) 
+                    {
+                        vertexColors[vertexIndex + 0] = Color.red;
+                        vertexColors[vertexIndex + 1] = Color.red;
+                        vertexColors[vertexIndex + 2] = Color.red;
+                        vertexColors[vertexIndex + 3] = Color.red;
+                        
+                    } 
                 }
+            }
+        } 
+        printSelectedParts();
+        text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
+    }
+
+    public void printSelectedParts() {
+        selectedWords.text="";
+        for (int i = 0; i <_parts.Count; i++)
+        {
+            selectedWords.text+=(_parts[i].GetLinkText()+"\n");
+        }
+    }
+
+    private void LinkOnHover(int linkIndex) 
+    { 
+        if (linkIndex != -1) {
+            TMP_LinkInfo info = text.textInfo.linkInfo[linkIndex];
+            for (int i = 0; i < info.linkTextLength; i++)
+            {
+                TMP_CharacterInfo cInfo = text.textInfo.characterInfo[info.linkTextfirstCharacterIndex+i];
+                if(!cInfo.isVisible) continue;
+                int meshIndex = cInfo.materialReferenceIndex;
+                int vertexIndex = cInfo.vertexIndex;
+
+                Color32[] vertexColors = text.textInfo.meshInfo[meshIndex].colors32;
                 
-                text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
+                if (vertexColors[vertexIndex + 0] == Color.white) {
+                    vertexColors[vertexIndex + 0] = Color.blue;
+                    vertexColors[vertexIndex + 1] = Color.blue;
+                    vertexColors[vertexIndex + 2] = Color.blue;
+                    vertexColors[vertexIndex + 3] = Color.blue;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < text.textInfo.characterCount; i++)
+            {
+                TMP_CharacterInfo cInfo = text.textInfo.characterInfo[i];
+                if(!cInfo.isVisible) continue;
+                int meshIndex = cInfo.materialReferenceIndex;
+                int vertexIndex = cInfo.vertexIndex;
+
+                Color32[] vertexColors = text.textInfo.meshInfo[meshIndex].colors32;
+                
+                if (vertexColors[vertexIndex + 0] == Color.blue) {
+                    vertexColors[vertexIndex + 0] = Color.white;
+                    vertexColors[vertexIndex + 1] = Color.white;
+                    vertexColors[vertexIndex + 2] = Color.white;
+                    vertexColors[vertexIndex + 3] = Color.white;
+                }
             }
         }
     }

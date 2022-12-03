@@ -35,6 +35,9 @@ public class DialogueManagerExploration : MonoBehaviour
 
     private bool loadingScene;
     // Start is called before the first frame update
+
+    public GameObject codex;
+
     private void Awake()
     {
         if (instance != null)
@@ -84,6 +87,17 @@ public class DialogueManagerExploration : MonoBehaviour
             HandleInteractable();
             HandleInventory();
         }
+
+        checkCodex();
+    }
+
+    private void checkCodex() {
+        string scene = SceneManager.GetActiveScene().name;
+        if (scene.Contains("BLACK")) {
+            codex.SetActive(false);
+        } else {
+            codex.SetActive(true);
+        }
     }
 
     public void EnterDialogueMode()
@@ -119,6 +133,7 @@ public class DialogueManagerExploration : MonoBehaviour
             ExitDialogueMode();
         }
     }
+    
 
     private IEnumerator DisplayLine(string line) {
         dialogueText.text = "";
@@ -168,7 +183,7 @@ public class DialogueManagerExploration : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
 
         if (sceneName == "BATTLE") {
-            sceneName = "BattlePhase";
+            sceneName = "BattleScene 1";
         }
 
         if (SceneManager.GetActiveScene().name != sceneName) {
@@ -201,7 +216,9 @@ public class DialogueManagerExploration : MonoBehaviour
             foreach (var item in inventory) {
                 string itemName = item.Key.ToString().Split('.')[1];
                 Debug.Log(itemName);
-                itemText.text += itemName + "\n";
+                if (itemName != "crane") {
+                    itemText.text += itemName + "\n";
+                }
             } 
         } else {
             itemPanel.SetActive(false);

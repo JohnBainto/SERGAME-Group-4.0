@@ -1,13 +1,13 @@
 LIST ch2_evidence = e1, e2, e3
-
 === chapter2 ===
 ~ INTERACTABLE = false
 ~ BG = CH02_EXP_BLACK
+# LOAD CODEX
 # NARRATOR
 CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
 ~ BG = CH02_EXP_BASEMENT
-Kit's defeated body lays on the floor in front you.
+Kit's defeated body lays on the floor near you.
 Just beyond him the door to your cell has been left open.
 
 
@@ -37,6 +37,7 @@ What should I do now?
     - else:
         {stopping:
         -   Hmm...
+            I don't think I should leave just yet.
             I feel like I'm missing something.
         -   Something Kit said..?
         }
@@ -68,8 +69,8 @@ Okay what should I do now?
     {stopping:
     -   You rattle the door knob. # NARRATOR
         # AMY
-        Sigh, it's locked.
-    -   I should really learn how to pick a lock one of these days.
+        Nope, there's no way he's getting out of there.
+    -   Gotta make sure he's really locked in there.
     }
 + [Door 2]
     ~ INTERACTABLE = false
@@ -87,17 +88,24 @@ Okay what should I do now?
     A couple of exposed wires dangle from the wall.
     The frayed ends crackle and pop with little bolts of lightning.
 
-    # AMY
-    Jeepers! I almost shocked myself.
-    These really have no business being exposed like this.
-    Although... I might find some use for these yet
-    {inventory ? newspaper:
-        If I use those newspapers I got to connect these two wires...
+    {stopping:
+    -   # AMY
+        Jeepers! I almost shocked myself.
+        These really have no business being exposed like this.
+        Although... maybe I could use this for my escape somehow.
+    -   # AMY
+        Hmm..> I don't have the right tools to open it up and I'm not really too keen on sticking my fingers in there.
+    }
+    {
+    -   inventory ? detector:
+        If this weren't dangerous before, it certainly is now that its wet!
+    -   inventory ? newspaper:
+        Wait, if I use those newspapers I got to connect these two wires...
 
         # NARRATOR
         You put the newspapers you collected up to the exposed wires.
-        Nothing seemed to happen at first.
-        Then slowly, the parts of the paper touching the wires start turning into a darker shade until smoke start to emanate from the newspaper,
+        Nothing seems to happen at first.
+        Then slowly, the parts of the paper touching the wires start turning into darker shades of brown until smoke starts emanating from the newspaper,
         You hold it there until it fully catches on fire.
 
         ~ inventory -= newspaper
@@ -145,7 +153,7 @@ Okay what should I do now?
     ~ INTERACTABLE = false
     {inventory !? detector:
         {stopping:
-        -   You stop before the door. # NARRATOR
+        -   You ascend the stairs stopping just before a door that leads outside. # NARRATOR
             You can hear faint voices coming from the other side.
 
             # AMY
@@ -176,9 +184,9 @@ Okay what should I do now?
         I need to hide.
 
         # NARRATOR
-        You positioned yourself behind the door just in time before it swung open.
-        You recognize the kapre running down the stair from when you were attacked earlier.
-        In the monster's rush to get downstairs, he did not even notice you holding your breath behind the door.
+        You quicly hid yourself underneath the stairs just in time before the door swung open.
+        You recognize the kapre running down the stairs from when you were attacked earlier.
+        In the monster's rush to get downstairs, he did not even notice you holding your breath under the staircase.
         You quickly slip out the door after he is some distance away.
         -> end_area2
     }
@@ -192,7 +200,7 @@ Okay what should I do now?
 ~ BG = CH02_EXP_BLACK
 # NARRATOR
 You exit into the main area of shipping office.
-The door leading outside is wide open exposing the interior of the building to heavy rain from the outside.
+The door leading outside of the building is wide open exposing the interior of the building to heavy rain.
 In combination with the sprinklers, there is a good inch of water pooling on the ground.
 
 # AMY
@@ -206,7 +214,7 @@ IMPRESSION FOUND # NARRATOR
 ~ ch2_evidence += ch2_evidence.e2
 
 # NARRATOR
-You run out of the shipping office and enter the pier area.
+You run out of the shipping office into the pier area.
 
 ~ BG = CH02_EXP_PIER_WET
 Heavy torrents of rain fall all around you reducing visibility.
@@ -232,16 +240,16 @@ What should I do now?
     ~ INTERACTABLE = false
     {stopping:
     -   Can't anything ever be easy!
-        That wave knocked the shipping containers over and now the exit's blocked.
+        That wave pushed these shipping containers over here and now the exit's blocked.
     -   I need to find a way around to get out.
         Or maybe over?
     }
 + [Shipping container 2]
     ~ INTERACTABLE = false
     {stopping:
-    -   Looks like this has been knocked over too.
-        It doesn't look like I can open it either.
-    -   I wonder if I can get on top of this thing?
+    -   Looks like I can't get passed beyond this point.
+        There's too much debris in the way.
+    -   I wonder if there's another way out.
     }
 + [Washed up fish]
     ~ INTERACTABLE = false
@@ -251,24 +259,27 @@ What should I do now?
     # AMY
     That wave must have washed these fish over here.
     This is honestly a pretty perfect metaphor for my situation.
-    Wait these fish remind me of something...
-    IMPRESSION FOUND # NARRATOR
-    # AMY
-    "That's right!"
-    "These fish are somehow connected to whoever is behind this whole thing."
-    ~ ch2_evidence += ch2_evidence.e3
+    {ch2_evidence !? ch2_evidence.e3:
+        Wait these fish remind me of something...
+        IMPRESSION FOUND # NARRATOR
+        # AMY
+        "That's right!"
+        "These fish must somehow be connected to whoever is behind this whole thing."
+        ~ ch2_evidence += ch2_evidence.e3
+    }
 + [Crane]
     ~ INTERACTABLE = false
     {inventory ? key:
         {inventory !? crane:
             Alright!
-            Let's see if what this baby can do!
+            Let's see what this baby can do!
             Wooaahh!
             Okay I guess I don't exactly know how to operate this thing.
-            But on the flip side, I think I moved it enough that I can use it as a platform to get to the other side.
+            But I think I can move some of these steel girders around enough so I can make a platform to escape.
             ~ inventory += crane
             ~ BG = CH02_EXP_PIER_MOVED
-            ~ INTERACTABLE = true
+            Yes!
+            I did it!
         - else:
             I think I got it stuck.
             Besides, I really don't feel like getting back on that thing.
@@ -276,7 +287,6 @@ What should I do now?
     - else:
         {stopping:
         -   Looks like this crane's still workin'.
-            ...unlike that other one.
             Maybe I can use this to escape somehow?
 
         -   You tried opening the cabin. # NARRATOR
@@ -356,7 +366,7 @@ No way!
     I'm getting outta here!
 
     # NARRATOR
-    You break out into a sprint ready to leap from the crane.
+    You break out into a sprint ready to leap from the shaky platform you put together.
 
     # KOI
     "Hiss! You fool!"

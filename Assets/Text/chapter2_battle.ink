@@ -1,11 +1,11 @@
 === ch2_battle ===
 ~BG = BATTLE
-# LOAD CODEX
+
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
 ~ _result = ""
-# NARRATOR BATTLE_PHASE
+# NARRATOR BATTLE_PHASE LOAD CODEX
 The wind is howling and the rain is falling in torrents.
 Are you ready?
 

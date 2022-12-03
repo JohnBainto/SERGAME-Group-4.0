@@ -1,13 +1,19 @@
 === ch1_battle ===
 ~BG = BATTLE
-# LOAD CODEX
+~ ch0_evidence += ch0_evidence.e1
+~ ch1_evidence += ch1_evidence.e1
+~ ch1_evidence += ch1_evidence.e2
+~ ch1_evidence += ch1_evidence.e3
+~ ch2_evidence += ch2_evidence.e1
+~ ch2_evidence += ch2_evidence.e2
+~ ch2_evidence += ch2_evidence.e3
+
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
 ~ _result = ""
-# NARRATOR BATTLE_PHASE
+# NARRATOR BATTLE_PHASE LOAD CODEX
 It feels like you're going to be sleeping with the fishes soon.
-
 ~ temp fallacy = ""
 
 - (battle_phase)

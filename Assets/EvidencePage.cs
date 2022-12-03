@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class ChapterPage : MonoBehaviour
+
+public class EvidencePage : MonoBehaviour
 {
     [SerializeField]  TextMeshProUGUI text0;
     [SerializeField]  TextMeshProUGUI text1;
     [SerializeField]  TextMeshProUGUI text2;
     [SerializeField]  GameObject sprite0;
-    // [SerializeField]  TextMeshProUGUI[] texts;
-    // [SerializeField]  GameObject[] sprites;
+
     public void Setup(PageData pageData) {
-        gameObject.SetActive(true); 
+        gameObject.SetActive(true);
         text0.text = pageData.pageContents[0];
         text1.text = pageData.pageContents[1];
         text2.text = pageData.pageContents[2];

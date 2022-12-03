@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using UnityEngine.UI;
 public class PageDataController : MonoBehaviour
 {
     [SerializeField]
@@ -10,8 +10,9 @@ public class PageDataController : MonoBehaviour
 
     public PageData Get(string id)
     {
-        return pages.FirstOrDefault(p => p.pageID == int.Parse(id));
+        return pages.FirstOrDefault(p => p.pageID == id);
     }
+
     public List<PageData> GetAll()
     {
         return pages;
@@ -22,7 +23,7 @@ public class PageDataController : MonoBehaviour
 public struct PageData
 {
     public bool isUnlocked;
-    public int pageID; //link name also
+    public string pageID; //link name also
     public string pageName;
     public string pageType;
     [TextArea(3,10)] // limit for each content 

@@ -17,16 +17,15 @@ public class CodexScreen : MonoBehaviour
 
     // Pages Types
     public OutlinePage outlinePage;
-    // public ChapterPage chapterPage;
-    // public CaseFilePage caseFilePage;
-    // public EvidencePage evidencePage;
-    // public FallacySkillPage fallacySkillPage;
+    public ChapterPage chapterPage;
+    public CaseFilePage caseFilePage;
+    public EvidencePage evidencePage;
+    public FallacySkillPage fallacySkillPage;
     
     public void Setup() {
         gameObject.SetActive(true);
-        nextButton.SetActive(true);
-        prevButton.SetActive(false);
         currentPage = 0;
+        setPrevNextButton();
         printPage(codexPagesData[currentPage]);
     }
 
@@ -57,25 +56,17 @@ public class CodexScreen : MonoBehaviour
     public void NextButton() 
     {
         currentPage++;
-        if(currentPage == maxPage)
-        {
-            nextButton.SetActive(false);
-            prevButton.SetActive(true);
-        } 
-
-        //printPage(currentPage);     
+        
+        setPrevNextButton();
+        printPage(codexPagesData[currentPage]);
     }
 
     public void PreviousButton() 
     {
         currentPage--;
-        if(currentPage == 0)
-        {
-            nextButton.SetActive(true);
-            prevButton.SetActive(false);
-        }
 
-        //printPage(currentPage);
+        setPrevNextButton();
+        printPage(codexPagesData[currentPage]);
     }
 
     public void BackButton() 
@@ -83,11 +74,72 @@ public class CodexScreen : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public  void setPrevNextButton()
+    {
+        if (currentPage == 0)
+        {
+            nextButton.SetActive(true);
+            prevButton.SetActive(false);
+        }
+        else if (currentPage > 0 && currentPage < 16)
+        {
+            nextButton.SetActive(true);
+            prevButton.SetActive(true);
+        }
+        else if (currentPage == 16)
+        {
+            nextButton.SetActive(false);
+            prevButton.SetActive(true);
+        }
+    }
+
     public void printPage(PageData pageData) 
     {
-        if(pageData.pageType == "Outline")
+        string type = pageData.pageType.Trim();
+        if(type == "Outline")
+        {
+            chapterPage.Destroy();
+            caseFilePage.Destroy();
+            evidencePage.Destroy();
+            fallacySkillPage.Destroy();
             outlinePage.Setup(pageData);
-        // else if(pageData.pageType == "Chapter")     
+        }
+        else if(type == "Chapter") 
+        {
+            outlinePage.Destroy();
+            caseFilePage.Destroy();
+            evidencePage.Destroy();
+            fallacySkillPage.Destroy();
+            chapterPage.Setup(pageData);  
+        }
+        else if(type == "Case File")
+        {
+            outlinePage.Destroy();
+            chapterPage.Destroy();
+            evidencePage.Destroy();
+            fallacySkillPage.Destroy();
+            caseFilePage.Setup(pageData); 
+        }
+        else if(type == "Evidence")
+        {
+            outlinePage.Destroy();
+            chapterPage.Destroy();
+            caseFilePage.Destroy();
+            fallacySkillPage.Destroy();
+            evidencePage.Setup(pageData);
+        }
+        else if(type == "Fallacy Skill")
+        {
+            outlinePage.Destroy();
+            chapterPage.Destroy();
+            caseFilePage.Destroy();
+            evidencePage.Destroy();
+            fallacySkillPage.Setup(pageData); 
+        }
+        else
+        {
+            Debug.Log("Not included in if conditions:<" + pageData.pageType+ ">AAA");
+        }
     }
 }
 

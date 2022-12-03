@@ -1304,6 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codexScreen: {fileID: 174686377}
 --- !u!1 &174686373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1402,10 @@ MonoBehaviour:
   nextButton: {fileID: 1129558175}
   prevButton: {fileID: 1856179598}
   outlinePage: {fileID: 1944337611}
+  chapterPage: {fileID: 1064809542}
+  caseFilePage: {fileID: 579643807}
+  evidencePage: {fileID: 2117010045}
+  fallacySkillPage: {fileID: 1066145149}
 --- !u!1 &194045262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,11 +2865,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066145146}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: 0.000011444}
+  m_AnchoredPosition: {x: -320, y: -79.3}
   m_SizeDelta: {x: 500, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554346820
@@ -2975,6 +2980,7 @@ GameObject:
   - component: {fileID: 579643804}
   - component: {fileID: 579643806}
   - component: {fileID: 579643805}
+  - component: {fileID: 579643807}
   m_Layer: 5
   m_Name: CaseFilePage
   m_TagString: Untagged
@@ -3043,6 +3049,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579643803}
   m_CullTransparentMesh: 1
+--- !u!114 &579643807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579643803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5551fd1a9e3174b5d9de6e8ae55a9c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text0: {fileID: 517792020}
+  text1: {fileID: 538157031}
+  text2: {fileID: 489059990}
+  sprite0: {fileID: 811643740}
 --- !u!1 &582046948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3306,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651391105}
+  m_CullTransparentMesh: 1
+--- !u!1 &653793406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653793407}
+  - component: {fileID: 653793409}
+  - component: {fileID: 653793408}
+  m_Layer: 5
+  m_Name: BossHeadPhoto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &653793407
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653793406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1066145146}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -320, y: 140}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &653793408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653793406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &653793409
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653793406}
   m_CullTransparentMesh: 1
 --- !u!1 &688067104
 GameObject:
@@ -4422,7 +4520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983816473}
   - component: {fileID: 983816475}
-  - component: {fileID: 983816474}
+  - component: {fileID: 983816476}
   m_Layer: 5
   m_Name: ChapterPhoto
   m_TagString: Untagged
@@ -4450,7 +4548,15 @@ RectTransform:
   m_AnchoredPosition: {x: -320, y: 70.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &983816474
+--- !u!222 &983816475
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983816472}
+  m_CullTransparentMesh: 1
+--- !u!114 &983816476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4480,14 +4586,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &983816475
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983816472}
-  m_CullTransparentMesh: 1
 --- !u!1 &1022100065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4849,6 +4947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7084b703a55a741a18f55ba5019ac2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text0: {fileID: 79992453}
+  text1: {fileID: 1640792999}
+  text2: {fileID: 1999187463}
+  sprite0: {fileID: 983816472}
 --- !u!1 &1066145145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,8 +4962,9 @@ GameObject:
   - component: {fileID: 1066145146}
   - component: {fileID: 1066145148}
   - component: {fileID: 1066145147}
+  - component: {fileID: 1066145149}
   m_Layer: 5
-  m_Name: FallacyPage
+  m_Name: FallacySkillPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4879,6 +4982,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 653793407}
   - {fileID: 554346819}
   - {fileID: 1462964568}
   m_Father: {fileID: 1810167456}
@@ -4927,6 +5031,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066145145}
   m_CullTransparentMesh: 1
+--- !u!114 &1066145149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066145145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4a0b8c53f6a43ca94f0ebeb8c3f799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text0: {fileID: 554346820}
+  text1: {fileID: 194045264}
+  text2: {fileID: 1436114988}
+  sprite0: {fileID: 653793406}
 --- !u!1 &1129558175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,7 +5130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1129558178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174686377}
+        m_TargetAssemblyTypeName: CodexScreen, Assembly-CSharp
+        m_MethodName: NextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1129558178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5376,7 +5508,7 @@ MonoBehaviour:
     - "> <link=\u201C3\u201D>Case File 0</link>    \n> <link=\u201C4\u201D>Evidence
       1</link>   \n> <link=\u201C5\u201D>Special Fallacy Skill</link> "
     pageSprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 9f7164e06c7094d2a95cfb05227a8676, type: 3}
   - isUnlocked: 1
     pageID: 2
     pageName: CH0 Case File
@@ -5391,8 +5523,13 @@ MonoBehaviour:
       to read a note placed inside of it, you find that it contains a note among
       other paraphernalia. Upon examining the note inside, you determine that a person
       named Hattie is likely responsible for the recent cases of vandalism."
+    - "Recent reports of vandalism in a suburban area of the city has made you believe
+      that a gang of supernatural beings are trying to assert their influence there.
+      You now staked out in a monster\u2019s domain in order to catch who their leader
+      is using a package with a tracking device\n\n<b>???\\nCOLLECT EVIDENCE to unlock
+      this part of the Case File!\\n???</b>"
     pageSprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: cabbb9980597e68458fe5f52a8fdd30d, type: 3}
   - isUnlocked: 0
     pageID: 3
     pageName: CH0 Evidence 1
@@ -5402,12 +5539,14 @@ MonoBehaviour:
     - Evidence 1
     - "The contents you find in the box give you the impression that a black-and-white
       worldview or separating things into two is involved.\n\nYou deduce that Hattie\u2019s
-      special fallacy skill must be<b>RED HERRING</b>.\n\nThis special fallacy skill
+      special fallacy skill must be <b>RED HERRING</b>.\n\nThis special fallacy skill
       frames problems as only having <b>two-sides</b>. They will simplify problems
       into a simple <b>either-or</b> situation and eliminate other alternatives to
       make their point seem more reasonable."
+    - ???????
+    - ACCESS RESTRICTED! Explore more to collect the evidence.
     pageSprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 5c109c2f37cb14ff49687e6123fb81f4, type: 3}
   - isUnlocked: 0
     pageID: 4
     pageName: CH0 Special Fallacy Skill
@@ -5420,7 +5559,10 @@ MonoBehaviour:
       of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
       you <b>don\u2019t</b> agree with me on this point, <b>then</b> you <b>must</b>
       agree with <b>them</b>!\u201D"
-    pageSprites: []
+    - ???????
+    - COMPLETE THE EVIDENCES to unlock this page!
+    pageSprites:
+    - {fileID: 21300000, guid: 5c109c2f37cb14ff49687e6123fb81f4, type: 3}
   - isUnlocked: 0
     pageID: 5
     pageName: CH1 Outline
@@ -5448,6 +5590,22 @@ MonoBehaviour:
       fishy is definitely going on.\n\nAfter being confronted by a couple of monster
       thugs, you woke up locked in some room. You tried looking for evidence as you
       try to escape, but you are interrupted..."
+    - 'An urgent call gave you a lead to a potential magical item smuggling ring
+      happening at the port of Wetro Wanila.
+
+
+      <b>???\nCollect evidence to
+      unlock this part of the Case File!\n???</b>
+
+
+      Upon exploring the pier,
+      there seems to be evidence of foul play and other illegal activity involved.
+      Something fishy is definitely going on.
+
+
+      After being confronted by a
+      couple of monster thugs, you woke up locked in some room. You tried looking
+      for evidence as you try to escape, but you are interrupted...'
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5457,10 +5615,8 @@ MonoBehaviour:
     pageContents:
     - Dock Worker
     - Evidence 1
-    - "Talking to the dock worker gave the impression that the boss \u2018Kit\u2019
-      is very intimidating.\n\nThis likely means that his fallacy spell skill is
-      also involved with <b>intimidation</b>.\n\nWhen battling him he will try to
-      intimidate <b>you</b> so look for words that are used to directly address you."
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5480,6 +5636,8 @@ MonoBehaviour:
       It is important
       to remember to watch out for his attacks that try to disparage or attack your
       character using <b>insults</b>.'
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5496,6 +5654,8 @@ MonoBehaviour:
       towards its target instead of the topic at hand. People with this skill may
       try to ruin your reputation or insult you to invalidate your points even if
       it is unrelated to your arguments."
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5511,7 +5671,10 @@ MonoBehaviour:
       such a <b>lousy</b> public speaker?\u201D\n\n\u201CStay out of this, you are
       still </b>just a kid.</b>\u201D\n\n\u201CYou\u2019re only defending him because
       you are <b>his friend</b>.\u201D"
-    pageSprites: []
+    - ???????
+    - COMPLETE THE EVIDENCES to unlock this page!
+    pageSprites:
+    - {fileID: 21300000, guid: 5c109c2f37cb14ff49687e6123fb81f4, type: 3}
   - isUnlocked: 0
     pageID: 11
     pageName: CH2 Outline
@@ -5540,6 +5703,24 @@ MonoBehaviour:
       guarding facility, you dash outside to find yourself outside the shipping office
       in the pier.\n\nStrong winds and rain encumber your quick escape plot. You
       need to find an alternate route if you are ever going to leave the pier.\n"
+    - 'After defeating Kit, you are left alone in the same room you were locked in
+      but with the door wide open. This is that chance you need to escape!
+
+
+      <b>???\nCOLLECT
+      EVIDENCE to unlock this part of the Case File!\n???</b>
+
+
+      After tricking
+      the goons guarding facility, you dash outside to find yourself outside the
+      shipping office in the pier.
+
+
+      Strong winds and rain encumber your quick
+      escape plot. You need to find an alternate route if you are ever going to leave
+      the pier.
+
+'
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5556,6 +5737,8 @@ MonoBehaviour:
       they are, they are trying to <b>hide</b> the fact that they are the actual
       mastermind using Kit. Their special fallacy skill must involve <b>leading people
       to wrong conclusions</b>."
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5577,6 +5760,8 @@ MonoBehaviour:
       the boss, try to look for words or phrases that try to distract from the main
       point. This could come in the form of <b>unrelated reasons</b> or <b>logically
       unconnected statements</b>.'
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
@@ -5599,12 +5784,14 @@ MonoBehaviour:
       main topic. It could cause you to <b>focus on the wrong thing</b>. They might
       switch topics, move goal posts, or just state plain nonsense to stop you from
       talking about more important matters.'
+    - ???????
+    - 'ACCESS RESTRICTED! Explore more to collect the evidence. '
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
     pageID: 16
     pageName: CH2 Special Fallacy Skill
-    pageType: Special Fallacy Skill
+    pageType: Fallacy Skill
     pageContents:
     - Special Fallacy Skill
     - RED HERRING
@@ -5615,7 +5802,10 @@ MonoBehaviour:
       <b>doesn\u2019t matter</b> if you\u2019re tired, your brother <b>does the same
       thing</b> and he\u2019s fine.\u201D\n\n\u201CWhy are you getting mad at me?
       <b>Other kids</b> are out doing drugs and partying.\u201D"
-    pageSprites: []
+    - ???????
+    - COMPLETE THE EVIDENCES to unlock this page!
+    pageSprites:
+    - {fileID: 21300000, guid: 5c109c2f37cb14ff49687e6123fb81f4, type: 3}
 --- !u!4 &1178868390
 Transform:
   m_ObjectHideFlags: 0
@@ -6204,6 +6394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codexScreen: {fileID: 0}
 --- !u!1 &1301394022
 GameObject:
   m_ObjectHideFlags: 0
@@ -7009,7 +7200,7 @@ RectTransform:
   - {fileID: 194045263}
   - {fileID: 1436114987}
   m_Father: {fileID: 1066145146}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7990,7 +8181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1856179601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174686377}
+        m_TargetAssemblyTypeName: CodexScreen, Assembly-CSharp
+        m_MethodName: PreviousButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1856179601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9435,6 +9638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codexScreen: {fileID: 174686377}
 --- !u!1 &2010733111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9913,6 +10117,7 @@ GameObject:
   - component: {fileID: 2117010042}
   - component: {fileID: 2117010044}
   - component: {fileID: 2117010043}
+  - component: {fileID: 2117010045}
   m_Layer: 5
   m_Name: EvidencePage
   m_TagString: Untagged
@@ -9981,6 +10186,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117010041}
   m_CullTransparentMesh: 1
+--- !u!114 &2117010045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117010041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426f7229c52f049f09172135c124f6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text0: {fileID: 467773398}
+  text1: {fileID: 1849781598}
+  text2: {fileID: 112021297}
+  sprite0: {fileID: 2010733111}
 --- !u!1 &2133372909
 GameObject:
   m_ObjectHideFlags: 0

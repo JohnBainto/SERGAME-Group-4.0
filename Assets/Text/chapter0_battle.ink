@@ -4,8 +4,7 @@ VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
 ~BG = BATTLE
-# LOAD CODEX
-# NARRATOR TUTORIAL BATTLE_PHASE
+# NARRATOR TUTORIAL BATTLE_PHASE LOAD CODEX
 This is the battle phase.
 Each round your enemy will try to attack you using a fallacy spell.
 Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.

@@ -601,6 +601,9 @@ MonoBehaviour:
   loseScreen: {fileID: 651391107}
   winScreen: {fileID: 230967958}
   codexScreen: {fileID: 174686377}
+  ch0_evidences: 
+  ch1_evidences: 
+  ch2_evidences: 
 --- !u!4 &70969583
 Transform:
   m_ObjectHideFlags: 0
@@ -1319,7 +1322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &174686374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1392,8 +1395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27624c952e33493b8edbc7c3f321cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codexPages: []
-  unlockedPages: 
+  codexPagesData: []
+  maxPage: 0
+  currentPage: 0
+  nextButton: {fileID: 1129558175}
+  prevButton: {fileID: 1856179598}
+  outlinePage: {fileID: 1944337611}
 --- !u!1 &194045262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,6 +4768,7 @@ GameObject:
   - component: {fileID: 1064809539}
   - component: {fileID: 1064809541}
   - component: {fileID: 1064809540}
+  - component: {fileID: 1064809542}
   m_Layer: 5
   m_Name: ChapterPage
   m_TagString: Untagged
@@ -4829,6 +4837,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064809538}
   m_CullTransparentMesh: 1
+--- !u!114 &1064809542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064809538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7084b703a55a741a18f55ba5019ac2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1066145145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,7 +4866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1066145146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5329,13 +5349,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pages:
-  - isUnlocked: 1
+  - isUnlocked: 0
     pageID: 0
     pageName: Undercity Codex Outline
     pageType: Outline
-    pageContents: []
+    pageContents:
+    - Undercity Codex
+    - Undercity Codex
+    - "<b><link=\u201C1\u201D>Chapter 0 (Tutorial)</link></b>\n> <link=\u201C2\u201D>Case
+      File 0</link>    \n> <link=\u201C3\u201D>Evidence 1</link>   \n> <link=\u201C4\u201D>Special
+      Fallacy Skill</link> \n\n<b><link=\u201C5\u201D>Chapter 1</link></b>\n> <link=\u201C6\u201D>Case
+      File 1</link>\n> <link=\u201C7\u201D>Evidence 1</link>\n> <link=\u201C8\u201D>Evidence
+      2</link>\n> <link=\u201C9\u201D>Evidence 3</link>\n> <link=\u201C10\u201D>Special
+      Fallacy Skill</link> \n\n<b><link=\u201C11\u201D>Chapter 2</link></b>\n> <link=\u201C12\u201D>Case
+      File 2</link>\n> <link=\u201C13\u201D>Evidence 1</link>\n> <link=\u201C14\u201D>Evidence
+      2</link>\n> <link=\u201C15\u201D>Evidence 3</link>\n> <link=\u201C16\u201D>Special
+      Fallacy Skill</link> "
     pageSprites: []
-  - isUnlocked: 1
+  - isUnlocked: 0
     pageID: 1
     pageName: CH0 Outline
     pageType: Chapter
@@ -5397,14 +5428,14 @@ MonoBehaviour:
     pageContents:
     - Chapter 1
     - Chapter 1
-    - "> <link=\u201C7\u201D>Case File 1</link>\n> <link=\u201C8\u201D>Evidence 1</link>\n>
-      <link=\u201C9\u201D>Evidence 2</link>\n> <link=\u201C10\u201D>Evidence 3</link>\n>
-      <link=\u201C11\u201D>Special Fallacy Skill</link> "
+    - "> <link=\u201C6\u201D>Case File 1</link>\n> <link=\u201C7\u201D>Evidence 1</link>\n>
+      <link=\u201C8\u201D>Evidence 2</link>\n> <link=\u201C9\u201D>Evidence 3</link>\n>
+      <link=\u201C10\u201D>Special Fallacy Skill</link>"
     pageSprites:
     - {fileID: 0}
   - isUnlocked: 0
     pageID: 6
-    pageName: CH1 Case File 1
+    pageName: CH1 Case File
     pageType: Case File
     pageContents:
     - Kit Balang
@@ -5482,40 +5513,108 @@ MonoBehaviour:
       you are <b>his friend</b>.\u201D"
     pageSprites: []
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
-    pageSprites: []
+    pageID: 11
+    pageName: CH2 Outline
+    pageType: Chapter
+    pageContents:
+    - Chapter 2
+    - Chapter 2
+    - "> <link=\u201C12\u201D>Case File 2</link>\n> <link=\u201C13\u201D>Evidence
+      1</link>\n> <link=\u201C14\u201D>Evidence 2</link>\n> <link=\u201C15\u201D>Evidence
+      3</link>\n> <link=\u201C16\u201D>Special Fallacy Skill</link>"
+    pageSprites:
+    - {fileID: 0}
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
-    pageSprites: []
+    pageID: 12
+    pageName: CH2 Case File
+    pageType: Case File
+    pageContents:
+    - Koi Ignacio
+    - Case File 2
+    - "After defeating Kit, you are left alone in the same room you were locked in
+      but with the door wide open. This is that chance you need to escape!\n\nConfused
+      to find that you can still feel the presence of a monster\u2019s domain, you
+      can\u2019t help ponder what it could mean. Then, you remember Kit mentioning
+      that somebody else named Mr. Ignacio. You realize that this could only mean
+      that there is another boss halimaw in the pier.\n\nAfter tricking the goons
+      guarding facility, you dash outside to find yourself outside the shipping office
+      in the pier.\n\nStrong winds and rain encumber your quick escape plot. You
+      need to find an alternate route if you are ever going to leave the pier.\n"
+    pageSprites:
+    - {fileID: 0}
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
-    pageSprites: []
+    pageID: 13
+    pageName: CH2 Evidence 1
+    pageType: Evidence
+    pageContents:
+    - Mr. Ignacio
+    - Evidence 1
+    - "Just before Kit passed out, he mentioned the name \u2018Mr. Ignacio\u2019.
+      Kit doesn\u2019t seem like the type to address someone so formally unless they
+      had to.\n\nThis fact lead you to believe that the reason there is still a monster\u2019s
+      domain is because there is another greater boss monster in the pier area\n\nWhoever
+      they are, they are trying to <b>hide</b> the fact that they are the actual
+      mastermind using Kit. Their special fallacy skill must involve <b>leading people
+      to wrong conclusions</b>."
+    pageSprites:
+    - {fileID: 0}
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
-    pageSprites: []
+    pageID: 14
+    pageName: CH2 Evidence 2
+    pageType: Evidence
+    pageContents:
+    - Sprinkler
+    - Evidence 2
+    - 'The distraction you caused using the sprinklers gave you a strong impression
+      about the boss monster.
+
+
+      This gives you the idea that the boss is somehow
+      strongly correlated with water and <b>distractions</b>.
+
+
+      When up against
+      the boss, try to look for words or phrases that try to distract from the main
+      point. This could come in the form of <b>unrelated reasons</b> or <b>logically
+      unconnected statements</b>.'
+    pageSprites:
+    - {fileID: 0}
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
-    pageSprites: []
+    pageID: 15
+    pageName: CH2 Evidence 3
+    pageType: Evidence
+    pageContents:
+    - Washed Up Fish
+    - Evidence 3
+    - 'The fish washed up on the show leads you to believe that Mr. Ignacio is a
+      monster that resides in water.
+
+
+      This evidence also tells you that their
+      special fallacy skill must be <b>RED HERRING</b>.
+
+
+      This special fallacy
+      skill is effective at distracting and misleading people from getting to the
+      main topic. It could cause you to <b>focus on the wrong thing</b>. They might
+      switch topics, move goal posts, or just state plain nonsense to stop you from
+      talking about more important matters.'
+    pageSprites:
+    - {fileID: 0}
   - isUnlocked: 0
-    pageID: 0
-    pageName: 
-    pageType: 
-    pageContents: []
+    pageID: 16
+    pageName: CH2 Special Fallacy Skill
+    pageType: Special Fallacy Skill
+    pageContents:
+    - Special Fallacy Skill
+    - RED HERRING
+    - "Highlight only that words that try to pull attention away from some other
+      statement. You may also select parts of the thing that is being used to distract
+      you but focus on keywords and nouns.\n\nExamples:\n\u201CThat\u2019s <b>besides
+      the point</b>, you need to <b>focus on the real issue</b> at hand.\u201D\n\n\u201CIt
+      <b>doesn\u2019t matter</b> if you\u2019re tired, your brother <b>does the same
+      thing</b> and he\u2019s fine.\u201D\n\n\u201CWhy are you getting mad at me?
+      <b>Other kids</b> are out doing drugs and partying.\u201D"
     pageSprites: []
 --- !u!4 &1178868390
 Transform:
@@ -8626,6 +8725,7 @@ GameObject:
   - component: {fileID: 1944337608}
   - component: {fileID: 1944337610}
   - component: {fileID: 1944337609}
+  - component: {fileID: 1944337611}
   m_Layer: 5
   m_Name: OutlinePage
   m_TagString: Untagged
@@ -8693,6 +8793,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944337607}
   m_CullTransparentMesh: 1
+--- !u!114 &1944337611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944337607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a5f0d31f5b461a946c934d2ba8456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text0: {fileID: 1132466470}
+  text1: {fileID: 1894835243}
+  text2: {fileID: 118459853}
 --- !u!1 &1946088521
 GameObject:
   m_ObjectHideFlags: 0

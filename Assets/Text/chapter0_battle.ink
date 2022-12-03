@@ -4,6 +4,7 @@ VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
 ~BG = BATTLE
+# LOAD CODEX
 # NARRATOR TUTORIAL BATTLE_PHASE
 This is the battle phase.
 Each round your enemy will try to attack you using a fallacy spell.

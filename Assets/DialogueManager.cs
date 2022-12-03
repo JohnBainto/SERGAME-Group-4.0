@@ -42,14 +42,19 @@ public class DialogueManager : MonoBehaviour
     // Win or Lose Screen
     public LoseScreen loseScreen;
     public WinScreen winScreen;
+
+    // Codex Screen
     public CodexScreen codexScreen;
+    public string ch0_evidences;
+    public string ch1_evidences;
+    public string ch2_evidences;
+
     // Start is called before the first frame update
     private void Start() 
     {
         StartCoroutine(ClearText());
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);
-        
         List<string> tags = new List<string>();
         // Get all normal choices
         normalChoicesText = new TextMeshProUGUI[normalChoices.Length];
@@ -82,12 +87,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         instance = this;
-        
-        //currentStory = new Story(inkJSON.text);
-        //currentStory.ChoosePathString(pathString);
     }
 
-    public void Update() {
+    public void Update() 
+    {
         if(!dialogueIsPlaying)
         {
             return;
@@ -97,6 +100,7 @@ public class DialogueManager : MonoBehaviour
             StartDialogue();
         }
     }
+
     public static DialogueManager GetInstance()
     {
         return instance;
@@ -180,7 +184,16 @@ public class DialogueManager : MonoBehaviour
             tags = currentStory.currentTags;
             
             HandleNameTags(tags);
-            Debug.Log(tags[0]);
+            
+            if(tags[0].Contains("LOAD CODEX"))
+            {
+                ch0_evidences = currentStory.variablesState["ch0_evidence"].ToString();
+                ch1_evidences = currentStory.variablesState["ch1_evidence"].ToString();
+                ch2_evidences = currentStory.variablesState["ch2_evidence"].ToString();
+                
+                codexScreen.loadCodexPages(ch0_evidences, ch1_evidences, ch2_evidences, pathString);
+            }
+            
             if(tags[0].Contains("QSTART")) 
             { 
                 Debug.Log("BATTLE " + currentLine);

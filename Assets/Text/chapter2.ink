@@ -1,8 +1,8 @@
 LIST ch2_evidence = e1, e2, e3
-
 === chapter2 ===
 ~ INTERACTABLE = false
 ~ BG = CH02_EXP_BLACK
+# LOAD CODEX
 # NARRATOR
 CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM

@@ -18,7 +18,23 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
 
                 var pageData = FindObjectOfType<PageDataController>().Get(_linkID);
 
-                //Show Pages
+                var _type = pageData.pageType;
+
+
+                // switch(_type)
+                // {
+                //     case "Outline":
+                //         <>;break;
+                //     case "Chapter":
+                //         <>;break;
+                //     case "Case File":
+                //         <>;break;
+                //     case "Evidence":
+                //         <>;break;
+                //     case "Fallacy Skill":
+                //         <>;break;
+                //         //<> enable the necessary pages per page type
+                // }
             }
         }
     }

@@ -1,10 +1,10 @@
 LIST ch1_evidence = e1, e2, e3
 
 === chapter1 ===
-
 = part1
 ~ INTERACTABLE = false
 ~ BG = CH01_EXP_BLACK
+# LOAD CODEX
 # NARRATOR
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM

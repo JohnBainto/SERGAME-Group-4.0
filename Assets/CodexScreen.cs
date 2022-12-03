@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CodexScreen : MonoBehaviour
 {
+    
     public void Setup() {
         gameObject.SetActive(true);
     }
@@ -19,5 +20,9 @@ public class CodexScreen : MonoBehaviour
 
     public void BackButton() {
         gameObject.SetActive(false);
+    }
+
+    public void printPage() {
+
     }
 }

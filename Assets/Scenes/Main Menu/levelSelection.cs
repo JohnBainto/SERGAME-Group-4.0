@@ -24,7 +24,7 @@ public class levelSelection : MonoBehaviour
 
     public void screenChangeToTutorial ()
     {
-        Initiate.Fade("PROLOGUE", Color.black, 1.0f);
+        Initiate.Fade("CH00_EXP_BLACK", Color.black, 1.0f);
     }
 
     public void screenChangeToChapter1 ()

@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Prologue/PROLOGUE.unity
     guid: 79547f0933462d842be9edd6fe055dd8
   - enabled: 1
-    path: Assets/Scenes/Main Menu/Title Screen.unity
+    path: Assets/Scenes/Main Menu/TITLE_SCREEN.unity
     guid: 3a97653a850e16d449cfe253fae09b21
   - enabled: 1
-    path: Assets/Scenes/Main Menu/Level Selection Screen.unity
+    path: Assets/Scenes/Main Menu/LEVEL_SELECTION.unity
     guid: 945c7f19e9f0948448ef7cc38f163b60
   - enabled: 1
     path: Assets/Scenes/Chapter 00/CH00_EXP_BLACK.unity

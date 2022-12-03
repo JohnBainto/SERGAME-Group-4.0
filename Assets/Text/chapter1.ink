@@ -11,7 +11,7 @@ DECEMBER 8, 20XX \| 3:45 PM
 ~ BG = CH01_EXP_OUTSIDE
 The light of the setting afternoon sun bathes the shanty houses beside the port in bright orange.
 Even here, the holiday season greets the locals with cooler air and shorter days.
-You gaze at the address you have written in your investigave notebook and look back at 3 story house made of cinderblocks and corrugated steel.
+You gaze at the address you have written in your investigative notebook and look back at 3 story house made of cinderblocks and corrugated steel.
 
 # AMY
 I recently got a tip on the phone 'bout some shady dealins 'round the port area.
@@ -74,7 +74,7 @@ Select an option:
     "It was dark but I could swear I saw the person blinking, so they were probably still alive."
 
 - A mermaid? # AMY
-Whoever these people are, they're involved in some monster smuggling and traficking ring.
+Whoever these people are, they're probably involved in some sorta monster smuggling and traficking ring.
 
 "Anyway, after seeing the person in the crate, I screamed."
 "And that was when I caught those two guy's attention."
@@ -115,7 +115,7 @@ But big trouble can also mean big story...
 = part2
 # NARRATOR
 You leave the house and step outside.
-Its dusk now and shadows loom over everything abated only by the lights on the street and the pier.
+It's dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
 ~ BG = CH01_EXP_OUTSIDE
 
@@ -155,7 +155,7 @@ What should I investigate?
             IMPRESSION FOUND  # NARRATOR
             # AMY
             "Okay!"
-            I feel like I'm really getting to the bottom of this.
+            I feel like I'm really learning more about this case.
             ~ ch1_evidence += ch1_evidence.e2
         
             {LIST_COUNT(ch1_evidence) == 2:
@@ -178,19 +178,19 @@ What should I investigate?
     ~ INTERACTABLE = false
     {stopping:
     -   It's mostly empty.
-        Wait, what's this on the floor!
-    -   Oh it's just a wet plastic bag.
+        Wait, what's this under the bubble wrap!
+    -   Oh it's just some loose screws.
     -   I feel... kind of silly.
     }
 + [Dock worker]
     ~ INTERACTABLE = false
-    # DOCK_WORKER
+    # DOCK WORKER
     "What're you gawkin' at me fer?"
     
     # AMY
     "Oh sorry, I uhh."
     
-    # DOCK_WORKER
+    # DOCK WORKER
     "Waait a minute, who are ya?"
     "Why're ya snoopin' 'round the dock fer?"
     "You with the popo?"
@@ -204,21 +204,21 @@ What should I investigate?
         "I'm uhh doing field work for my uhh thesis."
         "Yeah, its about the logistics of shipping and transportation."
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Ehh, college boy huh?"
         "Where do you go? What're you takin'?"
         
         # AMY
         "I'm taking my masters in civil engineering at DLSU"
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Scoff, listen fancy pants, you can't just go around here stickin' your nose where ever ya want."
     + + ["My motorcycle was stolen here"]
         "My uhh my motorcycle got stolen around here."
         "Yeah, im just lookin' around to see maybe if I could uhh..."
         "If there 're any witnesses or CCTV cameras 'round here that could've."
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Stolen eh?"
         "Well that's too bad, but you can't just go around here stickin' your nose where ever ya want."
         
@@ -229,13 +229,13 @@ What should I investigate?
         "Aww please, I just need to ask a few questions 's all."
         "Just a few questions so I can come back with the proper requirements and protocols and whatnot."
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Sigh... alright, whaddya need?"
         
     - - (area1_1)
     + + "What hours is the dock open?" # AMY
     
-        # DOCK_WORKER
+        # DOCK WORKER
         "Well, technically the dock is always open."
         "But, its operatin' hours 's the usual 5 to 9"
         "Outside of that, the dock isn't too active."
@@ -243,19 +243,19 @@ What should I investigate?
         # AMY
         "5 to 9? You mean 9 to 5."
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "9 to 5? Hah! Whaddya think this is? Some kinda day spa?"
         "This is a pier, genius. It works 'round the clock to get ya the food you eat and junk you buy."
         "If we work hours were that short, heh, the city'd probably collapse by now."
     + + "Who runs this place?" # AMY
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Mm, I ain't really supposed to say."
         
         # AMY 
         "Aww, c'mon. How am I supposed to ask permission if I don't know who to ask permission from?"
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "Sigh, alright. His name's Kit Balang, that's all I'll say."
         "If you really want to meet him, the shipping office's number's in the yellow pages."
         
@@ -270,7 +270,7 @@ What should I investigate?
             ~ ch1_evidence += ch1_evidence.e1
         
         
-            # DOCK_WORKER
+            # DOCK WORKER
             "What?"
         
             # AMY 
@@ -287,7 +287,7 @@ What should I investigate?
         }
     + + "What do you mean by 'dangerous'?" # AMY
         
-        # DOCK_WORKER
+        # DOCK WORKER
         "I mean IT'S DANGEROUS"
         "I ain't just wearin' this hard hat just to attract ladies ya know."
         "Besides, there's other things..."
@@ -298,7 +298,7 @@ What should I investigate?
         # AMY
         "Thanks, I'll be careful."
     + + "Nothing else." # AMY
-        # DOCK_WORKER
+        # DOCK WORKER
         "Alright, now stop botherin' me."
         ~ INTERACTABLE = true
         -> area1
@@ -307,18 +307,18 @@ What should I investigate?
 + [Go further in]
     ~ INTERACTABLE = false
     {stopping:
-        - # DOCK_WORKER
+        - # DOCK WORKER
         "Hey, you! Alice in wonderland."
         "Do yous think this place is some sorta theme park or somethin'?"
         "Authorized personnel only."
         
-        #MC
+        # AMY
         "Oh uh, sorry my bad."
         Hmm looks like I gotta find some other way to get in.
-        - # DOCK_WORKER
+        - # DOCK WORKER
         "How many times do I gotta says to you, AUTHORIZED PERSONNEL ONLY!"
         
-        #MC
+        # AMY
         !
         "Sorry!"
     }
@@ -352,7 +352,7 @@ Everything becomes hazy as you feel yourself fall unto the floor.
 You wake up to find yourself in a cell.
 There aren't any windows but judging from the smell it seems that you're still in the docking area.
 
-#MC
+# AMY
 Urgh, my head.
 Where am I?
 Looks like I'm in hotter water than a hotdog in a carnival concession stand.

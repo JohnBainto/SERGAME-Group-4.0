@@ -70,9 +70,9 @@ What should I do now?
         ~ ch0_evidence += ch0_evidence.e1
         
         # TUTORIAL
-        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
-        Your undercity codex is the book that you can see on the lower-left side of your screen.
-        Press the X button to access it any time and review the the evidence you just discovered.
+        Upon finding an impression, your undercity codex will react and turn that impression into evidence.
+        Your undercity codex is the book that you can see on the lower-right side of your screen.
+        Press the X button to access it any time and review the evidence you just discovered.
         It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
         Speaking of which...
         -> part2
@@ -87,13 +87,13 @@ What should I do now?
         Looks like they tried to hide it in this dark corner, but they didn't do a very good job at it.
         # TUTORIAL
         Try inspecting this box one more time.
-    -   
-        ~ examined_box = true
+    -   ~ examined_box = true
         # TUTORIAL
         Good job!
         You will also encounter choices.
         Use the up and down arrow keys to select between different choices.
         Then, click on the Enter key to confirm your selection.
+    -   What should I do now?
     }
     {not examined_box: -> area1}
     + + [Examine slip of paper.]
@@ -148,15 +148,15 @@ What should I do now?
         Ah there!
         
         # NARRATOR
-        Out of the corner of your eye, you spot something twinkling on top of a tall box
+        Out of the corner of your eye, you spot something twinkling suspended way above a tall box
         
         # TUTORIAL
-        Press the spacebar to jump.
-        Some items can be stood on.
+        As you know space bar is used to jump.
+        Sometime you will need to jump on multiple items to get to certain places.
         Try jumping on top of this box to reach the key
     -   examined_box and examined_tall_box and inventory !? key:
         # AMY
-        I have to stand on something to reach the key over there.
+        I have to stand on something to reach the key up there.
     -   examined_box and examined_tall_box and inventory ? key:
         # AMY
         It's a tall box.
@@ -178,7 +178,7 @@ What should I do now?
         ~ inventory += key
         # TUTORIAL
         Sometimes, interacting with an object will result in you picking up that object.
-        You can see the objects that you have picked up so far on the lower-right side of your screen.
+        You can see the objects that you have picked up so far on the lower-left side of your screen.
         
         # AMY
         Nice! Now let's see what's inside that crate.

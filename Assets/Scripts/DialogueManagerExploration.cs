@@ -93,7 +93,7 @@ public class DialogueManagerExploration : MonoBehaviour
 
     private void checkCodex() {
         string scene = SceneManager.GetActiveScene().name;
-        if (scene.Contains("BLACK")) {
+        if (scene.Contains("BLACK") || scene.Contains("PROLOGUE")) {
             codex.SetActive(false);
         } else {
             codex.SetActive(true);

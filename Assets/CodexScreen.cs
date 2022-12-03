@@ -81,12 +81,12 @@ public class CodexScreen : MonoBehaviour
             nextButton.SetActive(true);
             prevButton.SetActive(false);
         }
-        else if (currentPage > 0 && currentPage < 16)
+        else if (currentPage > 0 && currentPage < maxPage)
         {
             nextButton.SetActive(true);
             prevButton.SetActive(true);
         }
-        else if (currentPage == 16)
+        else if (currentPage == maxPage)
         {
             nextButton.SetActive(false);
             prevButton.SetActive(true);

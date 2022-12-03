@@ -702,6 +702,7 @@ MonoBehaviour:
   - {fileID: 5902726431702556829}
   itemPanel: {fileID: 3486905050022607354}
   itemText: {fileID: 803531232009016803}
+  codex: {fileID: 2606156519589037398}
 --- !u!1 &4744203468123323486
 GameObject:
   m_ObjectHideFlags: 0

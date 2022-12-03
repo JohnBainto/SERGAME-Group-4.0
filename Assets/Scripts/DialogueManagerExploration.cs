@@ -35,6 +35,9 @@ public class DialogueManagerExploration : MonoBehaviour
 
     private bool loadingScene;
     // Start is called before the first frame update
+
+    public GameObject codex;
+
     private void Awake()
     {
         if (instance != null)
@@ -84,6 +87,17 @@ public class DialogueManagerExploration : MonoBehaviour
             HandleInteractable();
             HandleInventory();
         }
+
+        checkCodex();
+    }
+
+    private void checkCodex() {
+        string scene = SceneManager.GetActiveScene().name;
+        if (scene.Contains("BLACK")) {
+            codex.SetActive(false);
+        } else {
+            codex.SetActive(true);
+        }
     }
 
     public void EnterDialogueMode()
@@ -119,6 +133,7 @@ public class DialogueManagerExploration : MonoBehaviour
             ExitDialogueMode();
         }
     }
+    
 
     private IEnumerator DisplayLine(string line) {
         dialogueText.text = "";

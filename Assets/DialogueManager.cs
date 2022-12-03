@@ -200,7 +200,8 @@ public class DialogueManager : MonoBehaviour
                 
                 DisplayChoices(normalChoices,normalChoicesText);
                 if (!startBattleBtn.activeSelf)
-                    continueButton.SetActive(true);           
+                    continueButton.SetActive(true);    
+                consultButton.SetActive(false);
             }
             HandleScenes();
         }

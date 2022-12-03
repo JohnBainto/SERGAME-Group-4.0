@@ -1156,6 +1156,7 @@ GameObject:
   - component: {fileID: 118459852}
   - component: {fileID: 118459854}
   - component: {fileID: 118459853}
+  - component: {fileID: 118459855}
   m_Layer: 5
   m_Name: OutlineText
   m_TagString: Untagged
@@ -1203,43 +1204,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Chapter 0</b>
-
-    > Case File #0
-
-    > Evidence #1
-
-    > Special
-    Fallacy Skill
-
-
-    <b>Chapter 1</b>
-
-    > Case File #1
-
-    > Evidence #1
-
-    >
-    Evidence #2
-
-    > Evidence #3
-
-    > Special Fallacy Skill
-
-
-    <b>Chapter
-    2</b>
-
-    > Case File #2
-
-    > Evidence #1
-
-    > Evidence #2
-
-    > Evidence
-    #3
-
-    > Special Fallacy Skill'
+  m_text: "<b><link=\u201C2\u201D>Chapter 0 (Tutorial)</link></b>\n> <link=\u201C3\u201D>Case
+    File 0</link>    \n> <link=\u201C4\u201D>Evidence 1</link>   \n> <link=\u201C5\u201D>Special
+    Fallacy Skill</link> \n\n<b><link=\u201C6\u201D>Chapter 1</link></b>\n> <link=\u201C7\u201D>Case
+    File 1</link>\n> <link=\u201C8\u201D>Evidence 1</link>\n> <link=\u201C9\u201D>Evidence
+    2</link>\n> <link=\u201C10\u201D>Evidence 3</link>\n> <link=\u201C11\u201D>Special
+    Fallacy Skill</link> \n\n<b><link=\u201C12\u201D>Chapter 2</link></b>\n> <link=\u201C13\u201D>Case
+    File 2</link>\n> <link=\u201C14\u201D>Evidence 1</link>\n> <link=\u201C15\u201D>Evidence
+    2</link>\n> <link=\u201C16\u201D>Evidence 3</link>\n> <link=\u201C17\u201D>Special
+    Fallacy Skill</link>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ceed54b39f854fa7807f7ae177a39a2, type: 2}
   m_sharedMaterial: {fileID: 204706722736583324, guid: 4ceed54b39f854fa7807f7ae177a39a2, type: 2}
@@ -1316,6 +1289,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118459851}
   m_CullTransparentMesh: 1
+--- !u!114 &118459855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118459851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &174686373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27624c952e33493b8edbc7c3f321cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codexPages: []
+  unlockedPages: 
 --- !u!1 &194045262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,8 +1479,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 53.91
+  m_fontSizeBase: 53.91
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4780,7 +4767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1064809539
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4859,7 +4846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1066145146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5312,6 +5299,239 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 430740664}
+--- !u!1 &1178868388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178868390}
+  - component: {fileID: 1178868389}
+  m_Layer: 0
+  m_Name: PageDataController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178868389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178868388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ca1ef9db3e641bc8d2c4ffc218f46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pages:
+  - isUnlocked: 1
+    pageID: 0
+    pageName: Undercity Codex Outline
+    pageType: Outline
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 1
+    pageID: 1
+    pageName: CH0 Outline
+    pageType: Chapter
+    pageContents:
+    - Chapter 0
+    - Chapter 0
+    - "> <link=\u201C3\u201D>Case File 0</link>    \n> <link=\u201C4\u201D>Evidence
+      1</link>   \n> <link=\u201C5\u201D>Special Fallacy Skill</link> "
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 1
+    pageID: 2
+    pageName: CH0 Case File
+    pageType: Case File
+    pageContents:
+    - Hattie Haute
+    - Case File 0
+    - "Recent reports of vandalism in a suburban area of the city has made you believe
+      that a gang of supernatural beings are trying to assert their influence there.
+      You now staked out in a monster\u2019s domain in order to catch who their leader
+      is using a package with a tracking device.\n\nWhile trying to open the package
+      to read a note placed inside of it, you find that it contains a note among
+      other paraphernalia. Upon examining the note inside, you determine that a person
+      named Hattie is likely responsible for the recent cases of vandalism."
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 3
+    pageName: CH0 Evidence 1
+    pageType: Evidence
+    pageContents:
+    - Note
+    - Evidence 1
+    - "The contents you find in the box give you the impression that a black-and-white
+      worldview or separating things into two is involved.\n\nYou deduce that Hattie\u2019s
+      special fallacy skill must be<b>RED HERRING</b>.\n\nThis special fallacy skill
+      frames problems as only having <b>two-sides</b>. They will simplify problems
+      into a simple <b>either-or</b> situation and eliminate other alternatives to
+      make their point seem more reasonable."
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 4
+    pageName: CH0 Special Fallacy Skill
+    pageType: ' Fallacy Skill'
+    pageContents:
+    - Special Fallacy Skill
+    - FALSE DICHOTOMY
+    - "Only highlight the words the imply only that there are only two options.\n\nExamples:\n\u201C<b>Either</b>
+      you are with us or against us.\u201D\n\n\u201CThere are <b>only two types</b>
+      of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
+      you <b>don\u2019t</b> agree with me on this point, <b>then</b> you <b>must</b>
+      agree with <b>them</b>!\u201D"
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 5
+    pageName: CH1 Outline
+    pageType: Chapter
+    pageContents:
+    - Chapter 1
+    - Chapter 1
+    - "> <link=\u201C7\u201D>Case File 1</link>\n> <link=\u201C8\u201D>Evidence 1</link>\n>
+      <link=\u201C9\u201D>Evidence 2</link>\n> <link=\u201C10\u201D>Evidence 3</link>\n>
+      <link=\u201C11\u201D>Special Fallacy Skill</link> "
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 6
+    pageName: CH1 Case File 1
+    pageType: Case File
+    pageContents:
+    - Kit Balang
+    - Case File 1
+    - "An urgent call gave you a lead to a potential magical item smuggling ring
+      happening at the port of Wetro Wanila.\n\nLooks like a new boss has taken over
+      the reigns of the pier. This person, named \u2018Kit\u2019, is apparently scary
+      enough not to be talked about in the open.\n\nUpon exploring the pier, there
+      seems to be evidence of foul play and other illegal activity involved. Something
+      fishy is definitely going on.\n\nAfter being confronted by a couple of monster
+      thugs, you woke up locked in some room. You tried looking for evidence as you
+      try to escape, but you are interrupted..."
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 7
+    pageName: CH1 Evidence 1
+    pageType: Evidence
+    pageContents:
+    - Dock Worker
+    - Evidence 1
+    - "Talking to the dock worker gave the impression that the boss \u2018Kit\u2019
+      is very intimidating.\n\nThis likely means that his fallacy spell skill is
+      also involved with <b>intimidation</b>.\n\nWhen battling him he will try to
+      intimidate <b>you</b> so look for words that are used to directly address you."
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 8
+    pageName: CH1 Evidence 2
+    pageType: Evidence
+    pageContents:
+    - Crowbar
+    - Evidence 2
+    - 'The bloodied crowbar you found indicates that the boss of this domain is violent.
+
+
+      This
+      reveals their nature as being very <b>aggressive</b>.
+
+
+      It is important
+      to remember to watch out for his attacks that try to disparage or attack your
+      character using <b>insults</b>.'
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 9
+    pageName: CH1 Evidence 3
+    pageType: Evidence
+    pageContents:
+    - Tuft of Hair
+    - Evidence 3
+    - "The bloodied tuft of hair shows you that the boss you\u2019re about to face
+      is not a human, but a tikbalang.\n\nThis together with the evidence you have
+      gathered reveals that their special fallacy skill is called <b>AD HOMINEM</b>.\n\nIt
+      is a special fallacy skill whose characterizing trait is it\u2019s aggression
+      towards its target instead of the topic at hand. People with this skill may
+      try to ruin your reputation or insult you to invalidate your points even if
+      it is unrelated to your arguments."
+    pageSprites:
+    - {fileID: 0}
+  - isUnlocked: 0
+    pageID: 10
+    pageName: CH1 Special Fallacy Skill
+    pageType: Fallacy Skill
+    pageContents:
+    - Special Fallacy Skill
+    - AD HOMINEM
+    - "Only highlight the words that disparage or insult someone. Sometimes the insult
+      may not be an insult at all but still undermines th other person\u2019s motives
+      or validity.\n\n<b>Examples:</b>\n\u201CWhy would you believe anything from
+      such a <b>lousy</b> public speaker?\u201D\n\n\u201CStay out of this, you are
+      still </b>just a kid.</b>\u201D\n\n\u201CYou\u2019re only defending him because
+      you are <b>his friend</b>.\u201D"
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+  - isUnlocked: 0
+    pageID: 0
+    pageName: 
+    pageType: 
+    pageContents: []
+    pageSprites: []
+--- !u!4 &1178868390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178868388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185647901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,6 +6025,7 @@ GameObject:
   - component: {fileID: 1289551772}
   - component: {fileID: 1289551774}
   - component: {fileID: 1289551773}
+  - component: {fileID: 1289551775}
   m_Layer: 5
   m_Name: ChapterOContent
   m_TagString: Untagged
@@ -5872,6 +6093,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289551771}
   m_CullTransparentMesh: 1
+--- !u!114 &1289551775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289551771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1301394022
 GameObject:
   m_ObjectHideFlags: 0
@@ -8944,6 +9177,7 @@ GameObject:
   - component: {fileID: 1999187462}
   - component: {fileID: 1999187464}
   - component: {fileID: 1999187463}
+  - component: {fileID: 1999187465}
   m_Layer: 5
   m_Name: ChapterOText
   m_TagString: Untagged
@@ -9074,6 +9308,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999187461}
   m_CullTransparentMesh: 1
+--- !u!114 &1999187465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999187461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a32890c46239408e92adfcd80e77578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010733111
 GameObject:
   m_ObjectHideFlags: 0

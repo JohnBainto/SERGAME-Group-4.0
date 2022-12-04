@@ -45,8 +45,8 @@ public class CodexScreen : MonoBehaviour
                 chapterNo = 0; break;
             case "chapter1":
             case "ch1_battle":
-                maxPage = 10;
-                chapterNo = 1; break;
+                maxPage = 16;
+                chapterNo = 2; break;
             case "chapter2":
             case "ch2_battle":
                 maxPage = 16;

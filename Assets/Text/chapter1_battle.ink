@@ -5,7 +5,7 @@
 ~ _life = 30
 ~ _turn = 0
 ~ _result = ""
-# NARRATOR BATTLE_PHASE LOAD CODEX
+# NARRATOR BATTLE_PHASE LOAD CODEX START BATTLE BTN
 It feels like you're going to be sleeping with the fishes soon.
 ~ temp fallacy = ""
 

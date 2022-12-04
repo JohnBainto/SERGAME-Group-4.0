@@ -5,13 +5,13 @@ VAR _result = ""
 === ch0_battle ===
 ~BG = BATTLE
 # NARRATOR TUTORIAL BATTLE_PHASE LOAD CODEX
-This is the battle phase.
-Each round your enemy will try to attack you using a fallacy spell.
-Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.
-If you run out of stamina you will lose the fight.
-You can dispel these fallacy spells by identifying their weak points.
-Each boss specializes in a certain type of fallacy as indicated in your undercity codex.
-Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.
+This is the battle phase.# NARRATOR
+Each round your enemy will try to attack you using a fallacy spell.# NARRATOR
+Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.# NARRATOR
+If you run out of stamina you will lose the fight.# NARRATOR
+You can dispel these fallacy spells by identifying their weak points.# NARRATOR
+Each boss specializes in a certain type of fallacy as indicated in your undercity codex.# NARRATOR
+Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.# NARRATOR START BATTLE BTN
 
 ~ temp fallacy = ""
 
@@ -27,15 +27,16 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 	<link="0">the funniest thing</link> <>
 	<link="0">I've ever heard</link> <>
 	<link="2">or</link> <>
-	<link="0">like the saddest</link>! <> # QEND
+	<link="0">like the saddest</link>! # QEND
 	~ fallacy = "FALSE DICHOTOMY"
 	
-    # TUTORIAL
-    Finding the weak points of a fallacy spell can be tricky.
-    But, you can CONSULT you undercity codex dusring the batttle to help you decide which words to pick.
-    Remember that Hattie's special fallacy skill is 【FALSE DICHOTOMY】.
-    Try to look for words that try to frame somethings as only one of two things.
-    Then when you're ready, click retort to dispel their attack.
+    # NARRATOR  # TUTORIAL
+    Finding the weak points of a fallacy spell can be tricky.# NARRATOR
+    But, you can CONSULT you undercity codex during the batttle to help you decide which words to pick.# NARRATOR
+    Remember that Hattie's special fallacy skill is 【FALSE DICHOTOMY】.# NARRATOR
+    Try to look for words that try to frame somethings as only one of two things.# NARRATOR
+    Then when you're ready, click retort to dispel their attack.# NARRATOR
+    
 -   <link="-1">Tch</link>, <> # HATTIE QSTART
 	<link="-2">as if</link> <>
 	<link="-1">I'm</link> <>
@@ -43,15 +44,15 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 	<link="-1">my time</link> <>
 	<link="-1">battling</link> <>
 	<link="-1">some poser like</link> <>
-	<link="-2">you</link>. <> # QEND
+	<link="-2">you</link>. # QEND
 	~ fallacy = "NONE"
 
     # TUTORIAL
-    Watch out! this question is tricky.
-    Sometimes, the opponent can show you a statement that does NOT contain the weakness of their special fallacy skill.
-    If you try to retort something like this, you will end up wasting your stamina on something that doesn't matter.
-    For questions like this, it's best for you to just skip.
-    But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!
+    Watch out! this question is tricky.# NARRATOR
+    Sometimes, the opponent can show you a statement that does NOT contain the weakness of their special fallacy skill.# NARRATOR
+    If you try to retort something like this, you will end up wasting your stamina on something that doesn't matter.# NARRATOR
+    For questions like this, it's best for you to just skip.# NARRATOR
+    But, be careful when skipping statements that DO have fallacies in them as you can take a lot of damage doing so!# NARRATOR
 -   -> end
 }
 ~ set_life(-10)

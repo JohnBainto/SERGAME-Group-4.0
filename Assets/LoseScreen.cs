@@ -6,12 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class LoseScreen : MonoBehaviour
 {
-    public void Setup() {
+    public string pathString; 
+    public void Setup(string _pathString) {
         gameObject.SetActive(true);
+        pathString = _pathString;
     }
 
     public void TryAgainButton() {
-        SceneManager.LoadScene("BattleScene 1");
+        switch(pathString)
+        {
+            case "ch0_battle":
+                SceneManager.LoadScene("CH00_BATTLE_HATTIE"); break;
+            case "ch1_battle":
+                SceneManager.LoadScene("CH01_BATTLE_KIT"); break;
+            case "ch2_battle":
+                SceneManager.LoadScene("CH02_BATTLE_KOI"); break;
+        }
     }
 
     public void mainMenuButton() {

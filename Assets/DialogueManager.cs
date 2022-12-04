@@ -155,6 +155,7 @@ public class DialogueManager : MonoBehaviour
         // hide items
         HideChoices(battleChoices);
         HideChoices(normalChoices);
+        startBattleBtn.SetActive(false); 
         continueButton.SetActive(false);
         consultButton.SetActive(false);
         
@@ -184,7 +185,11 @@ public class DialogueManager : MonoBehaviour
             tags = currentStory.currentTags;
             
             HandleNameTags(tags);
-            
+            if(tags[0].Contains("START BATTLE"))
+            {
+                startBattleBtn.SetActive(true); 
+
+            }
             if(tags[0].Contains("LOAD CODEX"))
             {
                 ch0_evidences = currentStory.variablesState["ch0_evidence"].ToString();
@@ -212,8 +217,9 @@ public class DialogueManager : MonoBehaviour
                 StartCoroutine(TypeLine(currentLine,false));   
                 
                 DisplayChoices(normalChoices,normalChoicesText);
-                if (!startBattleBtn.activeSelf)
-                    continueButton.SetActive(true);    
+                if(startBattleBtn.activeSelf)
+                    continueButton.SetActive(false);
+                else continueButton.SetActive(true);    
                 consultButton.SetActive(false);
             }
             HandleScenes();
@@ -304,7 +310,7 @@ public class DialogueManager : MonoBehaviour
                 bossBattleName = "Koi Ignacio";
                 speakerName.text = "KOI";
             }
-            else if(tag.Contains("NARRATOR"))
+            else if(tag.Contains("NARRATOR") || tag.Contains("TUTORIAL"))
                 speakerName.text = "NARRATOR";
             else
                 Debug.LogWarning("This tag does not have a character name: " + tag);
@@ -316,10 +322,10 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("BG: " + currentStory.variablesState["_result"].ToString());
 
         if (sceneName == "LOSE") {
-            loseScreen.Setup();
+            loseScreen.Setup(pathString);
         }
         else if (sceneName == "WIN") {
-            winScreen.Setup(bossBattleName);
+            winScreen.Setup(bossBattleName, pathString);
         }
         else {
             Debug.Log("Battle not yet done.");

@@ -21,9 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextAsset inkJSON;                 // main.ink --> Game Script
     [SerializeField] string pathString;          
     [SerializeField] public GameObject continueButton;
-    [SerializeField] public GameObject consultButton; 
-    [SerializeField] public GameObject retortButton;   
-    [SerializeField] public GameObject skipButton;           
+    [SerializeField] public GameObject consultButton;       
     // Other important attributes
     public Story currentStory;                                 // Tracker for which ink file is currently in use
     private string currentLine; 

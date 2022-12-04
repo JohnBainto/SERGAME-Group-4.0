@@ -3,39 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealthCH0 : MonoBehaviour
 {
     TrackSelectedWord trackSelectedWord;
-    DialogueManager dialogueManager;
+    DialogueManagerCH0 dialogueManagerCH0;
     private int maxHealth = 30;
     private int currentHealth;
     private List<TMP_LinkInfo> selectedParts;
-    private Story cStory;
+    [SerializeField] public Story cStory;
 
     [SerializeField] HealthBar healthBar;
     
     void Awake() {
         // Gets the instance of TrackSelectedWord to retrieve the list of selected parts and their corresponding performance points
         trackSelectedWord = GameObject.Find("Mouse Tracker").GetComponent<TrackSelectedWord>();
-        dialogueManager = GameObject.Find("Dialogue Manager").GetComponent<DialogueManager>();
+        dialogueManagerCH0 = GameObject.Find("DialogueManagerCH0").GetComponent<DialogueManagerCH0>();
     }
     
     void Start() {
         selectedParts = new List<TMP_LinkInfo>();
-        cStory = dialogueManager.currentStory;
+        cStory = dialogueManagerCH0.currentStory;
+
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update() {
-        cStory.EvaluateFunction("set_performance", sumPerformance());
+        sumPerformance();
         currentHealth = (int)cStory.variablesState["_life"];
+        Debug.Log(  "LIFE: " +currentHealth);
         healthBar.SetHealth(currentHealth);
-        int c = (int)cStory.variablesState["_turn"];
     }
 
 
-    public int sumPerformance()
+    public void sumPerformance()
     {
         selectedParts = trackSelectedWord._parts;
         int x = 0;
@@ -45,7 +46,6 @@ public class PlayerHealth : MonoBehaviour
             x = int.Parse(selectedParts[i].GetLinkID());
             performance+=x;
         }
-
-        return performance;
+        cStory.EvaluateFunction("set_performance", performance);
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using UnityEngine.EventSystems;
 using System;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManagerCH0 : MonoBehaviour
 {
     // Access to Dialogue Manager Inspector
     [Header("Dialogue UI")]                                     
@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI normalDialogue;    // Normal Text
     [SerializeField] public TextMeshProUGUI battleDialogue;    // Battle Text 
     [SerializeField] TextMeshProUGUI speakerName;       // Speaker Name
-    [SerializeField] TextAsset inkJSON;                 // main.ink --> Game Script
+    [SerializeField] public TextAsset inkJSON;                 // main.ink --> Game Script
     [SerializeField] string pathString;          
     [SerializeField] public GameObject continueButton;
     [SerializeField] public GameObject consultButton;       
@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     private string currentLine; 
     private string bossBattleName;                                // Tracker for which lineis currently being said in the game
     public bool dialogueIsPlaying;                              // Tracker for if the dialogue is active
-    private static DialogueManager instance;
+    private static DialogueManagerCH0 instance;
     public List<string> tags;
     public KeyCode interactKey;
     private bool canContinueToNext = false;
@@ -48,6 +48,9 @@ public class DialogueManager : MonoBehaviour
     public string ch0_evidences;
     public string ch1_evidences;
     public string ch2_evidences;
+
+    // Tutorial Screen
+    public TutorialScreen tutorialScreen;
 
     // Start is called before the first frame update
     private void Start() 
@@ -101,7 +104,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public static DialogueManager GetInstance()
+    public static DialogueManagerCH0 GetInstance()
     {
         return instance;
     }
@@ -205,22 +208,36 @@ public class DialogueManager : MonoBehaviour
                 StopAllCoroutines();
                 StartCoroutine(TypeLine(currentLine,true));
                 DisplayChoices(battleChoices,battleChoicesText);
+                continueButton.SetActive(true);
                 consultButton.SetActive(true);
-                continueButton.SetActive(false);
-            }
-
-            else 
+            } else if(tags[0].Contains("TUTORIAL")) 
+            { 
+                startBattleBtn.SetActive(false); 
+                continueButton.SetActive(true);
+                tutorialScreen.Setup(currentLine);
+                Debug.Log("TUTORIAL " + currentLine);   
+                DisplayChoices(battleChoices,battleChoicesText);
+                if(tags[0] == "TUTORIAL ANSWER") 
+                { 
+                    continueButton.SetActive(false);
+                }
+            }  else 
             {
+                tutorialScreen.Destroy();
                 Debug.Log("NORMAL " + currentLine);
                 StopAllCoroutines();
                 StartCoroutine(TypeLine(currentLine,false));   
                 
                 DisplayChoices(normalChoices,normalChoicesText);
-                if (!startBattleBtn.activeSelf)
-                    continueButton.SetActive(true);    
+                if(!startBattleBtn.activeSelf)
+                    continueButton.SetActive(true);
+                else continueButton.SetActive(false);    
                 consultButton.SetActive(false);
             }
+
+            
             HandleScenes();
+
         }
         else
         {
@@ -232,7 +249,6 @@ public class DialogueManager : MonoBehaviour
     private void DisplayChoices(GameObject[] choices, TextMeshProUGUI[] choicesText)
     {
         List<Choice> currentChoices = currentStory.currentChoices;
-        
         // checks if ui can support the number of choices from the ink file
         if (currentChoices.Count > choices.Length) {
             Debug.LogError("More choices were given than the UI can support. Number of choices given: " + currentChoices.Count);
@@ -249,7 +265,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = index; i < choices.Length; i++) {
             choices[i].gameObject.SetActive(false);
         }
-        
+
         if (currentChoices.Count > 0) {
             StartCoroutine(SelectFirstChoice(choices));
         }
@@ -272,6 +288,7 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNext) { 
             currentStory.ChooseChoiceIndex(choiceIndex);
             currentStory.EvaluateFunction("set_turn", 1);
+            continueButton.SetActive(true);
         }
     }
 

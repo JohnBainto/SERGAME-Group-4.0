@@ -9,8 +9,7 @@ public class ChapterPage : MonoBehaviour
     [SerializeField]  TextMeshProUGUI text1;
     [SerializeField]  TextMeshProUGUI text2;
     [SerializeField]  GameObject sprite0;
-    // [SerializeField]  TextMeshProUGUI[] texts;
-    // [SerializeField]  GameObject[] sprites;
+
     public void Setup(PageData pageData) {
         gameObject.SetActive(true); 
         text0.text = pageData.pageContents[0];

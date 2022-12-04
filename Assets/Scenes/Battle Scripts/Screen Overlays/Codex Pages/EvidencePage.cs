@@ -10,6 +10,7 @@ public class EvidencePage : MonoBehaviour
     [SerializeField]  TextMeshProUGUI text1;
     [SerializeField]  TextMeshProUGUI text2;
     [SerializeField]  GameObject sprite0;
+    [SerializeField]  GameObject sprite1;
 
     public void Setup(PageData pageData, string ch0_e, string ch1_e, string ch2_e,  int chNo) {
         bool isAcquired = false;
@@ -49,11 +50,13 @@ public class EvidencePage : MonoBehaviour
         text1.text = pageData.pageContents[1];
         text2.text = pageData.pageContents[2];
         sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];
+        sprite1.GetComponent<Image>().sprite = null; 
         if(!isAcquired)
         {
-            text0.text = pageData.pageContents[3];
+            text0.text = pageData.pageContents[1];
             text2.text = pageData.pageContents[4];
-            sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];            
+            sprite0.GetComponent<Image>().sprite = pageData.pageSprites[1];
+            sprite1.GetComponent<Image>().sprite = pageData.pageSprites[1];            
         }
     }
     public void Destroy() {

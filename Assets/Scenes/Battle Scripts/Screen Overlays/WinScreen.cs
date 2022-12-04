@@ -19,11 +19,11 @@ public class WinScreen : MonoBehaviour
         switch(pathString)
         {
             case "ch0_battle":
-                SceneManager.LoadScene("Chapter 0"); break;
+                Initiate.Fade("CH01_EXP_OUTSIDE",  Color.black, 1.0f); break;
             case "ch1_battle":
-                SceneManager.LoadScene("Chapter 01"); break;
+                Initiate.Fade("CH02_EXP_BLACK",  Color.black, 1.0f); break;
             case "ch2_battle":
-                SceneManager.LoadScene("Chapter 02"); break;
+                Initiate.Fade("CH02_EXP_BLACK",  Color.black, 1.0f); break;
         }
     }    
 }

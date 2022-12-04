@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MENU.unity
     guid: d1ecba4aab544ca4d9e01d7251022b65
   - enabled: 1
+    path: Assets/Scenes/Chapter 00/CH00_BATTLE_HATTIE.unity
+    guid: ab78e24f909294c60ae0688a728c82e8
+  - enabled: 1
     path: Assets/Scenes/Chapter 01/CH01_EXP_BLACK.unity
     guid: 5576d71df24ff0640abe93577cb2b742
   - enabled: 1
@@ -27,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 01/CH01_EXP_BASEMENT.unity
     guid: 091ceb398df6e4c4896b37157007a008
   - enabled: 1
+    path: Assets/Scenes/Chapter 01/CH01_BATTLE_KIT.unity
+    guid: 448064b5c09b746259b88eb41fe69323
+  - enabled: 0
     path: Assets/Scenes/BattlePhase.unity
     guid: bfbc5ab8c511f174ca7ea9d59ff189e5
   - enabled: 1
@@ -38,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter 02/CH02_EXP_HALLWAY.unity
     guid: 9e0eaa6949bae9342865c9f2747d5e0d
+  - enabled: 1
+    path: Assets/Scenes/Chapter 02/CH02_BATTLE_KOI.unity
+    guid: cfaecdd17000d4f258a9c6c6300f26c3
   - enabled: 1
     path: Assets/Scenes/Main Menu/Title Screen.unity
     guid: 3a97653a850e16d449cfe253fae09b21

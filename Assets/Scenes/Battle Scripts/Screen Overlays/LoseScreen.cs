@@ -16,15 +16,15 @@ public class LoseScreen : MonoBehaviour
         switch(pathString)
         {
             case "ch0_battle":
-                SceneManager.LoadScene("CH00_BATTLE_HATTIE"); break;
+                Initiate.Fade("CH00_BATTLE_HATTIE", Color.black, 1.0f); break;
             case "ch1_battle":
-                SceneManager.LoadScene("CH01_BATTLE_KIT"); break;
+                Initiate.Fade("CH01_BATTLE_KIT",  Color.black, 1.0f); break;
             case "ch2_battle":
-                SceneManager.LoadScene("CH02_BATTLE_KOI"); break;
+                Initiate.Fade("CH02_BATTLE_KOI", Color.black, 1.0f); break;
         }
     }
 
     public void mainMenuButton() {
-        SceneManager.LoadScene("Level Selection Screen");
+        Initiate.Fade("Level Selection Screen", Color.black, 1.0f); 
     }
 }

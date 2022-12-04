@@ -161,7 +161,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.7777863, y: 0.6}
-  m_SizeDelta: {x: 218, y: 35}
+  m_SizeDelta: {x: 218, y: 36.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8880803
 MonoBehaviour:
@@ -226,18 +226,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -589,6 +577,8 @@ MonoBehaviour:
   pathString: ch1_battle
   continueButton: {fileID: 1042181976}
   consultButton: {fileID: 1387332679}
+  retortButton: {fileID: 0}
+  skipButton: {fileID: 0}
   dialogueIsPlaying: 0
   tags: []
   interactKey: 0
@@ -1746,7 +1736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b029321635e7d4c48b5789ff14064f6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27a531d81da93447da560c6020414258, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3382,7 +3372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 76b301b5347fa4b74a6dab98da8fdc1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27a531d81da93447da560c6020414258, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

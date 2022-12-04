@@ -21,7 +21,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextAsset inkJSON;                 // main.ink --> Game Script
     [SerializeField] string pathString;          
     [SerializeField] public GameObject continueButton;
-    [SerializeField] public GameObject consultButton;          // consult button
+    [SerializeField] public GameObject consultButton; 
+    [SerializeField] public GameObject retortButton;   
+    [SerializeField] public GameObject skipButton;           
     // Other important attributes
     public Story currentStory;                                 // Tracker for which ink file is currently in use
     private string currentLine; 
@@ -292,20 +294,20 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("WHAT TAG: "+tag);
             if(tag.Contains("KIT")) {
                 bossBattleName = "Kit Balang";
-                speakerName.text = "Kit says...";
+                speakerName.text = "KIT";
             } else if(tag.Contains("AMY")) {
-                speakerName.text = "Amy says...";
+                speakerName.text = "AMY";
             }
             else if(tag.Contains("HATTIE")) {
                 bossBattleName = "Hattie Haute";
-                speakerName.text = "Hattie says..."; 
+                speakerName.text = "HATTIE"; 
             }
             else if(tag.Contains("KOI")) {
                 bossBattleName = "Koi Ignacio";
-                speakerName.text = "Koi says...";
+                speakerName.text = "KOI";
             }
             else if(tag.Contains("NARRATOR"))
-                speakerName.text = "Narrator says...";
+                speakerName.text = "NARRATOR";
             else
                 Debug.LogWarning("This tag does not have a character name: " + tag);
         }

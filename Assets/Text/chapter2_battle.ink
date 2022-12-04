@@ -175,7 +175,7 @@ Are you ready? # NARRATOR START BATTLE BTN
             I can't be fooled by his distractions. # AMY
         -   else:
             I don't think that one even had a fallacy. # AMY
-            I should ne more careful next time. # AMY
+            I should be more careful next time. # AMY
         }
     }
 + [SKIP]

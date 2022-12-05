@@ -12,7 +12,6 @@ public class titleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(GameObject.FindWithTag("Dialogue"));
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class titleScreen : MonoBehaviour
 
     public void startgame () 
     {
-        Initiate.Fade("LEVEL_SELECTION", Color.black, 1.0f);
+        Initiate.Fade("Level Selection Screen", Color.black, 1.0f);
     }
 
 

@@ -150,7 +150,7 @@ public class DialogueManager : MonoBehaviour
             else 
             {
                 normalDialogue.text += c;
-                yield return new WaitForSeconds(0.03f);
+                yield return new WaitForSeconds(0.0175f);
             }
         }
         if(isBattle) 

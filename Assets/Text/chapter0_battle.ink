@@ -3,16 +3,16 @@ VAR _life = 30
 VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
-~BG = CH00_BATTLE_HATTI
-# LOAD CODEX
-# NARRATOR TUTORIAL BATTLE_PHASE
-This is the battle phase.
-Each round your enemy will try to attack you using a fallacy spell.
-Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.
-If you run out of stamina you will lose the fight.
-You can dispel these fallacy spells by identifying their weak points.
-Each boss specializes in a certain type of fallacy as indicated in your undercity codex.
-Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.
+~BG = BATTLE
+
+# NARRATOR BATTLE_PHASE LOAD CODEX
+This is the battle phase.# NARRATOR
+Each round your enemy will try to attack you using a fallacy spell.# NARRATOR
+Fallacy spells are magical spells made out of lies and half-truths that weaken you're endurance.# NARRATOR
+If you run out of stamina you will lose the fight.# NARRATOR
+You can dispel these fallacy spells by identifying their weak points.# NARRATOR
+Each boss specializes in a certain type of fallacy as indicated in your undercity codex.# NARRATOR
+Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.# NARRATOR START BATTLE BTN
 
 ~ temp fallacy = ""
 

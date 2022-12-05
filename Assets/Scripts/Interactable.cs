@@ -22,15 +22,10 @@ public class Interactable : MonoBehaviour
         {
             visualCue.SetActive(true);
 
-            if (interactKey != KeyCode.None) {
-                if (Input.GetKeyDown(interactKey))
-                {
-                    interactAction.Invoke();
-                }
-            } else {
+            if (Input.GetKeyDown(interactKey))
+            {
                 interactAction.Invoke();
             }
-            
         }
         else
         {

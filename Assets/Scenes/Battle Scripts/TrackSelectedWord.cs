@@ -22,9 +22,11 @@ public class TrackSelectedWord : MonoBehaviour
         LinkOnHover(linkIndex);
         if (linkIndex != -1)
         {    
+            //AudioManager.instance.Play("Select Word");
             TMP_LinkInfo info = text.textInfo.linkInfo[linkIndex];
             if (Input.GetMouseButtonDown(0))
             {    
+                AudioManager.instance.Play("Select Word");
                 _parts.Add(text.textInfo.linkInfo[linkIndex]);
                 for (int i = 0; i < info.linkTextLength; i++)
                 {

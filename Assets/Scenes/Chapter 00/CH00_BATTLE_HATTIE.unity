@@ -231,6 +231,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: actionOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8880804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4588,7 +4600,7 @@ GameObject:
   - component: {fileID: 946650149}
   - component: {fileID: 946650148}
   m_Layer: 5
-  m_Name: ContinueCH1Text
+  m_Name: ContinueCH0Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4894,6 +4906,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009578951}
   m_CullTransparentMesh: 1
+--- !u!1 &1032001581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032001583}
+  - component: {fileID: 1032001582}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1032001582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032001581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdb0d46112984a0db96cc5f3bcf2e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Select Word
+    clip: {fileID: 8300000, guid: dd146dc55ff764d15a2e36f04471ab30, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Select Action
+    clip: {fileID: 8300000, guid: de7986fa1493f49bf9bfc06d35d947ed, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Close Codex
+    clip: {fileID: 8300000, guid: 8c6c5f60eddbe4348abc128922069a4c, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Open Codex
+    clip: {fileID: 8300000, guid: f70e3f17acf0244d58c20e11eff7c833, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Typing
+    clip: {fileID: 8300000, guid: 7d67fb0e1dd634577ae11e5efd9f3511, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: General
+    clip: {fileID: 8300000, guid: de7986fa1493f49bf9bfc06d35d947ed, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 0.73
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1032001583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032001581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042181976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,6 +5078,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: continueStoryButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 70969584}
         m_TargetAssemblyTypeName: DialogueManagerCH0, Assembly-CSharp
         m_MethodName: ContinueStory
@@ -6393,7 +6504,7 @@ GameObject:
   - component: {fileID: 1270353413}
   - component: {fileID: 1270353412}
   m_Layer: 5
-  m_Name: ContinueCH1
+  m_Name: ContinueCH0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7040,6 +7151,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: openCodex
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 174686377}
         m_TargetAssemblyTypeName: CodexScreen, Assembly-CSharp
         m_MethodName: Setup
@@ -7310,6 +7433,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: continueStoryButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 70969584}
         m_TargetAssemblyTypeName: DialogueManagerCH0, Assembly-CSharp
         m_MethodName: ContinueStory
@@ -7760,7 +7895,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8754,6 +8889,18 @@ MonoBehaviour:
       - m_Target: {fileID: 70969584}
         m_TargetAssemblyTypeName: DialogueManagerCH0, Assembly-CSharp
         m_MethodName: ContinueStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: actionOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10098,6 +10245,64 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!1 &2038700667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038700669}
+  - component: {fileID: 2038700668}
+  m_Layer: 0
+  m_Name: ClickableBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2038700668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038700667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6079b73bb0a8d4a54936772ea5bdf3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 832293041}
+  retortText: {fileID: 1523459717}
+  skipText: {fileID: 384060355}
+  consultText: {fileID: 19307899}
+  retortButton: {fileID: 8880801}
+  skipButton: {fileID: 1865855817}
+  consultButton: {fileID: 1387332679}
+  startBattleButton: {fileID: 1415337106}
+  continueButton: {fileID: 1042181976}
+  nextButton: {fileID: 1129558175}
+  previousButton: {fileID: 1856179598}
+  tryAgainButton: {fileID: 1928862904}
+  mainMenuButton: {fileID: 774391186}
+  continueCHButton: {fileID: 1270353410}
+--- !u!4 &2038700669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038700667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064875128
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,6 +10422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070384234}
   - component: {fileID: 2070384233}
+  - component: {fileID: 2070384235}
   m_Layer: 0
   m_Name: BGAudio
   m_TagString: Untagged
@@ -10335,6 +10541,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070384235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070384232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f9ff1ccadf143048babe42ad6d9a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093759450
 GameObject:
   m_ObjectHideFlags: 0
@@ -10419,6 +10637,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: closeCodex
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 174686377}
         m_TargetAssemblyTypeName: CodexScreen, Assembly-CSharp
         m_MethodName: BackButton

@@ -121,6 +121,7 @@ public class DialogueManager : MonoBehaviour
         
         foreach(char c in line.ToCharArray())
         {
+            AudioManager.instance.Play("Typing");
             if(Input.GetKeyDown(interactKey))
             {
                 normalDialogue.text = line;

@@ -11,6 +11,7 @@ public class ClickableBehavior : MonoBehaviour
     public TextMeshProUGUI retortText;
     public TextMeshProUGUI skipText;
     public TextMeshProUGUI consultText;
+    public TextMeshProUGUI goBackText;
     // Action Buttons
     public GameObject retortButton;
     public GameObject skipButton;
@@ -21,6 +22,7 @@ public class ClickableBehavior : MonoBehaviour
     // Codex Screen
     public GameObject nextButton;
     public GameObject previousButton;
+    public GameObject goBackButton;
     // Win or Lose Screen
     public GameObject tryAgainButton;
     public GameObject mainMenuButton;

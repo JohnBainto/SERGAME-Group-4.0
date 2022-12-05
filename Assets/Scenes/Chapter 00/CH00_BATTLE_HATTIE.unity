@@ -10278,6 +10278,7 @@ MonoBehaviour:
   retortText: {fileID: 1523459717}
   skipText: {fileID: 384060355}
   consultText: {fileID: 19307899}
+  goBackText: {fileID: 867839317}
   retortButton: {fileID: 8880801}
   skipButton: {fileID: 1865855817}
   consultButton: {fileID: 1387332679}
@@ -10285,6 +10286,7 @@ MonoBehaviour:
   continueButton: {fileID: 1042181976}
   nextButton: {fileID: 1129558175}
   previousButton: {fileID: 1856179598}
+  goBackButton: {fileID: 2093759450}
   tryAgainButton: {fileID: 1928862904}
   mainMenuButton: {fileID: 774391186}
   continueCHButton: {fileID: 1270353410}

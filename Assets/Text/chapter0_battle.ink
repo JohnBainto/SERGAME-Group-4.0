@@ -12,6 +12,7 @@ Fallacy spells are magical spells made out of lies and half-truths that weaken y
 If you run out of stamina you will lose the fight.# NARRATOR
 You can dispel these fallacy spells by identifying their weak points.# NARRATOR
 Each boss specializes in a certain type of fallacy as indicated in your undercity codex.# NARRATOR
+Click start battle to begin!# NARRATOR
 Select the words or phrases in the opponent's fallacy spell that contribute the most to it being fallacy in order to dispel them.# NARRATOR START BATTLE BTN
 
 ~ temp fallacy = ""
@@ -34,10 +35,10 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
     #  TUTORIAL
     Finding the weak points of a fallacy spell can be tricky. # TUTORIAL 
     But, you can CONSULT your undercity codex during the battle to help you decide which words to pick. # TUTORIAL 
-    Remember that Hattie's special fallacy skill is <b>FALSE DICHOTOMY</b>. # TUTORIAL 
-    Try to look for words that try to frame somethings as only one of two things. # TUTORIAL  
+    Try consulting you undercity codex right now and read up on what Hattie's special fallacy skill does. # TUTORIAL  
+    Go to the page detailing Hattie's special fallacy skill. # TUTORIAL  
     # TUTORIAL ANSWER 
-    Then when you're ready, click retort to dispel their attack. 
+    Then when you're ready, hover over the words you want to select and click them to add them to your selected word list. Once you're decided, click retort to dispel their attack. 
     
 -   <link="-1">Tch</link>, <> # HATTIE QSTART
 	<link="-2">as if</link> <>

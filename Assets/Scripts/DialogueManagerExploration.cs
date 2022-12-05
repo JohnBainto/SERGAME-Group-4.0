@@ -145,7 +145,7 @@ public class DialogueManagerExploration : MonoBehaviour
         bool isAddingRichTextTag = false;
 
         foreach(char letter in line.ToCharArray()) {
-
+            AudioManager.instance.Play("Typing");
             // if(Input.GetKeyDown(interactKey)) {
             //     dialogueText.text = line;
             //     break;

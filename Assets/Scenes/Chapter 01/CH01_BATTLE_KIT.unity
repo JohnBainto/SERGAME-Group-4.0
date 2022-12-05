@@ -582,11 +582,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 2030585694}
   startBattleBtn: {fileID: 1415337106}
+  _startBattleBtn: {fileID: 1415337108}
   normalDialogue: {fileID: 536259023}
   battleDialogue: {fileID: 916933081}
   speakerName: {fileID: 1908383041}
   inkJSON: {fileID: 4900000, guid: 2cd7e1221a0ea42108a4027aebdd400f, type: 3}
   pathString: ch1_battle
+  retortButton: {fileID: 8880803}
+  skipButton: {fileID: 1865855819}
   continueButton: {fileID: 1042181976}
   consultButton: {fileID: 1387332679}
   dialogueIsPlaying: 0
@@ -3355,6 +3358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e319f7abeafc14250977206072265212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  retortButton: {fileID: 8880803}
   text: {fileID: 916933081}
   MainCamera: {fileID: 832293041}
   selectedWords: {fileID: 582046951}

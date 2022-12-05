@@ -15,13 +15,17 @@ public class DialogueManagerCH0 : MonoBehaviour
     TrackSelectedWord trackSelectedWord;
     [SerializeField] GameObject dialogueBox;
     [SerializeField] GameObject startBattleBtn;         // startBattle button
+    [SerializeField] Button _startBattleBtn;         // startBattle button
     [SerializeField] public TextMeshProUGUI normalDialogue;    // Normal Text
     [SerializeField] public TextMeshProUGUI battleDialogue;    // Battle Text 
     [SerializeField] TextMeshProUGUI speakerName;       // Speaker Name
     [SerializeField] public TextAsset inkJSON;                 // main.ink --> Game Script
     [SerializeField] string pathString;          
     [SerializeField] public GameObject continueButton;
-    [SerializeField] public GameObject consultButton;       
+    [SerializeField] public Button retortButton;
+    [SerializeField] public Button skipButton;
+    [SerializeField] public GameObject consultButton; 
+    [SerializeField] public GameObject continueTutorialButton;        
     // Other important attributes
     public Story currentStory;                                 // Tracker for which ink file is currently in use
     private string currentLine; 
@@ -51,6 +55,7 @@ public class DialogueManagerCH0 : MonoBehaviour
 
     // Tutorial Screen
     public TutorialScreen tutorialScreen;
+    public CodexTutorialScreen tutorialCodexScreen;
 
     // Start is called before the first frame update
     private void Start() 
@@ -104,6 +109,10 @@ public class DialogueManagerCH0 : MonoBehaviour
         {
             StartDialogue();
         }
+        if(trackSelectedWord._parts.Count == 0) 
+            retortButton.interactable = false;
+        else
+            retortButton.interactable = true;
     }
 
     public static DialogueManagerCH0 GetInstance()
@@ -123,7 +132,9 @@ public class DialogueManagerCH0 : MonoBehaviour
         continueButton.SetActive(false);
         canContinueToNext = false;
         bool isAddingRichTextTag = false;
-        
+        //
+        retortButton.interactable = false;
+        skipButton.interactable = false;
         foreach(char c in line.ToCharArray())
         {
             AudioManager.instance.Play("Typing");
@@ -153,6 +164,11 @@ public class DialogueManagerCH0 : MonoBehaviour
         }
 
         canContinueToNext = true;
+        //
+        retortButton.interactable = true;
+        skipButton.interactable = true;
+        if(startBattleBtn.activeSelf)
+            _startBattleBtn.interactable = true;
     }
 
     // Start of the dialogue
@@ -194,6 +210,7 @@ public class DialogueManagerCH0 : MonoBehaviour
             if(tags[0].Contains("START BATTLE"))
             {
                 startBattleBtn.SetActive(true); 
+                _startBattleBtn.interactable = false;
             }
             if(tags[0].Contains("LOAD CODEX"))
             {
@@ -213,15 +230,35 @@ public class DialogueManagerCH0 : MonoBehaviour
                 DisplayChoices(battleChoices,battleChoicesText);
                 continueButton.SetActive(true);
                 consultButton.SetActive(true);
-            } else if(tags[0].Contains("TUTORIAL")) 
-            { 
+            } else if(tags[0].Contains("TUTORIAL")) { 
+                
                 startBattleBtn.SetActive(false); 
-                continueButton.SetActive(true);
-                tutorialScreen.Setup(currentLine);
+                
+                //battleDialogue.enable = false;
+                battleDialogue.gameObject.SetActive(false);
+                
+                if(tags[0].Contains("ONLY CONSULT"))
+                {
+                    continueButton.SetActive(false);
+                } 
+                else
+                    continueButton.SetActive(true);
+                
+                if(tags[0].Contains("C TUTORIAL"))
+                {
+                    tutorialScreen.Destroy();
+                    tutorialCodexScreen.Setup(currentLine);
+                } else
+                {
+                    tutorialCodexScreen.Destroy();
+                    tutorialScreen.Setup(currentLine);
+                }
                 Debug.Log("TUTORIAL " + currentLine);   
                 DisplayChoices(battleChoices,battleChoicesText);
                 if(tags[0] == "TUTORIAL ANSWER") 
                 { 
+                    //battleDialogue.enable = true;
+                    battleDialogue.gameObject.SetActive(true);
                     continueButton.SetActive(false);
                 }
             }  else 
@@ -237,8 +274,6 @@ public class DialogueManagerCH0 : MonoBehaviour
                 else continueButton.SetActive(false);    
                 consultButton.SetActive(false);
             }
-
-            
             HandleScenes();
 
         }
@@ -349,4 +384,34 @@ public class DialogueManagerCH0 : MonoBehaviour
             Debug.Log("Battle not yet done.");
         }
     }   
+
+    public void codexTutorialTexts()
+    {
+        if(tags[0].Contains("ONLY CONSULT"))
+        {
+            if(codexScreen.activity) {
+                ContinueStory();
+            }
+        } 
+    }
+    
+    public void codexTutorialEnable()
+    {
+        tags = currentStory.currentTags;
+        if(codexScreen.activity && codexScreen.currentPage==1) {
+            tutorialCodexScreen.Destroy();
+        }else if(codexScreen.activity && tags[0].Trim() == "C TUTORIAL GO BACK"){
+            continueTutorialButton.SetActive(false);
+        } 
+        else if(codexScreen.maxPage == codexScreen.currentPage && tags[0].Trim() == "C TUTORIAL ONLY CONSULT") {
+            ContinueStory();
+            continueTutorialButton.SetActive(true);
+        } 
+        else if (tags[0].Trim() == "C TUTORIAL GO BACK")
+        {
+            tutorialCodexScreen.Destroy();
+            ContinueStory();          
+        }
+
+    }
 }

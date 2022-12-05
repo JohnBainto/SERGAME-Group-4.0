@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class TrackSelectedWord : MonoBehaviour
 {
+    [SerializeField] public Button retortButton; 
     public TextMeshProUGUI text;
     public Camera MainCamera;
     [SerializeField] public TextMeshProUGUI selectedWords;
@@ -55,6 +57,11 @@ public class TrackSelectedWord : MonoBehaviour
                     } 
                 }
             }
+
+            if(_parts.Count == 0) 
+                retortButton.interactable = false;
+            else
+                retortButton.interactable = true;
         } 
         printSelectedParts();
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);

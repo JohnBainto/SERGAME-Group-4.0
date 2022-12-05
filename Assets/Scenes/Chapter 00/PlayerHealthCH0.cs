@@ -31,7 +31,7 @@ public class PlayerHealthCH0 : MonoBehaviour
     void Update() {
         sumPerformance();
         currentHealth = (int)cStory.variablesState["_life"];
-        Debug.Log(  "LIFE: " +currentHealth);
+        //Debug.Log(  "LIFE: " +currentHealth);
         healthBar.SetHealth(currentHealth);
     }
 

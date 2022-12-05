@@ -1,6 +1,6 @@
 === ch2_battle ===
 ~BG = CH02_BATTLE_KOI
-# LOAD CODEX
+
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0
@@ -53,13 +53,13 @@ Are you ready? # NARRATOR START BATTLE BTN
 		<link="1">get sick</link> <>
 		<link="1">if you don't dry up</link>. # QEND
 		~ fallacy = "RED HERRING"
-	-	<link="-1">Of course</link><> # KOI QSTART
-		<link="1">it's alright</link><>
-		<link="-1">for my business</link><>
-		<link="0">to be fishy</link>,<>
-		<link="1">I am</link><>
-		<link="1">a fish</link><>
-		<link="0">after all</link> # QEND
+	-	<link="-1">Of course</link> <> # KOI QSTART
+		<link="1">it's alright</link> <>
+		<link="-1">for my business</link> <>
+		<link="0">to be fishy</link>, <>
+		<link="1">I am</link> <>
+		<link="1">a fish</link> <>
+		<link="0">after all</link>. # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="-1">I'll</link><> # KOI QSTART
 		<link="-1">let you leave</link> <>

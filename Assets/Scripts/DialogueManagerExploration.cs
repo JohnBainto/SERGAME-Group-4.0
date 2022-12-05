@@ -9,17 +9,17 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManagerExploration : MonoBehaviour
 {
+    public float typingSpeed;
+
     public KeyCode interactKey;
-
     public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
 
+    public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI displayNameText;
 
     public Story currentStory;
     public bool dialogueIsPlaying;
 
-    public float typingSpeed;
     private bool canContinueToNext;
     private Coroutine displayLineCoroutine;
 
@@ -30,14 +30,7 @@ public class DialogueManagerExploration : MonoBehaviour
     public GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
-    public GameObject itemPanel;
-    public TextMeshProUGUI itemText;
-
-    private bool loadingScene;
     // Start is called before the first frame update
-
-    public GameObject codex;
-
     private void Awake()
     {
         if (instance != null)
@@ -64,7 +57,6 @@ public class DialogueManagerExploration : MonoBehaviour
         dialoguePanel.SetActive(false);
 
         canContinueToNext = false;
-        loadingScene = false;
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -85,18 +77,6 @@ public class DialogueManagerExploration : MonoBehaviour
         {
             ContinueStory();
             HandleInteractable();
-            HandleInventory();
-        }
-
-        checkCodex();
-    }
-
-    private void checkCodex() {
-        string scene = SceneManager.GetActiveScene().name;
-        if (scene.Contains("BLACK")) {
-            codex.SetActive(false);
-        } else {
-            codex.SetActive(true);
         }
     }
 
@@ -124,16 +104,16 @@ public class DialogueManagerExploration : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue())); //pop a line off the stack
+            Debug.Log("Text: " + dialogueText.text);
             
             HandleTags();
-            StartCoroutine(HandleScenes());
+            HandleScenes();
         }
         else
         {
             ExitDialogueMode();
         }
     }
-    
 
     private IEnumerator DisplayLine(string line) {
         dialogueText.text = "";
@@ -150,8 +130,6 @@ public class DialogueManagerExploration : MonoBehaviour
             //     dialogueText.text = line;
             //     break;
             // }
-
-            while(loadingScene) yield return null;
 
             if (letter == '<' || isAddingRichTextTag) {
                 isAddingRichTextTag = true;
@@ -178,51 +156,58 @@ public class DialogueManagerExploration : MonoBehaviour
         }
     }
 
-    public IEnumerator HandleScenes() {
-        string sceneName = currentStory.variablesState["BG"].ToString();
+    public void HandleScenes() {
+        string sceneName = "";
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
-
-        if (sceneName == "BATTLE") {
-            sceneName = "BattleScene 1";
+        switch (currentStory.variablesState["BG"].ToString())
+        {
+            case "PROLOGUE": 
+                sceneName = "PROLOGUE";
+                break;
+            case "MENU": 
+                sceneName = "MENU";
+                break;
+            case "CH01_EXP_BLACK": 
+                sceneName = "CH01_EXP_BLACK";
+                break;
+            case "CH01_EXP_OUTSIDE":
+                sceneName = "CH01_EXP_OUTSIDE";
+                break;
+            case "CH01_EXP_INSIDE":
+                sceneName = "CH01_EXP_INSIDE";
+                break;
+            case "CH01_EXP_PIER":
+                sceneName = "CH01_EXP_PIER";
+                break;
+            case "CH01_EXP_BASEMENT":
+                sceneName = "CH01_EXP_BASEMENT";
+                break;
+            case "BATTLE":
+                sceneName = "BattlePhase";
+                break;
+            case "CH02_EXP_BLACK":
+                sceneName = "CH02_EXP_BLACK";
+                break;
+            case "CH02_EXP_BASEMENT":
+                sceneName = "CH02_EXP_BASEMENT";
+                break;
+            case "CH02_EXP_HALLWAY":
+                sceneName = "CH02_EXP_HALLWAY";
+                break;
+            default:
+                sceneName = "";
+                break;
         }
 
         if (SceneManager.GetActiveScene().name != sceneName) {
-            loadingScene = true;
-            dialoguePanel.SetActive(false);
-
-            Initiate.Fade(sceneName, Color.black, 2.5f);
-            yield return new WaitForSeconds(1.0f);
-
-            dialoguePanel.SetActive(true);
-            loadingScene = false;
+            SceneManager.LoadScene(sceneName);
         }
     }
 
     public void HandleInteractable() {
-        Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTABLE"].ToString());
-        if (bool.Parse(currentStory.variablesState["INTERACTABLE"].ToString())) {
+        Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTIBLE"].ToString());
+        if (bool.Parse(currentStory.variablesState["INTERACTIBLE"].ToString())) {
             ExitDialogueMode();
-        }
-
-    }
-
-    public void HandleInventory() {
-        Debug.Log("INVENTORY: " + currentStory.variablesState["inventory"].ToString());
-
-        InkList inventory = (InkList) currentStory.variablesState["inventory"];
-        if(inventory.Count > 0) {
-            itemPanel.SetActive(true);
-            itemText.text = "<i>Inventory</i>\n";
-            foreach (var item in inventory) {
-                string itemName = item.Key.ToString().Split('.')[1];
-                Debug.Log(itemName);
-                if (itemName != "crane") {
-                    itemText.text += itemName + "\n";
-                }
-            } 
-        } else {
-            itemPanel.SetActive(false);
-            itemText.text = "";
         }
     }
 
@@ -262,7 +247,6 @@ public class DialogueManagerExploration : MonoBehaviour
     }
 
     public void MakeChoice (int choiceIndex) {
-        Debug.Log("choiceIndex: " + choiceIndex);            
         if (canContinueToNext) {
             currentStory.ChooseChoiceIndex(choiceIndex);
         }

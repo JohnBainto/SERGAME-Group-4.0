@@ -33,7 +33,7 @@ Select the words or phrases in the opponent's fallacy spell that contribute the 
 	
     #  TUTORIAL
     Finding the weak points of a fallacy spell can be tricky. # TUTORIAL 
-    But, you can CONSULT you undercity codex during the batttle to help you decide which words to pick. # TUTORIAL 
+    But, you can CONSULT your undercity codex during the battle to help you decide which words to pick. # TUTORIAL 
     Remember that Hattie's special fallacy skill is <b>FALSE DICHOTOMY</b>. # TUTORIAL 
     Try to look for words that try to frame somethings as only one of two things. # TUTORIAL  
     # TUTORIAL ANSWER 

@@ -4,6 +4,8 @@ LIST ch0_evidence = e1,e2
 ~ INTERACTABLE = false
 ~ BG = CH00_EXP_BLACK
 # LOAD CODEX
+# TUTORIAL
+Press enter to the next text.
 # NARRATOR
 CHAPTER 0: TUTORIAL
 NOVEMBER 23, 20XX \| 1:02 AM

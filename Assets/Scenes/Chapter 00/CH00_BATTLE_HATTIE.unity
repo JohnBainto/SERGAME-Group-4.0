@@ -5783,7 +5783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pages:
   - isUnlocked: 0
-    pageID: 0
+    pageID: 
     pageName: Undercity Codex Outline
     pageType: Outline
     pageContents:
@@ -5800,7 +5800,7 @@ MonoBehaviour:
       Fallacy Skill</link> "
     pageSprites: []
   - isUnlocked: 0
-    pageID: 1
+    pageID: 
     pageName: CH0 Outline
     pageType: Chapter
     pageContents:
@@ -5811,7 +5811,7 @@ MonoBehaviour:
     pageSprites:
     - {fileID: 21300000, guid: 75a74d4095696469eb0d14b331ceab9d, type: 3}
   - isUnlocked: 1
-    pageID: 2
+    pageID: 
     pageName: CH0 Case File
     pageType: Case File
     pageContents:
@@ -5834,7 +5834,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: cabbb9980597e68458fe5f52a8fdd30d, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 3
+    pageID: 
     pageName: CH0 Evidence 1
     pageType: Evidence
     pageContents:
@@ -5852,7 +5852,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 573f0051b9da14087b603cec127bcda8, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 4
+    pageID: 
     pageName: CH0 Special Fallacy Skill
     pageType: ' Fallacy Skill'
     pageContents:
@@ -5870,7 +5870,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 6b73d6bea3513420389ade7355be50aa, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 5
+    pageID: 
     pageName: CH1 Outline
     pageType: Chapter
     pageContents:
@@ -5882,7 +5882,7 @@ MonoBehaviour:
     pageSprites:
     - {fileID: 21300000, guid: 96d34ab12dbb8424fb4384d74c099be8, type: 3}
   - isUnlocked: 0
-    pageID: 6
+    pageID: 
     pageName: CH1 Case File
     pageType: Case File
     pageContents:
@@ -5917,7 +5917,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 087dcf5c251ec7b49830f96ddd9177a2, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 7
+    pageID: 
     pageName: CH1 Evidence 1
     pageType: Evidence
     pageContents:
@@ -5933,7 +5933,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: dd7a8c599cbeb4c5bb8c11d436276b8a, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 8
+    pageID: 
     pageName: CH1 Evidence 2
     pageType: Evidence
     pageContents:
@@ -5955,7 +5955,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ff649f69be91b45b89d0524b74edee9c, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 9
+    pageID: 
     pageName: CH1 Evidence 3
     pageType: Evidence
     pageContents:
@@ -5974,7 +5974,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 1796d0f203d1e4f6daced89ba1cab89d, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 10
+    pageID: 
     pageName: CH1 Special Fallacy Skill
     pageType: Fallacy Skill
     pageContents:
@@ -5993,7 +5993,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 3b606cb72ef6e462aa902a492eac9706, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 11
+    pageID: 
     pageName: CH2 Outline
     pageType: Chapter
     pageContents:
@@ -6005,7 +6005,7 @@ MonoBehaviour:
     pageSprites:
     - {fileID: 21300000, guid: c88298d9c8cf64dbeab606fc0fc43243, type: 3}
   - isUnlocked: 0
-    pageID: 12
+    pageID: 
     pageName: CH2 Case File
     pageType: Case File
     pageContents:
@@ -6041,7 +6041,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 56510dfa1eae4684e8678bdffd9fc2db, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 13
+    pageID: 
     pageName: CH2 Evidence 1
     pageType: Evidence
     pageContents:
@@ -6060,7 +6060,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: b6e08fda9cf97462885489c87b6c9145, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 14
+    pageID: 
     pageName: CH2 Evidence 2
     pageType: Evidence
     pageContents:
@@ -6084,7 +6084,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: fbea628aee41f46dc83d09f47e7a3827, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 15
+    pageID: 
     pageName: CH2 Evidence 3
     pageType: Evidence
     pageContents:
@@ -6109,7 +6109,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 564e83b4b0a0344de9dd196cc6ffe7db, type: 3}
     - {fileID: 21300000, guid: a056e16680bbf4236b5c81b93fc65a9b, type: 3}
   - isUnlocked: 0
-    pageID: 16
+    pageID: 
     pageName: CH2 Special Fallacy Skill
     pageType: Fallacy Skill
     pageContents:
@@ -9770,7 +9770,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14, y: 8.97}
+  m_Size: {x: 7.25, y: 4.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

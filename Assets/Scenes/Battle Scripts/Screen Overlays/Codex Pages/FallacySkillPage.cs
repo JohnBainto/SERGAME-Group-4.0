@@ -17,7 +17,8 @@ public class FallacySkillPage : MonoBehaviour
         text1.text = pageData.pageContents[1];
         text2.text = pageData.pageContents[2];
         sprite0.GetComponent<Image>().sprite = pageData.pageSprites[0];
-        sprite1.GetComponent<Image>().sprite = null;
+        sprite1.SetActive(false);
+        //sprite1.GetComponent<Image>().sprite = null;
 
         // Deciding on the content
         if(pageData.pageName == "CH0 Special Fallacy Skill") 
@@ -27,6 +28,7 @@ public class FallacySkillPage : MonoBehaviour
                 text1.text = pageData.pageContents[3];
                 text2.text = pageData.pageContents[4];
                 sprite0.GetComponent<Image>().sprite = pageData.pageSprites[1];
+                sprite1.SetActive(true);
                 sprite1.GetComponent<Image>().sprite = pageData.pageSprites[2];
             }
                 
@@ -39,6 +41,7 @@ public class FallacySkillPage : MonoBehaviour
                 text1.text = pageData.pageContents[3];
                 text2.text = pageData.pageContents[4];
                 sprite0.GetComponent<Image>().sprite = pageData.pageSprites[1];
+                sprite1.SetActive(true);
                 sprite1.GetComponent<Image>().sprite = pageData.pageSprites[2];
             }
         }
@@ -50,6 +53,7 @@ public class FallacySkillPage : MonoBehaviour
                 text1.text = pageData.pageContents[3];
                 text2.text = pageData.pageContents[4];
                 sprite0.GetComponent<Image>().sprite = pageData.pageSprites[1];
+                sprite1.SetActive(true);
                 sprite1.GetComponent<Image>().sprite = pageData.pageSprites[2];
             }
         }

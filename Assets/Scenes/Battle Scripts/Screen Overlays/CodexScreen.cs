@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CodexScreen : MonoBehaviour
 {
+    public bool activity = false;
     public List<PageData> codexPagesData; // all pages of codex
     private string ch0_evidences;
     private string ch1_evidences;
@@ -22,9 +23,10 @@ public class CodexScreen : MonoBehaviour
     public CaseFilePage caseFilePage;
     public EvidencePage evidencePage;
     public FallacySkillPage fallacySkillPage;
-    
+
     public void Setup() {
         gameObject.SetActive(true);
+        activity = true;
         currentPage = 0;
         setPrevNextButton();
         printPage(codexPagesData[currentPage]);
@@ -76,6 +78,7 @@ public class CodexScreen : MonoBehaviour
     public void BackButton() 
     {
         gameObject.SetActive(false);
+        activity = false;
     }
 
     public  void setPrevNextButton()

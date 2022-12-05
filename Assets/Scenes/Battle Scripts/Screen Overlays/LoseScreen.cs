@@ -25,6 +25,6 @@ public class LoseScreen : MonoBehaviour
     }
 
     public void mainMenuButton() {
-        Initiate.Fade("Level Selection Screen", Color.black, 1.0f); 
+        Initiate.Fade("LEVEL_SELECTION", Color.black, 1.0f); 
     }
 }

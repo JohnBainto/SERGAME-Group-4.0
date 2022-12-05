@@ -19,11 +19,11 @@ public class WinScreen : MonoBehaviour
         switch(pathString)
         {
             case "ch0_battle":
-                Initiate.Fade("CH01_EXP_OUTSIDE",  Color.black, 1.0f); break;
+                Initiate.Fade("LEVEL_SELECTION",  Color.black, 1.0f); break;
             case "ch1_battle":
-                Initiate.Fade("CH02_EXP_BLACK",  Color.black, 1.0f); break;
+                Initiate.Fade("LEVEL_SELECTION",  Color.black, 1.0f); break;
             case "ch2_battle":
-                Initiate.Fade("CH02_EXP_BLACK",  Color.black, 1.0f); break;
+                Initiate.Fade("TITLE_SCREEN",  Color.black, 1.0f); break;
         }
     }    
 }

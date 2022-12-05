@@ -15,11 +15,14 @@ public class DialogueManager : MonoBehaviour
     TrackSelectedWord trackSelectedWord;
     [SerializeField] GameObject dialogueBox;
     [SerializeField] GameObject startBattleBtn;         // startBattle button
+    [SerializeField] Button _startBattleBtn;         // startBattle button
     [SerializeField] public TextMeshProUGUI normalDialogue;    // Normal Text
     [SerializeField] public TextMeshProUGUI battleDialogue;    // Battle Text 
     [SerializeField] TextMeshProUGUI speakerName;       // Speaker Name
     [SerializeField] TextAsset inkJSON;                 // main.ink --> Game Script
-    [SerializeField] string pathString;          
+    [SerializeField] string pathString;   
+    [SerializeField] public Button retortButton;
+    [SerializeField] public Button skipButton;       
     [SerializeField] public GameObject continueButton;
     [SerializeField] public GameObject consultButton;       
     // Other important attributes
@@ -101,6 +104,11 @@ public class DialogueManager : MonoBehaviour
         {
             StartDialogue();
         }
+
+        if(trackSelectedWord._parts.Count == 0) 
+            retortButton.interactable = false;
+        else
+            retortButton.interactable = true;
     }
 
     public static DialogueManager GetInstance()
@@ -120,7 +128,8 @@ public class DialogueManager : MonoBehaviour
         continueButton.SetActive(false);
         canContinueToNext = false;
         bool isAddingRichTextTag = false;
-        
+        retortButton.interactable = false;
+        skipButton.interactable = false;
         foreach(char c in line.ToCharArray())
         {
             AudioManager.instance.Play("Typing");
@@ -141,7 +150,7 @@ public class DialogueManager : MonoBehaviour
             else 
             {
                 normalDialogue.text += c;
-                yield return new WaitForSeconds(0.03f);
+                yield return new WaitForSeconds(0.0175f);
             }
         }
         if(isBattle) 
@@ -150,6 +159,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         canContinueToNext = true;
+        retortButton.interactable = true;
+        skipButton.interactable = true;
+        if(startBattleBtn.activeSelf)
+            _startBattleBtn.interactable = true;
     }
 
     // Start of the dialogue
@@ -191,6 +204,7 @@ public class DialogueManager : MonoBehaviour
             if(tags[0].Contains("START BATTLE"))
             {
                 startBattleBtn.SetActive(true); 
+                _startBattleBtn.interactable = false;
             }
             if(tags[0].Contains("LOAD CODEX"))
             {
@@ -211,13 +225,11 @@ public class DialogueManager : MonoBehaviour
                 consultButton.SetActive(true);
                 continueButton.SetActive(false);
             }
-
             else 
             {
                 Debug.Log("NORMAL " + currentLine);
                 StopAllCoroutines();
-                StartCoroutine(TypeLine(currentLine,false));   
-                
+                StartCoroutine(TypeLine(currentLine,false));       
                 DisplayChoices(normalChoices,normalChoicesText);
                 if (!startBattleBtn.activeSelf)
                     continueButton.SetActive(true);    

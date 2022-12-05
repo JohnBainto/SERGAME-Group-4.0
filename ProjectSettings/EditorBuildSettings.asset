@@ -41,9 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter 01/CH01_BATTLE_KIT.unity
     guid: 448064b5c09b746259b88eb41fe69323
-  - enabled: 0
-    path: Assets/Scenes/BattlePhase.unity
-    guid: bfbc5ab8c511f174ca7ea9d59ff189e5
   - enabled: 1
     path: Assets/Scenes/Chapter 02/CH02_EXP_BLACK.unity
     guid: 82bc1c752a9fb5041ac01508112cad29
@@ -54,21 +51,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 02/CH02_EXP_HALLWAY.unity
     guid: 9e0eaa6949bae9342865c9f2747d5e0d
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/CH02_BATTLE_KOI.unity
-    guid: cfaecdd17000d4f258a9c6c6300f26c3
-  - enabled: 1
-    path: Assets/Scenes/Main Menu/Title Screen.unity
-    guid: 3a97653a850e16d449cfe253fae09b21
-  - enabled: 1
     path: Assets/Scenes/Chapter 02/CH02_EXP_PIER_MOVED.unity
     guid: 4c79b31ab9c4f6c43ba15bd06aa83773
   - enabled: 1
-    path: Assets/Scenes/CH00_BATTLE_HATTI.unity
-    guid: c1d50003d623d4eb68352ce365f5ff2c
+    path: Assets/Scenes/Chapter 02/CH02_EXP_PIER_WET.unity
+    guid: 4d4e79cc01aa4b7429ed7ef92670b2c1
   - enabled: 1
-    path: Assets/Scenes/CH01_BATTLE_KIT.unity
-    guid: 183eb2a9e049e4dcab8e4d4d157aa800
-  - enabled: 1
-    path: Assets/Scenes/CH02_BATTLE_KOI.unity
-    guid: b042affe045904a2f95fdc988a314922
+    path: Assets/Scenes/Chapter 02/CH02_BATTLE_KOI.unity
+    guid: cfaecdd17000d4f258a9c6c6300f26c3
   m_configObjects: {}

@@ -3,7 +3,7 @@ VAR _life = 30
 VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
-~BG = CH00_BATTLE_HATTI
+~BG = CH00_BATTLE_HATTIE
 
 # NARRATOR BATTLE_PHASE LOAD CODEX
 This is the battle phase.# NARRATOR

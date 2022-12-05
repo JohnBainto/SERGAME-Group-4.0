@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Chapter 01/CH01_EXP_BASEMENT.unity.meta
 guid: 091ceb398df6e4c4896b37157007a008
+========
+guid: 6718ddfcd6cd50545b7bd6cc27c1da26
+>>>>>>>> word-selection:Assets/Text/chapter0_battle.ink.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -4,91 +4,85 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
-    public Transform ceilingCheck;
-    public Transform groundCheck;
-    public LayerMask groundObjects;
-    public float checkRadius;
-    public int maxJumpCount;
-
     private Rigidbody2D rb;
-    private bool facingRight = true;
-    private float moveDirection;
-    private bool isJumping = false; 
-    private bool isGrounded;
-    private int jumpCount;
+    private BoxCollider2D coll;
+    private Animator anim;
+    private SpriteRenderer sprite;
 
-    //awake is called after all objects are intialized. Called in a random order.
-    private void Awake() {
+    [SerializeField] private LayerMask jumpableGround;
+
+    private float dirX = 0f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 14f;
+
+    private enum MovementState
+    {
+        idle, running, jumping, falling
+    }
+
+    private MovementState state = MovementState.idle;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
-    //start is called before the first frame update
-    void Start()
+    // Update is called once per frame
+    private void Update()
     {
-        jumpCount = maxJumpCount;
-    }
-
-    //update is called once per frame
-    void Update()
-    {
-        if(DialogueManagerExploration.GetInstance().dialogueIsPlaying) {
-            return; //freeze the player
-        }
-        
-        //get inputs
-        ProcessInputs();
-
-        //animate
-        Animate();
-    }
-
-    //better for handling physics, can be called multiple times per update frame
-    private void FixedUpdate() { 
-        
-        if(DialogueManagerExploration.GetInstance().dialogueIsPlaying) {
+        if (DialogueManagerExploration.GetInstance().dialogueIsPlaying)
+        {
             return; //freeze the player
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
-        if (isGrounded) {
-            jumpCount = maxJumpCount;
+        dirX = Input.GetAxisRaw("Horizontal");
+
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        if (Input.GetButtonDown("Jump") && isGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        //move
-        Move();
+        UpdateAnimationState();
     }
 
-    private void ProcessInputs() {
-        moveDirection = Input.GetAxis("Horizontal"); //scale of -1 to 1
-        if (Input.GetButtonDown("Jump") && jumpCount > 0) {
-            isJumping = true;
+    private void UpdateAnimationState()
+    {
+        MovementState state;
+
+        if (dirX > 0f)
+        {
+            state = MovementState.running;
+            sprite.flipX = false;
         }
-    }
-
-    private void Animate() {
-        if (moveDirection > 0 && !facingRight) {
-            FlipCharacter();
-        } else if (moveDirection < 0 && facingRight) {
-            FlipCharacter();
+        else if (dirX < 0f)
+        {
+            state = MovementState.running;
+            sprite.flipX = true;
         }
-    }
-
-    private void Move() {
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
-
-        if(isJumping && jumpCount > 0) {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            jumpCount--;
+        else
+        {
+            state = MovementState.idle;
         }
-        isJumping = false;
+
+        if(rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+
+        anim.SetInteger("state", (int)state);
     }
 
-    private void FlipCharacter() {
-        facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
-
-

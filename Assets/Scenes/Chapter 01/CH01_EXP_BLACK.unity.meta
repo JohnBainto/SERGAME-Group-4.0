@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Chapter 01/CH01_EXP_BLACK.unity.meta
 guid: 5576d71df24ff0640abe93577cb2b742
 DefaultImporter:
+========
+guid: 7579cf1e21b8b6847ac10f96d9fcb0ca
+NativeFormatImporter:
+>>>>>>>> word-selection:Assets/Animations/Canvas.controller.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

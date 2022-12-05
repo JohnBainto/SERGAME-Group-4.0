@@ -1,6 +1,6 @@
 === ch1_battle ===
-~BG = BATTLE
-
+~BG = CH01_BATTLE_KIT
+# LOAD CODEX
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0

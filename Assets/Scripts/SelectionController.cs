@@ -8,6 +8,12 @@ public class SelectionController : MonoBehaviour
         DialogueManagerExploration.GetInstance().MakeChoiceThenContinue(choice);
     }
 
+    public void SelectThenHide(int choice) {
+        DialogueManagerExploration.GetInstance().MakeChoiceThenContinue(choice);
+        gameObject.SetActive(false);
+        GameObject.Find(gameObject.name + " Prompt").SetActive(false);
+    }
+
     public void Interact() {
         DialogueManagerExploration.GetInstance().EnterDialogueMode();
     }

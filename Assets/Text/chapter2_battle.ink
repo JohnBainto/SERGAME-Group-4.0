@@ -1,6 +1,6 @@
 === ch2_battle ===
-~BG = BATTLE
-
+~BG = CH02_BATTLE_KOI
+# LOAD CODEX
 ~ _performance = 0
 ~ _life = 30
 ~ _turn = 0

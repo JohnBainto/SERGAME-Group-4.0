@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Text/chapter0_battle.ink.meta
 guid: 6718ddfcd6cd50545b7bd6cc27c1da26
+========
+guid: be523a205d55d6744a885c98e97ea54c
+>>>>>>>> word-selection:Assets/Scenes/BattleScene with Hattie.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

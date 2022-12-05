@@ -30,6 +30,7 @@ You have entered a monster's domain.
 While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
 Impressions can be revealed by examining objects or interacting with people.
 To move around a domain, use your ←/A and →/D keys.
+To jump, press spacebar.
 To interact with objects in a domain, stand next to the object and press E.
 Try moving towards the box on your right and interacting with it!
 
@@ -38,6 +39,8 @@ Try moving towards the box on your right and interacting with it!
 
 - (area1)
 ~ INTERACTABLE = true
+# AMY
+What should I do now?
 + [Examine box]
     ~ INTERACTABLE = false
     {inventory ? key:
@@ -67,9 +70,9 @@ Try moving towards the box on your right and interacting with it!
         ~ ch0_evidence += ch0_evidence.e1
         
         # TUTORIAL
-        Upon finding an impression, you undercity codex will react and turn that impression into evidence.
-        Your undercity codex is the book that you can see on the lower-left side of your screen.
-        Press the X button to access it any time and review the the evidence you just discovered.
+        Upon finding an impression, your undercity codex will react and turn that impression into evidence.
+        Your undercity codex is the book that you can see on the lower-right side of your screen.
+        Press the X button to access it any time and review the evidence you just discovered.
         It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
         Speaking of which...
         -> part2
@@ -90,57 +93,51 @@ Try moving towards the box on your right and interacting with it!
         You will also encounter choices.
         Use the up and down arrow keys to select between different choices.
         Then, click on the Enter key to confirm your selection.
-        # AMY
-        Anyway, what should I do now?
-        + + [Examine slip of paper.]
-            # AMY
-            There's a piece of paper that got caught on the lid of the box.
-            It looks like a note?
-            
-            # NARRATOR
-            You try pulling out the note.
-            You manage to get more of it out, but you are unable to fully take it.
-            
-            # AMY
-            Ah no good, the lids too tight.
-            It'll tear if I force it.
-            Let's see what we can read from what's sticking out.
-            
-            # NOTE
-            anyw....
-            ps. i put da key....
-            pps. so u need 2 stop breaki...
-            these. are. expensive!!
-            
-            # AMY
-            Hm... no names.
-            But it did mention a key.
-            Maybe they hid a key somewhere around here.
-            If I can find that key, I'd be able to read the whole note.
-            Then, I would know more about who I'm staking out and what to expect.
-            
-            # TUTORIAL
-            Seems like you need to find a key to open that box.
-            Try exploring the area to the left to look for a key.
-            Go left until you find a tall box and interact with it.
-            -> area1
-        + + [Examine lock.]
-            {stopping:
-            -   # AMY
-                Must not have wanted anyone taking a look inside.
-                I wonder if I could force it open.
-            -   # AMY
-                No, forcing it would be a terrible idea.
-                If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
-            -   # AMY
-                I wonder if the key to this is somewhere around here...
-            }
-            # TUTORIAL
-            Seems like you need to find a key to open that box.
-            Try exploring the area to the left to look for a key.
-            Go left until you find a tall box and interact with it.
-            -> area1
+    -   What should I do now?
     }
+    {not examined_box: -> area1}
+    + + [Examine slip of paper.]
+        # AMY
+        There's a piece of paper that got caught on the lid of the box.
+        It looks like a note?
+        
+        # NARRATOR
+        You try pulling out the note.
+        You manage to get more of it out, but you are unable to fully take it.
+        
+        # AMY
+        Ah no good, the lids too tight.
+        It'll tear if I force it.
+        Let's see what we can read from what's sticking out.
+        
+        # NOTE
+        anyw....
+        ps. i put da key....
+        pps. so u need 2 stop breaki...
+        these. are. expensive!!
+        
+        # AMY
+        Hm... no names.
+        But it did mention a key.
+        Maybe they hid a key somewhere around here.
+        If I can find that key, I'd be able to read the whole note.
+        Then, I would know more about who I'm staking out and what to expect.
+    + + [Examine lock.]
+        {stopping:
+        -   # AMY
+            Must not have wanted anyone taking a look inside.
+            I wonder if I could force it open.
+        -   # AMY
+            No, forcing it would be a terrible idea.
+            If I broke the lock, then whoever is expecting this package will know for sure that somebody is watching them.
+        -   # AMY
+            I wonder if the key to this is somewhere around here...
+        }
+    - - # TUTORIAL
+        Seems like you need to find a key to open that box.
+        Try exploring the area to the right to look for a key.
+        Go left until you find a tall box and interact with it.
+        -> area1
 + [Examine tall box]
     ~ INTERACTABLE = false
     {
@@ -151,19 +148,15 @@ Try moving towards the box on your right and interacting with it!
         Ah there!
         
         # NARRATOR
-        Out of the corner of your eye, you spot something twinkling on top of some boxes
-        
-        # AMY
-        Hmm it's too tall to reach.
-        I need to stand on something else to reach it.
+        Out of the corner of your eye, you spot something twinkling suspended way above a tall box
         
         # TUTORIAL
-        Press the spacebar to jump.
-        Some items can be stood on.
-        Try jumping on top of that box over there
+        As you know space bar is used to jump.
+        Sometime you will need to jump on multiple items to get to certain places.
+        Try jumping on top of this box to reach the key
     -   examined_box and examined_tall_box and inventory !? key:
         # AMY
-        I have to stand on something to reach the key over there.
+        I have to stand on something to reach the key up there.
     -   examined_box and examined_tall_box and inventory ? key:
         # AMY
         It's a tall box.
@@ -172,6 +165,7 @@ Try moving towards the box on your right and interacting with it!
         Try examining the box near where you first started before anything else.
     }
 + [Get key]
+    ~ INTERACTABLE = false
     {not examined_box:
         # TUTORIAL
         Woah slow down!
@@ -179,19 +173,12 @@ Try moving towards the box on your right and interacting with it!
         Otherwise you might be better off skipping the tutorial.
         -> area1
     }
-    {not examined_tall_box:
-        ~ examined_tall_box = true
-        # TUTORIAL
-        Looks like you've figured out how to jump.
-        To jump, you press the up arrow key.
-        And as you've already figured out, some items like this box can be stood on.
-    }
     {
     -   inventory !? key:
         ~ inventory += key
         # TUTORIAL
         Sometimes, interacting with an object will result in you picking up that object.
-        You can see the objects that you have picked up so far on the lower-right side of your screen.
+        You can see the objects that you have picked up so far on the lower-left side of your screen.
         
         # AMY
         Nice! Now let's see what's inside that crate.

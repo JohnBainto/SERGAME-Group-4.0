@@ -5,10 +5,9 @@
 ~ _life = 30
 ~ _turn = 0
 ~ _result = ""
-# NARRATOR BATTLE_PHASE
-The wind is howling and the rain is falling in torrents.
-Are you ready?
-
+# NARRATOR BATTLE_PHASE LOAD CODEX
+The wind is howling and the rain is falling in torrents. # NARRATOR
+Are you ready? # NARRATOR START BATTLE BTN
 ~ temp fallacy = ""
 
 - (battle_phase)
@@ -24,7 +23,7 @@ Are you ready?
 		<link="-1">There are</link> <>
 		<link="1">plenty of other fish</link> <>
 		<link="0">in the sea</link> <>
-		<link="1">doing crime</link>. <> # QEND
+		<link="1">doing crime</link>. # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="-1">I</link> <> # KOI QSTART
 		<link="-2">have</link> <>
@@ -34,7 +33,7 @@ Are you ready?
 		<link="0">on Dapitan</link> <>
 		<link="0">that you</link> <>
 		<link="1">could write about</link> <>
-		<link="1">instead</link>. <> # QEND
+		<link="1">instead</link>. # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="0">Exposing us</link> <> # KOI QSTART
 		<link="1">won't remove demand</link> <>
@@ -43,7 +42,7 @@ Are you ready?
 		<link="-1">at the root</link> <>
 		<link="1">by writing a story</link> <>
 		<link="1">about our clients</link> <>
-		<link="1">instead</link>. <> # QEND
+		<link="1">instead</link>. # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="-1">You're</link> <> # KOI QSTART
 		<link="-1">so keen</link> <>
@@ -52,22 +51,22 @@ Are you ready?
 		<link="1">but you're soaking wet</link>! <>
 		<link="0">You'll</link> <>
 		<link="1">get sick</link> <>
-		<link="1">if you don't dry up</link>. <> # QEND
+		<link="1">if you don't dry up</link>. # QEND
 		~ fallacy = "RED HERRING"
-	-	<link="-1">Of course</link> <> # KOI QSTART
-		<link="1">it's alright</link> <>
-		<link="-1">for my business</link> <>
-		<link="0">to be fishy</link>, <>
-		<link="1">I am</link> <>
-		<link="1">a fish</link> <>
-		<link="0">after all</link>. <> # QEND
+	-	<link="-1">Of course</link><> # KOI QSTART
+		<link="1">it's alright</link><>
+		<link="-1">for my business</link><>
+		<link="0">to be fishy</link>,<>
+		<link="1">I am</link><>
+		<link="1">a fish</link><>
+		<link="0">after all</link> # QEND
 		~ fallacy = "RED HERRING"
-	-	<link="-1">I'll</link> # KOI QSTART
+	-	<link="-1">I'll</link><> # KOI QSTART
 		<link="-1">let you leave</link> <>
 		<link="-1">if you give me</link> <>
 		<link="-1">that book</link>, <>
 		<link="1">that's what you want right</link>? <>
-		<link="1">To leave</link>? <> # QEND
+		<link="1">To leave</link>?  # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="-1">Why</link> <> # KOI QSTART
 		<link="-1">are you</link> <>
@@ -76,7 +75,7 @@ Are you ready?
 		<link="-1">so much</link>. <>
 		<link="1">Don't</link> <>
 		<link="0">you</link> <>
-		<link="1">have anything better to do</link>? <> # QEND
+		<link="1">have anything better to do</link>? # QEND
 		~ fallacy = "RED HERRING"
 	-	<link="-1">Hand me</link> <> # KOI QSTART
 		<link="-1">that cursed book</link> <>
@@ -85,7 +84,7 @@ Are you ready?
 		<link="-1">messing</link> <>
 		<link="-1">with powers</link> <>
 		<link="-1">greater than</link> <>
-		<link="-1">you could even understand</link>. <> # QEND
+		<link="-1">you could even understand</link>.  # QEND
 		~ fallacy = "NONE"
 	-	<link="-1">I</link> <> # KOI QSTART
 		<link="-1">won't let</link> <>
@@ -94,7 +93,7 @@ Are you ready?
 		<link="-1">my operation!</link> <>
 		<link="-1">I'll have you</link> <>
 		<link="-1">sleeping with the fishes</link> <>
-		<link="-1">before that happens</link>. <> # QEND
+		<link="-1">before that happens</link>. # QEND
 		~ fallacy = "NONE"
 	-	<link="-1">How dare you</link> <> # KOI QSTART
 		<link="-1">attack me</link> <>
@@ -102,7 +101,7 @@ Are you ready?
 		<link="-1">I</link> <>
 		<link="-1">am</link> <>
 		<link="-1">a renowned businessman</link> <>
-		<link="-1">with many connections</link> <> # QEND
+		<link="-1">with many connections</link> # QEND
 		~ fallacy = "NONE"
 	-	<link="-1">The water</link> <> # KOI QSTART
 		<link="-1">is rising faster</link> <>
@@ -110,7 +109,7 @@ Are you ready?
 		<link="-1">My business</link> <>
 		<link="-1">will stay afloat</link> <>
 		<link="-1">but I don't think</link> <>
-		<link="-1">you will</link>. <> # QEND
+		<link="-1">you will</link>. # QEND
 		~ fallacy = "NONE"
 	-	<link="-1">I'm going to</link> <> # KOI QSTART
 		<link="-1">wash you away</link> <>
@@ -118,7 +117,7 @@ Are you ready?
 		<link="-1">all the evidence</link> <>
 		<link="-1">you've collected</link> <>
 		<link="-1">with one</link> <>
-		<link="-1">big wave</link>. <> # QEND
+		<link="-1">big wave</link>. # QEND
 		~ fallacy = "NONE"
     }
 - _turn == 2:
@@ -172,11 +171,11 @@ Are you ready?
         -   Ouch! # AMY
         }
         {fallacy == "RED HERRING":
-            I should look for words that are unrelated to what he is saying.
-            I can't be fooled by his distractions.
+            I should look for words that are unrelated to what he is saying. # AMY
+            I can't be fooled by his distractions. # AMY
         -   else:
-            I don't think that one even had a fallacy.
-            I should ne more careful next time.
+            I don't think that one even had a fallacy. # AMY
+            I should be more careful next time. # AMY
         }
     }
 + [SKIP]
@@ -229,8 +228,8 @@ Continue?
 "It's over!"
 "You little reign of terror over the pier is going to be exposed." # AMY
 
-# KIT
+# KOI
 "This... can't... be..."
-"hapening!!!" # KIT
+"hapening!!!" # KOI
 ~ _result = "WIN"
 -> chapter2.end

@@ -4,7 +4,7 @@ VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
 ~BG = CH00_BATTLE_HATTIE
-// TRIAL: ~ ch0_evidence += ch0_evidence.e1
+
 # NARRATOR BATTLE_PHASE LOAD CODEX
 This is the battle phase.# NARRATOR
 Each round your enemy will try to attack you using a fallacy spell.# NARRATOR

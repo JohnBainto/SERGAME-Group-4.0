@@ -55,6 +55,8 @@ public class DialogueManagerCH0 : MonoBehaviour
     // Start is called before the first frame update
     private void Start() 
     {
+        Destroy(GameObject.FindWithTag("Dialogue"));
+        
         StartCoroutine(ClearText());
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);

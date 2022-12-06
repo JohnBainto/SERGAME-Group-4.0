@@ -2,6 +2,7 @@ LIST ch1_evidence = e1, e2, e3
 
 === chapter1 ===
 = part1
+~ ch0_evidence += ch0_evidence.e1
 ~ INTERACTABLE = false
 ~ BG = CH01_EXP_BLACK
 # NARRATOR

@@ -104,7 +104,7 @@ Okay what should I do now?
         Hmm... I don't have the right tools to open it up and I'm not really too keen on sticking my fingers in there.
     }
     {
-    -   inventory ? detector:
+    -   inventory ? distraction:
         If this weren't dangerous before, it certainly is now that its wet!
     -   inventory ? newspaper:
         Wait, if I use those newspapers I got to connect these two wires...
@@ -154,11 +154,11 @@ Okay what should I do now?
         # AMY
         Nice! This should distract those goons outside.
         ~ inventory -= fire
-        ~ inventory += detector
+        ~ inventory += distraction
     }
 + [Stairs]
     ~ INTERACTABLE = false
-    {inventory !? detector:
+    {inventory !? distraction:
         {stopping:
         -   You ascend the stairs stopping just before a door that leads outside. # NARRATOR
             You can hear faint voices coming from the other side.

@@ -62881,6 +62881,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6672442054675849401, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672442054675849401, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6672442054675849403, guid: 6f780278e34857d45a4ceac9d3f183f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0

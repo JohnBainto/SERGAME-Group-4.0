@@ -192,7 +192,7 @@ Okay what should I do now?
         I need to hide.
 
         # NARRATOR
-        You quicly hid yourself underneath the stairs just in time before the door swung open.
+        You quickly hid yourself underneath the stairs just in time before the door swung open.
         You recognize the kapre running down the stairs from when you were attacked earlier.
         In the monster's rush to get downstairs, he did not even notice you holding your breath under the staircase.
         You quickly slip out the door after he is some distance away.
@@ -314,6 +314,8 @@ What should I do now?
         Maybe the one of the dock workers dropped this while trying to get away from the wave.
         With any luck I might just be able to use that crane.
         ~ inventory += key
+    -   else:
+        I don't think I need anything else from here.
     }
 + [Leave]
     ~ INTERACTABLE = false

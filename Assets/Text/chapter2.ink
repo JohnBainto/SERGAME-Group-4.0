@@ -26,6 +26,7 @@ What should I do now?
         Somebody more powerful than Kit...
         Hmm... that's gotta mean..!
         IMPRESSION FOUND # NARRATOR
+        Check your undercity codex for a new entry. # NARRATOR
         # AMY
         That's right, I can still feel the presence of a monster's domain.
         If he were the only boss here, the domain should have dissolved after he was defeated.
@@ -215,6 +216,7 @@ Mmph!
 All this water... serving as a distraction.
 It feels like a...
 IMPRESSION FOUND # NARRATOR
+Check your undercity codex for a new entry.  # NARRATOR
 # AMY
 "Who would 'a thought all that water would have contained an impression."
 "Phew! It's good that I found that, but I really need get out of here."
@@ -269,6 +271,7 @@ What should I do now?
     {ch2_evidence !? ch2_evidence.e3:
         Wait these fish remind me of something...
         IMPRESSION FOUND # NARRATOR
+        Check your undercity codex for a new entry. # NARRATOR
         # AMY
         "That's right!"
         "These fish must somehow be connected to whoever is behind this whole thing."

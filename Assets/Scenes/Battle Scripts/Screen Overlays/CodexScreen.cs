@@ -24,7 +24,8 @@ public class CodexScreen : MonoBehaviour
     public EvidencePage evidencePage;
     public FallacySkillPage fallacySkillPage;
 
-    public void Setup() {
+    public void Setup()
+    {
         gameObject.SetActive(true);
         activity = true;
         currentPage = 0;
@@ -32,14 +33,27 @@ public class CodexScreen : MonoBehaviour
         printPage(codexPagesData[currentPage]);
     }
 
-    public void loadCodexPages(string ch0_e, string ch1_e, string ch2_e, string ch) {
+    public void SetupExploration()
+    {
+        if (!DialogueManagerExploration.GetInstance().dialogueIsPlaying)
+        {
+            gameObject.SetActive(true);
+            activity = true;
+            currentPage = 0;
+            setPrevNextButton();
+            printPage(codexPagesData[currentPage]);
+        }
+    }
+
+    public void loadCodexPages(string ch0_e, string ch1_e, string ch2_e, string ch)
+    {
         codexPagesData = FindObjectOfType<PageDataController>().GetAll();
         ch0_evidences = ch0_e;
         ch1_evidences = ch1_e;
         ch2_evidences = ch2_e;
         chapter = ch;
 
-        switch(chapter)
+        switch (chapter)
         {
             case "tutorial":
             case "ch0_battle":
@@ -54,20 +68,20 @@ public class CodexScreen : MonoBehaviour
                 maxPage = 16;
                 chapterNo = 2; break;
         }
-        
+
         Debug.Log("CODEX SCREEN:\n" + ch0_evidences + " AAAA " + ch1_evidences + " BBB " + ch2_evidences
         + "\n" + "Chapter: " + chapter + "\nMax Page: " + maxPage + "\nPages Count: " + codexPagesData.Count);
     }
 
-    public void NextButton() 
+    public void NextButton()
     {
         currentPage++;
-        
+
         setPrevNextButton();
         printPage(codexPagesData[currentPage]);
     }
 
-    public void PreviousButton() 
+    public void PreviousButton()
     {
         currentPage--;
 
@@ -75,13 +89,13 @@ public class CodexScreen : MonoBehaviour
         printPage(codexPagesData[currentPage]);
     }
 
-    public void BackButton() 
+    public void BackButton()
     {
         gameObject.SetActive(false);
         activity = false;
     }
 
-    public  void setPrevNextButton()
+    public void setPrevNextButton()
     {
         if (currentPage == 0)
         {
@@ -100,10 +114,10 @@ public class CodexScreen : MonoBehaviour
         }
     }
 
-    public void printPage(PageData pageData) 
+    public void printPage(PageData pageData)
     {
         string type = pageData.pageType.Trim();
-        if(type == "Outline")
+        if (type == "Outline")
         {
             chapterPage.Destroy();
             caseFilePage.Destroy();
@@ -111,23 +125,23 @@ public class CodexScreen : MonoBehaviour
             fallacySkillPage.Destroy();
             outlinePage.Setup(pageData);
         }
-        else if(type == "Chapter") 
+        else if (type == "Chapter")
         {
             outlinePage.Destroy();
             caseFilePage.Destroy();
             evidencePage.Destroy();
             fallacySkillPage.Destroy();
-            chapterPage.Setup(pageData);  
+            chapterPage.Setup(pageData);
         }
-        else if(type == "Case File")
+        else if (type == "Case File")
         {
             outlinePage.Destroy();
             chapterPage.Destroy();
             evidencePage.Destroy();
             fallacySkillPage.Destroy();
-            caseFilePage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo); 
+            caseFilePage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo);
         }
-        else if(type == "Evidence")
+        else if (type == "Evidence")
         {
             outlinePage.Destroy();
             chapterPage.Destroy();
@@ -135,17 +149,17 @@ public class CodexScreen : MonoBehaviour
             fallacySkillPage.Destroy();
             evidencePage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo);
         }
-        else if(type == "Fallacy Skill")
+        else if (type == "Fallacy Skill")
         {
             outlinePage.Destroy();
             chapterPage.Destroy();
             caseFilePage.Destroy();
             evidencePage.Destroy();
-            fallacySkillPage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo); 
+            fallacySkillPage.Setup(pageData, ch0_evidences, ch1_evidences, ch2_evidences, chapterNo);
         }
         else
         {
-            Debug.Log("Not included in if conditions:<" + pageData.pageType+ ">AAA");
+            Debug.Log("Not included in if conditions:<" + pageData.pageType + ">AAA");
         }
     }
 }

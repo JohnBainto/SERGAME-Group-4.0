@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class DialogueManagerExploration : MonoBehaviour
 {
     public KeyCode interactKey;
+    public KeyCode codexKey;
 
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
@@ -38,6 +39,11 @@ public class DialogueManagerExploration : MonoBehaviour
 
     public GameObject codex;
 
+    public CodexScreen codexScreen;
+    public string ch0_evidences;
+    public string ch1_evidences;
+    public string ch2_evidences;
+
     private void Awake()
     {
         if (instance != null)
@@ -48,7 +54,7 @@ public class DialogueManagerExploration : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
         currentStory = new Story(inkJSON.text);
         currentStory.ChoosePathString(pathString);
     }
@@ -68,7 +74,8 @@ public class DialogueManagerExploration : MonoBehaviour
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
-        foreach(GameObject choice in choices) {
+        foreach (GameObject choice in choices)
+        {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
@@ -91,11 +98,15 @@ public class DialogueManagerExploration : MonoBehaviour
         checkCodex();
     }
 
-    private void checkCodex() {
+    private void checkCodex()
+    {
         string scene = SceneManager.GetActiveScene().name;
-        if (scene.Contains("BLACK") || scene.Contains("PROLOGUE")) {
+        if (scene.Contains("BLACK") || scene.Contains("PROLOGUE"))
+        {
             codex.SetActive(false);
-        } else {
+        }
+        else
+        {
             codex.SetActive(true);
         }
     }
@@ -120,22 +131,30 @@ public class DialogueManagerExploration : MonoBehaviour
 
         if (currentStory.canContinue)
         {
-            if (displayLineCoroutine != null) {
+            if (displayLineCoroutine != null)
+            {
                 StopCoroutine(displayLineCoroutine);
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue())); //pop a line off the stack
-            
+
             HandleTags();
             StartCoroutine(HandleScenes());
+
+            ch0_evidences = currentStory.variablesState["ch0_evidence"].ToString();
+            ch1_evidences = currentStory.variablesState["ch1_evidence"].ToString();
+            ch2_evidences = currentStory.variablesState["ch2_evidence"].ToString();
+
+            codexScreen.loadCodexPages(ch0_evidences, ch1_evidences, ch2_evidences, pathString);
         }
         else
         {
             ExitDialogueMode();
         }
     }
-    
 
-    private IEnumerator DisplayLine(string line) {
+
+    private IEnumerator DisplayLine(string line)
+    {
         dialogueText.text = "";
 
         HideChoices();
@@ -144,22 +163,27 @@ public class DialogueManagerExploration : MonoBehaviour
 
         bool isAddingRichTextTag = false;
 
-        foreach(char letter in line.ToCharArray()) {
+        foreach (char letter in line.ToCharArray())
+        {
             AudioManager.instance.Play("Typing");
             // if(Input.GetKeyDown(interactKey)) {
             //     dialogueText.text = line;
             //     break;
             // }
 
-            while(loadingScene) yield return null;
+            while (loadingScene) yield return null;
 
-            if (letter == '<' || isAddingRichTextTag) {
+            if (letter == '<' || isAddingRichTextTag)
+            {
                 isAddingRichTextTag = true;
                 dialogueText.text += letter;
-                if (letter == '>') {
+                if (letter == '>')
+                {
                     isAddingRichTextTag = false;
                 }
-            } else {
+            }
+            else
+            {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
             }
@@ -171,22 +195,27 @@ public class DialogueManagerExploration : MonoBehaviour
         canContinueToNext = true;
     }
 
-    private void HandleTags() {
+    private void HandleTags()
+    {
         List<string> currentTags = currentStory.currentTags;
-        if (currentTags.Count > 0 && displayNameText != null) {
+        if (currentTags.Count > 0 && displayNameText != null)
+        {
             displayNameText.text = currentTags[0];
         }
     }
 
-    public IEnumerator HandleScenes() {
+    public IEnumerator HandleScenes()
+    {
         string sceneName = currentStory.variablesState["BG"].ToString();
         Debug.Log("BG: " + currentStory.variablesState["BG"].ToString());
 
-        if (sceneName == "BATTLE") {
+        if (sceneName == "BATTLE")
+        {
             sceneName = "BattleScene 1";
         }
 
-        if (SceneManager.GetActiveScene().name != sceneName) {
+        if (SceneManager.GetActiveScene().name != sceneName)
+        {
             loadingScene = true;
             dialoguePanel.SetActive(false);
 
@@ -198,77 +227,96 @@ public class DialogueManagerExploration : MonoBehaviour
         }
     }
 
-    public void HandleInteractable() {
+    public void HandleInteractable()
+    {
         Debug.Log("INTERACTABLE: " + currentStory.variablesState["INTERACTABLE"].ToString());
-        if (bool.Parse(currentStory.variablesState["INTERACTABLE"].ToString())) {
+        if (bool.Parse(currentStory.variablesState["INTERACTABLE"].ToString()))
+        {
             ExitDialogueMode();
         }
 
     }
 
-    public void HandleInventory() {
+    public void HandleInventory()
+    {
         Debug.Log("INVENTORY: " + currentStory.variablesState["inventory"].ToString());
 
-        InkList inventory = (InkList) currentStory.variablesState["inventory"];
-        if(inventory.Count > 0) {
+        InkList inventory = (InkList)currentStory.variablesState["inventory"];
+        if (inventory.Count > 0)
+        {
             itemPanel.SetActive(true);
             itemText.text = "<i>Inventory</i>\n";
-            foreach (var item in inventory) {
+            foreach (var item in inventory)
+            {
                 string itemName = item.Key.ToString().Split('.')[1];
                 Debug.Log(itemName);
-                if (itemName != "crane") {
+                if (itemName != "crane")
+                {
                     itemText.text += itemName + "\n";
                 }
-            } 
-        } else {
+            }
+        }
+        else
+        {
             itemPanel.SetActive(false);
             itemText.text = "";
         }
     }
 
-    private void DisplayChoices() {
+    private void DisplayChoices()
+    {
         List<Choice> currentChoices = currentStory.currentChoices;
 
-        if (currentChoices.Count > choices.Length) {
+        if (currentChoices.Count > choices.Length)
+        {
             Debug.LogError("More choices were given than the UI can support. Number of choices given: " + currentChoices.Count);
         }
-        
+
         int index = 0;
-        foreach (Choice choice in currentChoices) {
+        foreach (Choice choice in currentChoices)
+        {
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
         }
 
-        for (int i = index; i < choices.Length; i++) {
+        for (int i = index; i < choices.Length; i++)
+        {
             choices[i].gameObject.SetActive(false);
         }
-        
-        if (currentChoices.Count > 0) {
+
+        if (currentChoices.Count > 0)
+        {
             StartCoroutine(SelectFirstChoice());
         }
     }
 
-    private void HideChoices() {
-        foreach (GameObject choiceButton in choices) {
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
             choiceButton.SetActive(false);
         }
     }
 
-    private IEnumerator SelectFirstChoice() {
+    private IEnumerator SelectFirstChoice()
+    {
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
 
-    public void MakeChoice (int choiceIndex) {
-        Debug.Log("choiceIndex: " + choiceIndex);            
-        if (canContinueToNext) {
+    public void MakeChoice(int choiceIndex)
+    {
+        Debug.Log("choiceIndex: " + choiceIndex);
+        if (canContinueToNext)
+        {
             currentStory.ChooseChoiceIndex(choiceIndex);
         }
     }
 
-    public void MakeChoiceThenContinue (int choiceIndex) {
+    public void MakeChoiceThenContinue(int choiceIndex)
+    {
         currentStory.ChooseChoiceIndex(choiceIndex);
         EnterDialogueMode();
     }

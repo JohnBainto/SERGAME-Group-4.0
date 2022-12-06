@@ -250,7 +250,7 @@ public class DialogueManagerExploration : MonoBehaviour
             {
                 string itemName = item.Key.ToString().Split('.')[1];
                 Debug.Log(itemName);
-                if (itemName != "crane")
+                if (itemName != "crane" || itemName != "distraction")
                 {
                     itemText.text += itemName + "\n";
                 }

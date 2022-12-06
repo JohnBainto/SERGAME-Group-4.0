@@ -72,7 +72,7 @@ What should I do now?
         # TUTORIAL
         Upon finding an impression, your undercity codex will react and turn that impression into evidence.
         Your undercity codex is the book that you can see on the lower-right side of your screen.
-        Press the X button to access it any time and review the evidence you just discovered.
+        Click on the undercity codex to access it any time and review the evidence you just discovered.
         It is important to examine the evidence you find before fighting a boss in order to know how to defeat them.
         Speaking of which...
         -> part2

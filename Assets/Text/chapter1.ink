@@ -2,11 +2,10 @@ LIST ch1_evidence = e1, e2, e3
 
 === chapter1 ===
 = part1
-~ ch0_evidence += ch0_evidence.e1
 ~ INTERACTABLE = false
 ~ BG = CH01_EXP_BLACK
-# NARRATOR 
 # LOAD CODEX
+# NARRATOR
 CHAPTER 1: LEAD A HORSE TO WATER
 DECEMBER 8, 20XX \| 3:45 PM
 ~ BG = CH01_EXP_OUTSIDE
@@ -74,7 +73,7 @@ Select an option:
     "It was hard to tell. I was pretty scared already and didn't get a good look"
     "It was dark but I could swear I saw the person blinking, so they were probably still alive."
 
-- A mermaid? # AMY
+- Could that have been a mermaid? # AMY
 Whoever these people are, they're probably involved in some sorta monster smuggling and traficking ring.
 
 "Anyway, after seeing the person in the crate, I screamed."
@@ -150,7 +149,16 @@ What should I investigate?
 + [Shipping crate 1]
     ~ INTERACTABLE = false
     {stopping:
-    -   The inside is full of discarded packaging. Wait what's this on the floor?
+    -   Let's see what's inside this shipping container.
+        Looks like this one's locked.
+    -   Hrrmpph, it's not use. I can't force it open.
+    -   Sealed tight as the vaults of Bangko Sentral.
+    }
++ [Shipping crate 2]
+    ~ INTERACTABLE = false
+    {stopping:
+    -   What could be inside of here?
+        The inside is full of discarded packaging. Wait what's this on the floor?
     -   It's a crowbar!
         Not unusual to see in a dock, but...
         There! It looks to have some dried blood on it.
@@ -170,17 +178,10 @@ What should I investigate?
             }
         }
     }
-+ [Shipping crate 2]
-    ~ INTERACTABLE = false
-    {stopping:
-    -   Looks like this one's locked.
-    -   Hrrmpph, it's not use. I can't force it open.
-    -   Sealed tight as the vaults of Bangko Sentral.
-    }
 + [Shipping crate 3]
     ~ INTERACTABLE = false
     {stopping:
-    -   It's mostly empty.
+    -   Looks like this box is mostly empty.
         Wait, what's this under the bubble wrap!
     -   Oh it's just some loose screws.
     -   I feel... kind of silly.
@@ -197,7 +198,7 @@ What should I investigate?
     
     # DOCK WORKER
     "Waait a minute, who are ya?"
-    "Why're ya snoopin' 'round the dock fer?"
+    "What're ya snoopin' 'round the dock fer?"
     "You with the popo?"
     
     # NARRATOR

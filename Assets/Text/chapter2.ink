@@ -280,19 +280,23 @@ What should I do now?
 + [Crane]
     ~ INTERACTABLE = false
     {inventory ? key:
-        {inventory !? crane:
-            Alright!
-            Let's see what this baby can do!
-            Wooaahh!
-            Okay I guess I don't exactly know how to operate this thing.
-            But I think I can move some of these steel girders around enough so I can make a platform to escape.
-            ~ inventory += crane
-            ~ BG = CH02_EXP_PIER_MOVED
-            Yes!
-            I did it!
-        - else:
-            I think I got it stuck.
-            Besides, I really don't feel like getting back on that thing.
+        {ch2_evidence !? ch2_evidence.e3:
+            Wait, before I use this, I should look around the area to make sure I haven't missed anything.
+        -   else:
+            {inventory !? crane:
+                Alright!
+                Let's see what this baby can do!
+                Wooaahh!
+                Okay I guess I don't exactly know how to operate this thing.
+                But I think I can move some of these steel girders around enough so I can make a platform to escape.
+                ~ inventory += crane
+                ~ BG = CH02_EXP_PIER_MOVED
+                Yes!
+                I did it!
+            - else:
+                I think I got it stuck.
+                Besides, I really don't feel like getting back on that thing.
+            }
         }
     - else:
         {stopping:

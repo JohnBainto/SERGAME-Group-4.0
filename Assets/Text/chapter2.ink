@@ -101,7 +101,7 @@ Okay what should I do now?
         These really have no business being exposed like this.
         Although... maybe I could use this for my escape somehow.
     -   # AMY
-        Hmm..> I don't have the right tools to open it up and I'm not really too keen on sticking my fingers in there.
+        Hmm... I don't have the right tools to open it up and I'm not really too keen on sticking my fingers in there.
     }
     {
     -   inventory ? detector:

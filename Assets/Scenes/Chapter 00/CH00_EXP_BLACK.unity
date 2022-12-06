@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: pathString
       value: tutorial
       objectReference: {fileID: 0}
-    - target: {fileID: 3560198041143515961, guid: 509bd57f1a2fbf84eb6f74b04326e709, type: 3}
-      propertyPath: typingSpeed
-      value: 0.025
-      objectReference: {fileID: 0}
     - target: {fileID: 4744203467705999164, guid: 509bd57f1a2fbf84eb6f74b04326e709, type: 3}
       propertyPath: m_Name
       value: DialogueManager

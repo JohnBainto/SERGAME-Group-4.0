@@ -166,6 +166,7 @@ What should I investigate?
         There! It looks to have some dried blood on it.
         {ch1_evidence !? ch1_evidence.e2:
             IMPRESSION FOUND  # NARRATOR
+            Check your undercity codex for a new entry.  # NARRATOR
             # AMY
             "Okay!"
             I feel like I'm really learning more about this case.
@@ -273,6 +274,7 @@ What should I investigate?
         That name... it seems like...
         {ch1_evidence !? ch1_evidence.e1:
             IMPRESSION FOUND  # NARRATOR
+            Check your undercity codex for a new entry.  # NARRATOR
             # AMY
             "Nice!"
             That should help unravel this whole mystery.
@@ -416,6 +418,7 @@ What should I investigate?
         Hair?
         Gasp! Tikbalang hair!
         IMPRESSION FOUND # NARRATOR
+        Check your undercity codex for a new entry.  # NARRATOR
          # AMY
         "Looks like an impression manifested in that hair."
         "It's a good thing I spotted it."

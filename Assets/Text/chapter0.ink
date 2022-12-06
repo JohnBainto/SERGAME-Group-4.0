@@ -67,6 +67,7 @@ What should I do now?
         And the pieces of clothes here that have been cut into two pieces...
         
         IMPRESSION FOUND  # NARRATOR
+        Check your undercity codex for a new entry.  # NARRATOR
         ~ ch0_evidence += ch0_evidence.e1
         
         # TUTORIAL

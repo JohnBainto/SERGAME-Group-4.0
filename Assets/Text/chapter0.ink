@@ -136,7 +136,7 @@ What should I do now?
     - - # TUTORIAL
         Seems like you need to find a key to open that box.
         Try exploring the area to the right to look for a key.
-        Go left until you find a tall box and interact with it.
+        Go right until you find a tall box and interact with it.
         -> area1
 + [Examine tall box]
     ~ INTERACTABLE = false

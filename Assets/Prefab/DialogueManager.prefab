@@ -3034,7 +3034,7 @@ MonoBehaviour:
   dialogueText: {fileID: 4744203468620282654}
   displayNameText: {fileID: 4744203468620282650}
   dialogueIsPlaying: 0
-  typingSpeed: 0.025
+  typingSpeed: 0.0175
   inkJSON: {fileID: 4900000, guid: 2cd7e1221a0ea42108a4027aebdd400f, type: 3}
   pathString: chapter1
   choices:

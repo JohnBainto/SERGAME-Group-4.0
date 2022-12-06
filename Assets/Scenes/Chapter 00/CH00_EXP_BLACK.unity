@@ -182,6 +182,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7067453486503130463, guid: 509bd57f1a2fbf84eb6f74b04326e709, type: 3}
+      propertyPath: m_text
+      value: "The contents you find in the box give you the impression that a black-and-white
+        worldview or separating things into two is involved.\n\nYou deduce that Hattie\u2019s
+        special fallacy skill must be <b>FALSE DICHOTOMY</b>.\n\nThis special fallacy
+        skill frames problems as only having <b>two-sides</b>. They will simplify
+        problems into a simple <b>either-or</b> situation and eliminate other alternatives
+        to make their point seem more reasonable."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 509bd57f1a2fbf84eb6f74b04326e709, type: 3}
 --- !u!1 &680656186

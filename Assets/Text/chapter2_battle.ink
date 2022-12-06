@@ -237,6 +237,6 @@ Continue?
 
 # KOI
 "This... can't... be..."
-"hapening!!!" # KOI
+"happening!!!" # KOI
 ~ _result = "WIN"
 -> chapter2.end

@@ -256,7 +256,7 @@ What should I investigate?
         # DOCK WORKER
         "9 to 5? Hah! Whaddya think this is? Some kinda day spa?"
         "This is a pier, genius. It works 'round the clock to get ya the food you eat and junk you buy."
-        "If we work hours were that short, heh, the city'd probably collapse by now."
+        "If work hours were that short, heh, the city'd probably collapse by now."
     + + "Who runs this place?" # AMY
         
         # DOCK WORKER

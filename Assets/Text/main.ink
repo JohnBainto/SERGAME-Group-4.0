@@ -20,13 +20,14 @@ Seems like everyday these streets get darker and darker.
 But that's why I'm here.
 My name is Amy Buscador.
 I'm a hard-boiled investigative journalist working in the city.
-Where ever there's a big scoop, you can bet yer mama's sweet jammys that I'm there.
+Where ever there's a big scoop, you can bet yer sweet jammys that I'm there.
 Lately I've been tracking a series 'a stories about gangs of supernatural beings doing organized crime in the city.
 Y'know real bump in the night types, spooks ya tell yer friends 'round the campfire types.
-They've been running amok in the city, wreckin' havoc, goin' about doin' whatever in tarnation they please.
-Its 'cause those... things, they have some sorta magic about them. It's like they can cast these spells that can convince ya real good even though what they're sayin's more bologna than a deli on black friday.
-But see, I'm wise to their tricks.
-What they don't know 's on top 'a bein' an investigative reporter, I'm also the descendant of a family of powerful <color=yellow>babaylans</color> or monster hunters for short.
+They've been running amok in the city, wreckin' havoc, goin' about doin' whatever they please.
+Its 'cause those mosters have some sorta magic power they can use.
+They can cast these spells that can convince ya to beleive them even though what they're sayin's more bologna than a deli on black friday.
+But see, I've got an ace up my sleeve.
+What they don't know 's on top 'a bein' an investigative reporter, I'm also the descendant of a family of powerful <color=yellow>babaylans</color> or monster hunters.
 I know the truth is more powerful than any 'a their lies.
 The <color=yellow>TRUTH</color> can break through any <color=red>FALLACY</color> and if those monsters think they can make my city into they're own personal playground, then they've got another thing comin'.
 -> main

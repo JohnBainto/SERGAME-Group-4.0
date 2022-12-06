@@ -246,7 +246,6 @@ public class DialogueManagerCH0 : MonoBehaviour
                 } 
                 else {
                     continueButton.SetActive(true);
-                    goBackButton.SetActive(true);
                 }
                 if(tags[0].Contains("C TUTORIAL"))
                 {
@@ -406,6 +405,7 @@ public class DialogueManagerCH0 : MonoBehaviour
             tutorialCodexScreen.Destroy();
         }else if(codexScreen.activity && tags[0].Trim() == "C TUTORIAL GO BACK"){
             continueTutorialButton.SetActive(false);
+            goBackButton.SetActive(true);
         } 
         else if(codexScreen.maxPage == codexScreen.currentPage && tags[0].Trim() == "C TUTORIAL ONLY CONSULT") {
             ContinueStory();

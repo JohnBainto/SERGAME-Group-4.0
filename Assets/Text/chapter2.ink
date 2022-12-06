@@ -12,7 +12,7 @@ CHAPTER 2: SLEEPING WITH THE FISHES
 DECEMBER 8, 20XX \| 11:02 PM
 ~ BG = CH02_EXP_BASEMENT
 Kit's defeated body lays on the floor near you.
-Just beyond him the door to your cell has been left open.
+Just beyond you, the door to your cell has been left open.
 
 
 - (area1)
@@ -21,18 +21,21 @@ Just beyond him the door to your cell has been left open.
 What should I do now?
 + [Kit]
     ~ INTERACTABLE = false
-    That's right Kit said something about a boss?
-    Somebody more powerful than Kit...
-    Hmm... that's gotta mean..!
-    IMPRESSION FOUND # NARRATOR
-    # AMY
-    That's right, I can still feel the presence of a monster's domain.
-    If he were the only boss here, the domain should have dissolved after he was defeated.
-    "Mr Ignacio..."
-    "Ugh, just my luck."
-    "Guess I'm in for another battle with whoever that is."
-    "I really need get out of here and solve this case quick."
-    ~ ch2_evidence += ch2_evidence.e1
+    {stopping:
+    -   That's right Kit said something about a boss?
+        Somebody more powerful than Kit...
+        Hmm... that's gotta mean..!
+        IMPRESSION FOUND # NARRATOR
+        # AMY
+        That's right, I can still feel the presence of a monster's domain.
+        If he were the only boss here, the domain should have dissolved after he was defeated.
+        "Mr Ignacio..."
+        "Ugh, just my luck."
+        "Guess I'm in for another battle with whoever that is."
+        "I really need get out of here and solve this case quick."
+        ~ ch2_evidence += ch2_evidence.e1
+    -   I better get out of here before he wakes up.
+    }
 + [Door]
     ~ INTERACTABLE = false
     {ch2_evidence ? ch2_evidence.e1:

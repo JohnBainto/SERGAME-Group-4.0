@@ -135,7 +135,7 @@ You make your way to the pier area.
 Flood lights fill the area with icy light that seems fitting with the chilly coastal air.
 The pungent smell of the harbor is almost overwhelming.
 In the distance, large cranes with dangling hooks litter the port.
-All around you, there are various shipping containers in shades of maroon, green, and the occasional blue.
+All around you, there are various shipping containers in shades of green, and the occasional blue or maroon.
 Strangely, there are not as many dock wokers as you'd expect.
 
 # AMY
@@ -204,7 +204,7 @@ What should I investigate?
     "You with the popo?"
     
     # NARRATOR
-    The dock work crosses his arms and narrows his eyes at you.
+    The dock worker crosses his arms and narrows his eyes at you.
     
     # AMY
     I can't let him know the truth.
@@ -359,7 +359,7 @@ But instead of falling, a kapre catches you and stifles your mouth and nose with
 Everything becomes hazy as you feel yourself fall unto the floor.
 ~ BG = CH01_EXP_BASEMENT
 You wake up to find yourself in a cell.
-There aren't any windows but judging from the smell it seems that you're still in the docking area.
+There aren't any windows but judging from the smell it seems that you're still near the docks.
 
 # AMY
 Urgh, my head.

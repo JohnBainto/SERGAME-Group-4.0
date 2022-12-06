@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 2030585694}
+  goBackButton: {fileID: 2093759450}
   startBattleBtn: {fileID: 1415337106}
   _startBattleBtn: {fileID: 1415337108}
   normalDialogue: {fileID: 536259023}

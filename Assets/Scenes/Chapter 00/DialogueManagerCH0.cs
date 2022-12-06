@@ -14,6 +14,7 @@ public class DialogueManagerCH0 : MonoBehaviour
     [Header("Dialogue UI")]                                     
     TrackSelectedWord trackSelectedWord;
     [SerializeField] GameObject dialogueBox;
+    [SerializeField] GameObject goBackButton;         // go back button
     [SerializeField] GameObject startBattleBtn;         // startBattle button
     [SerializeField] Button _startBattleBtn;         // startBattle button
     [SerializeField] public TextMeshProUGUI normalDialogue;    // Normal Text
@@ -241,10 +242,12 @@ public class DialogueManagerCH0 : MonoBehaviour
                 if(tags[0].Contains("ONLY CONSULT"))
                 {
                     continueButton.SetActive(false);
+                    goBackButton.SetActive(false);
                 } 
-                else
+                else {
                     continueButton.SetActive(true);
-                
+                    goBackButton.SetActive(true);
+                }
                 if(tags[0].Contains("C TUTORIAL"))
                 {
                     tutorialScreen.Destroy();

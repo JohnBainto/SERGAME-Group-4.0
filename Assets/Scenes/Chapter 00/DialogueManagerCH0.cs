@@ -223,6 +223,7 @@ public class DialogueManagerCH0 : MonoBehaviour
             
             if(tags[0].Contains("QSTART")) 
             { 
+                battleDialogue.gameObject.SetActive(false);
                 Debug.Log("BATTLE " + currentLine);
                 startBattleBtn.SetActive(false);    
                 StopAllCoroutines();

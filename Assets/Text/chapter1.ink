@@ -115,9 +115,11 @@ But big trouble can also mean big story...
 = part2
 # NARRATOR
 You leave the house and step outside.
-It's dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
 ~ BG = CH01_EXP_OUTSIDE
+
+# NARRATOR
+It's dusk now and shadows loom over everything abated only by the lights on the street and the pier.
 
 ~temp first_select = ""
 # AMY

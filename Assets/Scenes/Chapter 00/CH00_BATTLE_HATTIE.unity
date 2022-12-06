@@ -3614,7 +3614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda9fe05aaf624f59be547fe7273de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathString: 
+  pathString: ch0_battle
 --- !u!114 &651391108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,7 +4111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 651391107}
         m_TargetAssemblyTypeName: LoseScreen, Assembly-CSharp
-        m_MethodName: mainMenuButotn
+        m_MethodName: mainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7015,6 +7015,18 @@ MonoBehaviour:
       - m_Target: {fileID: 230967958}
         m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
         m_MethodName: ContinueButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2038700668}
+        m_TargetAssemblyTypeName: ClickableBehavior, Assembly-CSharp
+        m_MethodName: continueStoryButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

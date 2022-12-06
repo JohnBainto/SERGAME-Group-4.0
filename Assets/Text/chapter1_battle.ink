@@ -1,4 +1,8 @@
 === ch1_battle ===
+~ ch0_evidence += ch0_evidence.e1
+~ ch1_evidence += ch1_evidence.e1
+~ ch1_evidence += ch1_evidence.e2
+~ ch1_evidence += ch1_evidence.e3
 ~BG = CH01_BATTLE_KIT
 ~ _performance = 0
 ~ _life = 30

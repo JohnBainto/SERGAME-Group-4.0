@@ -1,4 +1,11 @@
 === ch2_battle ===
+~ ch0_evidence += ch0_evidence.e1
+~ ch1_evidence += ch1_evidence.e1
+~ ch1_evidence += ch1_evidence.e2
+~ ch1_evidence += ch1_evidence.e3
+~ ch2_evidence += ch2_evidence.e1
+~ ch2_evidence += ch2_evidence.e2
+~ ch2_evidence += ch2_evidence.e3
 ~BG = CH02_BATTLE_KOI
 
 ~ _performance = 0

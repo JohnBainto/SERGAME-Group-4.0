@@ -3,6 +3,7 @@ VAR _life = 30
 VAR _turn = 0
 VAR _result = ""
 === ch0_battle ===
+~ ch0_evidence += ch0_evidence.e1
 ~BG = CH00_BATTLE_HATTIE
 
 # NARRATOR BATTLE_PHASE LOAD CODEX

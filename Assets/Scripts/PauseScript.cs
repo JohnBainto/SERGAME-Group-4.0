@@ -19,10 +19,12 @@ public class PauseScript : MonoBehaviour
     }
 
     public void Restart() {
+        Destroy(GameObject.FindWithTag("Dialogue"));
         Initiate.Fade(RestartScene, Color.black, 1.0f);
     }
 
     public void MainMenu() {
+        Destroy(GameObject.FindWithTag("Dialogue"));
         Initiate.Fade("TITLE_SCREEN", Color.black, 1.0f);
     }
 }

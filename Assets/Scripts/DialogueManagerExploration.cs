@@ -23,6 +23,7 @@ public class DialogueManagerExploration : MonoBehaviour
     public float typingSpeed;
     private bool canContinueToNext;
     private Coroutine displayLineCoroutine;
+    public GameObject EnterPrompt;
 
     private static DialogueManagerExploration instance;
     public TextAsset inkJSON;
@@ -158,9 +159,10 @@ public class DialogueManagerExploration : MonoBehaviour
         dialogueText.text = "";
 
         HideChoices();
+        EnterPrompt.SetActive(false);
 
         canContinueToNext = false;
-
+        
         bool isAddingRichTextTag = false;
 
         foreach (char letter in line.ToCharArray())
@@ -191,7 +193,7 @@ public class DialogueManagerExploration : MonoBehaviour
         }
 
         DisplayChoices();
-
+        EnterPrompt.SetActive(true);
         canContinueToNext = true;
     }
 

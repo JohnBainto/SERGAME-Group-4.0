@@ -338,7 +338,7 @@ What should I do now?
 "So you're the one whose been making a mess of my business."
 
 # AMY
-"Huh, who the devil are you?"
+"Huh, who the H-E double hockey sticks are you?"
 And how'd you get up here??
 
 # KOI

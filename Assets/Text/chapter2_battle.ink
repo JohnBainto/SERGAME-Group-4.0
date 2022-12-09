@@ -159,7 +159,7 @@ Are you ready? # NARRATOR START BATTLE BTN
         -   Don't bother trying to distract me, I already know what you're up to. # AMY
         -   Think you're the first monster I've taken down? I know your tricks # AMY
         -   That's wrong! I can see through your magic! # AMY
-        -   I can see trhough your illusions Koi! # AMY
+        -   I can see through your illusions Koi! # AMY
         }
         ~ set_life(13)
     - _performance > -2:
@@ -233,7 +233,7 @@ Continue?
 
 # AMY
 "It's over!"
-"You little reign of terror over the pier is going to be exposed." # AMY
+"You little reign of terror over the pier is over." # AMY
 
 # KOI
 "This... can't... be..."

@@ -328,7 +328,6 @@ public class DialogueManagerCH0 : MonoBehaviour
         Debug.Log("choiceIndex: " + choiceIndex);           
         if (canContinueToNext) { 
             currentStory.ChooseChoiceIndex(choiceIndex);
-            currentStory.EvaluateFunction("set_turn", 1);
             continueButton.SetActive(true);
         }
     }

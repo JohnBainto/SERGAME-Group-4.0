@@ -34,7 +34,7 @@ public class PlayerHealthCH0 : MonoBehaviour
         //Debug.Log(  "LIFE: " +currentHealth);
         healthBar.SetHealth(currentHealth);
     }
-
+// ~ set_turn(1)
 
     public void sumPerformance()
     {

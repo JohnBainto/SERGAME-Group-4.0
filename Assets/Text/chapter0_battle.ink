@@ -5,7 +5,10 @@ VAR _result = ""
 === ch0_battle ===
 ~ ch0_evidence += ch0_evidence.e1
 ~BG = CH00_BATTLE_HATTIE
-
+~ _performance = 0
+~ _life = 30
+~ _turn = 0
+~ _result = ""
 # NARRATOR BATTLE_PHASE LOAD CODEX
 This is the battle phase.# NARRATOR
 Each round your enemy will try to attack you using a fallacy spell.# NARRATOR
@@ -17,7 +20,6 @@ You have to select the words or phrases in the opponent's fallacy spell that con
 Click the Start Battle button to begin!# NARRATOR START BATTLE BTN
 
 ~ temp fallacy = ""
-
 - (battle_phase)
 ~ _performance = 0
 {_life <= 0: -> bad_end}
@@ -80,8 +82,8 @@ Click the Start Battle button to begin!# NARRATOR START BATTLE BTN
         "N-no its not that going to be that simple... I think."
         # TUTORIAL
         Nice one!
-        A little shaky, but you've got the right idea.
-        Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.
+        A little shaky, but you've got the right idea.# TUTORIAL
+        Try to ignore filler words or phrases that are just there for the structure of the sentence to make you attack stronger next time.# TUTORIAL
         ~ set_life(6)
     -   _turn == 0:
         # AMY

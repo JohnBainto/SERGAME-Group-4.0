@@ -13,6 +13,9 @@ public class FallacySkillPage : MonoBehaviour
     [SerializeField]  GameObject sprite1;
 
     public void Setup(PageData pageData, string ch0_e, string ch1_e, string ch2_e,  int chNo) {
+        text0.text = "";
+        text1.text =  "";
+        text2.text =  "";
         text0.text = pageData.pageContents[0];
         text1.text = pageData.pageContents[1];
         text2.text = pageData.pageContents[2];

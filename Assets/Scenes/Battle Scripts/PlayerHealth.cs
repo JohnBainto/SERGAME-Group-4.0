@@ -31,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
         cStory.EvaluateFunction("set_performance", sumPerformance());
         currentHealth = (int)cStory.variablesState["_life"];
         healthBar.SetHealth(currentHealth);
-        int c = (int)cStory.variablesState["_turn"];
     }
 
 

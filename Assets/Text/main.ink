@@ -24,8 +24,8 @@ Where ever there's a big scoop, you can bet yer sweet jammys that I'm there.
 Lately I've been tracking a series 'a stories about gangs of supernatural beings doing organized crime in the city.
 Y'know real bump in the night types, spooks ya tell yer friends 'round the campfire types.
 They've been running amok in the city, wreckin' havoc, goin' about doin' whatever they please.
-Its 'cause those mosters have some sorta magic power they can use.
-They can cast these spells that can convince ya to beleive them even though what they're sayin's more bologna than a deli on black friday.
+It's 'cause those mosters have some sorta magic power they can use.
+They can cast these spells that can convince ya to believe them even though what they're sayin's more bologna than a deli on Black Friday.
 But see, I've got an ace up my sleeve.
 What they don't know 's on top 'a bein' an investigative reporter, I'm also the descendant of a family of powerful <color=yellow>babaylans</color> or monster hunters.
 I know the truth is more powerful than any 'a their lies.

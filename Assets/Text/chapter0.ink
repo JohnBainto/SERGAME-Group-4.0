@@ -14,7 +14,7 @@ The moonless sky above is dark, save for the twinkling of a few stars and the re
 Here, you find yourself wandering the dimly lit streets looking for your next big scoop.
 
 # AMY
-Over the past week I've been investigatin' a series of vanadalism cases in this area.
+Over the past week I've been investigatin' a series of vandalism cases in this area.
 Each case has the same MO, black and white gang signs painted over the vandalized property.
 Now, you don't need to be a genius supernatural detective like me to figure out that this is a clear sign a' gang activity.
 But what I do know as a supernatural detective is that a domain has already formed over this place.
@@ -22,12 +22,12 @@ That means this is no ordinary gang, but a gang of supernatural beings!
 Since this case piqued my interest, I set up a mole in a couple of art supply chains to warn me about any large orders of spray paints and what not.
 After a particularly suspicious order of black and white spray paint, I asked my guy to place a tracking device on the package.
 And that leads me to here.
-Who ever bought the package seems to have just left it here slightly hidden in the bushes.
-Whatever's the case, its time to investigate.
+Whoever bought the package seems to have just left it here slightly hidden in the bushes.
+Whatever's the case, it's time to investigate.
 
 # TUTORIAL
 You have entered a monster's domain.
-While in a domain it your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
+While in a domain it's your job to look for impressions or weaknesses and other information about the monster that has manifested into the domain.
 Impressions can be revealed by examining objects or interacting with people.
 To move around a domain, use your ←/A and →/D keys.
 To jump, press spacebar.

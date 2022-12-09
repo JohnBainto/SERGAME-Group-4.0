@@ -29,20 +29,20 @@ A moment later, a nervous looking man opens the door.
 He scouts the area behind you and then quickly pulls you inside.
 ~ BG = CH01_EXP_INSIDE
 # WITNESS
-D-did you see any of them outside?
+"D-did you see any of them outside?"
 
 # AMY
 Them?
 
 # WITNESS
-I'm being stalked.
-Ever since I saw *that*, everywhere I go I feel like I'm being watched.
-Not just by ordinary people either, I suspect a gang of monsters are watching me.
+"I'm being stalked."
+"Ever since I saw *that*, everywhere I go I feel like I'm being watched.
+Not just by ordinary people either, I suspect a gang of monsters are watching me."
 
 # AMY
-That? Listen, its pretty clear that you're being spooked by somethin',
-but I'm going to need ya to be a bit more clear, alright?
-Why don't 'cha start of from the beginning?
+"That? Listen, it's pretty clear that you're being spooked by somethin',
+but I'm going to need ya to be a bit more clear, alright?"
+"Why don't 'cha start of from the beginning?"
 
 # WITNESS
 "Right, sorry."
@@ -53,7 +53,7 @@ Why don't 'cha start of from the beginning?
 "They were arguing, I think it had something to do about messing up their delivery."
 "Anyway, it's a rough area and I didn't want to get involved."
 "But suddenly their fight escalated."
-"They were threatening each other and I think saw a flash of something metallic coming from one of the guy's hand."
+"They were threatening each other, and I think saw a flash of something metallic coming from the hand of one of the guys."
 "I thought it was a gun, so I got scared and tried to hide behind some trash."
 "I was so scared."
 "I just wanted to get away without getting noticed, so I tried to sneak away."
@@ -75,10 +75,11 @@ Select an option:
     "It was dark but I could swear I saw the person blinking, so they were probably still alive."
 
 - Could that have been a mermaid? # AMY
-Whoever these people are, they're probably involved in some sorta monster smuggling and traficking ring.
+Whoever these people are, they're probably involved in some sorta monster smuggling and trafficking ring.
 
+# WITNESS
 "Anyway, after seeing the person in the crate, I screamed."
-"And that was when I caught those two guy's attention."
+"And that was when I caught those two guys' attention."
 "They turned to me, and it became clear that they weren't human."
 "One guy had claws several inches long while the other had a long sharp tongue."
 "That was when I started running."
@@ -148,6 +149,7 @@ I ought 'ta blend in to avoid any suspicion to myself.
 
 - (area1)
 ~ INTERACTABLE = true
+# AMY
 What should I investigate?
 + [Shipping crate 1]
     ~ INTERACTABLE = false

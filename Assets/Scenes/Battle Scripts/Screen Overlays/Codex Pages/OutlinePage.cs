@@ -10,6 +10,9 @@ public class OutlinePage : MonoBehaviour
     [SerializeField] public TextMeshProUGUI text2;
 
     public void Setup(PageData pageData) {
+        text0.text = "";
+        text1.text =  "";
+        text2.text =  "";
         gameObject.SetActive(true);
         Debug.LogWarning(gameObject.activeSelf); 
         text0.text = pageData.pageContents[0];

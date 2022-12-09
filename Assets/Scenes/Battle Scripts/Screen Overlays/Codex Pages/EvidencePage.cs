@@ -13,6 +13,9 @@ public class EvidencePage : MonoBehaviour
     [SerializeField]  GameObject sprite1;
 
     public void Setup(PageData pageData, string ch0_e, string ch1_e, string ch2_e,  int chNo) {
+        text0.text = "";
+        text1.text = "";
+        text2.text = "";
         bool isAcquired = false;
         
         if (pageData.pageName.Contains("CH0 Evidence 1"))
@@ -45,6 +48,7 @@ public class EvidencePage : MonoBehaviour
         {
             if(ch2_e.Contains("e3")) isAcquired = true; 
         }
+
         gameObject.SetActive(true);
         text0.text = pageData.pageContents[0];
         text1.text = pageData.pageContents[1];

@@ -11,6 +11,9 @@ public class ChapterPage : MonoBehaviour
     [SerializeField]  GameObject sprite0;
 
     public void Setup(PageData pageData) {
+        text0.text = "";
+        text1.text =  "";
+        text2.text =  "";
         gameObject.SetActive(true); 
         text0.text = pageData.pageContents[0];
         text1.text = pageData.pageContents[1];

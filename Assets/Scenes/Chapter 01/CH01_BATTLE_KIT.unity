@@ -5764,8 +5764,8 @@ MonoBehaviour:
     - Special Fallacy Skill
     - FALSE DICHOTOMY
     - "Only highlight the words that imply there to be only two options.\n\nExamples:\n\u201C<b>Either</b>
-      you are with us or against us.\u201D\n\n\u201CThere are <b>only two types</b>
-      of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
+      you are with us <b>or</b> against us.\u201D\n\n\u201CThere are <b>only two
+      types</b> of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
       you <b>don\u2019t</b> agree with me on this point, <b>then</b> you <b>must</b>
       agree with <b>them</b>!\u201D"
     - UNKNOWN
@@ -5889,7 +5889,7 @@ MonoBehaviour:
       may not be an insult at all but still undermines th other person\u2019s motives
       or validity.\n\n<b>Examples:</b>\n\u201CWhy would you believe anything from
       such a <b>lousy</b> public speaker?\u201D\n\n\u201CStay out of this, you are
-      still </b>just a kid.</b>\u201D\n\n\u201CYou\u2019re only defending him because
+      still <b>just a kid.</b>\u201D\n\n\u201CYou\u2019re only defending him because
       you are <b>his friend</b>.\u201D"
     - UNKNOWN
     - <b><u>COMPLETE THE EVIDENCES to unlock this page!</u></b>

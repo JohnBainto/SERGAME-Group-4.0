@@ -194,8 +194,8 @@ PrefabInstance:
     - target: {fileID: 7109432894556121300, guid: 509bd57f1a2fbf84eb6f74b04326e709, type: 3}
       propertyPath: pages.Array.data[4].pageContents.Array.data[2]
       value: "Only highlight the words that imply there to be only two options.\n\nExamples:\n\u201C<b>Either</b>
-        you are with us or against us.\u201D\n\n\u201CThere are <b>only two types</b>
-        of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
+        you are with us <b>or</b> against us.\u201D\n\n\u201CThere are <b>only two
+        types</b> of people, those who hurt <b>and</b> those who are hurt.\u201D\n\n\u201C<b>If</b>
         you <b>don\u2019t</b> agree with me on this point, <b>then</b> you <b>must</b>
         agree with <b>them</b>!\u201D"
       objectReference: {fileID: 0}
